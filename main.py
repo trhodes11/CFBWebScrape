@@ -65,6 +65,14 @@ def main_hist(this_url, this_season, this_week, this_date, table_name):
 # This is the initial entry point into the code
 """
 if __name__ == '__main__':
+
+    """
+    # Ignore - Configuration settings
+    """
+    desired_width = 320
+    pd.set_option('display.width', desired_width)
+    pd.set_option('display.max_columns', 60)
+
     """
     # This try statement is a check to see whether the program was started using the command line/terminal or using an 
     # editor (like pycharm). We will always be starting it from pycharm, so the try statement will always fail and 
