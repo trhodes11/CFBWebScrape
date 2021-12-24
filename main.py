@@ -6,6 +6,20 @@ import time
 import pandas as pd
 
 
+def rearrange_columns(df):
+    df.insert(0, 'Team_temp', df['Team'])
+    df.insert(1, 'Season_temp', df['Season'])
+    df.insert(2, 'Week_temp', df['Week'])
+    df.drop('Team', axis=1, inplace=True)
+    df.drop('Season', axis=1, inplace=True)
+    df.drop('Week', axis=1, inplace=True)
+    df.rename(columns={'Team_temp': 'Team'}, inplace=True)
+    df.rename(columns={'Season_temp': 'Season'}, inplace=True)
+    df.rename(columns={'Week_temp': 'Week'}, inplace=True)
+
+    return df
+
+
 def main_hist(this_url, this_season, this_week, this_date, table_name):
     
     print('Starting scraper... \n')
@@ -52,8 +66,8 @@ def main_hist(this_url, this_season, this_week, this_date, table_name):
 """
 if __name__ == '__main__':
     """
-    # This try statement is a check to see whether the program was started using the command line/terminal or using the 
-    # start button in pycharm. We will always be starting it from pycharm, so we will always skip the try statement and 
+    # This try statement is a check to see whether the program was started using the command line/terminal or using an 
+    # editor (like pycharm). We will always be starting it from pycharm, so the try statement will always fail and 
     # skip down into the except code
     """
     try:
@@ -85,7 +99,7 @@ if __name__ == '__main__':
 
             """
             # We want to set 'season' to each value in the list 2010-2018; for each value of season we go into the 
-            # for loop
+            # for loop and scrape each TR table for each week of the season from week 5-14
             """
             for season in ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']:
                 season_df = pd.DataFrame()
@@ -119,14 +133,26 @@ if __name__ == '__main__':
                 # Monday before week 5 games.
                 """
                 this_week_date = season_start_date
+
                 # The next line will convert the date variable to a string so that we can use it in filenames
                 season_start_date_str = season_start_date.strftime("%Y-%m-%d")
+
                 # Next line just stores the string version of the date into a this_week_date_str variable that we will
-                # update each time wt
+                # update each time we go through the for loop that goes through each week
                 this_week_date_str = season_start_date_str
 
+                """
+                # The variable 'week' will update each time through the loop, starting at 5 and incrementing until
+                # it reaches the value of 15 which will cause it to exit the loop (week = 14 will be the last time it
+                # enters the loop
+                """
                 for week in range(5, 15):
-
+                    """
+                    # For each week of the current season, we will build a url string for each of the tables we want to
+                    # scrape using the current value of 'this_week_date_str'. The 'this_week_date_str' variable will 
+                    # start at 2010-9-26  and will be updated at the bottom of this loop to add 7 days so that each time
+                    # we go through the loop it will scrape the next weeks table.
+                    """
                     scoring_offense_url_current = 'https://www.teamrankings.com/college-football/stat/points-per-game'\
                         + '?date='\
                         + this_week_date_str
@@ -139,6 +165,7 @@ if __name__ == '__main__':
                                           'Home': 'At_Home_Scoring_Offense',
                                           'Away': 'Away_Scoring_Offense'
                                           }, inplace=True)
+                    so_df['Team'] = so_df['Team'].str.strip()
                     time.sleep(1)
 
                     total_offense_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-game'\
@@ -153,6 +180,7 @@ if __name__ == '__main__':
                                           'Home': 'At_Home_Total_Offense',
                                           'Away': 'Away_Total_Offense'
                                           }, inplace=True)
+                    to_df['Team'] = to_df['Team'].str.strip()
                     time.sleep(1)
 
                     scoring_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game'\
@@ -167,6 +195,7 @@ if __name__ == '__main__':
                                           'Home': 'At_Home_Scoring_Defense',
                                           'Away': 'Away_Scoring_Defense'
                                           }, inplace=True)
+                    sd_df['Team'] = sd_df['Team'].str.strip()
                     time.sleep(1)
 
                     total_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game'\
@@ -181,6 +210,7 @@ if __name__ == '__main__':
                                           'Home': 'At_Home_Total_Defense',
                                           'Away': 'Away_Total_Defense'
                                           }, inplace=True)
+                    td_df['Team'] = td_df['Team'].str.strip()
                     time.sleep(1)
 
                     turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game'\
@@ -195,6 +225,7 @@ if __name__ == '__main__':
                                           'Home': 'At_Home_Turnovers_Given',
                                           'Away': 'Away_Turnovers_Given'
                                           }, inplace=True)
+                    tg_df['Team'] = tg_df['Team'].str.strip()
                     time.sleep(1)
 
                     turnovers_taken_url_current = 'https://www.teamrankings.com/college-football/stat/takeaways-per-game'\
@@ -209,6 +240,7 @@ if __name__ == '__main__':
                                           'Home': 'At_Home_Turnovers_Taken',
                                           'Away': 'Away_Turnovers_Taken'
                                           }, inplace=True)
+                    tt_df['Team'] = tt_df['Team'].str.strip()
                     time.sleep(1)
 
                     last_5_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other'\
@@ -221,6 +253,7 @@ if __name__ == '__main__':
                                           'Low': 'Low_Last_5',
                                           'Last': 'Last_Last_5'
                                           }, inplace=True)
+                    l5_df['Team'] = l5_df['Team'].str.strip()
                     time.sleep(1)
 
                     neutral_site_url_current = 'https://www.teamrankings.com/college-football/ranking/neutral-by-other'\
@@ -234,6 +267,7 @@ if __name__ == '__main__':
                                           'Last': 'Last_Neutral_Site'
                                           }, inplace=True)
                     ns_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                    ns_df['Team'] = ns_df['Team'].str.strip()
                     time.sleep(1)
 
                     sos_url_current = 'https://www.teamrankings.com/college-football/ranking/schedule-strength-by-other'\
@@ -246,6 +280,7 @@ if __name__ == '__main__':
                                            'Low': 'Low_SoS',
                                            'Last': 'Last_SoS'
                                            }, inplace=True)
+                    sos_df['Team'] = sos_df['Team'].str.strip()
 
                     this_week_date = this_week_date + datetime.timedelta(days=7)
                     this_week_date_str = this_week_date.strftime("%Y-%m-%d")
@@ -259,6 +294,7 @@ if __name__ == '__main__':
                     this_week_df = pd.merge(this_week_df, ns_df, on=['Team', 'Season', 'Week'], how='outer')
                     this_week_df = pd.merge(this_week_df, sos_df, on=['Team', 'Season', 'Week'], how='outer')
 
+                    this_week_df = rearrange_columns(this_week_df)
                     season_df = pd.concat([season_df, this_week_df])
                     master_df = pd.concat([master_df, this_week_df])
 
@@ -285,58 +321,170 @@ if __name__ == '__main__':
         else:
             season = 'Current'
             week = '14'
-            s1_start_date = datetime.date(2021, 12, 20)
-            s1_this_week = s1_start_date
-            s1_start_date_str = s1_start_date.strftime("%Y-%m-%d")
-            s1_this_week_str = s1_start_date_str
+            season_start_date = datetime.date(2021, 12, 20)
 
-            scoring_offense_url_current = 'https://www.teamrankings.com/college-football/stat/points-per-game' + \
-                                          '?date=' + \
-                                          s1_this_week_str
+            """
+            # Now that we know the season_start_date for the current season, we can set the start date for the 
+            # variable that will keep track of the current week (this_week_date) that we are scraping data for. 
+            # Since we will start at week 5, we can set this_week_date to the season_start_date which is the 
+            # Monday before week 5 games.
+            """
+            this_week_date = season_start_date
+
+            # The next line will convert the date variable to a string so that we can use it in filenames
+            season_start_date_str = season_start_date.strftime("%Y-%m-%d")
+
+            # Next line just stores the string version of the date into a this_week_date_str variable that we will
+            # update each time we go through the for loop that goes through each week
+            this_week_date_str = season_start_date_str
+
+            scoring_offense_url_current = 'https://www.teamrankings.com/college-football/stat/points-per-game' \
+                                          + '?date=' \
+                                          + this_week_date_str
+            so_df = main_hist(scoring_offense_url_current, season, str(week), this_week_date_str, 'scoring_offense')
+            so_df.rename(columns={'Rank': 'Rank_Scoring_Offense',
+                                  season: 'Current_Season_Scoring_Offense',
+                                  str(int(season) - 1): 'Previous_Season_Scoring_Offense',
+                                  'Last 3': 'Last 3_Scoring_Offense',
+                                  'Last 1': 'Last 1_Scoring_Offense',
+                                  'Home': 'At_Home_Scoring_Offense',
+                                  'Away': 'Away_Scoring_Offense'
+                                  }, inplace=True)
+            so_df['Team'] = so_df['Team'].str.strip()
+            time.sleep(1)
+
             total_offense_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-game' \
                                         + '?date=' \
-                                        + s1_this_week_str
+                                        + this_week_date_str
+            to_df = main_hist(total_offense_url_current, season, str(week), this_week_date_str, 'total_offense')
+            to_df.rename(columns={'Rank': 'Rank_Total_Offense',
+                                  season: 'Current_Season_Total_Offense',
+                                  str(int(season) - 1): 'Previous_Season_Total_Offense',
+                                  'Last 3': 'Last 3_Total_Offense',
+                                  'Last 1': 'Last 1_Total_Offense',
+                                  'Home': 'At_Home_Total_Offense',
+                                  'Away': 'Away_Total_Offense'
+                                  }, inplace=True)
+            to_df['Team'] = to_df['Team'].str.strip()
+            time.sleep(1)
+
             scoring_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game' \
                                           + '?date=' \
-                                          + s1_this_week_str
+                                          + this_week_date_str
+            sd_df = main_hist(scoring_defense_url_current, season, str(week), this_week_date_str, 'scoring_defense')
+            sd_df.rename(columns={'Rank': 'Rank_Scoring_Defense',
+                                  season: 'Current_Season_Scoring_Defense',
+                                  str(int(season) - 1): 'Previous_Season_Scoring_Defense',
+                                  'Last 3': 'Last 3_Scoring_Defense',
+                                  'Last 1': 'Last 1_Scoring_Defense',
+                                  'Home': 'At_Home_Scoring_Defense',
+                                  'Away': 'Away_Scoring_Defense'
+                                  }, inplace=True)
+            sd_df['Team'] = sd_df['Team'].str.strip()
+            time.sleep(1)
+
             total_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game' \
                                         + '?date=' \
-                                        + s1_this_week_str
+                                        + this_week_date_str
+            td_df = main_hist(total_defense_url_current, season, str(week), this_week_date_str, 'total_defense')
+            td_df.rename(columns={'Rank': 'Rank_Total_Defense',
+                                  season: 'Current_Season_Total_Defense',
+                                  str(int(season) - 1): 'Previous_Season_Total_Defense',
+                                  'Last 3': 'Last 3_Total_Defense',
+                                  'Last 1': 'Last 1_Total_Defense',
+                                  'Home': 'At_Home_Total_Defense',
+                                  'Away': 'Away_Total_Defense'
+                                  }, inplace=True)
+            td_df['Team'] = td_df['Team'].str.strip()
+            time.sleep(1)
+
             turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game' \
                                           + '?date=' \
-                                          + s1_this_week_str
+                                          + this_week_date_str
+            tg_df = main_hist(turnovers_given_url_current, season, str(week), this_week_date_str, 'turnovers_given')
+            tg_df.rename(columns={'Rank': 'Rank_Turnovers_Given',
+                                  season: 'Current_Season_Turnovers_Given',
+                                  str(int(season) - 1): 'Previous_Season_Turnovers_Given',
+                                  'Last 3': 'Last 3_Turnovers_Given',
+                                  'Last 1': 'Last 1_Turnovers_Given',
+                                  'Home': 'At_Home_Turnovers_Given',
+                                  'Away': 'Away_Turnovers_Given'
+                                  }, inplace=True)
+            tg_df['Team'] = tg_df['Team'].str.strip()
+            time.sleep(1)
+
             turnovers_taken_url_current = 'https://www.teamrankings.com/college-football/stat/takeaways-per-game' \
                                           + '?date=' \
-                                          + s1_this_week_str
+                                          + this_week_date_str
+            tt_df = main_hist(turnovers_taken_url_current, season, str(week), this_week_date_str, 'turnovers_taken')
+            tt_df.rename(columns={'Rank': 'Rank_Turnovers_Taken',
+                                  season: 'Current_Season_Turnovers_Taken',
+                                  str(int(season) - 1): 'Previous_Season_Turnovers_Taken',
+                                  'Last 3': 'Last 3_Turnovers_Taken',
+                                  'Last 1': 'Last 1_Turnovers_Taken',
+                                  'Home': 'At_Home_Turnovers_Taken',
+                                  'Away': 'Away_Turnovers_Taken'
+                                  }, inplace=True)
+            tt_df['Team'] = tt_df['Team'].str.strip()
+            time.sleep(1)
+
             last_5_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other' \
                                  + '?date=' \
-                                 + s1_this_week_str
+                                 + this_week_date_str
+            l5_df = main_hist(last_5_url_current, season, str(week), this_week_date_str, 'last_5')
+            l5_df.rename(columns={'Rank': 'Rank_Last_5',
+                                  'Rating': 'Rating_Last_5',
+                                  'Hi': 'Hi_Last_5',
+                                  'Low': 'Low_Last_5',
+                                  'Last': 'Last_Last_5'
+                                  }, inplace=True)
+            l5_df['Team'] = l5_df['Team'].str.strip()
+            time.sleep(1)
+
             neutral_site_url_current = 'https://www.teamrankings.com/college-football/ranking/neutral-by-other' \
                                        + '?date=' \
-                                       + s1_this_week_str
+                                       + this_week_date_str
+            ns_df = main_hist(neutral_site_url_current, season, str(week), this_week_date_str, 'neutral_site')
+            ns_df.rename(columns={'Rank': 'Rank_Neutral_Site',
+                                  'Rating': 'Rating_Neutral_Site',
+                                  'Hi': 'Hi_Neutral_Site',
+                                  'Low': 'Low_Neutral_Site',
+                                  'Last': 'Last_Neutral_Site'
+                                  }, inplace=True)
+            ns_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+            ns_df['Team'] = ns_df['Team'].str.strip()
+            time.sleep(1)
+
             sos_url_current = 'https://www.teamrankings.com/college-football/ranking/schedule-strength-by-other' \
                               + '?date=' \
-                              + s1_this_week_str
-            main_hist(scoring_offense_url_current, season, str(week), s1_this_week_str, 'scoring_offense')
-            main_hist(total_offense_url_current, season, str(week), s1_this_week_str, 'total_offense')
-            main_hist(scoring_defense_url_current, season, str(week), s1_this_week_str, 'scoring_defense')
-            main_hist(total_defense_url_current, season, str(week), s1_this_week_str, 'total_defense')
-            main_hist(turnovers_given_url_current, season, str(week), s1_this_week_str, 'turnovers_given')
-            main_hist(turnovers_taken_url_current, season, str(week), s1_this_week_str, 'turnovers_taken')
-            main_hist(last_5_url_current, season, str(week), s1_this_week_str, 'last_5')
-            main_hist(neutral_site_url_current, season, str(week), s1_this_week_str, 'neutral_site')
-            main_hist(sos_url_current, season, str(week), s1_this_week_str, 'sos')
-        """
-        scoring_offense_url_current = 'https://www.teamrankings.com/college-football/stat/points-per-game' + '?date=' + s1_start_date_str
-        total_offense_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-game'
-        scoring_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game'
-        total_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game'
-        turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game'
-        turnovers_taken_url_current = 'https://www.teamrankings.com/college-football/stat/takeaways-per-game'
-        last_5_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other'
-        neutral_site_url_current = 'https://www.teamrankings.com/college-football/ranking/neutral-by-other'
-        sos_url_current = 'https://www.teamrankings.com/college-football/ranking/schedule-strength-by-other'
-        url_list = ['https://www.teamrankings.com/ncf/stats/']
-        """
-        # main(scoring_offense_url_current)
+                              + this_week_date_str
+            sos_df = main_hist(sos_url_current, season, str(week), this_week_date_str, 'sos')
+            sos_df.rename(columns={'Rank': 'Rank_SoS',
+                                   'Rating': 'Rating_SoS',
+                                   'Hi': 'Hi_SoS',
+                                   'Low': 'Low_SoS',
+                                   'Last': 'Last_SoS'
+                                   }, inplace=True)
+            sos_df['Team'] = sos_df['Team'].str.strip()
 
+            this_week_df = pd.merge(so_df, to_df, on=['Team', 'Season', 'Week'], how='outer')
+            this_week_df = pd.merge(this_week_df, sd_df, on=['Team', 'Season', 'Week'], how='outer')
+            this_week_df = pd.merge(this_week_df, td_df, on=['Team', 'Season', 'Week'], how='outer')
+            this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
+            this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
+            this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
+            this_week_df = pd.merge(this_week_df, ns_df, on=['Team', 'Season', 'Week'], how='outer')
+            this_week_df = pd.merge(this_week_df, sos_df, on=['Team', 'Season', 'Week'], how='outer')
+
+            this_week_df = rearrange_columns(this_week_df)
+            season_df = pd.concat([season_df, this_week_df])
+            master_df = pd.concat([master_df, this_week_df])
+
+            save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/Current'
+            save_file = 'Scraped_TR_Data_Season_' + season + '_Week_' + week
+            try:
+                datascraper.save_df(season_df, save_dir, save_file)
+                print('{} saved successfully.'.format(save_file))
+                print('File successfully saved at {}.'.format(save_dir))
+            except:
+                print('I don\'t think the file saved, you should double check.')

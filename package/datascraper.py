@@ -11,9 +11,8 @@ def save_df(data_frame, out_path,out_file_name):
     Save the data frame in a csv file.
     """
     path = os.path.join(out_path, out_file_name)
-    data_frame.to_csv(path + '.csv')
-        
-        
+    data_frame.to_csv(path + '.csv', index=False)
+
 
 def create_df(soup_table, list_of_column_names):
     """
