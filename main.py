@@ -1652,6 +1652,90 @@ if __name__ == '__main__':
                 tdoppg_df = tdoppg_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
+                total_defense_opponent_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-first-downs-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tdofdpg_df = main_hist(total_defense_opponent_first_downs_per_game_url_current, season, str(week),
+                                      this_week_date_str, 'total_defense_opponent_first_downs_per_game')
+                tdofdpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_First_Downs_per_Game',
+                                          season: 'Current_Season_Total_Defense_Opponent_First_Downs_per_Game',
+                                          str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_First_Downs_per_Game',
+                                          'Last 3': 'Last 3_Total_Defense_Opponent_First_Downs_per_Game',
+                                          'Last 1': 'Last 1_Total_Defense_Opponent_First_Downs_per_Game',
+                                          'Home': 'At_Home_Total_Defense_Opponent_First_Downs_per_Game',
+                                          'Away': 'Away_Total_Defense_Opponent_First_Downs_per_Game'
+                                          }, inplace=True)
+                tdofdpg_df['Team'] = tdofdpg_df['Team'].str.strip()
+                if season == '2010':
+                    tdofdpg_df['Rank_Total_Defense_Opponent_First_Downs_per_Game'] = tdofdpg_df.index + 1
+                tdofdpg_df = tdofdpg_df.replace('--', np.nan)
+                tdofdpg_df = tdofdpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                total_defense_opponent_third_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-third-downs-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tdotdpg_df = main_hist(total_defense_opponent_third_downs_per_game_url_current, season, str(week),
+                                       this_week_date_str, 'total_defense_opponent_third_downs_per_game')
+                tdotdpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Third_Downs_per_Game',
+                                           season: 'Current_Season_Total_Defense_Opponent_Third_Downs_per_Game',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Downs_per_Game',
+                                           'Last 3': 'Last 3_Total_Defense_Opponent_Third_Downs_per_Game',
+                                           'Last 1': 'Last 1_Total_Defense_Opponent_Third_Downs_per_Game',
+                                           'Home': 'At_Home_Total_Defense_Opponent_Third_Downs_per_Game',
+                                           'Away': 'Away_Total_Defense_Opponent_Third_Downs_per_Game'
+                                           }, inplace=True)
+                tdotdpg_df['Team'] = tdotdpg_df['Team'].str.strip()
+                if season == '2010':
+                    tdotdpg_df['Rank_Total_Defense_Opponent_Third_Downs_per_Game'] = tdotdpg_df.index + 1
+                tdotdpg_df = tdotdpg_df.replace('--', np.nan)
+                tdotdpg_df = tdotdpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                total_defense_opponent_third_down_conversions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-third-down-conversions-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tdotdcpg_df = main_hist(total_defense_opponent_third_down_conversions_per_game_url_current, season, str(week),
+                                       this_week_date_str, 'total_defense_opponent_third_down_conversions_per_game')
+                tdotdpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                           season: 'Current_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                           'Last 3': 'Last 3_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                           'Last 1': 'Last 1_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                           'Home': 'At_Home_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                           'Away': 'Away_Total_Defense_Opponent_Third_Down_Conversions_per_Game'
+                                           }, inplace=True)
+                tdotdcpg_df['Team'] = tdotdcpg_df['Team'].str.strip()
+                if season == '2010':
+                    tdotdcpg_df['Rank_Total_Defense_Opponent_Third_Down_Conversions_per_Game'] = tdotdcpg_df.index + 1
+                tdotdcpg_df = tdotdcpg_df.replace('--', np.nan)
+                tdotdcpg_df = tdotdcpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                total_defense_opponent_fourth_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fourth-downs-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tdofodpg_df = main_hist(total_defense_opponent_fourth_downs_per_game_url_current, season,
+                                        str(week),
+                                        this_week_date_str, 'total_defense_opponent_fourth_downs_per_game')
+                tdofodpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                           season: 'Current_Season_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                           'Last 3': 'Last 3_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                           'Last 1': 'Last 1_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                           'Home': 'At_Home_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                           'Away': 'Away_Total_Defense_Opponent_Fourth_Downs_per_Game'
+                                           }, inplace=True)
+                tdofodpg_df['Team'] = tdofodpg_df['Team'].str.strip()
+                if season == '2010':
+                    tdofodpg_df['Rank_Total_Defense_Opponent_Fourth_Downs_per_Game'] = tdofodpg_df.index + 1
+                tdofodpg_df = tdofodpg_df.replace('--', np.nan)
+                tdofodpg_df = tdofodpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
                 turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game'\
                     + '?date='\
                     + this_week_date_str
@@ -1815,6 +1899,10 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, sdooppg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tdoypg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tdofdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tdotdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tdotdcpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tdofodpg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -3076,6 +3164,74 @@ if __name__ == '__main__':
         tdoppg_df['Team'] = tdoppg_df['Team'].str.strip()
         time.sleep(1)
 
+        total_defense_opponent_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-first-downs-per-game' \
+                                                                  + '?date=' \
+                                                                  + this_week_date_str
+        tdofdpg_df = main_hist(total_defense_opponent_first_downs_per_game_url_current, season, str(week),
+                               this_week_date_str, 'total_defense_opponent_first_downs_per_game')
+        tdofdpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_First_Downs_per_Game',
+                                   season: 'Current_Season_Total_Defense_Opponent_First_Downs_per_Game',
+                                   str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_First_Downs_per_Game',
+                                   'Last 3': 'Last 3_Total_Defense_Opponent_First_Downs_per_Game',
+                                   'Last 1': 'Last 1_Total_Defense_Opponent_First_Downs_per_Game',
+                                   'Home': 'At_Home_Total_Defense_Opponent_First_Downs_per_Game',
+                                   'Away': 'Away_Total_Defense_Opponent_First_Downs_per_Game'
+                                   }, inplace=True)
+        tdofdpg_df['Team'] = tdofdpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        total_defense_opponent_third_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-third-downs-per-game' \
+                                                                  + '?date=' \
+                                                                  + this_week_date_str
+        tdotdpg_df = main_hist(total_defense_opponent_third_downs_per_game_url_current, season, str(week),
+                               this_week_date_str, 'total_defense_opponent_third_downs_per_game')
+        tdotdpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Third_Downs_per_Game',
+                                   season: 'Current_Season_Total_Defense_Opponent_Third_Downs_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Downs_per_Game',
+                                   'Last 3': 'Last 3_Total_Defense_Opponent_Third_Downs_per_Game',
+                                   'Last 1': 'Last 1_Total_Defense_Opponent_Third_Downs_per_Game',
+                                   'Home': 'At_Home_Total_Defense_Opponent_Third_Downs_per_Game',
+                                   'Away': 'Away_Total_Defense_Opponent_Third_Downs_per_Game'
+                                   }, inplace=True)
+        tdotdpg_df['Team'] = tdotdpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        total_defense_opponent_third_down_conversions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-third-down-conversions-per-game' \
+                                                                             + '?date=' \
+                                                                             + this_week_date_str
+        tdotdcpg_df = main_hist(total_defense_opponent_third_down_conversions_per_game_url_current, season, str(week),
+                                this_week_date_str, 'total_defense_opponent_third_down_conversions_per_game')
+        tdotdpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                   season: 'Current_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                   'Last 3': 'Last 3_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                   'Last 1': 'Last 1_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                   'Home': 'At_Home_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                   'Away': 'Away_Total_Defense_Opponent_Third_Down_Conversions_per_Game'
+                                   }, inplace=True)
+        tdotdcpg_df['Team'] = tdotdcpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        total_defense_opponent_fourth_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fourth-downs-per-game' \
+                                                                   + '?date=' \
+                                                                   + this_week_date_str
+        tdofodpg_df = main_hist(total_defense_opponent_fourth_downs_per_game_url_current, season,
+                                str(week),
+                                this_week_date_str, 'total_defense_opponent_fourth_downs_per_game')
+        tdofodpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                    season: 'Current_Season_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                    str(int(
+                                        season) - 1): 'Previous_Season_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                    'Last 3': 'Last 3_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                    'Last 1': 'Last 1_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                    'Home': 'At_Home_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                    'Away': 'Away_Total_Defense_Opponent_Fourth_Downs_per_Game'
+                                    }, inplace=True)
+        tdofodpg_df['Team'] = tdofodpg_df['Team'].str.strip()
+        time.sleep(1)
+
         turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game' \
                                       + '?date=' \
                                       + this_week_date_str
@@ -3216,6 +3372,10 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, sdooppg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tdoypg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdofdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdotdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdotdcpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdofodpg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
