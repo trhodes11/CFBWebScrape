@@ -1285,6 +1285,111 @@ if __name__ == '__main__':
                 poypc_df = poypc_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
+                special_teams_offense_field_goal_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/field-goal-attempts-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                stofgapg_df = main_hist(special_teams_offense_field_goal_attempts_per_game_url_current, season, str(week), this_week_date_str,
+                                     'special_teams_offense_field_goal_attempts_per_game')
+                stofgapg_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                         season: 'Current_Season_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                         'Last 3': 'Last 3_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                         'Last 1': 'Last 1_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                         'Home': 'At_Home_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                         'Away': 'Away_Special_Teams_Offense_Field_Goal_Attempts_per_Game'
+                                         }, inplace=True)
+                stofgapg_df['Team'] = stofgapg_df['Team'].str.strip()
+                if season == '2010':
+                    stofgapg_df['Rank_Special_Teams_Offense_Field_Goal_Attempts_per_Game'] = stofgapg_df.index + 1
+                stofgapg_df = stofgapg_df.replace('--', np.nan)
+                stofgapg_df = stofgapg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                special_teams_offense_field_goals_made_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/field-goals-made-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                stofgmpg_df = main_hist(special_teams_offense_field_goals_made_per_game_url_current, season, str(week), this_week_date_str,
+                                        'special_teams_offense_field_goals_made_per_game')
+                stofgmpg_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                            season: 'Current_Season_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                            str(int(
+                                                season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                            'Last 3': 'Last 3_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                            'Last 1': 'Last 1_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                            'Home': 'At_Home_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                            'Away': 'Away_Special_Teams_Offense_Field_Goals_Made_per_Game'
+                                            }, inplace=True)
+                stofgmpg_df['Team'] = stofgmpg_df['Team'].str.strip()
+                if season == '2010':
+                    stofgmpg_df['Rank_Special_Teams_Offense_Field_Goals_Made_per_Game'] = stofgmpg_df.index + 1
+                stofgmpg_df = stofgmpg_df.replace('--', np.nan)
+                stofgmpg_df = stofgmpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                special_teams_offense_field_goal_conversion_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/field-goal-conversion-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                stofgcp_df = main_hist(special_teams_offense_field_goal_conversion_percentage_url_current, season, str(week), this_week_date_str,
+                                        'special_teams_offense_field_goal_conversion_percentage')
+                stofgcp_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                            season: 'Current_Season_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                            str(int(
+                                                season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                            'Last 3': 'Last 3_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                            'Last 1': 'Last 1_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                            'Home': 'At_Home_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                            'Away': 'Away_Special_Teams_Offense_Field_Goal_Conversion_Percentage'
+                                            }, inplace=True)
+                stofgcp_df['Team'] = stofgcp_df['Team'].str.strip()
+                if season == '2010':
+                    stofgcp_df['Rank_Special_Teams_Offense_Field_Goal_Conversion_Percentage'] = stofgcp_df.index + 1
+                stofgcp_df = stofgcp_df.replace('--', np.nan)
+                stofgcp_df = stofgcp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                special_teams_offense_punt_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/punt-attempts-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                stopapg_df = main_hist(special_teams_offense_punt_attempts_per_game_url_current, season, str(week), this_week_date_str,
+                                       'special_teams_offense_punt_attempts_per_game')
+                stopapg_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                           season: 'Current_Season_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                           'Last 3': 'Last 3_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                           'Last 1': 'Last 1_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                           'Home': 'At_Home_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                           'Away': 'Away_Special_Teams_Offense_Punt_Attempts_per_Game'
+                                           }, inplace=True)
+                stopapg_df['Team'] = stopapg_df['Team'].str.strip()
+                if season == '2010':
+                    stopapg_df['Rank_Special_Teams_Offense_Punt_Attempts_per_Game'] = stopapg_df.index + 1
+                stopapg_df = stopapg_df.replace('--', np.nan)
+                stopapg_df = stopapg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                special_teams_offense_gross_punt_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/gross-punt-yards-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                stogpypg_df = main_hist(special_teams_offense_gross_punt_yards_per_game_url_current, season, str(week), this_week_date_str,
+                                       'special_teams_offense_gross_punt_yards_per_game')
+                stogpypg_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                           season: 'Current_Season_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                           'Last 3': 'Last 3_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                           'Last 1': 'Last 1_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                           'Home': 'At_Home_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                           'Away': 'Away_Special_Teams_Offense_Gross_Punt_Yards_per_Game'
+                                           }, inplace=True)
+                stogpypg_df['Team'] = stogpypg_df['Team'].str.strip()
+                if season == '2010':
+                    stogpypg_df['Rank_Special_Teams_Offense_Gross_Punt_Yards_per_Game'] = stogpypg_df.index + 1
+                stogpypg_df = stogpypg_df.replace('--', np.nan)
+                stogpypg_df = stogpypg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
                 scoring_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game'\
                     + '?date='\
                     + this_week_date_str
@@ -1469,6 +1574,11 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, popyp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, poyppa_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, poypc_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, stofgapg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, stofgmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, stofgcp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, stopapg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, stogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, sd_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, td_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -1958,7 +2068,7 @@ if __name__ == '__main__':
                                                    + this_week_date_str
         toypp_df = main_hist(total_offense_yards_per_play_url_current, season, str(week), this_week_date_str,
                              'total_offense_yards_per_play')
-        toyyp_df.rename(columns={'Rank': 'Rank_Total_Offense_Yards_per_Play',
+        toypp_df.rename(columns={'Rank': 'Rank_Total_Offense_Yards_per_Play',
                                  season: 'Current_Season_Total_Offense_Yards_per_Play',
                                  str(int(season) - 1): 'Previous_Season_Total_Offense_Yards_per_Play',
                                  'Last 3': 'Last 3_Total_Offense_Yards_per_Play',
@@ -1966,7 +2076,7 @@ if __name__ == '__main__':
                                  'Home': 'At_Home_Total_Offense_Yards_per_Play',
                                  'Away': 'Away_Total_Offense_Yards_per_Play'
                                  }, inplace=True)
-        toyyp_df['Team'] = toyyp_df['Team'].str.strip()
+        toypp_df['Team'] = toypp_df['Team'].str.strip()
         time.sleep(1)
 
         total_offense_third_down_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/third-downs-per-game' \
@@ -2331,7 +2441,7 @@ if __name__ == '__main__':
         passing_offense_qb_sacked_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/qb-sacked-pct' \
                                                            + '?date=' \
                                                            + this_week_date_str
-        poqsp_df = main_hist(passing_offense_qb_sacked_percentage_url-Current, season, str(week), this_week_date_str,
+        poqsp_df = main_hist(passing_offense_qb_sacked_percentage_url_current, season, str(week), this_week_date_str,
                              'passing_offense_qb_sacked_percentage')
         poqsp_df.rename(columns={'Rank': 'Rank_Passing_Offense_QB_Sacked_Percentage',
                                  season: 'Current_Season_Passing_Offense_QB_Sacked_Percentage',
@@ -2365,7 +2475,7 @@ if __name__ == '__main__':
         passing_offense_passing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/passing-play-pct' \
                                                               + '?date=' \
                                                               + this_week_date_str
-        poppp_df = main_hist(passing_offense_passing_play_percentage_url-current, season, str(week), this_week_date_str,
+        poppp_df = main_hist(passing_offense_passing_play_percentage_url_current, season, str(week), this_week_date_str,
                              'passing_offense_passing_play_percentage')
         poppp_df.rename(columns={'Rank': 'Rank_Passing_Offense_Passing_Play_Percentage',
                                  season: 'Current_Season_Passing_Offense_Passing_Play_Percentage',
@@ -2428,6 +2538,96 @@ if __name__ == '__main__':
                                  'Away': 'Away_Passing_Offense_Yards_per_Completion'
                                  }, inplace=True)
         poypc_df['Team'] = poypc_df['Team'].str.strip()
+        time.sleep(1)
+
+        special_teams_offense_field_goal_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/field-goal-attempts-per-game' \
+                                                                         + '?date=' \
+                                                                         + this_week_date_str
+        stofgapg_df = main_hist(special_teams_offense_field_goal_attempts_per_game_url_current, season, str(week),
+                                this_week_date_str,
+                                'special_teams_offense_field_goal_attempts_per_game')
+        stofgapg_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                    season: 'Current_Season_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                    str(int(
+                                        season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                    'Last 3': 'Last 3_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                    'Last 1': 'Last 1_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                    'Home': 'At_Home_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                    'Away': 'Away_Special_Teams_Offense_Field_Goal_Attempts_per_Game'
+                                    }, inplace=True)
+        stofgapg_df['Team'] = stofgapg_df['Team'].str.strip()
+        time.sleep(1)
+
+        special_teams_offense_field_goals_made_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/field-goals-made-per-game' \
+                                                                      + '?date=' \
+                                                                      + this_week_date_str
+        stofgmpg_df = main_hist(special_teams_offense_field_goals_made_per_game_url_current, season, str(week),
+                                this_week_date_str,
+                                'special_teams_offense_field_goals_made_per_game')
+        stofgmpg_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                    season: 'Current_Season_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                    str(int(
+                                        season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                    'Last 3': 'Last 3_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                    'Last 1': 'Last 1_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                    'Home': 'At_Home_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                    'Away': 'Away_Special_Teams_Offense_Field_Goals_Made_per_Game'
+                                    }, inplace=True)
+        stofgmpg_df['Team'] = stofgmpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        special_teams_offense_field_goal_conversion_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/field-goal-conversion-pct' \
+                                                                             + '?date=' \
+                                                                             + this_week_date_str
+        stofgcp_df = main_hist(special_teams_offense_field_goal_conversion_percentage_url_current, season, str(week),
+                               this_week_date_str,
+                               'special_teams_offense_field_goal_conversion_percentage')
+        stofgcp_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                    season: 'Current_Season_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                    str(int(
+                                        season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                    'Last 3': 'Last 3_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                    'Last 1': 'Last 1_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                    'Home': 'At_Home_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                    'Away': 'Away_Special_Teams_Offense_Field_Goal_Conversion_Percentage'
+                                    }, inplace=True)
+        stofgcp_df['Team'] = stofgcp_df['Team'].str.strip()
+        time.sleep(1)
+
+        special_teams_offense_punt_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/punt-attempts-per-game' \
+                                                                   + '?date=' \
+                                                                   + this_week_date_str
+        stopapg_df = main_hist(special_teams_offense_punt_attempts_per_game_url_current, season, str(week),
+                               this_week_date_str,
+                               'special_teams_offense_punt_attempts_per_game')
+        stopapg_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                   season: 'Current_Season_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                   'Last 3': 'Last 3_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                   'Last 1': 'Last 1_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                   'Home': 'At_Home_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                   'Away': 'Away_Special_Teams_Offense_Punt_Attempts_per_Game'
+                                   }, inplace=True)
+        stopapg_df['Team'] = stopapg_df['Team'].str.strip()
+        time.sleep(1)
+
+        special_teams_offense_gross_punt_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/gross-punt-yards-per-game' \
+                                                                      + '?date=' \
+                                                                      + this_week_date_str
+        stogpypg_df = main_hist(special_teams_offense_gross_punt_yards_per_game_url_current, season, str(week),
+                                this_week_date_str,
+                                'special_teams_offense_gross_punt_yards_per_game')
+        stogpypg_df.rename(columns={'Rank': 'Rank_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                    season: 'Current_Season_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                    str(int(
+                                        season) - 1): 'Previous_Season_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                    'Last 3': 'Last 3_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                    'Last 1': 'Last 1_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                    'Home': 'At_Home_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                    'Away': 'Away_Special_Teams_Offense_Gross_Punt_Yards_per_Game'
+                                    }, inplace=True)
+        stogpypg_df['Team'] = stogpypg_df['Team'].str.strip()
         time.sleep(1)
 
         scoring_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game' \
@@ -2583,6 +2783,11 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, popyp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, poyppa_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, poypc_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stofgapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stofgmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stofgcp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stopapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, sd_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, td_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
