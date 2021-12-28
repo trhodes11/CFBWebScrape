@@ -1430,23 +1430,226 @@ if __name__ == '__main__':
                 sdoypp_df = sdoypp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
-                total_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game'\
+                scoring_defense_opponent_points_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-play' \
+                    + '?date=' \
+                    + this_week_date_str
+                sdoppp_df = main_hist(scoring_defense_opponent_points_per_play_url_current, season, str(week),
+                                      this_week_date_str, 'scoring_defense_opponent_points_per_play')
+                sdoppp_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Points_per_Play',
+                                          season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Play',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Play',
+                                          'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Play',
+                                          'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Play',
+                                          'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Play',
+                                          'Away': 'Away_Scoring_Defense_Opponent_Points_per_Play'
+                                          }, inplace=True)
+                sdoppp_df['Team'] = sdoppp_df['Team'].str.strip()
+                if season == '2010':
+                    sdoppp_df['Rank_Scoring_Defense_Opponent_Points_per_Play'] = sdoppp_df.index + 1
+                sdoppp_df = sdoppp_df.replace('--', np.nan)
+                sdoppp_df = sdoppp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                scoring_defense_opponent_average_scoring_margin_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-average-scoring-margin' \
+                    + '?date=' \
+                    + this_week_date_str
+                sdoasm_df = main_hist(scoring_defense_opponent_average_scoring_margin_url_current, season, str(week),
+                                      this_week_date_str, 'scoring_defense_opponent_average_scoring_margin')
+                sdoasm_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                          season: 'Current_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                          'Last 3': 'Last 3_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                          'Last 1': 'Last 1_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                          'Home': 'At_Home_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                          'Away': 'Away_Scoring_Defense_Opponent_Average_Scoring_Margin'
+                                          }, inplace=True)
+                sdoasm_df['Team'] = sdoasm_df['Team'].str.strip()
+                if season == '2010':
+                    sdoasm_df['Rank_Scoring_Defense_Opponent_Average_Scoring_Margin'] = sdoasm_df.index + 1
+                sdoasm_df = sdoasm_df.replace('--', np.nan)
+                sdoasm_df = sdoasm_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                scoring_defense_opponent_red_zone_scoring_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-red-zone-scoring-attempts-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                sdorzsapg_df = main_hist(scoring_defense_opponent_red_zone_scoring_attempts_per_game_url_current, season, str(week),
+                                      this_week_date_str, 'scoring_defense_opponent_red_zone_scoring_attempts_per_game')
+                sdorzsapg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                          season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                          'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                          'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                          'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                          'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game'
+                                          }, inplace=True)
+                sdorzsapg_df['Team'] = sdorzsapg_df['Team'].str.strip()
+                if season == '2010':
+                    sdorzsapg_df['Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game'] = sdorzsapg_df.index + 1
+                sdorzsapg_df = sdorzsapg_df.replace('--', np.nan)
+                sdorzsapg_df = sdorzsapg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                scoring_defense_opponent_red_zone_scores_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-red-zone-scores-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                sdorzspg_df = main_hist(scoring_defense_opponent_red_zone_scores_per_game_url_current,
+                                         season, str(week),
+                                         this_week_date_str,
+                                         'scoring_defense_opponent_red_zone_scores_per_game')
+                sdorzspg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                             season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                             str(int(
+                                                 season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                             'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scores_per_Game',
+                                             'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                             'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                             'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game'
+                                             }, inplace=True)
+                sdorzspg_df['Team'] = sdorzspg_df['Team'].str.strip()
+                if season == '2010':
+                    sdorzspg_df[
+                        'Rank_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game'] = sdorzspg_df.index + 1
+                sdorzspg_df = sdorzspg_df.replace('--', np.nan)
+                sdorzspg_df = sdorzspg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                scoring_defense_opponent_red_zone_scoring_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-red-zone-scoring-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                sdorzsp_df = main_hist(scoring_defense_opponent_red_zone_scoring_percentage_url_current,
+                                        season, str(week),
+                                        this_week_date_str,
+                                        'scoring_defense_opponent_red_zone_scoring_percentage')
+                sdorzspg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                            season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                            str(int(
+                                                season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                            'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scoring_Percentage',
+                                            'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                            'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                            'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage'
+                                            }, inplace=True)
+                sdorzsp_df['Team'] = sdorzsp_df['Team'].str.strip()
+                if season == '2010':
+                    sdorzsp_df[
+                        'Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage'] = sdorzsp_df.index + 1
+                sdorzsp_df = sdorzsp_df.replace('--', np.nan)
+                sdorzsp_df = sdorzsp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                scoring_defense_opponent_points_per_field_goal_attempt_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-field-goal-attempt' \
+                    + '?date=' \
+                    + this_week_date_str
+                sdoppfga_df = main_hist(scoring_defense_opponent_points_per_field_goal_attempt_url_current,
+                                       season, str(week),
+                                       this_week_date_str,
+                                       'scoring_defense_opponent_points_per_field_goal_attempt')
+                sdoppfga_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                            season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                            str(int(
+                                                season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                            'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                            'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                            'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                            'Away': 'Away_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt'
+                                            }, inplace=True)
+                sdoppfga_df['Team'] = sdoppfga_df['Team'].str.strip()
+                if season == '2010':
+                    sdoppfga_df[
+                        'Rank_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt'] = sdoppfga_df.index + 1
+                sdoppfga_df = sdoppfga_df.replace('--', np.nan)
+                sdoppfga_df = sdoppfga_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                scoring_defense_opponent_offensive_touchdowns_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-offensive-touchdowns-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                sdootpg_df = main_hist(scoring_defense_opponent_offensive_touchdowns_per_game_url_current,
+                                        season, str(week),
+                                        this_week_date_str,
+                                        'scoring_defense_opponent_offensive_touchdowns_per_game')
+                sdootpg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                            season: 'Current_Season_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                            str(int(
+                                                season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                            'Last 3': 'Last 3_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                            'Last 1': 'Last 1_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                            'Home': 'At_Home_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                            'Away': 'Away_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game'
+                                            }, inplace=True)
+                sdootpg_df['Team'] = sdootpg_df['Team'].str.strip()
+                if season == '2010':
+                    sdootpg_df[
+                        'Rank_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game'] = sdootpg_df.index + 1
+                sdootpg_df = sdootpg_df.replace('--', np.nan)
+                sdootpg_df = sdootpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                scoring_defense_opponent_offensive_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-offensive-points-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                sdooppg_df = main_hist(scoring_defense_opponent_offensive_points_per_game_url_current,
+                                       season, str(week),
+                                       this_week_date_str,
+                                       'scoring_defense_opponent_offensive_points_per_game')
+                sdooppg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                           season: 'Current_Season_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                           'Last 3': 'Last 3_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                           'Last 1': 'Last 1_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                           'Home': 'At_Home_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                           'Away': 'Away_Scoring_Defense_Opponent_Offensive_Points_per_Game'
+                                           }, inplace=True)
+                sdooppg_df['Team'] = sdooppg_df['Team'].str.strip()
+                if season == '2010':
+                    sdooppg_df[
+                        'Rank_Scoring_Defense_Opponent_Offensive_Points_per_Game'] = sdooppg_df.index + 1
+                sdooppg_df = sdooppg_df.replace('--', np.nan)
+                sdooppg_df = sdooppg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                total_defense_opponent_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game'\
                     + '?date='\
                     + this_week_date_str
-                td_df = main_hist(total_defense_url_current, season, str(week), this_week_date_str, 'total_defense')
-                td_df.rename(columns={'Rank': 'Rank_Total_Defense',
-                                      season: 'Current_Season_Total_Defense',
-                                      str(int(season) - 1): 'Previous_Season_Total_Defense',
-                                      'Last 3': 'Last 3_Total_Defense',
-                                      'Last 1': 'Last 1_Total_Defense',
-                                      'Home': 'At_Home_Total_Defense',
-                                      'Away': 'Away_Total_Defense'
+                tdoypg_df = main_hist(total_defense_opponent_yards_per_game_url_current, season, str(week), this_week_date_str, 'total_defense_opponent_yards_per_game')
+                tdoypg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Yards_per_Game',
+                                      season: 'Current_Season_Total_Defense_Opponent_Yards_per_Game',
+                                      str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_Yards_per_Game',
+                                      'Last 3': 'Last 3_Total_Defense_Opponent_Yards_per_Game',
+                                      'Last 1': 'Last 1_Total_Defense_Opponent_Yards_per_Game',
+                                      'Home': 'At_Home_Total_Defense_Opponent_Yards_per_Game',
+                                      'Away': 'Away_Total_Defense_Opponent_Yards_per_Game'
                                       }, inplace=True)
-                td_df['Team'] = td_df['Team'].str.strip()
+                tdoypg_df['Team'] = tdoypg_df['Team'].str.strip()
                 if season == '2010':
-                    td_df['Rank_Total_Defense'] = td_df.index + 1
-                td_df = td_df.replace('--', np.nan)
-                td_df = td_df.apply(pd.to_numeric, errors='ignore')
+                    tdoypg_df['Rank_Total_Defense_Opponent_Yards_per_Game'] = tdoypg_df.index + 1
+                tdoypg_df = tdoypg_df.replace('--', np.nan)
+                tdoypg_df = tdoypg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                total_defense_opponent_plays_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-plays-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tdoppg_df = main_hist(total_defense_opponent_plays_per_game_url_current, season, str(week),
+                                      this_week_date_str, 'total_defense_opponent_plays_per_game')
+                tdoppg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Plays_per_Game',
+                                          season: 'Current_Season_Total_Defense_Opponent_Plays_per_Game',
+                                          str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_Plays_per_Game',
+                                          'Last 3': 'Last 3_Total_Defense_Opponent_Plays_per_Game',
+                                          'Last 1': 'Last 1_Total_Defense_Opponent_Plays_per_Game',
+                                          'Home': 'At_Home_Total_Defense_Opponent_Plays_per_Game',
+                                          'Away': 'Away_Total_Defense_Opponent_Plays_per_Game'
+                                          }, inplace=True)
+                tdoppg_df['Team'] = tdoppg_df['Team'].str.strip()
+                if season == '2010':
+                    tdoppg_df['Rank_Total_Defense_Opponent_Plays_per_Game'] = tdoppg_df.index + 1
+                tdoppg_df = tdoppg_df.replace('--', np.nan)
+                tdoppg_df = tdoppg_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
                 turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game'\
@@ -1602,7 +1805,16 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, stogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, sdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, sdoypp_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, td_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdoppp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdoasm_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdorzsapg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdorzspg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdorzsp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdoppfga_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdootpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdooppg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tdoypg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -2685,19 +2897,183 @@ if __name__ == '__main__':
         sdoypp_df['Team'] = sdoypp_df['Team'].str.strip()
         time.sleep(1)
 
-        total_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game' \
-                                    + '?date=' \
-                                    + this_week_date_str
-        td_df = main_hist(total_defense_url_current, season, str(week), this_week_date_str, 'total_defense')
-        td_df.rename(columns={'Rank': 'Rank_Total_Defense',
-                              season: 'Current_Season_Total_Defense',
-                              str(int(season) - 1): 'Previous_Season_Total_Defense',
-                              'Last 3': 'Last 3_Total_Defense',
-                              'Last 1': 'Last 1_Total_Defense',
-                              'Home': 'At_Home_Total_Defense',
-                              'Away': 'Away_Total_Defense'
-                              }, inplace=True)
-        td_df['Team'] = td_df['Team'].str.strip()
+        scoring_defense_opponent_points_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-play' \
+                                                               + '?date=' \
+                                                               + this_week_date_str
+        sdoppp_df = main_hist(scoring_defense_opponent_points_per_play_url_current, season, str(week),
+                              this_week_date_str, 'scoring_defense_opponent_points_per_play')
+        sdoppp_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Points_per_Play',
+                                  season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Play',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Play',
+                                  'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Play',
+                                  'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Play',
+                                  'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Play',
+                                  'Away': 'Away_Scoring_Defense_Opponent_Points_per_Play'
+                                  }, inplace=True)
+        sdoppp_df['Team'] = sdoppp_df['Team'].str.strip()
+        time.sleep(1)
+
+        scoring_defense_opponent_average_scoring_margin_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-average-scoring-margin' \
+                                                                      + '?date=' \
+                                                                      + this_week_date_str
+        sdoasm_df = main_hist(scoring_defense_opponent_average_scoring_margin_url_current, season, str(week),
+                              this_week_date_str, 'scoring_defense_opponent_average_scoring_margin')
+        sdoasm_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                  season: 'Current_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                  'Last 3': 'Last 3_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                  'Last 1': 'Last 1_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                  'Home': 'At_Home_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                  'Away': 'Away_Scoring_Defense_Opponent_Average_Scoring_Margin'
+                                  }, inplace=True)
+        sdoasm_df['Team'] = sdoasm_df['Team'].str.strip()
+        time.sleep(1)
+
+        scoring_defense_opponent_red_zone_scoring_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-red-zone-scoring-attempts-per-game' \
+                                                                                  + '?date=' \
+                                                                                  + this_week_date_str
+        sdorzsapg_df = main_hist(scoring_defense_opponent_red_zone_scoring_attempts_per_game_url_current, season,
+                                 str(week),
+                                 this_week_date_str, 'scoring_defense_opponent_red_zone_scoring_attempts_per_game')
+        sdorzsapg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                     season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                     str(int(
+                                         season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                     'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                     'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                     'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                     'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game'
+                                     }, inplace=True)
+        sdorzsapg_df['Team'] = sdorzsapg_df['Team'].str.strip()
+        time.sleep(1)
+
+        scoring_defense_opponent_red_zone_scores_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-red-zone-scores-per-game' \
+                                                                        + '?date=' \
+                                                                        + this_week_date_str
+        sdorzspg_df = main_hist(scoring_defense_opponent_red_zone_scores_per_game_url_current,
+                                season, str(week),
+                                this_week_date_str,
+                                'scoring_defense_opponent_red_zone_scores_per_game')
+        sdorzspg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                    season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                    str(int(
+                                        season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                    'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scores_per_Game',
+                                    'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                    'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                    'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game'
+                                    }, inplace=True)
+        sdorzspg_df['Team'] = sdorzspg_df['Team'].str.strip()
+        time.sleep(1)
+
+        scoring_defense_opponent_red_zone_scoring_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-red-zone-scoring-pct' \
+                                                                           + '?date=' \
+                                                                           + this_week_date_str
+        sdorzsp_df = main_hist(scoring_defense_opponent_red_zone_scoring_percentage_url_current,
+                               season, str(week),
+                               this_week_date_str,
+                               'scoring_defense_opponent_red_zone_scoring_percentage')
+        sdorzspg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                    season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                    str(int(
+                                        season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                    'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scoring_Percentage',
+                                    'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                    'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                    'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage'
+                                    }, inplace=True)
+        sdorzsp_df['Team'] = sdorzsp_df['Team'].str.strip()
+        time.sleep(1)
+
+        scoring_defense_opponent_points_per_field_goal_attempt_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-field-goal-attempt' \
+                                                                             + '?date=' \
+                                                                             + this_week_date_str
+        sdoppfga_df = main_hist(scoring_defense_opponent_points_per_field_goal_attempt_url_current,
+                                season, str(week),
+                                this_week_date_str,
+                                'scoring_defense_opponent_points_per_field_goal_attempt')
+        sdoppfga_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                    season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                    str(int(
+                                        season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                    'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                    'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                    'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                    'Away': 'Away_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt'
+                                    }, inplace=True)
+        sdoppfga_df['Team'] = sdoppfga_df['Team'].str.strip()
+        time.sleep(1)
+
+        scoring_defense_opponent_offensive_touchdowns_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-offensive-touchdowns-per-game' \
+                                                                             + '?date=' \
+                                                                             + this_week_date_str
+        sdootpg_df = main_hist(scoring_defense_opponent_offensive_touchdowns_per_game_url_current,
+                               season, str(week),
+                               this_week_date_str,
+                               'scoring_defense_opponent_offensive_touchdowns_per_game')
+        sdootpg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                   season: 'Current_Season_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                   'Last 3': 'Last 3_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                   'Last 1': 'Last 1_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                   'Home': 'At_Home_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                   'Away': 'Away_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game'
+                                   }, inplace=True)
+        sdootpg_df['Team'] = sdootpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        scoring_defense_opponent_offensive_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-offensive-points-per-game' \
+                                                                         + '?date=' \
+                                                                         + this_week_date_str
+        sdooppg_df = main_hist(scoring_defense_opponent_offensive_points_per_game_url_current,
+                               season, str(week),
+                               this_week_date_str,
+                               'scoring_defense_opponent_offensive_points_per_game')
+        sdooppg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                   season: 'Current_Season_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                   'Last 3': 'Last 3_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                   'Last 1': 'Last 1_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                   'Home': 'At_Home_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                   'Away': 'Away_Scoring_Defense_Opponent_Offensive_Points_per_Game'
+                                   }, inplace=True)
+        sdooppg_df['Team'] = sdooppg_df['Team'].str.strip()
+        time.sleep(1)
+
+        total_defense_opponent_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game' \
+                                                            + '?date=' \
+                                                            + this_week_date_str
+        tdoypg_df = main_hist(total_defense_opponent_yards_per_game_url_current, season, str(week), this_week_date_str,
+                              'total_defense_opponent_yards_per_game')
+        tdoypg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Yards_per_Game',
+                                  season: 'Current_Season_Total_Defense_Opponent_Yards_per_Game',
+                                  str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_Yards_per_Game',
+                                  'Last 3': 'Last 3_Total_Defense_Opponent_Yards_per_Game',
+                                  'Last 1': 'Last 1_Total_Defense_Opponent_Yards_per_Game',
+                                  'Home': 'At_Home_Total_Defense_Opponent_Yards_per_Game',
+                                  'Away': 'Away_Total_Defense_Opponent_Yards_per_Game'
+                                  }, inplace=True)
+        tdoypg_df['Team'] = tdoypg_df['Team'].str.strip()
+        time.sleep(1)
+
+        total_defense_opponent_plays_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-plays-per-game' \
+                                                            + '?date=' \
+                                                            + this_week_date_str
+        tdoppg_df = main_hist(total_defense_opponent_plays_per_game_url_current, season, str(week),
+                              this_week_date_str, 'total_defense_opponent_plays_per_game')
+        tdoppg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Plays_per_Game',
+                                  season: 'Current_Season_Total_Defense_Opponent_Plays_per_Game',
+                                  str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_Plays_per_Game',
+                                  'Last 3': 'Last 3_Total_Defense_Opponent_Plays_per_Game',
+                                  'Last 1': 'Last 1_Total_Defense_Opponent_Plays_per_Game',
+                                  'Home': 'At_Home_Total_Defense_Opponent_Plays_per_Game',
+                                  'Away': 'Away_Total_Defense_Opponent_Plays_per_Game'
+                                  }, inplace=True)
+        tdoppg_df['Team'] = tdoppg_df['Team'].str.strip()
         time.sleep(1)
 
         turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game' \
@@ -2830,7 +3206,16 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, stogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, sdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, sdoypp_df, on=['Team', 'Season', 'Week'], how='outer')
-        this_week_df = pd.merge(this_week_df, td_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoasm_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdorzsapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdorzspg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdorzsp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoppfga_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdootpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdooppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdoypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
