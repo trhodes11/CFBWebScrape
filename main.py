@@ -1390,23 +1390,44 @@ if __name__ == '__main__':
                 stogpypg_df = stogpypg_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
-                scoring_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game'\
+                scoring_defense_opponent_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game'\
                     + '?date='\
                     + this_week_date_str
-                sd_df = main_hist(scoring_defense_url_current, season, str(week), this_week_date_str, 'scoring_defense')
-                sd_df.rename(columns={'Rank': 'Rank_Scoring_Defense',
-                                      season: 'Current_Season_Scoring_Defense',
-                                      str(int(season) - 1): 'Previous_Season_Scoring_Defense',
-                                      'Last 3': 'Last 3_Scoring_Defense',
-                                      'Last 1': 'Last 1_Scoring_Defense',
-                                      'Home': 'At_Home_Scoring_Defense',
-                                      'Away': 'Away_Scoring_Defense'
+                sdoppg_df = main_hist(scoring_defense_opponent_points_per_game_url_current, season, str(week), this_week_date_str, 'scoring_defense_opponent_points_per_game')
+                sdoppg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Points_per_Game',
+                                      season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Game',
+                                      str(int(season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Game',
+                                      'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Game',
+                                      'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Game',
+                                      'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Game',
+                                      'Away': 'Away_Scoring_Defense_Opponent_Points_per_Game'
                                       }, inplace=True)
-                sd_df['Team'] = sd_df['Team'].str.strip()
+                sdoppg_df['Team'] = sdoppg_df['Team'].str.strip()
                 if season == '2010':
-                    sd_df['Rank_Scoring_Defense'] = sd_df.index + 1
-                sd_df = sd_df.replace('--', np.nan)
-                sd_df = sd_df.apply(pd.to_numeric, errors='ignore')
+                    sdoppg_df['Rank_Scoring_Defense_Opponent_Points_per_Game'] = sdoppg_df.index + 1
+                sdoppg_df = sdoppg_df.replace('--', np.nan)
+                sdoppg_df = sdoppg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                scoring_defense_opp_yards_per_point_url_current = 'https://www.teamrankings.com/college-football/stat/opp-yards-per-point' \
+                    + '?date=' \
+                    + this_week_date_str
+                sdoypp_df = main_hist(scoring_defense_opp_yards_per_point_url_current, season, str(week),
+                                      this_week_date_str, 'scoring_defense_opp_yards_per_point')
+                sdoypp_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opp_Yards_per_Point',
+                                          season: 'Current_Season_Scoring_Defense_Opp_Yards_per_Point',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Scoring_Defense_Opp_Yards_per_Point',
+                                          'Last 3': 'Last 3_Scoring_Defense_Opp_Yards_per_Point',
+                                          'Last 1': 'Last 1_Scoring_Defense_Opp_Yards_per_Point',
+                                          'Home': 'At_Home_Scoring_Defense_Opp_Yards_per_Point',
+                                          'Away': 'Away_Scoring_Defense_Opp_Yards_per_Point'
+                                          }, inplace=True)
+                sdoypp_df['Team'] = sdoypp_df['Team'].str.strip()
+                if season == '2010':
+                    sdoypp_df['Rank_Scoring_Defense_Opp_Yards_per_Point'] = sdoypp_df.index + 1
+                sdoypp_df = sdoypp_df.replace('--', np.nan)
+                sdoypp_df = sdoypp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
                 total_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game'\
@@ -1579,7 +1600,8 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, stofgcp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, stopapg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, stogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, sd_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sdoypp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, td_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -2630,19 +2652,37 @@ if __name__ == '__main__':
         stogpypg_df['Team'] = stogpypg_df['Team'].str.strip()
         time.sleep(1)
 
-        scoring_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game' \
-                                      + '?date=' \
-                                      + this_week_date_str
-        sd_df = main_hist(scoring_defense_url_current, season, str(week), this_week_date_str, 'scoring_defense')
-        sd_df.rename(columns={'Rank': 'Rank_Scoring_Defense',
-                              season: 'Current_Season_Scoring_Defense',
-                              str(int(season) - 1): 'Previous_Season_Scoring_Defense',
-                              'Last 3': 'Last 3_Scoring_Defense',
-                              'Last 1': 'Last 1_Scoring_Defense',
-                              'Home': 'At_Home_Scoring_Defense',
-                              'Away': 'Away_Scoring_Defense'
-                              }, inplace=True)
-        sd_df['Team'] = sd_df['Team'].str.strip()
+        scoring_defense_opponent_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game' \
+                                                               + '?date=' \
+                                                               + this_week_date_str
+        sdoppg_df = main_hist(scoring_defense_opponent_points_per_game_url_current, season, str(week),
+                              this_week_date_str, 'scoring_defense_opponent_points_per_game')
+        sdoppg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Points_per_Game',
+                                  season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Game',
+                                  str(int(season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Game',
+                                  'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Game',
+                                  'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Game',
+                                  'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Game',
+                                  'Away': 'Away_Scoring_Defense_Opponent_Points_per_Game'
+                                  }, inplace=True)
+        sdoppg_df['Team'] = sdoppg_df['Team'].str.strip()
+        time.sleep(1)
+
+        scoring_defense_opp_yards_per_point_url_current = 'https://www.teamrankings.com/college-football/stat/opp-yards-per-point' \
+                                                          + '?date=' \
+                                                          + this_week_date_str
+        sdoypp_df = main_hist(scoring_defense_opp_yards_per_point_url_current, season, str(week),
+                              this_week_date_str, 'scoring_defense_opp_yards_per_point')
+        sdoypp_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opp_Yards_per_Point',
+                                  season: 'Current_Season_Scoring_Defense_Opp_Yards_per_Point',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Scoring_Defense_Opp_Yards_per_Point',
+                                  'Last 3': 'Last 3_Scoring_Defense_Opp_Yards_per_Point',
+                                  'Last 1': 'Last 1_Scoring_Defense_Opp_Yards_per_Point',
+                                  'Home': 'At_Home_Scoring_Defense_Opp_Yards_per_Point',
+                                  'Away': 'Away_Scoring_Defense_Opp_Yards_per_Point'
+                                  }, inplace=True)
+        sdoypp_df['Team'] = sdoypp_df['Team'].str.strip()
         time.sleep(1)
 
         total_defense_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game' \
@@ -2788,7 +2828,8 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, stofgcp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, stopapg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, stogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
-        this_week_df = pd.merge(this_week_df, sd_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoypp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, td_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
