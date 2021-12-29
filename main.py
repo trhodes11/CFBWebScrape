@@ -2221,42 +2221,809 @@ if __name__ == '__main__':
                 pdoppp_df = pdoppp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
-                turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game'\
-                    + '?date='\
+                passing_defense_opponent_passing_yards_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-yards-pct' \
+                    + '?date=' \
                     + this_week_date_str
-                tg_df = main_hist(turnovers_given_url_current, season, str(week), this_week_date_str, 'turnovers_given')
-                tg_df.rename(columns={'Rank': 'Rank_Turnovers_Given',
-                                      season: 'Current_Season_Turnovers_Given',
-                                      str(int(season) - 1): 'Previous_Season_Turnovers_Given',
-                                      'Last 3': 'Last 3_Turnovers_Given',
-                                      'Last 1': 'Last 1_Turnovers_Given',
-                                      'Home': 'At_Home_Turnovers_Given',
-                                      'Away': 'Away_Turnovers_Given'
-                                      }, inplace=True)
-                tg_df['Team'] = tg_df['Team'].str.strip()
+                pdopyp_df = main_hist(passing_defense_opponent_passing_yards_percentage_url_current, season,
+                                      str(week),
+                                      this_week_date_str, 'passing_defense_opponent_passing_yards_percentage')
+                pdopyp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Team_Opponent_Passing_Yards_Percentage',
+                                          season: 'Current_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                          'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                          'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                          'Home': 'At_Home_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                          'Away': 'Away_Passing_Defense_Opponent_Passing_Yards_Percentage'
+                                          }, inplace=True)
+                pdopyp_df['Team'] = pdopyp_df['Team'].str.strip()
                 if season == '2010':
-                    tg_df['Rank_Turnovers_Given'] = tg_df.index + 1
-                tg_df = tg_df.replace('--', np.nan)
-                tg_df = tg_df.apply(pd.to_numeric, errors='ignore')
+                    pdopyp_df[
+                        'Rank_Passing_Defense_Opponent_Passing_Yards_Percentage'] = pdopyp_df.index + 1
+                pdopyp_df = pdopyp_df.replace('--', np.nan)
+                pdopyp_df = pdopyp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
-                turnovers_taken_url_current = 'https://www.teamrankings.com/college-football/stat/takeaways-per-game'\
+                passing_defense_sacks_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/sacks-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdspg_df = main_hist(passing_defense_sacks_per_game_url_current, season,
+                                      str(week),
+                                      this_week_date_str, 'passing_defense_sacks_per_game')
+                pdspg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Sacks_per_Game',
+                                          season: 'Current_Season_Passing_Defense_Sacks_per_Game',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Passing_Defense_Sacks_per_Game',
+                                          'Last 3': 'Last 3_Passing_Defense_Sacks_per_Game',
+                                          'Last 1': 'Last 1_Passing_Defense_Sacks_per_Game',
+                                          'Home': 'At_Home_Passing_Defense_Sacks_per_Game',
+                                          'Away': 'Away_Passing_Defense_Sacks_per_Game'
+                                          }, inplace=True)
+                pdspg_df['Team'] = pdspg_df['Team'].str.strip()
+                if season == '2010':
+                    pdspg_df[
+                        'Rank_Passing_Defense_Sacks_per_Game'] = pdspg_df.index + 1
+                pdspg_df = pdspg_df.replace('--', np.nan)
+                pdspg_df = pdspg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_opponent_yards_per_pass_attempt_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-pass-attempt' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdoyppa_df = main_hist(passing_defense_opponent_yards_per_pass_attempt_url_current, season,
+                                     str(week),
+                                     this_week_date_str, 'passing_defense_opponent_yards_per_pass_attempt')
+                pdoyppa_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                         season: 'Current_Season_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                         'Last 3': 'Last 3_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                         'Last 1': 'Last 1_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                         'Home': 'At_Home_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                         'Away': 'Away_Passing_Defense_Opponent_Yards_per_Pass_Attempt'
+                                         }, inplace=True)
+                pdoyppa_df['Team'] = pdoyppa_df['Team'].str.strip()
+                if season == '2010':
+                    pdoyppa_df[
+                        'Rank_Passing_Defense_Opponent_Yards_per_Pass_Attempt'] = pdoyppa_df.index + 1
+                pdoyppa_df = pdoyppa_df.replace('--', np.nan)
+                pdoyppa_df = pdoyppa_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_opponent_yards_per_completion_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-completion' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdoypc_df = main_hist(passing_defense_opponent_yards_per_completion_url_current, season,
+                                       str(week),
+                                       this_week_date_str, 'passing_defense_opponent_yards_per_completion')
+                pdoypc_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Yards_per_Completion',
+                                           season: 'Current_Season_Passing_Defense_Opponent_Yards_per_Completion',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Passing_Defense_Opponent_Yards_per_Completion',
+                                           'Last 3': 'Last 3_Passing_Defense_Opponent_Yards_per_Completion',
+                                           'Last 1': 'Last 1_Passing_Defense_Opponent_Yards_per_Completion',
+                                           'Home': 'At_Home_Passing_Defense_Opponent_Yards_per_Completion',
+                                           'Away': 'Away_Passing_Defense_Opponent_Yards_per_Completion'
+                                           }, inplace=True)
+                pdoypc_df['Team'] = pdoypc_df['Team'].str.strip()
+                if season == '2010':
+                    pdoypc_df[
+                        'Rank_Passing_Defense_Opponent_Yards_per_Completion'] = pdoypc_df.index + 1
+                pdoypc_df = pdoypc_df.replace('--', np.nan)
+                pdoypc_df = pdoypc_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                special_teams_defense_opponent_field_goal_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-field-goal-attempts-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                stdofgapg_df = main_hist(special_teams_defense_opponent_field_goal_attempts_per_game_url_current, season,
+                                      str(week),
+                                      this_week_date_str, 'special_teams_defense_opponent_field_goal_attempts_per_game')
+                stdofgapg_df.rename(columns={'Rank': 'Rank_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                          season: 'Current_Season_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                          'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                          'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                          'Home': 'At_Home_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                          'Away': 'Away_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game'
+                                          }, inplace=True)
+                stdofgapg_df['Team'] = stdofgapg_df['Team'].str.strip()
+                if season == '2010':
+                    stdofgapg_df[
+                        'Rank_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game'] = stdofgapg_df.index + 1
+                stdofgapg_df = stdofgapg_df.replace('--', np.nan)
+                stdofgapg_df = stdofgapg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                special_teams_defense_opponent_field_goals_made_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-field-goals-made-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                stdofgmpg_df = main_hist(special_teams_defense_opponent_field_goals_made_per_game_url_current,
+                                         season,
+                                         str(week),
+                                         this_week_date_str,
+                                         'special_teams_defense_opponent_field_goals_made_per_game')
+                stdofgmpg_df.rename(columns={'Rank': 'Rank_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                             season: 'Current_Season_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                             str(int(
+                                                 season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                             'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                             'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                             'Home': 'At_Home_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                             'Away': 'Away_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game'
+                                             }, inplace=True)
+                stdofgmpg_df['Team'] = stdofgmpg_df['Team'].str.strip()
+                if season == '2010':
+                    stdofgmpg_df[
+                        'Rank_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game'] = stdofgmpg_df.index + 1
+                stdofgmpg_df = stdofgmpg_df.replace('--', np.nan)
+                stdofgmpg_df = stdofgmpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                special_teams_defense_opponent_punt_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-punt-attempts-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                stdopapg_df = main_hist(special_teams_defense_opponent_punt_attempts_per_game_url_current, season,
+                                         str(week),
+                                         this_week_date_str,
+                                         'special_teams_defense_opponent_punt_attempts_per_game')
+                stdopapg_df.rename(columns={'Rank': 'Rank_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                             season: 'Current_Season_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                             str(int(
+                                                 season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                             'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                             'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                             'Home': 'At_Home_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                             'Away': 'Away_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game'
+                                             }, inplace=True)
+                stdopapg_df['Team'] = stdopapg_df['Team'].str.strip()
+                if season == '2010':
+                    stdopapg_df[
+                        'Rank_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game'] = stdopapg_df.index + 1
+                stdopapg_df = stdopapg_df.replace('--', np.nan)
+                stdopapg_df = stdopapg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                special_teams_defense_opponent_gross_punt_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-gross-punt-yards-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                stdogpypg_df = main_hist(special_teams_defense_opponent_gross_punt_yards_per_game_url_current,
+                                        season,
+                                        str(week),
+                                        this_week_date_str,
+                                        'special_teams_defense_opponent_gross_punt_yards_per_game')
+                stdogpypg_df.rename(columns={'Rank': 'Rank_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                            season: 'Current_Season_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                            str(int(
+                                                season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                            'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                            'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                            'Home': 'At_Home_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                            'Away': 'Away_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game'
+                                            }, inplace=True)
+                stdogpypg_df['Team'] = stdogpypg_df['Team'].str.strip()
+                if season == '2010':
+                    stdogpypg_df[
+                        'Rank_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game'] = stdogpypg_df.index + 1
+                stdogpypg_df = stdogpypg_df.replace('--', np.nan)
+                stdogpypg_df = stdogpypg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_interceptions_thrown_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/interceptions-thrown-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                titpg_df = main_hist(turnovers_interceptions_thrown_per_game_url_current, season, str(week),
+                                         this_week_date_str,
+                                         'turnovers_interceptions_thrown_per_game')
+                titpg_df.rename(columns={'Rank': 'Rank_Turnovers_Interceptions_Thrown_per_Game',
+                                             season: 'Current_Season_Turnovers_Interceptions_Thrown_per_Game',
+                                             str(int(
+                                                 season) - 1): 'Previous_Season_Turnovers_Interceptions_Thrown_per_Game',
+                                             'Last 3': 'Last 3_Turnovers_Interceptions_Thrown_per_Game',
+                                             'Last 1': 'Last 1_Turnovers_Interceptions_Thrown_per_Game',
+                                             'Home': 'At_Home_Turnovers_Interceptions_Thrown_per_Game',
+                                             'Away': 'Away_Turnovers_Interceptions_per_Game'
+                                             }, inplace=True)
+                titpg_df['Team'] = titpg_df['Team'].str.strip()
+                if season == '2010':
+                    titpg_df[
+                        'Rank_Turnovers_Interceptions_Thrown_per_Game'] = titpg_df.index + 1
+                titpg_df = titpg_df.replace('--', np.nan)
+                titpg_df = titpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_fumbles_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fumbles-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tfpg_df = main_hist(turnovers_fumbles_per_game_url_current, season, str(week),
+                                     this_week_date_str,
+                                     'turnovers_fumbles_per_game')
+                tfpg_df.rename(columns={'Rank': 'Rank_Turnovers_Fumbles_per_Game',
+                                         season: 'Current_Season_Turnovers_Fumbles_per_Game',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Turnovers_Fumbles_per_Game',
+                                         'Last 3': 'Last 3_Turnovers_Fumbles_per_Game',
+                                         'Last 1': 'Last 1_Turnovers_Fumbles_per_Game',
+                                         'Home': 'At_Home_Turnovers_Fumbles_per_Game',
+                                         'Away': 'Away_Turnovers_Fumbles_per_Game'
+                                         }, inplace=True)
+                tfpg_df['Team'] = tfpg_df['Team'].str.strip()
+                if season == '2010':
+                    tfpg_df[
+                        'Rank_Turnovers_Fumbles_per_Game'] = tfpg_df.index + 1
+                tfpg_df = tfpg_df.replace('--', np.nan)
+                tfpg_df = tfpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_fumbles_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fumbles-lost-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tflpg_df = main_hist(turnovers_fumbles_lost_per_game_url_current, season, str(week),
+                                    this_week_date_str,
+                                    'turnovers_fumbles_lost_per_game')
+                tflpg_df.rename(columns={'Rank': 'Rank_Turnovers_Fumbles_Lost_per_Game',
+                                        season: 'Current_Season_Turnovers_Fumbles_Lost_per_Game',
+                                        str(int(
+                                            season) - 1): 'Previous_Season_Turnovers_Fumbles_Lost_per_Game',
+                                        'Last 3': 'Last 3_Turnovers_Fumbles_Lost_per_Game',
+                                        'Last 1': 'Last 1_Turnovers_Fumbles_Lost_per_Game',
+                                        'Home': 'At_Home_Turnovers_Fumbles_Lost_per_Game',
+                                        'Away': 'Away_Turnovers_Fumbles_Lost_per_Game'
+                                        }, inplace=True)
+                tflpg_df['Team'] = tflpg_df['Team'].str.strip()
+                if season == '2010':
+                    tflpg_df[
+                        'Rank_Turnovers_Fumbles_Lost_per_Game'] = tflpg_df.index + 1
+                tflpg_df = tflpg_df.replace('--', np.nan)
+                tflpg_df = tflpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_fumbles_not_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fumbles-not-lost-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tfnlpg_df = main_hist(turnovers_fumbles_not_lost_per_game_url_current, season, str(week),
+                                     this_week_date_str,
+                                     'turnovers_fumbles_not_lost_per_game')
+                tfnlpg_df.rename(columns={'Rank': 'Rank_Turnovers_Fumbles_Not_Lost_per_Game',
+                                         season: 'Current_Season_Turnovers_Fumbles_Not_Lost_per_Game',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Turnovers_Fumbles_Not_Lost_per_Game',
+                                         'Last 3': 'Last 3_Turnovers_Fumbles_Not_Lost_per_Game',
+                                         'Last 1': 'Last 1_Turnovers_Fumbles_Not_Lost_per_Game',
+                                         'Home': 'At_Home_Turnovers_Fumbles_Not_Lost_per_Game',
+                                         'Away': 'Away_Turnovers_Fumbles_Not_Lost_per_Game'
+                                         }, inplace=True)
+                tfnlpg_df['Team'] = tfnlpg_df['Team'].str.strip()
+                if season == '2010':
+                    tfnlpg_df[
+                        'Rank_Turnovers_Fumbles_Not_Lost_per_Game'] = tfnlpg_df.index + 1
+                tfnlpg_df = tfnlpg_df.replace('--', np.nan)
+                tfnlpg_df = tfnlpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_giveaways_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game'\
                     + '?date='\
                     + this_week_date_str
-                tt_df = main_hist(turnovers_taken_url_current, season, str(week), this_week_date_str, 'turnovers_taken')
-                tt_df.rename(columns={'Rank': 'Rank_Turnovers_Taken',
-                                      season: 'Current_Season_Turnovers_Taken',
-                                      str(int(season) - 1): 'Previous_Season_Turnovers_Taken',
-                                      'Last 3': 'Last 3_Turnovers_Taken',
-                                      'Last 1': 'Last 1_Turnovers_Taken',
-                                      'Home': 'At_Home_Turnovers_Taken',
-                                      'Away': 'Away_Turnovers_Taken'
+                tgpg_df = main_hist(turnovers_giveaways_per_game_url_current, season, str(week), this_week_date_str, 'turnovers_giveaways_per_game')
+                tgpg_df.rename(columns={'Rank': 'Rank_Turnovers_Giveaways_per_Game',
+                                      season: 'Current_Season_Turnovers_Giveaways_per_Game',
+                                      str(int(season) - 1): 'Previous_Season_Turnovers_Giveaways_per_Game',
+                                      'Last 3': 'Last 3_Turnovers_Giveaways_per_Game',
+                                      'Last 1': 'Last 1_Turnovers_Giveaways_per_Game',
+                                      'Home': 'At_Home_Turnovers_Giveaways_per_Game',
+                                      'Away': 'Away_Turnovers_Giveaways_per-Game'
                                       }, inplace=True)
-                tt_df['Team'] = tt_df['Team'].str.strip()
+                tgpg_df['Team'] = tgpg_df['Team'].str.strip()
                 if season == '2010':
-                    tt_df['Rank_Turnovers_Taken'] = tt_df.index + 1
-                tt_df = tt_df.replace('--', np.nan)
-                tt_df = tt_df.apply(pd.to_numeric, errors='ignore')
+                    tgpg_df['Rank_Turnovers_Giveaways_per_Game'] = tgpg_df.index + 1
+                tgpg_df = tgpg_df.replace('--', np.nan)
+                tgpg_df = tgpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_turnover_margin_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/turnover-margin-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                ttmpg_df = main_hist(turnovers_turnover_margin_per_game_url_current, season, str(week), this_week_date_str,
+                                    'turnovers_turnover_margin_per_game')
+                ttmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Turnover_Margin_per_Game',
+                                        season: 'Current_Season_Turnovers_Turnover_Margin_per_Game',
+                                        str(int(season) - 1): 'Previous_Season_Turnovers_Turnover_Margin_per_Game',
+                                        'Last 3': 'Last 3_Turnovers_Turnover_Margin_per_Game',
+                                        'Last 1': 'Last 1_Turnovers_Turnover_Margin_per_Game',
+                                        'Home': 'At_Home_Turnovers_Turnover_Margin_per_Game',
+                                        'Away': 'Away_Turnovers_Turnover_Margin_per-Game'
+                                        }, inplace=True)
+                ttmpg_df['Team'] = ttmpg_df['Team'].str.strip()
+                if season == '2010':
+                    ttmpg_df['Rank_Turnovers_Turnover_Margin_per_Game'] = ttmpg_df.index + 1
+                ttmpg_df = ttmpg_df.replace('--', np.nan)
+                ttmpg_df = ttmpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_interceptions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/interceptions-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tipg_df = main_hist(turnovers_interceptions_per_game_url_current, season, str(week),
+                                     this_week_date_str,
+                                     'turnovers_interceptions_per_game')
+                tipg_df.rename(columns={'Rank': 'Rank_Turnovers_Interceptions_per_Game',
+                                         season: 'Current_Season_Turnovers_Interceptions_per_Game',
+                                         str(int(season) - 1): 'Previous_Season_Turnovers_Interceptions_per_Game',
+                                         'Last 3': 'Last 3_Turnovers_Interceptions_per_Game',
+                                         'Last 1': 'Last 1_Turnovers_Interceptions_per_Game',
+                                         'Home': 'At_Home_Turnovers_Interceptions_per_Game',
+                                         'Away': 'Away_Turnovers_Interceptions_per-Game'
+                                         }, inplace=True)
+                tipg_df['Team'] = tipg_df['Team'].str.strip()
+                if season == '2010':
+                    tipg_df['Rank_Turnovers_Interceptions_per_Game'] = tipg_df.index + 1
+                tipg_df = tipg_df.replace('--', np.nan)
+                tipg_df = tipg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_opponent_fumbles_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumbles-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tofpg_df = main_hist(turnovers_opponent_fumbles_per_game_url_current, season, str(week),
+                                    this_week_date_str,
+                                    'turnovers_opponent_fumbles_per_game')
+                tofpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_per_Game',
+                                        season: 'Current_Season_Turnovers_Opponent_Fumbles_per_Game',
+                                        str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_per_Game',
+                                        'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_per_Game',
+                                        'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_per_Game',
+                                        'Home': 'At_Home_Turnovers_Opponent_Fumbles_per_Game',
+                                        'Away': 'Away_Turnovers_Opponent_Fumbles_per-Game'
+                                        }, inplace=True)
+                tofpg_df['Team'] = tofpg_df['Team'].str.strip()
+                if season == '2010':
+                    tofpg_df['Rank_Turnovers_Opponent_Fumbles_per_Game'] = tofpg_df.index + 1
+                tofpg_df = tofpg_df.replace('--', np.nan)
+                tofpg_df = tofpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_opponent_fumbles_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumbles-lost-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                toflpg_df = main_hist(turnovers_opponent_fumbles_lost_per_game_url_current, season, str(week),
+                                     this_week_date_str,
+                                     'turnovers_opponent_fumbles_lost_per_game')
+                toflpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                         season: 'Current_Season_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                         str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                         'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                         'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                         'Home': 'At_Home_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                         'Away': 'Away_Turnovers_Opponent_Fumbles_Lost_per-Game'
+                                         }, inplace=True)
+                toflpg_df['Team'] = toflpg_df['Team'].str.strip()
+                if season == '2010':
+                    toflpg_df['Rank_Turnovers_Opponent_Fumbles_Lost_per_Game'] = toflpg_df.index + 1
+                toflpg_df = toflpg_df.replace('--', np.nan)
+                toflpg_df = toflpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_opponent_fumbles_not_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumbles-not-lost-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                tofnlpg_df = main_hist(turnovers_opponent_fumbles_not_lost_per_game_url_current, season, str(week),
+                                      this_week_date_str,
+                                      'turnovers_opponent_fumbles_not_lost_per_game')
+                tofnlpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                          season: 'Current_Season_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                          'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                          'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                          'Home': 'At_Home_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                          'Away': 'Away_Turnovers_Opponent_Fumbles_Not_Lost_per-Game'
+                                          }, inplace=True)
+                tofnlpg_df['Team'] = tofnlpg_df['Team'].str.strip()
+                if season == '2010':
+                    tofnlpg_df['Rank_Turnovers_Opponent_Fumbles_Not_Lost_per_Game'] = tonflpg_df.index + 1
+                tofnlpg_df = tofnlpg_df.replace('--', np.nan)
+                tofnlpg_df = tofnlpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_takeaways_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/takeaways-per-game'\
+                    + '?date='\
+                    + this_week_date_str
+                tttapg_df = main_hist(turnovers_takeaways_per_game_url_current, season, str(week), this_week_date_str, 'turnovers_takeaways_per_game')
+                tttapg_df.rename(columns={'Rank': 'Rank_Turnovers_Takeaways_per_Game',
+                                      season: 'Current_Season_Turnovers_Takeaways_per_Game',
+                                      str(int(season) - 1): 'Previous_Season_Turnovers_Takeaways_per_Game',
+                                      'Last 3': 'Last 3_Turnovers_Takeaways_per_Game',
+                                      'Last 1': 'Last 1_Turnovers_Takeaways_per_Game',
+                                      'Home': 'At_Home_Turnovers_Takeaways_per_Game',
+                                      'Away': 'Away_Turnovers_Takeaways_per_Game'
+                                      }, inplace=True)
+                tttapg_df['Team'] = tttapg_df['Team'].str.strip()
+                if season == '2010':
+                    tttapg_df['Rank_Turnovers_Takeaways_per_Game'] = tttapg_df.index + 1
+                tttapg_df = tttapg_df.replace('--', np.nan)
+                tttapg_df = tttapg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_opponent_turnover_margin_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-turnover-margin-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                totmpg_df = main_hist(turnovers_opponent_turnover_margin_per_game_url_current, season, str(week), this_week_date_str,
+                                      'turnovers_opponent_turnover_margin_per_game')
+                totmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Oppoenent_Turnover_margin_per_Game',
+                                          season: 'Current_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                          str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                          'Last 3': 'Last 3_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                          'Last 1': 'Last 1_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                          'Home': 'At_Home_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                          'Away': 'Away_Turnovers_Turnover_Margin_per_Game'
+                                          }, inplace=True)
+                totmpg_df['Team'] = totmpg_df['Team'].str.strip()
+                if season == '2010':
+                    totmpg_df['Rank_Turnovers_Opponent_Turnover_Margin_per_Game'] = totmpg_df.index + 1
+                totmpg_df = totmpg_df.replace('--', np.nan)
+                totmpg_df = totmpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_interceptions_thrown_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/pass-intercepted-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                titp_df = main_hist(turnovers_interceptions_thrown_percentage_url_current, season, str(week),
+                                      this_week_date_str,
+                                      'turnovers_interceptions_thrown_percentage')
+                titp_df.rename(columns={'Rank': 'Rank_Turnovers_Interceptions_Thrown_Percentage',
+                                          season: 'Current_Season_Turnovers_Interceptions_Thrown_Percentage',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Turnovers_Interceptions_Thrown_Percentage',
+                                          'Last 3': 'Last 3_Turnovers_Interceptions_Thrown_Percentage',
+                                          'Last 1': 'Last 1_Turnovers_Interceptions_Thrown_Percentage',
+                                          'Home': 'At_Home_Turnovers_Interceptions_Thrown_Percentage',
+                                          'Away': 'Away_Turnovers_Interceptions_Thrown_Percentage'
+                                          }, inplace=True)
+                titp_df['Team'] = titp_df['Team'].str.strip()
+                if season == '2010':
+                    titp_df['Rank_Turnovers_Interceptions_Thrown_Percentage'] = titp_df.index + 1
+                titp_df = titp_df.replace('--', np.nan)
+                titp_df = titp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/fumble-recovery-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                tfrp_df = main_hist(turnovers_fumble_recovery_percentage_url_current, season, str(week),
+                                    this_week_date_str,
+                                    'turnovers_fumble_recovery_percentage')
+                tfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Fumble_Recovery_Percentage',
+                                        season: 'Current_Season_Turnovers_Fumble_Recovery_Percentage',
+                                        str(int(
+                                            season) - 1): 'Previous_Season_Turnovers_Fumble_Recovery_Percentage',
+                                        'Last 3': 'Last 3_Turnovers_Fumble_Recovery_Percentage',
+                                        'Last 1': 'Last 1_Turnovers_Fumble_Recovery_Percentage',
+                                        'Home': 'At_Home_Turnovers_Fumble_Recovery_Percentage',
+                                        'Away': 'Away_Turnovers_Fumble_Recovery_Percentage'
+                                        }, inplace=True)
+                tfrp_df['Team'] = tfrp_df['Team'].str.strip()
+                if season == '2010':
+                    tfrp_df['Rank_Turnovers_Fumble_Recovery_Percentage'] = tfrp_df.index + 1
+                tfrp_df = tfrp_df.replace('--', np.nan)
+                tfrp_df = tfrp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_giveaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/giveaway-fumble-recovery-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                tgfrp_df = main_hist(turnovers_giveaway_fumble_recovery_percentage_url_current, season, str(week),
+                                    this_week_date_str,
+                                    'turnovers_giveaway_fumble_recovery_percentage')
+                tgfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                        season: 'Current_Season_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                        str(int(
+                                            season) - 1): 'Previous_Season_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                        'Last 3': 'Last 3_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                        'Last 1': 'Last 1_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                        'Home': 'At_Home_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                        'Away': 'Away_Turnovers_Giveaway_Fumble_Recovery_Percentage'
+                                        }, inplace=True)
+                tgfrp_df['Team'] = tgfrp_df['Team'].str.strip()
+                if season == '2010':
+                    tgfrp_df['Rank_Turnovers_Giveaway_Fumble_Recovery_Percentage'] = tgfrp_df.index + 1
+                tgfrp_df = tgfrp_df.replace('--', np.nan)
+                tgfrp_df = tgfrp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_takeaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/takeaway-fumble-recovery-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                ttfrp_df = main_hist(turnovers_takeaway_fumble_recovery_percentage_url_current, season, str(week),
+                                     this_week_date_str,
+                                     'turnovers_takeaway_fumble_recovery_percentage')
+                ttfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                         season: 'Current_Season_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                         'Last 3': 'Last 3_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                         'Last 1': 'Last 1_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                         'Home': 'At_Home_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                         'Away': 'Away_Turnovers_Takeaway_Fumble_Recovery_Percentage'
+                                         }, inplace=True)
+                ttfrp_df['Team'] = ttfrp_df['Team'].str.strip()
+                if season == '2010':
+                    ttfrp_df['Rank_Turnovers_Takeaway_Fumble_Recovery_Percentage'] = ttfrp_df.index + 1
+                ttfrp_df = ttfrp_df.replace('--', np.nan)
+                ttfrp_df = ttfrp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_opponent_interceptions_thrown_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/interception-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                toitp_df = main_hist(turnovers_opponent_interceptions_thrown_percentage_url_current, season, str(week),
+                                    this_week_date_str,
+                                    'turnovers_opponent_interceptions_thrown_percentage')
+                toitp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                        season: 'Current_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                        str(int(
+                                            season) - 1): 'Previous_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                        'Last 3': 'Last 3_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                        'Last 1': 'Last 1_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                        'Home': 'At_Home_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                        'Away': 'Away_Turnovers_Opponents_Interceptions_Thrown_Percentage'
+                                        }, inplace=True)
+                toitp_df['Team'] = toitp_df['Team'].str.strip()
+                if season == '2010':
+                    toitp_df['Rank_Turnovers_Opponent_Interceptions_Thrown_Percentage'] = toitp_df.index + 1
+                toitp_df = toitp_df.replace('--', np.nan)
+                toitp_df = toitp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_opponent_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumble-recovery-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                tofrp_df = main_hist(turnovers_opponent_fumble_recovery_percentage_url_current, season, str(week),
+                                     this_week_date_str,
+                                     'turnovers_opponent_fumble_recovery_percentage')
+                tofrp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                         season: 'Current_Season_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                         'Last 3': 'Last 3_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                         'Last 1': 'Last 1_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                         'Home': 'At_Home_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                         'Away': 'Away_Turnovers_Opponent_Fumble_Recovery_Percentage'
+                                         }, inplace=True)
+                tofrp_df['Team'] = tofrp_df['Team'].str.strip()
+                if season == '2010':
+                    tofrp_df['Rank_Turnovers_Opponent_Fumble_Recovery_Percentage'] = tofrp_df.index + 1
+                tofrp_df = tofrp_df.replace('--', np.nan)
+                tofrp_df = tofrp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_opponent_giveaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-giveaway-fumble-recovery-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                togfrp_df = main_hist(turnovers_opponent_giveaway_fumble_recovery_percentage_url_current, season, str(week),
+                                     this_week_date_str,
+                                     'turnovers_opponent_giveaway_fumble_recovery_percentage')
+                togfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                         season: 'Current_Season_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                         'Last 3': 'Last 3_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                         'Last 1': 'Last 1_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                         'Home': 'At_Home_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                         'Away': 'Away_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage'
+                                         }, inplace=True)
+                togfrp_df['Team'] = togfrp_df['Team'].str.strip()
+                if season == '2010':
+                    togfrp_df['Rank_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage'] = togfrp_df.index + 1
+                togfrp_df = togfrp_df.replace('--', np.nan)
+                togfrp_df = togfrp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                turnovers_opponent_takeaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-takeaway-fumble-recovery-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                totfrp_df = main_hist(turnovers_opponent_takeaway_fumble_recovery_percentage_url_current, season,
+                                      str(week),
+                                      this_week_date_str,
+                                      'turnovers_opponent_takeaway_fumble_recovery_percentage')
+                totfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                          season: 'Current_Season_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                          'Last 3': 'Last 3_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                          'Last 1': 'Last 1_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                          'Home': 'At_Home_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                          'Away': 'Away_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage'
+                                          }, inplace=True)
+                totfrp_df['Team'] = totfrp_df['Team'].str.strip()
+                if season == '2010':
+                    totfrp_df['Rank_Turnovers_Opponent_Takeway_Fumble_Recovery_Percentage'] = totfrp_df.index + 1
+                totfrp_df = totfrp_df.replace('--', np.nan)
+                totfrp_df = totfrp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                penalties_penalties_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/penalties-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                pppg_df = main_hist(penalties_penalties_per_game_url_current, season,
+                                      str(week),
+                                      this_week_date_str,
+                                      'penalties_penalties_per_game')
+                pppg_df.rename(columns={'Rank': 'Rank_Penalties_Penalties_per_Game',
+                                          season: 'Current_Season_Penalties_Penalties_per_Game',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Penalties_per_Game',
+                                          'Last 3': 'Last 3_Penalties_Penalties_per_Game',
+                                          'Last 1': 'Last 1_Penalties_Penalties_per_Game',
+                                          'Home': 'At_Home_Penalties_Penalties_per_Game',
+                                          'Away': 'Away_Turnovers_Penalties_Penalties_per_Game'
+                                          }, inplace=True)
+                pppg_df['Team'] = pppg_df['Team'].str.strip()
+                if season == '2010':
+                    pppg_df['Rank_Penalties_Penalties_per_Game'] = pppg_df.index + 1
+                pppg_df = pppg_df.replace('--', np.nan)
+                pppg_df = pppg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                penalties_penalty_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/penalty-yards-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                ppypg_df = main_hist(penalties_penalty_yards_per_game_url_current, season,
+                                    str(week),
+                                    this_week_date_str,
+                                    'penalties_penalty_yards_per_game')
+                ppypg_df.rename(columns={'Rank': 'Rank_Penalties_Penalty_Yards_per_Game',
+                                        season: 'Current_Season_Penalties_Penalty_Yards_per_Game',
+                                        str(int(
+                                            season) - 1): 'Previous_Season_Penalty_Yards_per_Game',
+                                        'Last 3': 'Last 3_Penalties_Penalty_Yards_per_Game',
+                                        'Last 1': 'Last 1_Penalties_Penalty_Yards_per_Game',
+                                        'Home': 'At_Home_Penalties_Penalty_Yards_per_Game',
+                                        'Away': 'Away_Turnovers_Penalties_Penalty_Yards_per_Game'
+                                        }, inplace=True)
+                ppypg_df['Team'] = ppypg_df['Team'].str.strip()
+                if season == '2010':
+                    ppypg_df['Rank_Penalties_Penalty_Yards_per_Game'] = ppypg_df.index + 1
+                ppypg_df = ppypg_df.replace('--', np.nan)
+                ppypg_df = ppypg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                penalties_penalty_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/penalty-first-downs-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                ppfdpg_df = main_hist(penalties_penalty_first_downs_per_game_url_current, season,
+                                     str(week),
+                                     this_week_date_str,
+                                     'penalties_penalty_first_downs_per_game')
+                ppfdpg_df.rename(columns={'Rank': 'Rank_Penalties_Penalty_First_Downs_per_Game',
+                                         season: 'Current_Season_Penalties_Penalty_First_Downs_per_Game',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Penalty_First_Downs_per_Game',
+                                         'Last 3': 'Last 3_Penalties_Penalty_First_Downs_per_Game',
+                                         'Last 1': 'Last 1_Penalties_Penalty_First_Downs_per_Game',
+                                         'Home': 'At_Home_Penalties_Penalty_First_Downs_per_Game',
+                                         'Away': 'Away_Turnovers_Penalties_Penalty_First_Downs_per_Game'
+                                         }, inplace=True)
+                ppfdpg_df['Team'] = ppfdpg_df['Team'].str.strip()
+                if season == '2010':
+                    ppfdpg_df['Rank_Penalties_Penalty_First_Downs_per_Game'] = ppfdpg_df.index + 1
+                ppfdpg_df = ppfdpg_df.replace('--', np.nan)
+                ppfdpg_df = ppfdpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                penalties_opponent_penalties_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalties-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                poppg_df = main_hist(penalties_opponent_penalties_per_game_url_current, season,
+                                    str(week),
+                                    this_week_date_str,
+                                    'penalties_opponent_penalties_per_game')
+                poppg_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalties_per_Game',
+                                        season: 'Current_Season_Penalties_Opponent_Penalties_per_Game',
+                                        str(int(
+                                            season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Game',
+                                        'Last 3': 'Last 3_Penalties_Opponent_Penalties_per_Game',
+                                        'Last 1': 'Last 1_Penalties_Opponent_Penalties_per_Game',
+                                        'Home': 'At_Home_Penalties_Opponent_Penalties_per_Game',
+                                        'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Game'
+                                        }, inplace=True)
+                poppg_df['Team'] = poppg_df['Team'].str.strip()
+                if season == '2010':
+                    poppg_df['Rank_Penalties_Opponent_Penalties_per_Game'] = poppg_df.index + 1
+                poppg_df = poppg_df.replace('--', np.nan)
+                poppg_df = poppg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                penalties_opponent_penalty_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-yards-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                popypg_df = main_hist(penalties_opponent_penalty_yards_per_game_url_current, season,
+                                     str(week),
+                                     this_week_date_str,
+                                     'penalties_opponent_penalty_yards_per_game')
+                popypg_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalty_Yards_per_Game',
+                                         season: 'Current_Season_Penalties_Opponent_Penalty_Yards_per_Game',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Game',
+                                         'Last 3': 'Last 3_Penalties_Opponent_Penalty_Yards_per_Game',
+                                         'Last 1': 'Last 1_Penalties_Opponent_Penalty_Yards_per_Game',
+                                         'Home': 'At_Home_Penalties_Opponent_Penalty_Yards_per_Game',
+                                         'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_Yards_per_Game'
+                                         }, inplace=True)
+                popypg_df['Team'] = popypg_df['Team'].str.strip()
+                if season == '2010':
+                    popypg_df['Rank_Penalties_Opponent_Penalty_Yards_per_Game'] = popypg_df.index + 1
+                popypg_df = popypg_df.replace('--', np.nan)
+                popypg_df = popypg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                penalties_opponent_penalty_first_down_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-first-downs-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                popfdpg_df = main_hist(penalties_opponent_penalty_first_downs_per_game_url_current, season,
+                                      str(week),
+                                      this_week_date_str,
+                                      'penalties_opponent_penalty_first_downs_per_game')
+                popfdpg_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                          season: 'Current_Season_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                          'Last 3': 'Last 3_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                          'Last 1': 'Last 1_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                          'Home': 'At_Home_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                          'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_First_Downs_per_Game'
+                                          }, inplace=True)
+                popfdpg_df['Team'] = popfdpg_df['Team'].str.strip()
+                if season == '2010':
+                    popfdpg_df['Rank_Penalties_Opponent_Penalty_First_Downs_per_Game'] = popfdpg_df.index + 1
+                popfdpg_df = popfdpg_df.replace('--', np.nan)
+                popfdpg_df = popfdpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                penalties_penalty_yards_per_penalty_url_current = 'https://www.teamrankings.com/college-football/stat/penalty-yards-per-penalty' \
+                    + '?date=' \
+                    + this_week_date_str
+                poptpp_df = main_hist(penalties_penalty_yards_per_penalty_url_current, season,
+                                       str(week),
+                                       this_week_date_str,
+                                       'penalties_penalty_yards_per_penalty')
+                poptpp_df.rename(columns={'Rank': 'Rank_Penalties_Penalty_Yards_per_Penalty',
+                                           season: 'Current_Season_Penalties_Penalty_Yards_per_Penalty',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Penalties_Penalty_Yards_per_Penalty',
+                                           'Last 3': 'Last 3_Penalties_Penalty_Yards_per_Penalty',
+                                           'Last 1': 'Last 1_Penalties_Penalty_Yards_per_Penalty',
+                                           'Home': 'At_Home_Penalties_Penalty_Yards_per_Penalty',
+                                           'Away': 'Away_Turnovers_Penalties_Penalty_Yards_per_Penalty'
+                                           }, inplace=True)
+                poptpp_df['Team'] = poptpp_df['Team'].str.strip()
+                if season == '2010':
+                    poptpp_df['Rank_Penalties_Penalty_Yards_per_Penalty'] = poptpp_df.index + 1
+                poptpp_df = poptpp_df.replace('--', np.nan)
+                poptpp_df = poptpp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                penalties_penalties_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/penalties-per-play' \
+                    + '?date=' \
+                    + this_week_date_str
+                pppp_df = main_hist(penalties_penalties_per_play_url_current, season,
+                                      str(week),
+                                      this_week_date_str,
+                                      'penalties_penalties_per_play')
+                pppp_df.rename(columns={'Rank': 'Rank_Penalties_Penalties_per_Play',
+                                          season: 'Current_Season_Penalties_Penalties_per_Play',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Penalties_Penalties_per_Play',
+                                          'Last 3': 'Last 3_Penalties_Penalties_per_Play',
+                                          'Last 1': 'Last 1_Penalties_Penalties_per_Play',
+                                          'Home': 'At_Home_Penalties_Penalties_per_Play',
+                                          'Away': 'Away_Turnovers_Penalties_Penalties_per_Play'
+                                          }, inplace=True)
+                pppp_df['Team'] = pppp_df['Team'].str.strip()
+                if season == '2010':
+                    pppp_df['Rank_Penalties_Penalties_per_Play'] = pppp_df.index + 1
+                pppp_df = pppp_df.replace('--', np.nan)
+                pppp_df = pppp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
                 last_5_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other'\
@@ -2406,12 +3173,46 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, pdoipg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, pdocp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, pdopypg_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, pdofdg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdofdpg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, pdoatpr_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, pdtsp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, pdoppp_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdopyp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdspg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdoyppa_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdoypc_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, stdofgapg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, stdofgmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, stdopapg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, stdogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, titpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tfpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tflpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tfnlpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tgpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ttmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tipg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tofpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, toflpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tofnlpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ttapg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, totmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, titp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tgfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ttfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, toitp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tofrp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tofrp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, totfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pppg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ppypg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ppfdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, poppg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, popypg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, popfdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, poptpp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pppp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, ns_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, sos_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -4135,34 +4936,657 @@ if __name__ == '__main__':
         pdoppp_df['Team'] = pdoppp_df['Team'].str.strip()
         time.sleep(1)
 
-        turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game' \
-                                      + '?date=' \
-                                      + this_week_date_str
-        tg_df = main_hist(turnovers_given_url_current, season, str(week), this_week_date_str, 'turnovers_given')
-        tg_df.rename(columns={'Rank': 'Rank_Turnovers_Given',
-                              season: 'Current_Season_Turnovers_Given',
-                              str(int(season) - 1): 'Previous_Season_Turnovers_Given',
-                              'Last 3': 'Last 3_Turnovers_Given',
-                              'Last 1': 'Last 1_Turnovers_Given',
-                              'Home': 'At_Home_Turnovers_Given',
-                              'Away': 'Away_Turnovers_Given'
-                              }, inplace=True)
-        tg_df['Team'] = tg_df['Team'].str.strip()
+        passing_defense_opponent_passing_yards_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-yards-pct' \
+                                                                        + '?date=' \
+                                                                        + this_week_date_str
+        pdopyp_df = main_hist(passing_defense_opponent_passing_yards_percentage_url_current, season,
+                              str(week),
+                              this_week_date_str, 'passing_defense_opponent_passing_yards_percentage')
+        pdopyp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Team_Opponent_Passing_Yards_Percentage',
+                                  season: 'Current_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                  'Home': 'At_Home_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                  'Away': 'Away_Passing_Defense_Opponent_Passing_Yards_Percentage'
+                                  }, inplace=True)
+        pdopyp_df['Team'] = pdopyp_df['Team'].str.strip()
         time.sleep(1)
 
-        turnovers_taken_url_current = 'https://www.teamrankings.com/college-football/stat/takeaways-per-game' \
-                                      + '?date=' \
-                                      + this_week_date_str
-        tt_df = main_hist(turnovers_taken_url_current, season, str(week), this_week_date_str, 'turnovers_taken')
-        tt_df.rename(columns={'Rank': 'Rank_Turnovers_Taken',
-                              season: 'Current_Season_Turnovers_Taken',
-                              str(int(season) - 1): 'Previous_Season_Turnovers_Taken',
-                              'Last 3': 'Last 3_Turnovers_Taken',
-                              'Last 1': 'Last 1_Turnovers_Taken',
-                              'Home': 'At_Home_Turnovers_Taken',
-                              'Away': 'Away_Turnovers_Taken'
-                              }, inplace=True)
-        tt_df['Team'] = tt_df['Team'].str.strip()
+        passing_defense_sacks_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/sacks-per-game' \
+                                                     + '?date=' \
+                                                     + this_week_date_str
+        pdspg_df = main_hist(passing_defense_sacks_per_game_url_current, season,
+                             str(week),
+                             this_week_date_str, 'passing_defense_sacks_per_game')
+        pdspg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Sacks_per_Game',
+                                 season: 'Current_Season_Passing_Defense_Sacks_per_Game',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Passing_Defense_Sacks_per_Game',
+                                 'Last 3': 'Last 3_Passing_Defense_Sacks_per_Game',
+                                 'Last 1': 'Last 1_Passing_Defense_Sacks_per_Game',
+                                 'Home': 'At_Home_Passing_Defense_Sacks_per_Game',
+                                 'Away': 'Away_Passing_Defense_Sacks_per_Game'
+                                 }, inplace=True)
+        pdspg_df['Team'] = pdspg_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_opponent_yards_per_pass_attempt_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-pass-attempt' \
+                                                                      + '?date=' \
+                                                                      + this_week_date_str
+        pdoyppa_df = main_hist(passing_defense_opponent_yards_per_pass_attempt_url_current, season,
+                               str(week),
+                               this_week_date_str, 'passing_defense_opponent_yards_per_pass_attempt')
+        pdoyppa_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                   season: 'Current_Season_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                   'Home': 'At_Home_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                   'Away': 'Away_Passing_Defense_Opponent_Yards_per_Pass_Attempt'
+                                   }, inplace=True)
+        pdoyppa_df['Team'] = pdoyppa_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_opponent_yards_per_completion_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-completion' \
+                                                                    + '?date=' \
+                                                                    + this_week_date_str
+        pdoypc_df = main_hist(passing_defense_opponent_yards_per_completion_url_current, season,
+                              str(week),
+                              this_week_date_str, 'passing_defense_opponent_yards_per_completion')
+        pdoypc_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Yards_per_Completion',
+                                  season: 'Current_Season_Passing_Defense_Opponent_Yards_per_Completion',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Passing_Defense_Opponent_Yards_per_Completion',
+                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Yards_per_Completion',
+                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Yards_per_Completion',
+                                  'Home': 'At_Home_Passing_Defense_Opponent_Yards_per_Completion',
+                                  'Away': 'Away_Passing_Defense_Opponent_Yards_per_Completion'
+                                  }, inplace=True)
+        pdoypc_df['Team'] = pdoypc_df['Team'].str.strip()
+        time.sleep(1)
+
+        special_teams_defense_opponent_field_goal_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-field-goal-attempts-per-game' \
+                                                                                  + '?date=' \
+                                                                                  + this_week_date_str
+        stdofgapg_df = main_hist(special_teams_defense_opponent_field_goal_attempts_per_game_url_current, season,
+                                 str(week),
+                                 this_week_date_str, 'special_teams_defense_opponent_field_goal_attempts_per_game')
+        stdofgapg_df.rename(columns={'Rank': 'Rank_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                     season: 'Current_Season_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                     str(int(
+                                         season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                     'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                     'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                     'Home': 'At_Home_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                     'Away': 'Away_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game'
+                                     }, inplace=True)
+        stdofgapg_df['Team'] = stdofgapg_df['Team'].str.strip()
+        time.sleep(1)
+
+        special_teams_defense_opponent_field_goals_made_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-field-goals-made-per-game' \
+                                                                               + '?date=' \
+                                                                               + this_week_date_str
+        stdofgmpg_df = main_hist(special_teams_defense_opponent_field_goals_made_per_game_url_current,
+                                 season,
+                                 str(week),
+                                 this_week_date_str,
+                                 'special_teams_defense_opponent_field_goals_made_per_game')
+        stdofgmpg_df.rename(columns={'Rank': 'Rank_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                     season: 'Current_Season_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                     str(int(
+                                         season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                     'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                     'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                     'Home': 'At_Home_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                     'Away': 'Away_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game'
+                                     }, inplace=True)
+        stdofgmpg_df['Team'] = stdofgmpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        special_teams_defense_opponent_punt_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-punt-attempts-per-game' \
+                                                                            + '?date=' \
+                                                                            + this_week_date_str
+        stdopapg_df = main_hist(special_teams_defense_opponent_punt_attempts_per_game_url_current,
+                                season,
+                                str(week),
+                                this_week_date_str,
+                                'special_teams_defense_opponent_punt_attempts_per_game')
+        stdopapg_df.rename(columns={'Rank': 'Rank_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                    season: 'Current_Season_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                    str(int(
+                                        season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                    'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                    'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                    'Home': 'At_Home_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                    'Away': 'Away_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game'
+                                    }, inplace=True)
+        stdopapg_df['Team'] = stdopapg_df['Team'].str.strip()
+        time.sleep(1)
+
+        special_teams_defense_opponent_gross_punt_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-gross-punt-yards-per-game' \
+                                                                               + '?date=' \
+                                                                               + this_week_date_str
+        stdogpypg_df = main_hist(special_teams_defense_opponent_gross_punt_yards_per_game_url_current,
+                                 season,
+                                 str(week),
+                                 this_week_date_str,
+                                 'special_teams_defense_opponent_gross_punt_yards_per_game')
+        stdogpypg_df.rename(columns={'Rank': 'Rank_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                     season: 'Current_Season_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                     str(int(
+                                         season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                     'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                     'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                     'Home': 'At_Home_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                     'Away': 'Away_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game'
+                                     }, inplace=True)
+        stdogpypg_df['Team'] = stdogpypg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_interceptions_thrown_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/interceptions-thrown-per-game' \
+                                                              + '?date=' \
+                                                              + this_week_date_str
+        titpg_df = main_hist(turnovers_interceptions_thrown_per_game_url_current, season, str(week),
+                             this_week_date_str,
+                             'turnovers_interceptions_thrown_per_game')
+        titpg_df.rename(columns={'Rank': 'Rank_Turnovers_Interceptions_Thrown_per_Game',
+                                 season: 'Current_Season_Turnovers_Interceptions_Thrown_per_Game',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Turnovers_Interceptions_Thrown_per_Game',
+                                 'Last 3': 'Last 3_Turnovers_Interceptions_Thrown_per_Game',
+                                 'Last 1': 'Last 1_Turnovers_Interceptions_Thrown_per_Game',
+                                 'Home': 'At_Home_Turnovers_Interceptions_Thrown_per_Game',
+                                 'Away': 'Away_Turnovers_Interceptions_per_Game'
+                                 }, inplace=True)
+        titpg_df['Team'] = titpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_fumbles_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fumbles-per-game' \
+                                                 + '?date=' \
+                                                 + this_week_date_str
+        tfpg_df = main_hist(turnovers_fumbles_per_game_url_current, season, str(week),
+                            this_week_date_str,
+                            'turnovers_fumbles_per_game')
+        tfpg_df.rename(columns={'Rank': 'Rank_Turnovers_Fumbles_per_Game',
+                                season: 'Current_Season_Turnovers_Fumbles_per_Game',
+                                str(int(
+                                    season) - 1): 'Previous_Season_Turnovers_Fumbles_per_Game',
+                                'Last 3': 'Last 3_Turnovers_Fumbles_per_Game',
+                                'Last 1': 'Last 1_Turnovers_Fumbles_per_Game',
+                                'Home': 'At_Home_Turnovers_Fumbles_per_Game',
+                                'Away': 'Away_Turnovers_Fumbles_per_Game'
+                                }, inplace=True)
+        tfpg_df['Team'] = tfpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_fumbles_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fumbles-lost-per-game' \
+                                                      + '?date=' \
+                                                      + this_week_date_str
+        tflpg_df = main_hist(turnovers_fumbles_lost_per_game_url_current, season, str(week),
+                             this_week_date_str,
+                             'turnovers_fumbles_lost_per_game')
+        tflpg_df.rename(columns={'Rank': 'Rank_Turnovers_Fumbles_Lost_per_Game',
+                                 season: 'Current_Season_Turnovers_Fumbles_Lost_per_Game',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Turnovers_Fumbles_Lost_per_Game',
+                                 'Last 3': 'Last 3_Turnovers_Fumbles_Lost_per_Game',
+                                 'Last 1': 'Last 1_Turnovers_Fumbles_Lost_per_Game',
+                                 'Home': 'At_Home_Turnovers_Fumbles_Lost_per_Game',
+                                 'Away': 'Away_Turnovers_Fumbles_Lost_per_Game'
+                                 }, inplace=True)
+        tflpg_df['Team'] = tflpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_fumbles_not_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fumbles-not-lost-per-game' \
+                                                          + '?date=' \
+                                                          + this_week_date_str
+        tfnlpg_df = main_hist(turnovers_fumbles_not_lost_per_game_url_current, season, str(week),
+                              this_week_date_str,
+                              'turnovers_fumbles_not_lost_per_game')
+        tfnlpg_df.rename(columns={'Rank': 'Rank_Turnovers_Fumbles_Not_Lost_per_Game',
+                                  season: 'Current_Season_Turnovers_Fumbles_Not_Lost_per_Game',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Turnovers_Fumbles_Not_Lost_per_Game',
+                                  'Last 3': 'Last 3_Turnovers_Fumbles_Not_Lost_per_Game',
+                                  'Last 1': 'Last 1_Turnovers_Fumbles_Not_Lost_per_Game',
+                                  'Home': 'At_Home_Turnovers_Fumbles_Not_Lost_per_Game',
+                                  'Away': 'Away_Turnovers_Fumbles_Not_Lost_per_Game'
+                                  }, inplace=True)
+        tfnlpg_df['Team'] = tfnlpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_giveaways_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game' \
+                                                   + '?date=' \
+                                                   + this_week_date_str
+        tgpg_df = main_hist(turnovers_giveaways_per_game_url_current, season, str(week), this_week_date_str,
+                            'turnovers_giveaways_per_game')
+        tgpg_df.rename(columns={'Rank': 'Rank_Turnovers_Giveaways_per_Game',
+                                season: 'Current_Season_Turnovers_Giveaways_per_Game',
+                                str(int(season) - 1): 'Previous_Season_Turnovers_Giveaways_per_Game',
+                                'Last 3': 'Last 3_Turnovers_Giveaways_per_Game',
+                                'Last 1': 'Last 1_Turnovers_Giveaways_per_Game',
+                                'Home': 'At_Home_Turnovers_Giveaways_per_Game',
+                                'Away': 'Away_Turnovers_Giveaways_per-Game'
+                                }, inplace=True)
+        tgpg_df['Team'] = tgpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_turnover_margin_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/turnover-margin-per-game' \
+                                                         + '?date=' \
+                                                         + this_week_date_str
+        ttmpg_df = main_hist(turnovers_turnover_margin_per_game_url_current, season, str(week), this_week_date_str,
+                             'turnovers_turnover_margin_per_game')
+        ttmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Turnover_Margin_per_Game',
+                                 season: 'Current_Season_Turnovers_Turnover_Margin_per_Game',
+                                 str(int(season) - 1): 'Previous_Season_Turnovers_Turnover_Margin_per_Game',
+                                 'Last 3': 'Last 3_Turnovers_Turnover_Margin_per_Game',
+                                 'Last 1': 'Last 1_Turnovers_Turnover_Margin_per_Game',
+                                 'Home': 'At_Home_Turnovers_Turnover_Margin_per_Game',
+                                 'Away': 'Away_Turnovers_Turnover_Margin_per-Game'
+                                 }, inplace=True)
+        ttmpg_df['Team'] = ttmpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_interceptions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/interceptions-per-game' \
+                                                       + '?date=' \
+                                                       + this_week_date_str
+        tipg_df = main_hist(turnovers_interceptions_per_game_url_current, season, str(week),
+                            this_week_date_str,
+                            'turnovers_interceptions_per_game')
+        tipg_df.rename(columns={'Rank': 'Rank_Turnovers_Interceptions_per_Game',
+                                season: 'Current_Season_Turnovers_Interceptions_per_Game',
+                                str(int(season) - 1): 'Previous_Season_Turnovers_Interceptions_per_Game',
+                                'Last 3': 'Last 3_Turnovers_Interceptions_per_Game',
+                                'Last 1': 'Last 1_Turnovers_Interceptions_per_Game',
+                                'Home': 'At_Home_Turnovers_Interceptions_per_Game',
+                                'Away': 'Away_Turnovers_Interceptions_per-Game'
+                                }, inplace=True)
+        tipg_df['Team'] = tipg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_opponent_fumbles_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumbles-per-game' \
+                                                          + '?date=' \
+                                                          + this_week_date_str
+        tofpg_df = main_hist(turnovers_opponent_fumbles_per_game_url_current, season, str(week),
+                             this_week_date_str,
+                             'turnovers_opponent_fumbles_per_game')
+        tofpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_per_Game',
+                                 season: 'Current_Season_Turnovers_Opponent_Fumbles_per_Game',
+                                 str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_per_Game',
+                                 'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_per_Game',
+                                 'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_per_Game',
+                                 'Home': 'At_Home_Turnovers_Opponent_Fumbles_per_Game',
+                                 'Away': 'Away_Turnovers_Opponent_Fumbles_per-Game'
+                                 }, inplace=True)
+        tofpg_df['Team'] = tofpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_opponent_fumbles_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumbles-lost-per-game' \
+                                                               + '?date=' \
+                                                               + this_week_date_str
+        toflpg_df = main_hist(turnovers_opponent_fumbles_lost_per_game_url_current, season, str(week),
+                              this_week_date_str,
+                              'turnovers_opponent_fumbles_lost_per_game')
+        toflpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                  season: 'Current_Season_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                  str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                  'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                  'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                  'Home': 'At_Home_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                  'Away': 'Away_Turnovers_Opponent_Fumbles_Lost_per-Game'
+                                  }, inplace=True)
+        toflpg_df['Team'] = toflpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_opponent_fumbles_not_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumbles-not-lost-per-game' \
+                                                                   + '?date=' \
+                                                                   + this_week_date_str
+        tofnlpg_df = main_hist(turnovers_opponent_fumbles_not_lost_per_game_url_current, season, str(week),
+                               this_week_date_str,
+                               'turnovers_opponent_fumbles_not_lost_per_game')
+        tofnlpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                   season: 'Current_Season_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                   'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                   'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                   'Home': 'At_Home_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                   'Away': 'Away_Turnovers_Opponent_Fumbles_Not_Lost_per-Game'
+                                   }, inplace=True)
+        tofnlpg_df['Team'] = tofnlpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_takeaways_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/takeaways-per-game' \
+                                                   + '?date=' \
+                                                   + this_week_date_str
+        tttapg_df = main_hist(turnovers_takeaways_per_game_url_current, season, str(week), this_week_date_str,
+                              'turnovers_takeaways_per_game')
+        tttapg_df.rename(columns={'Rank': 'Rank_Turnovers_Takeaways_per_Game',
+                                  season: 'Current_Season_Turnovers_Takeaways_per_Game',
+                                  str(int(season) - 1): 'Previous_Season_Turnovers_Takeaways_per_Game',
+                                  'Last 3': 'Last 3_Turnovers_Take_Aways_per_Game',
+                                  'Last 1': 'Last 1_Turnovers_Takeaways_per_Game',
+                                  'Home': 'At_Home_Turnovers_Takeaways_per_Game',
+                                  'Away': 'Away_Turnovers_Takeaways_per_Game'
+                                  }, inplace=True)
+        tttapg_df['Team'] = tttapg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_opponent_turnover_margin_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-turnover-margin-per-game' \
+                                                                  + '?date=' \
+                                                                  + this_week_date_str
+        totmpg_df = main_hist(turnovers_opponent_turnover_margin_per_game_url_current, season, str(week),
+                              this_week_date_str,
+                              'turnovers_opponent_turnover_margin_per_game')
+        totmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Oppoenent_Turnover_margin_per_Game',
+                                  season: 'Current_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                  str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                  'Last 3': 'Last 3_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                  'Last 1': 'Last 1_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                  'Home': 'At_Home_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                  'Away': 'Away_Turnovers_Turnover_Margin_per_Game'
+                                  }, inplace=True)
+        totmpg_df['Team'] = totmpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_interceptions_thrown_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/pass-intercepted-pct' \
+                                                                + '?date=' \
+                                                                + this_week_date_str
+        titp_df = main_hist(turnovers_interceptions_thrown_percentage_url_current, season, str(week),
+                            this_week_date_str,
+                            'turnovers_interceptions_thrown_percentage')
+        titp_df.rename(columns={'Rank': 'Rank_Turnovers_Interceptions_Thrown_Percentage',
+                                season: 'Current_Season_Turnovers_Interceptions_Thrown_Percentage',
+                                str(int(
+                                    season) - 1): 'Previous_Season_Turnovers_Interceptions_Thrown_Percentage',
+                                'Last 3': 'Last 3_Turnovers_Interceptions_Thrown_Percentage',
+                                'Last 1': 'Last 1_Turnovers_Interceptions_Thrown_Percentage',
+                                'Home': 'At_Home_Turnovers_Interceptions_Thrown_Percentage',
+                                'Away': 'Away_Turnovers_Interceptions_Thrown_Percentage'
+                                }, inplace=True)
+        titp_df['Team'] = titp_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/fumble-recovery-pct' \
+                                                           + '?date=' \
+                                                           + this_week_date_str
+        tfrp_df = main_hist(turnovers_fumble_recovery_percentage_url_current, season, str(week),
+                            this_week_date_str,
+                            'turnovers_fumble_recovery_percentage')
+        tfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Fumble_Recovery_Percentage',
+                                season: 'Current_Season_Turnovers_Fumble_Recovery_Percentage',
+                                str(int(
+                                    season) - 1): 'Previous_Season_Turnovers_Fumble_Recovery_Percentage',
+                                'Last 3': 'Last 3_Turnovers_Fumble_Recovery_Percentage',
+                                'Last 1': 'Last 1_Turnovers_Fumble_Recovery_Percentage',
+                                'Home': 'At_Home_Turnovers_Fumble_Recovery_Percentage',
+                                'Away': 'Away_Turnovers_Fumble_Recovery_Percentage'
+                                }, inplace=True)
+        tfrp_df['Team'] = tfrp_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_giveaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/giveaway-fumble-recovery-pct' \
+                                                                    + '?date=' \
+                                                                    + this_week_date_str
+        tgfrp_df = main_hist(turnovers_giveaway_fumble_recovery_percentage_url_current, season, str(week),
+                             this_week_date_str,
+                             'turnovers_giveaway_fumble_recovery_percentage')
+        tgfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                 season: 'Current_Season_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                 'Last 3': 'Last 3_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                 'Last 1': 'Last 1_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                 'Home': 'At_Home_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                 'Away': 'Away_Turnovers_Giveaway_Fumble_Recovery_Percentage'
+                                 }, inplace=True)
+        tgfrp_df['Team'] = tgfrp_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_takeaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/takeaway-fumble-recovery-pct' \
+                                                                    + '?date=' \
+                                                                    + this_week_date_str
+        ttfrp_df = main_hist(turnovers_takeaway_fumble_recovery_percentage_url_current, season, str(week),
+                             this_week_date_str,
+                             'turnovers_takeaway_fumble_recovery_percentage')
+        ttfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                 season: 'Current_Season_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                 'Last 3': 'Last 3_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                 'Last 1': 'Last 1_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                 'Home': 'At_Home_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                 'Away': 'Away_Turnovers_Takeaway_Fumble_Recovery_Percentage'
+                                 }, inplace=True)
+        ttfrp_df['Team'] = ttfrp_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_opponent_interceptions_thrown_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/interception-pct' \
+                                                                         + '?date=' \
+                                                                         + this_week_date_str
+        toitp_df = main_hist(turnovers_opponent_interceptions_thrown_percentage_url_current, season, str(week),
+                             this_week_date_str,
+                             'turnovers_opponent_interceptions_thrown_percentage')
+        toitp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                 season: 'Current_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                 'Last 3': 'Last 3_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                 'Last 1': 'Last 1_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                 'Home': 'At_Home_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                 'Away': 'Away_Turnovers_Opponents_Interceptions_Thrown_Percentage'
+                                 }, inplace=True)
+        toitp_df['Team'] = toitp_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_opponent_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumble-recovery-pct' \
+                                                                    + '?date=' \
+                                                                    + this_week_date_str
+        tofrp_df = main_hist(turnovers_opponent_fumble_recovery_percentage_url_current, season, str(week),
+                             this_week_date_str,
+                             'turnovers_opponent_fumble_recovery_percentage')
+        tofrp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                 season: 'Current_Season_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                 'Last 3': 'Last 3_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                 'Last 1': 'Last 1_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                 'Home': 'At_Home_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                 'Away': 'Away_Turnovers_Opponent_Fumble_Recovery_Percentage'
+                                 }, inplace=True)
+        tofrp_df['Team'] = tofrp_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_opponent_giveaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-giveaway-fumble-recovery-pct' \
+                                                                             + '?date=' \
+                                                                             + this_week_date_str
+        togfrp_df = main_hist(turnovers_opponent_giveaway_fumble_recovery_percentage_url_current, season, str(week),
+                              this_week_date_str,
+                              'turnovers_opponent_giveaway_fumble_recovery_percentage')
+        togfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                  season: 'Current_Season_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                  'Last 3': 'Last 3_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                  'Last 1': 'Last 1_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                  'Home': 'At_Home_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                  'Away': 'Away_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage'
+                                  }, inplace=True)
+        togfrp_df['Team'] = togfrp_df['Team'].str.strip()
+        time.sleep(1)
+
+        turnovers_opponent_takeaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-takeaway-fumble-recovery-pct' \
+                                                                             + '?date=' \
+                                                                             + this_week_date_str
+        totfrp_df = main_hist(turnovers_opponent_takeaway_fumble_recovery_percentage_url_current, season,
+                              str(week),
+                              this_week_date_str,
+                              'turnovers_opponent_takeaway_fumble_recovery_percentage')
+        totfrp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                  season: 'Current_Season_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                  'Last 3': 'Last 3_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                  'Last 1': 'Last 1_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                  'Home': 'At_Home_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                  'Away': 'Away_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage'
+                                  }, inplace=True)
+        totfrp_df['Team'] = totfrp_df['Team'].str.strip()
+        time.sleep(1)
+
+        penalties_penalties_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/penalties-per-game' \
+                                                   + '?date=' \
+                                                   + this_week_date_str
+        pppg_df = main_hist(penalties_penalties_per_game_url_current, season,
+                            str(week),
+                            this_week_date_str,
+                            'penalties_penalties_per_game')
+        pppg_df.rename(columns={'Rank': 'Rank_Penalties_Penalties_per_Game',
+                                season: 'Current_Season_Penalties_Penalties_per_Game',
+                                str(int(
+                                    season) - 1): 'Previous_Season_Penalties_per_Game',
+                                'Last 3': 'Last 3_Penalties_Penalties_per_Game',
+                                'Last 1': 'Last 1_Penalties_Penalties_per_Game',
+                                'Home': 'At_Home_Penalties_Penalties_per_Game',
+                                'Away': 'Away_Turnovers_Penalties_Penalties_per_Game'
+                                }, inplace=True)
+        pppg_df['Team'] = pppg_df['Team'].str.strip()
+        time.sleep(1)
+
+        penalties_penalty_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/penalty-yards-per-game' \
+                                                       + '?date=' \
+                                                       + this_week_date_str
+        ppypg_df = main_hist(penalties_penalty_yards_per_game_url_current, season,
+                             str(week),
+                             this_week_date_str,
+                             'penalties_penalty_yards_per_game')
+        ppypg_df.rename(columns={'Rank': 'Rank_Penalties_Penalty_Yards_per_Game',
+                                 season: 'Current_Season_Penalties_Penalty_Yards_per_Game',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Penalty_Yards_per_Game',
+                                 'Last 3': 'Last 3_Penalties_Penalty_Yards_per_Game',
+                                 'Last 1': 'Last 1_Penalties_Penalty_Yards_per_Game',
+                                 'Home': 'At_Home_Penalties_Penalty_Yards_per_Game',
+                                 'Away': 'Away_Turnovers_Penalties_Penalty_Yards_per_Game'
+                                 }, inplace=True)
+        ppypg_df['Team'] = ppypg_df['Team'].str.strip()
+        time.sleep(1)
+
+        penalties_penalty_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/penalty-first-downs-per-game' \
+                                                             + '?date=' \
+                                                             + this_week_date_str
+        ppfdpg_df = main_hist(penalties_penalty_first_downs_per_game_url_current, season,
+                              str(week),
+                              this_week_date_str,
+                              'penalties_penalty_first_downs_per_game')
+        ppfdpg_df.rename(columns={'Rank': 'Rank_Penalties_Penalty_First_Downs_per_Game',
+                                  season: 'Current_Season_Penalties_Penalty_First_Downs_per_Game',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Penalty_First_Downs_per_Game',
+                                  'Last 3': 'Last 3_Penalties_Penalty_First_Downs_per_Game',
+                                  'Last 1': 'Last 1_Penalties_Penalty_First_Downs_per_Game',
+                                  'Home': 'At_Home_Penalties_Penalty_First_Downs_per_Game',
+                                  'Away': 'Away_Turnovers_Penalties_Penalty_First_Downs_per_Game'
+                                  }, inplace=True)
+        ppfdpg_df['Team'] = ppfdpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        penalties_opponent_penalties_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalties-per-game' \
+                                                            + '?date=' \
+                                                            + this_week_date_str
+        poppg_df = main_hist(penalties_opponent_penalties_per_game_url_current, season,
+                             str(week),
+                             this_week_date_str,
+                             'penalties_opponent_penalties_per_game')
+        poppg_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalties_per_Game',
+                                 season: 'Current_Season_Penalties_Opponent_Penalties_per_Game',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Game',
+                                 'Last 3': 'Last 3_Penalties_Opponent_Penalties_per_Game',
+                                 'Last 1': 'Last 1_Penalties_Opponent_Penalties_per_Game',
+                                 'Home': 'At_Home_Penalties_Opponent_Penalties_per_Game',
+                                 'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Game'
+                                 }, inplace=True)
+        poppg_df['Team'] = poppg_df['Team'].str.strip()
+        time.sleep(1)
+
+        penalties_opponent_penalty_yards_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-yards-per-game' \
+                                                            + '?date=' \
+                                                            + this_week_date_str
+        popypg_df = main_hist(penalties_opponent_penalty_yards_per_game_url_current, season,
+                              str(week),
+                              this_week_date_str,
+                              'penalties_opponent_penalty_yards_per_game')
+        popypg_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalty_Yards_per_Game',
+                                  season: 'Current_Season_Penalties_Opponent_Penalty_Yards_per_Game',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Game',
+                                  'Last 3': 'Last 3_Penalties_Opponent_Penalty_Yards_per_Game',
+                                  'Last 1': 'Last 1_Penalties_Opponent_Penalty_Yards_per_Game',
+                                  'Home': 'At_Home_Penalties_Opponent_Penalty_Yards_per_Game',
+                                  'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_Yards_per_Game'
+                                  }, inplace=True)
+        popypg_df['Team'] = popypg_df['Team'].str.strip()
+        time.sleep(1)
+
+        enalties_opponent_penalty_first_down_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-first-downs-per-game' \
+                                                                    + '?date=' \
+                                                                    + this_week_date_str
+        popfdpg_df = main_hist(penalties_opponent_penalty_first_downs_per_game_url_current, season,
+                               str(week),
+                               this_week_date_str,
+                               'penalties_opponent_penalty_first_downs_per_game')
+        popfdpg_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                   season: 'Current_Season_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                   'Last 3': 'Last 3_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                   'Last 1': 'Last 1_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                   'Home': 'At_Home_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                   'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_First_Downs_per_Game'
+                                   }, inplace=True)
+        popfdpg_df['Team'] = popfdpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        penalties_penalty_yards_per_penalty_url_current = 'https://www.teamrankings.com/college-football/stat/penalty-yards-per-penalty' \
+                                                          + '?date=' \
+                                                          + this_week_date_str
+        poptpp_df = main_hist(penalties_penalty_yards_per_penalty_url_current, season,
+                              str(week),
+                              this_week_date_str,
+                              'penalties_penalty_yards_per_penalty')
+        poptpp_df.rename(columns={'Rank': 'Rank_Penalties_Penalty_Yards_per_Penalty',
+                                  season: 'Current_Season_Penalties_Penalty_Yards_per_Penalty',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Penalties_Penalty_Yards_per_Penalty',
+                                  'Last 3': 'Last 3_Penalties_Penalty_Yards_per_Penalty',
+                                  'Last 1': 'Last 1_Penalties_Penalty_Yards_per_Penalty',
+                                  'Home': 'At_Home_Penalties_Penalty_Yards_per_Penalty',
+                                  'Away': 'Away_Turnovers_Penalties_Penalty_Yards_per_Penalty'
+                                  }, inplace=True)
+        poptpp_df['Team'] = poptpp_df['Team'].str.strip()
+        time.sleep(1)
+
+        penalties_penalties_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/penalties-per-play' \
+                                                   + '?date=' \
+                                                   + this_week_date_str
+        pppp_df = main_hist(penalties_penalties_per_play_url_current, season,
+                            str(week),
+                            this_week_date_str,
+                            'penalties_penalties_per_play')
+        pppp_df.rename(columns={'Rank': 'Rank_Penalties_Penalties_per_Play',
+                                season: 'Current_Season_Penalties_Penalties_per_Play',
+                                str(int(
+                                    season) - 1): 'Previous_Season_Penalties_Penalties_per_Play',
+                                'Last 3': 'Last 3_Penalties_Penalties_per_Play',
+                                'Last 1': 'Last 1_Penalties_Penalties_per_Play',
+                                'Home': 'At_Home_Penalties_Penalties_per_Play',
+                                'Away': 'Away_Turnovers_Penalties_Penalties_per_Play'
+                                }, inplace=True)
+        pppp_df['Team'] = pppp_df['Team'].str.strip()
         time.sleep(1)
 
         last_5_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other' \
@@ -4301,8 +5725,42 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, pdoatpr_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, pdtsp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, pdoppp_df, on=['Team', 'Season', 'Week'], how='outer')
-        this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
-        this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdopyp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdspg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoyppa_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoypc_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stdofgapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stdofgmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stdopapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stdogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, titpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tfpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tflpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tfnlpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tgpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ttmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tipg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toflpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofnlpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ttapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, totmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, titp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tgfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ttfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toitp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, togfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, totfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ppypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ppfdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, popypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, popfdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poptpp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pppp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, ns_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, sos_df, on=['Team', 'Season', 'Week'], how='outer')
