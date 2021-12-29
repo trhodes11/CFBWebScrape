@@ -2021,6 +2021,206 @@ if __name__ == '__main__':
                 rdoryp_df = rdoryp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
+                passing_defense_opponent_pass_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-pass-attempts-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdopapg_df = main_hist(passing_defense_opponent_pass_attempts_per_game_url_current, season,
+                                      str(week),
+                                      this_week_date_str, 'passing_defense_opponent_pass_attempts_per_game')
+                pdopapg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                          season: 'Current_Season_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                          'Last 3': 'Last 3_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                          'Last 1': 'Last 1_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                          'Home': 'At_Home_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                          'Away': 'Away_Passing_Defense_Opponent_Pass_Attempts_per_Game'
+                                          }, inplace=True)
+                pdopapg_df['Team'] = pdopapg_df['Team'].str.strip()
+                if season == '2010':
+                    pdopapg_df['Rank_Passing_Defense_Opponent_Pass_Attempts_per_Game'] = pdopapg_df.index + 1
+                pdopapg_df = pdopapg_df.replace('--', np.nan)
+                pdopapg_df = pdopapg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_opponent_completions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-completions-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdocpg_df = main_hist(passing_defense_opponent_completions_per_game_url_current, season,
+                                       str(week),
+                                       this_week_date_str, 'passing_defense_opponent_completions_per_game')
+                pdocpg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Completions_per_Game',
+                                           season: 'Current_Season_Passing_Defense_Opponent_Completions_per_Game',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Passing_Defense_Opponent_Completions_per_Game',
+                                           'Last 3': 'Last 3_Passing_Defense_Opponent_Completions_per_Game',
+                                           'Last 1': 'Last 1_Passing_Defense_Opponent_Completions_per_Game',
+                                           'Home': 'At_Home_Passing_Defense_Opponent_Completions_per_Game',
+                                           'Away': 'Away_Passing_Defense_Opponent_Completions_per_Game'
+                                           }, inplace=True)
+                pdocpg_df['Team'] = pdocpg_df['Team'].str.strip()
+                if season == '2010':
+                    pdocpg_df['Rank_Passing_Defense_Opponent_Completions_per_Game'] = pdocpg_df.index + 1
+                pdocpg_df = pdocpg_df.replace('--', np.nan)
+                pdocpg_df = pdocpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_opponent_incompletions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-incompletions-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdoipg_df = main_hist(passing_defense_opponent_incompletions_per_game_url_current, season,
+                                      str(week),
+                                      this_week_date_str, 'passing_defense_opponent_incompletions_per_game')
+                pdoipg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Incompletions_per_Game',
+                                          season: 'Current_Season_Passing_Defense_Opponent_Incompletions_per_Game',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Passing_Defense_Opponent_Incompletions_per_Game',
+                                          'Last 3': 'Last 3_Passing_Defense_Opponent_Incompletions_per_Game',
+                                          'Last 1': 'Last 1_Passing_Defense_Opponent_Incompletions_per_Game',
+                                          'Home': 'At_Home_Passing_Defense_Opponent_Incompletions_per_Game',
+                                          'Away': 'Away_Passing_Defense_Opponent_Incompletions_per_Game'
+                                          }, inplace=True)
+                pdoipg_df['Team'] = pdoipg_df['Team'].str.strip()
+                if season == '2010':
+                    pdoipg_df['Rank_Passing_Defense_Opponent_Incompletions_per_Game'] = pdoipg_df.index + 1
+                pdoipg_df = pdoipg_df.replace('--', np.nan)
+                pdoipg_df = pdoipg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_opponent_completion_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-completion-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdocp_df = main_hist(passing_defense_opponent_completion_percentage_url_current, season,
+                                      str(week),
+                                      this_week_date_str, 'passing_defense_opponent_completion_percentage')
+                pdocp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Completion_Percentage',
+                                          season: 'Current_Season_Passing_Defense_Opponent_Completion_Percentage',
+                                          str(int(
+                                              season) - 1): 'Previous_Season_Passing_Defense_Opponent_Completion_Percentage',
+                                          'Last 3': 'Last 3_Passing_Defense_Opponent_Completion_Percentage',
+                                          'Last 1': 'Last 1_Passing_Defense_Opponent_Completion_Percentage',
+                                          'Home': 'At_Home_Passing_Defense_Opponent_Completion_Percentage',
+                                          'Away': 'Away_Passing_Defense_Opponent_Completion_Percentage'
+                                          }, inplace=True)
+                pdocp_df['Team'] = pdocp_df['Team'].str.strip()
+                if season == '2010':
+                    pdocp_df['Rank_Passing_Defense_Opponent_Completion_Percentage'] = pdocp_df.index + 1
+                pdocp_df = pdocp_df.replace('--', np.nan)
+                pdocp_df = pdocp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_opponent_passing_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-yards-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdopypg_df = main_hist(passing_defense_opponent_passing_yards_per_game_url_current, season,
+                                     str(week),
+                                     this_week_date_str, 'passing_defense_opponent_passing_yards_per_game')
+                pdopypg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                         season: 'Current_Season_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                         'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                         'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                         'Home': 'At_Home_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                         'Away': 'Away_Passing_Defense_Opponent_Passing_Yards_per_Game'
+                                         }, inplace=True)
+                pdopypg_df['Team'] = pdopypg_df['Team'].str.strip()
+                if season == '2010':
+                    pdopypg_df['Rank_Passing_Defense_Opponent_Passing_Yards_per_Game'] = pdopypg_df.index + 1
+                pdopypg_df = pdopypg_df.replace('--', np.nan)
+                pdopypg_df = pdopypg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_opponent_passing_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-first-downs-per-game' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdofdpg_df = main_hist(passing_defense_opponent_passing_first_downs_per_game_url_current, season,
+                                       str(week),
+                                       this_week_date_str, 'passing_defense_opponent_passing_first_downs_per_game')
+                pdofdpg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                           season: 'Current_Season_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                           'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                           'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                           'Home': 'At_Home_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                           'Away': 'Away_Passing_Defense_Opponent_Passing_First_Downs_per_Game'
+                                           }, inplace=True)
+                pdofdpg_df['Team'] = pdofdpg_df['Team'].str.strip()
+                if season == '2010':
+                    pdofdpg_df['Rank_Passing_Defense_Opponent_Passing_First_Downs_per_Game'] = pdofdpg_df.index + 1
+                pdofdpg_df = pdofdpg_df.replace('--', np.nan)
+                pdofdpg_df = pdofdpg_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_opponent_average_team_passer_rating_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-average-team-passer-rating' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdoatpr_df = main_hist(passing_defense_opponent_average_team_passer_rating_url_current, season,
+                                       str(week),
+                                       this_week_date_str, 'passing_defense_opponent_average_team_passer_rating')
+                pdoatpr_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                           season: 'Current_Season_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                           'Last 3': 'Last 3_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                           'Last 1': 'Last 1_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                           'Home': 'At_Home_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                           'Away': 'Away_Passing_Defense_Opponent_Average_Team_Passer_Rating'
+                                           }, inplace=True)
+                pdoatpr_df['Team'] = pdoatpr_df['Team'].str.strip()
+                if season == '2010':
+                    pdoatpr_df['Rank_Passing_Defense_Opponent_Passing_Average_Team_Passer_Rating'] = pdoatpr_df.index + 1
+                pdoatpr_df = pdoatpr_df.replace('--', np.nan)
+                pdoatpr_df = pdoatpr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_team_sack_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/sack-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdtsp_df = main_hist(passing_defense_team_sack_percentage_url_current, season,
+                                       str(week),
+                                       this_week_date_str, 'passing_defense_team_sack_percentage')
+                pdtsp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Team_Sack_Percentage',
+                                           season: 'Current_Season_Passing_Defense_Team_Sack_Percentage',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Passing_Defense_Team_Sack_Percentage',
+                                           'Last 3': 'Last 3_Passing_Defense_Team_Sack_Percentage',
+                                           'Last 1': 'Last 1_Passing_Defense_Team_Sack_Percentage',
+                                           'Home': 'At_Home_Passing_Defense_Team_Sack_Percentage',
+                                           'Away': 'Away_Passing_Defense_Team_Sack_Percentage'
+                                           }, inplace=True)
+                pdtsp_df['Team'] = pdtsp_df['Team'].str.strip()
+                if season == '2010':
+                    pdtsp_df[
+                        'Rank_Passing_Defense_Team_Sack_Percentage'] = pdtsp_df.index + 1
+                pdtsp_df = pdtsp_df.replace('--', np.nan)
+                pdtsp_df = pdtsp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                passing_defense_opponent_passing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-play-pct' \
+                    + '?date=' \
+                    + this_week_date_str
+                pdoppp_df = main_hist(passing_defense_opponent_passing_play_percentage_url_current, season,
+                                     str(week),
+                                     this_week_date_str, 'passing_defense_opponent_passing_play_percentage')
+                pdoppp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Team_Opponent_Passing_Play_Percentage',
+                                         season: 'Current_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                         str(int(
+                                             season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                         'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                         'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                         'Home': 'At_Home_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                         'Away': 'Away_Passing_Defense_Opponent_Passing_Play_Percentage'
+                                         }, inplace=True)
+                pdoppp_df['Team'] = pdoppp_df['Team'].str.strip()
+                if season == '2010':
+                    pdoppp_df[
+                        'Rank_Passing_Defense_Opponent_Passing_Play_Percentage'] = pdoppp_df.index + 1
+                pdoppp_df = pdoppp_df.replace('--', np.nan)
+                pdoppp_df = pdoppp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
                 turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game'\
                     + '?date='\
                     + this_week_date_str
@@ -2201,6 +2401,15 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, rdoypra_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, rdorpp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, rdoryp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdopapg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdocpg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdoipg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdocp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdopypg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdofdg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdoatpr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdtsp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, pdoppp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -3764,6 +3973,168 @@ if __name__ == '__main__':
         rdoryp_df['Team'] = rdoryp_df['Team'].str.strip()
         time.sleep(1)
 
+        passing_defense_opponent_pass_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-pass-attempts-per-game' \
+                                                                      + '?date=' \
+                                                                      + this_week_date_str
+        pdopapg_df = main_hist(passing_defense_opponent_pass_attempts_per_game_url_current, season,
+                               str(week),
+                               this_week_date_str, 'passing_defense_opponent_pass_attempts_per_game')
+        pdopapg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                   season: 'Current_Season_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                   'Home': 'At_Home_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                   'Away': 'Away_Passing_Defense_Opponent_Pass_Attempts_per_Game'
+                                   }, inplace=True)
+        pdopapg_df['Team'] = pdopapg_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_opponent_completions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-completions-per-game' \
+            + '?date=' \
+            + this_week_date_str
+        pdocpg_df = main_hist(passing_defense_opponent_completions_per_game_url_current, season,
+                              str(week),
+                              this_week_date_str, 'passing_defense_opponent_completions_per_game')
+        pdocpg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Completions_per_Game',
+                                  season: 'Current_Season_Passing_Defense_Opponent_Completions_per_Game',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Passing_Defense_Opponent_Completions_per_Game',
+                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Completions_per_Game',
+                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Completions_per_Game',
+                                  'Home': 'At_Home_Passing_Defense_Opponent_Completions_per_Game',
+                                  'Away': 'Away_Passing_Defense_Opponent_Completions_per_Game'
+                                  }, inplace=True)
+        pdocpg_df['Team'] = pdocpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_opponent_incompletions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-incompletions-per-game' \
+                                                                      + '?date=' \
+                                                                      + this_week_date_str
+        pdoipg_df = main_hist(passing_defense_opponent_incompletions_per_game_url_current, season,
+                              str(week),
+                              this_week_date_str, 'passing_defense_opponent_incompletions_per_game')
+        pdoipg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Incompletions_per_Game',
+                                  season: 'Current_Season_Passing_Defense_Opponent_Incompletions_per_Game',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Passing_Defense_Opponent_Incompletions_per_Game',
+                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Incompletions_per_Game',
+                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Incompletions_per_Game',
+                                  'Home': 'At_Home_Passing_Defense_Opponent_Incompletions_per_Game',
+                                  'Away': 'Away_Passing_Defense_Opponent_Incompletions_per_Game'
+                                  }, inplace=True)
+        pdoipg_df['Team'] = pdoipg_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_opponent_completion_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-completion-pct' \
+                                                                     + '?date=' \
+                                                                     + this_week_date_str
+        pdocp_df = main_hist(passing_defense_opponent_completion_percentage_url_current, season,
+                             str(week),
+                             this_week_date_str, 'passing_defense_opponent_completion_percentage')
+        pdocp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Completion_Percentage',
+                                 season: 'Current_Season_Passing_Defense_Opponent_Completion_Percentage',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Passing_Defense_Opponent_Completion_Percentage',
+                                 'Last 3': 'Last 3_Passing_Defense_Opponent_Completion_Percentage',
+                                 'Last 1': 'Last 1_Passing_Defense_Opponent_Completion_Percentage',
+                                 'Home': 'At_Home_Passing_Defense_Opponent_Completion_Percentage',
+                                 'Away': 'Away_Passing_Defense_Opponent_Completion_Percentage'
+                                 }, inplace=True)
+        pdocp_df['Team'] = pdocp_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_opponent_passing_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-yards-per-game' \
+                                                                      + '?date=' \
+                                                                      + this_week_date_str
+        pdopypg_df = main_hist(passing_defense_opponent_passing_yards_per_game_url_current, season,
+                               str(week),
+                               this_week_date_str, 'passing_defense_opponent_passing_yards_per_game')
+        pdopypg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                   season: 'Current_Season_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                   'Home': 'At_Home_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                   'Away': 'Away_Passing_Defense_Opponent_Passing_Yards_per_Game'
+                                   }, inplace=True)
+        pdopypg_df['Team'] = pdopypg_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_opponent_passing_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-first-downs-per-game' \
+                                                                            + '?date=' \
+                                                                            + this_week_date_str
+        pdofdpg_df = main_hist(passing_defense_opponent_passing_first_downs_per_game_url_current, season,
+                               str(week),
+                               this_week_date_str, 'passing_defense_opponent_passing_first_downs_per_game')
+        pdofdpg_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                   season: 'Current_Season_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                   'Home': 'At_Home_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                   'Away': 'Away_Passing_Defense_Opponent_Passing_First_Downs_per_Game'
+                                   }, inplace=True)
+        pdofdpg_df['Team'] = pdofdpg_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_opponent_average_team_passer_rating_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-average-team-passer-rating' \
+                                                                          + '?date=' \
+                                                                          + this_week_date_str
+        pdoatpr_df = main_hist(passing_defense_opponent_average_team_passer_rating_url_current, season,
+                               str(week),
+                               this_week_date_str, 'passing_defense_opponent_average_team_passer_rating')
+        pdoatpr_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                   season: 'Current_Season_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                   'Home': 'At_Home_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                   'Away': 'Away_Passing_Defense_Opponent_Average_Team_Passer_Rating'
+                                   }, inplace=True)
+        pdoatpr_df['Team'] = pdoatpr_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_team_sack_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/sack-pct' \
+                                                           + '?date=' \
+                                                           + this_week_date_str
+        pdtsp_df = main_hist(passing_defense_team_sack_percentage_url_current, season,
+                             str(week),
+                             this_week_date_str, 'passing_defense_team_sack_percentage')
+        pdtsp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Team_Sack_Percentage',
+                                 season: 'Current_Season_Passing_Defense_Team_Sack_Percentage',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Passing_Defense_Team_Sack_Percentage',
+                                 'Last 3': 'Last 3_Passing_Defense_Team_Sack_Percentage',
+                                 'Last 1': 'Last 1_Passing_Defense_Team_Sack_Percentage',
+                                 'Home': 'At_Home_Passing_Defense_Team_Sack_Percentage',
+                                 'Away': 'Away_Passing_Defense_Team_Sack_Percentage'
+                                 }, inplace=True)
+        pdtsp_df['Team'] = pdtsp_df['Team'].str.strip()
+        time.sleep(1)
+
+        passing_defense_opponent_passing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-play-pct' \
+                                                                       + '?date=' \
+                                                                       + this_week_date_str
+        pdoppp_df = main_hist(passing_defense_opponent_passing_play_percentage_url_current, season,
+                              str(week),
+                              this_week_date_str, 'passing_defense_opponent_passing_play_percentage')
+        pdoppp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Team_Opponent_Passing_Play_Percentage',
+                                  season: 'Current_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                  str(int(
+                                      season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                  'Home': 'At_Home_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                  'Away': 'Away_Passing_Defense_Opponent_Passing_Play_Percentage'
+                                  }, inplace=True)
+        pdoppp_df['Team'] = pdoppp_df['Team'].str.strip()
+        time.sleep(1)
+
         turnovers_given_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game' \
                                       + '?date=' \
                                       + this_week_date_str
@@ -3921,6 +4292,15 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, rdoypra_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, rdorpp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, rdoryp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdopapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdocpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoipg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdocp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdopypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdofdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoatpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdtsp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoppp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, tt_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
