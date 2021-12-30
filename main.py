@@ -2685,7 +2685,7 @@ if __name__ == '__main__':
                                           }, inplace=True)
                 tofnlpg_df['Team'] = tofnlpg_df['Team'].str.strip()
                 if season == '2010':
-                    tofnlpg_df['Rank_Turnovers_Opponent_Fumbles_Not_Lost_per_Game'] = tonflpg_df.index + 1
+                    tofnlpg_df['Rank_Turnovers_Opponent_Fumbles_Not_Lost_per_Game'] = tofnlpg_df.index + 1
                 tofnlpg_df = tofnlpg_df.replace('--', np.nan)
                 tofnlpg_df = tofnlpg_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
@@ -3048,7 +3048,7 @@ if __name__ == '__main__':
                 penalties_opponent_penalty_first_down_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-first-downs-per-game' \
                     + '?date=' \
                     + this_week_date_str
-                popfdpg_df = main_hist(penalties_opponent_penalty_first_downs_per_game_url_current, season,
+                popfdpg_df = main_hist(penalties_opponent_penalty_first_down_per_game_url_current, season,
                                       str(week),
                                       this_week_date_str,
                                       'penalties_opponent_penalty_first_downs_per_game')
@@ -3461,6 +3461,158 @@ if __name__ == '__main__':
                 lpr_df = lpr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
+                consistency_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/consistency-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                cpr_df = main_hist(consistency_power_ranking_url_current, season, str(week),
+                                   this_week_date_str, 'consistency_power_ranking')
+                cpr_df.rename(columns={'Rank': 'Consistency_Power_Ranking',
+                                       'Rating': 'Rating_Consistency_Power_Ranking',
+                                       'Hi': 'Hi_Consistency_Power_Ranking',
+                                       'Low': 'Low_Consistency_Power_Ranking',
+                                       'Last': 'Last_Consistency_Power_Ranking'
+                                       }, inplace=True)
+                cpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                cpr_df['Team'] = cpr_df['Team'].str.strip()
+                if season == '2010':
+                    cpr_df['Rank_Consistency_Power_Ranking'] = cpr_df.index + 1
+                cpr_df = cpr_df.replace('--', np.nan)
+                cpr_df = cpr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                versus_teams_1_thru_10_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-1-10-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                vt1_df = main_hist(versus_teams_1_thru_10_power_ranking_url_current, season, str(week),
+                                   this_week_date_str, 'versus_teams_1_thru_10_power_ranking')
+                vt1_df.rename(columns={'Rank': 'Versus_Teams_1_Thru_10_Power_Ranking',
+                                       'Rating': 'Rating_Versus_Teams_1_Thru_10_Power_Ranking',
+                                       'Hi': 'Hi_Versus_Teams_1_Thru_10_Power_Ranking',
+                                       'Low': 'Low_Versus_Teams_1_Thru_10_Power_Ranking',
+                                       'Last': 'Last_Versus_Teams_1_Thru_10_Power_Ranking'
+                                       }, inplace=True)
+                vt1_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                vt1_df['Team'] = vt1_df['Team'].str.strip()
+                if season == '2010':
+                    vt1_df['Rank_Versus_Teams_1_Thru_10_Power_Ranking'] = vt1_df.index + 1
+                vt1_df = vt1_df.replace('--', np.nan)
+                vt1_df = vt1_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                versus_teams_11_thru_25_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-11-25-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                vt11_df = main_hist(versus_teams_11_thru_25_power_ranking_url_current, season, str(week),
+                                   this_week_date_str, 'versus_teams_11_thru_25_power_ranking')
+                vt11_df.rename(columns={'Rank': 'Versus_Teams_11_Thru_25_Power_Ranking',
+                                       'Rating': 'Rating_Versus_Teams_11_Thru_25_Power_Ranking',
+                                       'Hi': 'Hi_Versus_Teams_11_Thru_25_Power_Ranking',
+                                       'Low': 'Low_Versus_Teams_11_Thru_25_Power_Ranking',
+                                       'Last': 'Last_Versus_Teams_11_Thru_25_Power_Ranking'
+                                       }, inplace=True)
+                vt11_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                vt11_df['Team'] = vt11_df['Team'].str.strip()
+                if season == '2010':
+                    vt11_df['Rank_Versus_Teams_11_Thru_25_Power_Ranking'] = vt11_df.index + 1
+                vt11_df = vt11_df.replace('--', np.nan)
+                vt11_df = vt11_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                versus_teams_26_thru_40_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-26-40-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                vt26_df = main_hist(versus_teams_26_thru_40_power_ranking_url_current, season, str(week),
+                                    this_week_date_str, 'versus_teams_26_thru_40_power_ranking')
+                vt26_df.rename(columns={'Rank': 'Versus_Teams_26_Thru_40_Power_Ranking',
+                                        'Rating': 'Rating_Versus_Teams_26_Thru_40_Power_Ranking',
+                                        'Hi': 'Hi_Versus_Teams_26_Thru_40_Power_Ranking',
+                                        'Low': 'Low_Versus_Teams_26_Thru_40_Power_Ranking',
+                                        'Last': 'Last_Versus_Teams_26_Thru_40_Power_Ranking'
+                                        }, inplace=True)
+                vt26_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                vt26_df['Team'] = vt26_df['Team'].str.strip()
+                if season == '2010':
+                    vt26_df['Rank_Versus_Teams_26_Thru_40_Power_Ranking'] = vt26_df.index + 1
+                vt26_df = vt26_df.replace('--', np.nan)
+                vt26_df = vt26_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                versus_teams_41_thru_75_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-41-75-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                vt41_df = main_hist(versus_teams_41_thru_75_power_ranking_url_current, season, str(week),
+                                    this_week_date_str, 'versus_teams_41_thru_75_power_ranking')
+                vt41_df.rename(columns={'Rank': 'Versus_Teams_41_Thru_75_Power_Ranking',
+                                        'Rating': 'Rating_Versus_Teams_41_Thru_75_Power_Ranking',
+                                        'Hi': 'Hi_Versus_Teams_41_Thru_75_Power_Ranking',
+                                        'Low': 'Low_Versus_Teams_41_Thru_75_Power_Ranking',
+                                        'Last': 'Last_Versus_Teams_41_Thru_75_Power_Ranking'
+                                        }, inplace=True)
+                vt41_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                vt41_df['Team'] = vt41_df['Team'].str.strip()
+                if season == '2010':
+                    vt41_df['Rank_Versus_Teams_41_Thru_75_Power_Ranking'] = vt41_df.index + 1
+                vt41_df = vt41_df.replace('--', np.nan)
+                vt41_df = vt41_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                versus_teams_76_thru_120_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-76-120-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                vt76_df = main_hist(versus_teams_76_thru_120_power_ranking_url_current, season, str(week),
+                                    this_week_date_str, 'versus_teams_76_thru_120_power_ranking')
+                vt76_df.rename(columns={'Rank': 'Versus_Teams_76_Thru_120_Power_Ranking',
+                                        'Rating': 'Rating_Versus_Teams_76_Thru_120_Power_Ranking',
+                                        'Hi': 'Hi_Versus_Teams_76_Thru_120_Power_Ranking',
+                                        'Low': 'Low_Versus_Teams_76_Thru_120_Power_Ranking',
+                                        'Last': 'Last_Versus_Teams_76_Thru_120_Power_Ranking'
+                                        }, inplace=True)
+                vt76_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                vt76_df['Team'] = vt76_df['Team'].str.strip()
+                if season == '2010':
+                    vt76_df['Rank_Versus_Teams_76_Thru_120_Power_Ranking'] = vt76_df.index + 1
+                vt76_df = vt76_df.replace('--', np.nan)
+                vt76_df = vt76_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                first_half_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/first-half-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                fhpr_df = main_hist(first_half_per_ranking_url_current, season, str(week),
+                                    this_week_date_str, 'first_half_power_ranking')
+                fhpr_df.rename(columns={'Rank': 'First_Half_Power_Ranking',
+                                        'Rating': 'First_Half_Power_Ranking',
+                                        'Hi': 'First_Half_Power_Ranking',
+                                        'Low': 'First_Half_Power_Ranking',
+                                        'Last': 'First_Half_Power_Ranking'
+                                        }, inplace=True)
+                fhpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                fhpr_df['Team'] = fhpr_df['Team'].str.strip()
+                if season == '2010':
+                    fhpr_df['Rank_First_Half_Power_Ranking'] = fhpr_df.index + 1
+                fhpr_df = fhpr_df.replace('--', np.nan)
+                fhpr_df = fhpr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                second_half_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/second-half-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                shpr_df = main_hist(first_half_per_ranking_url_current, season, str(week),
+                                    this_week_date_str, 'second_half_power_ranking')
+                shpr_df.rename(columns={'Rank': 'Second_Half_Power_Ranking',
+                                        'Rating': 'Second_Half_Power_Ranking',
+                                        'Hi': 'Second_Half_Power_Ranking',
+                                        'Low': 'Second_Half_Power_Ranking',
+                                        'Last': 'Second_Half_Power_Ranking'
+                                        }, inplace=True)
+                shpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                shpr_df['Team'] = shpr_df['Team'].str.strip()
+                if season == '2010':
+                    shpr_df['Rank_Second_Half_Power_Ranking'] = shpr_df.index + 1
+                shpr_df = shpr_df.replace('--', np.nan)
+                shpr_df = shpr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
                 this_week_date = this_week_date + datetime.timedelta(days=7)
                 this_week_date_str = this_week_date.strftime("%Y-%m-%d")
 
@@ -3615,6 +3767,14 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, icpr_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, ncpr_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, lpr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, cpr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, vt1_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, vt11_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, vt26_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, vt41_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, vt76_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, fhpr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, shpr_df, on=['Team', 'Season', 'Week'], how='outer')
 
                 this_week_df = rearrange_columns(this_week_df)
                 season_df = pd.concat([season_df, this_week_df])
@@ -6266,6 +6426,126 @@ if __name__ == '__main__':
         lpr_df['Team'] = lpr_df['Team'].str.strip()
         time.sleep(1)
 
+        consistency_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/consistency-by-other' \
+                                                + '?date=' \
+                                                + this_week_date_str
+        cpr_df = main_hist(consistency_power_ranking_url_current, season, str(week),
+                           this_week_date_str, 'consistency_power_ranking')
+        cpr_df.rename(columns={'Rank': 'Consistency_Power_Ranking',
+                               'Rating': 'Rating_Consistency_Power_Ranking',
+                               'Hi': 'Hi_Consistency_Power_Ranking',
+                               'Low': 'Low_Consistency_Power_Ranking',
+                               'Last': 'Last_Consistency_Power_Ranking'
+                               }, inplace=True)
+        cpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        cpr_df['Team'] = cpr_df['Team'].str.strip()
+        time.sleep(1)
+
+        versus_teams_1_thru_10_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-1-10-by-other' \
+                                                           + '?date=' \
+                                                           + this_week_date_str
+        vt1_df = main_hist(versus_teams_1_thru_10_power_ranking_url_current, season, str(week),
+                           this_week_date_str, 'versus_teams_1_thru_10_power_ranking')
+        vt1_df.rename(columns={'Rank': 'Versus_Teams_1_Thru_10_Power_Ranking',
+                               'Rating': 'Rating_Versus_Teams_1_Thru_10_Power_Ranking',
+                               'Hi': 'Hi_Versus_Teams_1_Thru_10_Power_Ranking',
+                               'Low': 'Low_Versus_Teams_1_Thru_10_Power_Ranking',
+                               'Last': 'Last_Versus_Teams_1_Thru_10_Power_Ranking'
+                               }, inplace=True)
+        vt1_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        vt1_df['Team'] = vt1_df['Team'].str.strip()
+        time.sleep(1)
+
+        versus_teams_11_thru_25_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-11-25-by-other' \
+                                                            + '?date=' \
+                                                            + this_week_date_str
+        vt11_df = main_hist(versus_teams_11_thru_25_power_ranking_url_current, season, str(week),
+                            this_week_date_str, 'versus_teams_11_thru_25_power_ranking')
+        vt11_df.rename(columns={'Rank': 'Versus_Teams_11_Thru_25_Power_Ranking',
+                                'Rating': 'Rating_Versus_Teams_11_Thru_25_Power_Ranking',
+                                'Hi': 'Hi_Versus_Teams_11_Thru_25_Power_Ranking',
+                                'Low': 'Low_Versus_Teams_11_Thru_25_Power_Ranking',
+                                'Last': 'Last_Versus_Teams_11_Thru_25_Power_Ranking'
+                                }, inplace=True)
+        vt11_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        vt11_df['Team'] = vt11_df['Team'].str.strip()
+        time.sleep(1)
+
+        versus_teams_26_thru_40_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-26-40-by-other' \
+                                                            + '?date=' \
+                                                            + this_week_date_str
+        vt26_df = main_hist(versus_teams_26_thru_40_power_ranking_url_current, season, str(week),
+                            this_week_date_str, 'versus_teams_26_thru_40_power_ranking')
+        vt26_df.rename(columns={'Rank': 'Versus_Teams_26_Thru_40_Power_Ranking',
+                                'Rating': 'Rating_Versus_Teams_26_Thru_40_Power_Ranking',
+                                'Hi': 'Hi_Versus_Teams_26_Thru_40_Power_Ranking',
+                                'Low': 'Low_Versus_Teams_26_Thru_40_Power_Ranking',
+                                'Last': 'Last_Versus_Teams_26_Thru_40_Power_Ranking'
+                                }, inplace=True)
+        vt26_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        vt26_df['Team'] = vt26_df['Team'].str.strip()
+        time.sleep(1)
+
+        versus_teams_41_thru_75_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-41-75-by-other' \
+                                                            + '?date=' \
+                                                            + this_week_date_str
+        vt41_df = main_hist(versus_teams_41_thru_75_power_ranking_url_current, season, str(week),
+                            this_week_date_str, 'versus_teams_41_thru_75_power_ranking')
+        vt41_df.rename(columns={'Rank': 'Versus_Teams_41_Thru_75_Power_Ranking',
+                                'Rating': 'Rating_Versus_Teams_41_Thru_75_Power_Ranking',
+                                'Hi': 'Hi_Versus_Teams_41_Thru_75_Power_Ranking',
+                                'Low': 'Low_Versus_Teams_41_Thru_75_Power_Ranking',
+                                'Last': 'Last_Versus_Teams_41_Thru_75_Power_Ranking'
+                                }, inplace=True)
+        vt41_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        vt41_df['Team'] = vt41_df['Team'].str.strip()
+        time.sleep(1)
+
+        versus_teams_76_thru_120_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-76-120-by-other' \
+                                                             + '?date=' \
+                                                             + this_week_date_str
+        vt76_df = main_hist(versus_teams_76_thru_120_power_ranking_url_current, season, str(week),
+                            this_week_date_str, 'versus_teams_76_thru_120_power_ranking')
+        vt76_df.rename(columns={'Rank': 'Versus_Teams_76_Thru_120_Power_Ranking',
+                                'Rating': 'Rating_Versus_Teams_76_Thru_120_Power_Ranking',
+                                'Hi': 'Hi_Versus_Teams_76_Thru_120_Power_Ranking',
+                                'Low': 'Low_Versus_Teams_76_Thru_120_Power_Ranking',
+                                'Last': 'Last_Versus_Teams_76_Thru_120_Power_Ranking'
+                                }, inplace=True)
+        vt76_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        vt76_df['Team'] = vt76_df['Team'].str.strip()
+        time.sleep(1)
+
+        first_half_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/first-half-by-other' \
+                                               + '?date=' \
+                                               + this_week_date_str
+        fhpr_df = main_hist(first_half_per_ranking_url_current, season, str(week),
+                            this_week_date_str, 'first_half_power_ranking')
+        fhpr_df.rename(columns={'Rank': 'First_Half_Power_Ranking',
+                                'Rating': 'First_Half_Power_Ranking',
+                                'Hi': 'First_Half_Power_Ranking',
+                                'Low': 'First_Half_Power_Ranking',
+                                'Last': 'First_Half_Power_Ranking'
+                                }, inplace=True)
+        fhpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        fhpr_df['Team'] = fhpr_df['Team'].str.strip()
+        time.sleep(1)
+
+        second_half_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/second-half-by-other' \
+                                                + '?date=' \
+                                                + this_week_date_str
+        shpr_df = main_hist(first_half_per_ranking_url_current, season, str(week),
+                            this_week_date_str, 'second_half_power_ranking')
+        shpr_df.rename(columns={'Rank': 'Second_Half_Power_Ranking',
+                                'Rating': 'Second_Half_Power_Ranking',
+                                'Hi': 'Second_Half_Power_Ranking',
+                                'Low': 'Second_Half_Power_Ranking',
+                                'Last': 'Second_Half_Power_Ranking'
+                                }, inplace=True)
+        shpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        shpr_df['Team'] = shpr_df['Team'].str.strip()
+        time.sleep(1)
+
         this_week_df = pd.merge(so_df, tasm_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, typp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, typm_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -6417,6 +6697,14 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, icpr_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, ncpr_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, lpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, cpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt1_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt11_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt26_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt41_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt76_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fhpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, shpr_df, on=['Team', 'Season', 'Week'], how='outer')
 
         this_week_df = rearrange_columns(this_week_df)
         season_df = pd.concat([season_df, this_week_df])
