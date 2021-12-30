@@ -75,8 +75,8 @@ if __name__ == '__main__':
     pd.set_option('display.width', desired_width)
     pd.set_option('display.max_columns', 60)
 
-    # save_dir = 'C:\PythonPrograms'
-    save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
+    save_dir = 'C:\PythonPrograms'
+    # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
 
     """
     # This try statement is a check to see whether the program was started using the command line/terminal or using an 
@@ -3783,8 +3783,8 @@ if __name__ == '__main__':
 
                 time.sleep(3)
 
-            save_dir = 'C:\PythonPrograms'
-            # save_file = 'Scraped_TR_Data_Combined_' + season
+            # save_dir = 'C:\PythonPrograms'
+            save_file = 'Scraped_TR_Data_Combined_' + season
             try:
                 datascraper.save_df(season_df, save_dir, save_file)
                 print('{} saved successfully.'.format(save_file))
@@ -3792,8 +3792,8 @@ if __name__ == '__main__':
             except:
                 print('I don\'t think the file saved, you should double check.')
 
-        save_dir = 'C:\PythonPrograms'
-        # save_file = 'Scraped_TR_Data_Combined_ALL'
+        # save_dir = 'C:\PythonPrograms'
+        save_file = 'Scraped_TR_Data_Combined_ALL'
         try:
             datascraper.save_df(master_df, save_dir, save_file)
             print('{} saved successfully.'.format(save_file))
