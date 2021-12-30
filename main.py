@@ -3732,7 +3732,7 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, tofpg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, toflpg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tofnlpg_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, ttapg_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, tttapg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, totmpg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, titp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, tfrp_df, on=['Team', 'Season', 'Week'], how='outer')
