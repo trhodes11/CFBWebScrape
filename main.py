@@ -3116,7 +3116,7 @@ if __name__ == '__main__':
 
                 penalties_opponent_penalty_yards_per_penalty_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-yards-per-penalty' \
                     + '?date=' \
-                   + this_week_date_str
+                    + this_week_date_str
                 poppypp_df = main_hist(penalties_opponent_penalty_yards_per_penalty_url_current, season,
                                     str(week),
                                     this_week_date_str,
