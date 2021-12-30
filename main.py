@@ -184,7 +184,7 @@ if __name__ == '__main__':
                     so_df['Rank_Scoring_Offense'] = so_df.index + 1
                 so_df = so_df.replace('--', np.nan)
                 so_df = so_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_average_scoring_margin_url_current = 'https://www.teamrankings.com/college-football/stat/average-scoring-margin' \
                     + '?date=' \
@@ -203,7 +203,7 @@ if __name__ == '__main__':
                     tasm_df['Rank_Team_Average_Scoring_Margin'] = tasm_df.index + 1
                 tasm_df = tasm_df.replace('--', np.nan)
                 tasm_df = tasm_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_yards_per_point_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-point' \
                     + '?date=' \
@@ -222,7 +222,7 @@ if __name__ == '__main__':
                     typp_df['Rank_Team_Yards_per_Point'] = typp_df.index + 1
                 typp_df = typp_df.replace('--', np.nan)
                 typp_df = typp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_yards_per_point_margin_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-point-margin' \
                     + '?date=' \
@@ -241,7 +241,7 @@ if __name__ == '__main__':
                     typm_df['Rank_Team_Yards_per_Point_Margin'] = typm_df.index + 1
                 typm_df = typm_df.replace('--', np.nan)
                 typm_df = typm_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_points_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/points-per-play' \
                     + '?date=' \
@@ -260,7 +260,7 @@ if __name__ == '__main__':
                     typ_df['Rank_Team_Points_per_Play'] = typ_df.index + 1
                 typ_df = typ_df.replace('--', np.nan)
                 typ_df = typ_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_points_per_play_margin_url_current = 'https://www.teamrankings.com/college-football/stat/points-per-play-margin' \
                     + '?date=' \
@@ -279,7 +279,7 @@ if __name__ == '__main__':
                     typpm_df['Rank_Team_Points_per_Play_Margin'] = typpm_df.index + 1
                 typpm_df = typpm_df.replace('--', np.nan)
                 typpm_df = typpm_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_red_zone_scoring_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/red-zone-scoring-attempts-per-game' \
                     + '?date=' \
@@ -299,7 +299,7 @@ if __name__ == '__main__':
                     trs_df['Rank_Team_Red-Zone_Scoring_Attempts_per_Game'] = trs_df.index + 1
                 trs_df = trs_df.replace('--', np.nan)
                 trs_df = trs_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_red_zone_scores_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/red-zone-scores-per-game' \
                     + '?date=' \
@@ -319,7 +319,7 @@ if __name__ == '__main__':
                     trsp_df['Rank_Team_Red-Zone_Scores_per_Game'] = trsp_df.index + 1
                 tssp_df = trsp_df.replace('--', np.nan)
                 trsp_df = trsp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_red_zone_scoring_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/red-zone-scoring-pct' \
                     + '?date=' \
@@ -342,7 +342,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         trspp_df[c] = trspp_df[c].str.rstrip('%').astype('float') / 100.0
                 trspp_df = trspp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_offensive_touchdowns_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/offensive-touchdowns-per-game' \
                     + '?date=' \
@@ -362,7 +362,7 @@ if __name__ == '__main__':
                     tot_df['Rank_Team_Offensive_Touchdowns_per_Game'] = tot_df.index + 1
                 tot_df = tot_df.replace('--', np.nan)
                 tot_df = tot_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_offensive_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/offensive-points-per-game' \
                     + '?date=' \
@@ -382,7 +382,7 @@ if __name__ == '__main__':
                     top_df['Rank_Team_Offensive_Points_per_Game'] = top_df.index + 1
                 top_df = top_df.replace('--', np.nan)
                 top_df = top_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_offensive_point_share_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/offensive-point-share-pct' \
                     + '?date=' \
@@ -405,7 +405,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         tops_df[c] = tops_df[c].str.rstrip('%').astype('float') / 100.0
                 tops_df = tops_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_first_quarter_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/1st-quarter-points-per-game' \
                     + '?date=' \
@@ -425,7 +425,7 @@ if __name__ == '__main__':
                     fiq_df['Rank_Team_First_Quarter_Points_per_Game'] = fiq_df.index + 1
                 fiq_df = fiq_df.replace('--', np.nan)
                 fiq_df = fiq_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_second_quarter_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/2nd-quarter-points-per-game' \
                     + '?date=' \
@@ -445,7 +445,7 @@ if __name__ == '__main__':
                     sq_df['Rank_Team_Second_Quarter_Points_per_Game'] = sq_df.index + 1
                 sq_df = sq_df.replace('--', np.nan)
                 sq_df = sq_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_third_quarter_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/3rd-quarter-points-per-game' \
                     + '?date=' \
@@ -465,7 +465,7 @@ if __name__ == '__main__':
                     tq_df['Rank_Team_Third_Quarter_Points_per_Game'] = tq_df.index + 1
                 tq_df = tq_df.replace('--', np.nan)
                 tq_df = tq_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_fourth_quarter_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/4th-quarter-points-per-game' \
                     + '?date=' \
@@ -485,7 +485,7 @@ if __name__ == '__main__':
                     fq_df['Rank_Team_Fourth_Quarter_Points_per_Game'] = fq_df.index + 1
                 fq_df = fq_df.replace('--', np.nan)
                 fq_df = fq_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_overtime_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/overtime-points-per-game' \
                     + '?date=' \
@@ -505,7 +505,7 @@ if __name__ == '__main__':
                     ot_df['Rank_Team_Overtime_Points_per_Game'] = fq_df.index + 1
                 ot_df = ot_df.replace('--', np.nan)
                 ot_df = ot_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_first_half_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/1st-half-points-per-game' \
                     + '?date=' \
@@ -525,7 +525,7 @@ if __name__ == '__main__':
                     fh_df['Rank_Team_First_Half_Points_per_Game'] = fh_df.index + 1
                 fh_df = fh_df.replace('--', np.nan)
                 fh_df = fh_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_second_half_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/2nd-half-points-per-game' \
                     + '?date=' \
@@ -545,7 +545,7 @@ if __name__ == '__main__':
                     sh_df['Rank_Team_Second_Half_Points_per_Game'] = fh_df.index + 1
                 sh_df = sh_df.replace('--', np.nan)
                 sh_df = sh_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_first_quarter_time_of_possession_share_percent_url_current = 'https://www.teamrankings.com/college-football/stat/1st-quarter-time-of-possession-share-pct' \
                     + '?date=' \
@@ -565,7 +565,7 @@ if __name__ == '__main__':
                     fiqtp_df['Rank_Team_First_Quarter_Time_of_Possession_Share_Percent'] = fiqtp_df.index + 1
                 fiqtp_df = fiqtp_df.replace('--', np.nan)
                 fiqtp_df = fiqtp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_second_quarter_time_of_possession_share_percent_url_current = 'https://www.teamrankings.com/college-football/stat/2nd-quarter-time-of-possession-share-pct' \
                     + '?date=' \
@@ -586,7 +586,7 @@ if __name__ == '__main__':
                     sqtp_df['Rank_Team_Second_Quarter_Time_of_Possession_Share_Percent'] = sqtp_df.index + 1
                 sqtp_df = sqtp_df.replace('--', np.nan)
                 sqtp_df = sqtp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_third_quarter_time_of_possession_share_percent_url_current = 'https://www.teamrankings.com/college-football/stat/3rd-quarter-time-of-possession-share-pct' \
                     + '?date=' \
@@ -608,7 +608,7 @@ if __name__ == '__main__':
                     tqtp_df['Rank_Team_Third_Quarter_Time_of_Possession_Share_Percent'] = tqtp_df.index + 1
                 tqtp_df = tqtp_df.replace('--', np.nan)
                 tqtp_df = tqtp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_fourth_quarter_time_of_possession_share_percent_url_current = 'https://www.teamrankings.com/college-football/stat/4th-quarter-time-of-possession-share-pct' \
                     + '?date=' \
@@ -629,7 +629,7 @@ if __name__ == '__main__':
                     fqtp_df['Rank_Team_Fourth_Quarter_Time_of_Possession_Share_Percent'] = fqtp_df.index + 1
                 fqtp_df = fqtp_df.replace('--', np.nan)
                 fqtp_df = fqtp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_first_half_time_of_possession_share_percent_url_current = 'https://www.teamrankings.com/college-football/stat/1st-half-time-of-possession-share-pct' \
                     + '?date=' \
@@ -650,7 +650,7 @@ if __name__ == '__main__':
                     fhtp_df['Rank_Team_First_Half_Time_of_Possession_Share_Percent'] = fhtp_df.index + 1
                 fhtp_df = fhtp_df.replace('--', np.nan)
                 fhtp_df = fhtp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 team_second_half_time_of_possession_share_percent_url_current = 'https://www.teamrankings.com/college-football/stat/2nd-half-time-of-possession-share-pct' \
                     + '?date=' \
@@ -671,7 +671,7 @@ if __name__ == '__main__':
                     shtp_df['Rank_Team_Second_Half_Time_of_Possession_Share_Percent'] = shtp_df.index + 1
                 shtp_df = shtp_df.replace('--', np.nan)
                 shtp_df = shtp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-game'\
                     + '?date='\
@@ -690,7 +690,7 @@ if __name__ == '__main__':
                     toypg_df['Rank_Total_Offense_Yards_per_Game'] = toypg_df.index + 1
                 toypg_df = toypg_df.replace('--', np.nan)
                 toypg_df = toypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_plays_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/plays-per-game' \
                     + '?date=' \
@@ -709,7 +709,7 @@ if __name__ == '__main__':
                     toppg_df['Rank_Total_Offense_Plays_per_Play'] = toppg_df.index + 1
                 toppg_df = toppg_df.replace('--', np.nan)
                 toppg_df = toppg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_yards_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-play' \
                     + '?date=' \
@@ -729,7 +729,7 @@ if __name__ == '__main__':
                     toypp_df['Rank_Total_Offense_Yards_per_Play'] = toypp_df.index + 1
                 toypp_df = toypp_df.replace('--', np.nan)
                 toypp_df = toypp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_third_down_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/third-downs-per-game' \
                     + '?date=' \
@@ -749,7 +749,7 @@ if __name__ == '__main__':
                     totdpg_df['Rank_Total_Offense_Third_Down_per_Game'] = totdpg_df.index + 1
                 totdpg_df = totdpg_df.replace('--', np.nan)
                 totdpg_df = totdpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_third_down_conversions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/third-down-conversions-per-game' \
                     + '?date=' \
@@ -769,7 +769,7 @@ if __name__ == '__main__':
                     totdcpg_df['Rank_Total_Offense_Third_Down_Conversions_per_Game'] = totdcpg_df.index + 1
                 totdcpg_df = totdcpg_df.replace('--', np.nan)
                 totdcpg_df = totdcpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_fourth_down_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fourth-downs-per-game' \
                     + '?date=' \
@@ -789,7 +789,7 @@ if __name__ == '__main__':
                     tofdpg_df['Rank_Total_Offense_Fourth_Down_per_Game'] = tofdpg_df.index + 1
                 tofdpg_df = tofdpg_df.replace('--', np.nan)
                 tofdpg_df = tofdpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_fourth_down_conversions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fourth-down-conversions-per-game' \
                     + '?date=' \
@@ -810,7 +810,7 @@ if __name__ == '__main__':
                     tofdcpg_df['Rank_Total_Offense_Fourth_Down_Conversions_per_Game'] = tofdcpg_df.index + 1
                 tofdcpg_df = tofdcpg_df.replace('--', np.nan)
                 tofdcpg_df = tofdcpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_average_time_of_possession_url_current = 'https://www.teamrankings.com/college-football/stat/average-time-of-possession-net-of-ot' \
                     + '?date=' \
@@ -831,7 +831,7 @@ if __name__ == '__main__':
                     toatp_df['Rank_Total_Offense_Average_Time_of_Possession'] = toatp_df.index + 1
                 toatp_df = toatp_df.replace('--', np.nan)
                 toatp_df = toatp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_average_time_of_possession_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/time-of-possession-pct-net-of-ot' \
                     + '?date=' \
@@ -855,7 +855,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         toatpp_df[c] = toatpp_df[c].str.rstrip('%').astype('float') / 100.0
                 toatpp_df = toatpp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_third_down_conversion_percent_url_current = 'https://www.teamrankings.com/college-football/stat/third-down-conversion-pct' \
                     + '?date=' \
@@ -877,7 +877,7 @@ if __name__ == '__main__':
                     totdcp_df['Rank_Total_Offense_Third_Down_Conversion_Percent'] = totdcp_df.index + 1
                 totdcp_df = totdcp_df.replace('--', np.nan)
                 totdcp_df = totdcp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_fourth_down_conversion_percent_url_current = 'https://www.teamrankings.com/college-football/stat/fourth-down-conversion-pct' \
                     + '?date=' \
@@ -898,7 +898,7 @@ if __name__ == '__main__':
                     tofdcp_df['Rank_Total_Offense_Fourth_Down_Conversion_Percent'] = tofdcp_df.index + 1
                 tofdcp_df = tofdcp_df.replace('--', np.nan)
                 tofdcp_df = tofdcp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_punts_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/punts-per-play' \
                     + '?date=' \
@@ -919,7 +919,7 @@ if __name__ == '__main__':
                     toppp_df['Rank_Total_Offense_Punts_per_Play'] = toppp_df.index + 1
                 toppp_df = toppp_df.replace('--', np.nan)
                 toppp_df = toppp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_offense_punts_per_offensive_score_url_current = 'https://www.teamrankings.com/college-football/stat/punts-per-offensive-score' \
                     + '?date=' \
@@ -940,7 +940,7 @@ if __name__ == '__main__':
                     toppos_df['Rank_Total_Offense_Punts_per_Offensive_Score'] = toppos_df.index + 1
                 toppos_df = toppos_df.replace('--', np.nan)
                 toppos_df = toppos_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_offense_rushing_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/rushing-attempts-per-game' \
                     + '?date=' \
@@ -961,7 +961,7 @@ if __name__ == '__main__':
                     rorapg_df['Rank_Rushing_Offense_Rushing_Attempts_per_Game'] = rorapg_df.index + 1
                 rorapg_df = rorapg_df.replace('--', np.nan)
                 rorapg_df = rorapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_offense_rushing_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/rushing-yards-per-game' \
                     + '?date=' \
@@ -982,7 +982,7 @@ if __name__ == '__main__':
                     rorypg_df['Rank_Rushing_Offense_Rushing_Yards_per_Game'] = rorypg_df.index + 1
                 rorypg_df = rorypg_df.replace('--', np.nan)
                 rorypg_df = rorypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_offense_rushing_yards_per_rush_attempt_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-rush-attempt' \
                     + '?date=' \
@@ -1003,7 +1003,7 @@ if __name__ == '__main__':
                     rorypra_df['Rank_Rushing_Offense_Rushing_Yards_per_Rush_Attempt'] = rorypra_df.index + 1
                 rorypra_df = rorypra_df.replace('--', np.nan)
                 rorypra_df = rorypra_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_offense_rushing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/rushing-play-pct' \
                     + '?date=' \
@@ -1027,7 +1027,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         rorpp_df[c] = rorpp_df[c].str.rstrip('%').astype('float') / 100.0
                 rorpp_df = rorpp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_offense_rushing_yards_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/rushing-yards-pct' \
                     + '?date=' \
@@ -1051,7 +1051,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         roryp_df[c] = roryp_df[c].str.rstrip('%').astype('float') / 100.0
                 roryp_df = roryp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_pass_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/pass-attempts-per-game' \
                     + '?date=' \
@@ -1072,7 +1072,7 @@ if __name__ == '__main__':
                     popapg_df['Rank_Passing_Offense_Pass_Attempts_per_Game'] = popapg_df.index + 1
                 popapg_df = popapg_df.replace('--', np.nan)
                 popapg_df = popapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_completions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/completions-per-game' \
                     + '?date=' \
@@ -1093,7 +1093,7 @@ if __name__ == '__main__':
                     pocpg_df['Rank_Passing_Offense_Completions_per_Game'] = pocpg_df.index + 1
                 pocpg_df = pocpg_df.replace('--', np.nan)
                 pocpg_df = pocpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_incompletions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/incompletions-per-game' \
                     + '?date=' \
@@ -1114,7 +1114,7 @@ if __name__ == '__main__':
                     poipg_df['Rank_Passing_Offense_Incompletions_per_Game'] = poipg_df.index + 1
                 poipg_df = poipg_df.replace('--', np.nan)
                 poipg_df = poipg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_completion_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/completion-pct' \
                     + '?date=' \
@@ -1138,7 +1138,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         pocp_df[c] = pocp_df[c].str.rstrip('%').astype('float') / 100.0
                 pocp_df = pocp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_passing_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/passing-yards-per-game' \
                     + '?date=' \
@@ -1159,7 +1159,7 @@ if __name__ == '__main__':
                     popypg_df['Rank_Passing_Offense_Passing_Yards_per_Game'] = popypg_df.index + 1
                 popypg_df = popypg_df.replace('--', np.nan)
                 popypg_df = popypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_qb_sacked_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/qb-sacked-per-game' \
                     + '?date=' \
@@ -1180,7 +1180,7 @@ if __name__ == '__main__':
                     poqspg_df['Rank_Passing_Offense_QB_Sacked_per_Game'] = poqspg_df.index + 1
                 poqspg_df = poqspg_df.replace('--', np.nan)
                 poqspg_df = poqspg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_qb_sacked_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/qb-sacked-pct' \
                     + '?date=' \
@@ -1204,7 +1204,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         poqsp_df[c] = poqsp_df[c].str.rstrip('%').astype('float') / 100.0
                 poqsp_df = poqsp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_average_passer_rating_url_current = 'https://www.teamrankings.com/college-football/stat/average-team-passer-rating' \
                     + '?date=' \
@@ -1225,7 +1225,7 @@ if __name__ == '__main__':
                     poapr_df['Rank_Passing_Offense_Average_Passer_Rating'] = poapr_df.index + 1
                 poapr_df = poapr_df.replace('--', np.nan)
                 poapr_df = poapr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_passing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/passing-play-pct' \
                     + '?date=' \
@@ -1249,7 +1249,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         poppp_df[c] = poppp_df[c].str.rstrip('%').astype('float') / 100.0
                 poppp_df = poppp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_passing_yards_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/passing-yards-pct' \
                     + '?date=' \
@@ -1273,7 +1273,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         popyp_df[c] = popyp_df[c].str.rstrip('%').astype('float') / 100.0
                 popyp_df = popyp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_yards_per_pass_attempt_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-pass-attempt' \
                     + '?date=' \
@@ -1294,7 +1294,7 @@ if __name__ == '__main__':
                     poyppa_df['Rank_Passing_Offense_Yards_per_Pass_Attempt'] = poyppa_df.index + 1
                 poyppa_df = poyppa_df.replace('--', np.nan)
                 poyppa_df = poyppa_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_yards_per_completion_url_current = 'https://www.teamrankings.com/college-football/stat/yards-per-completion' \
                     + '?date=' \
@@ -1315,7 +1315,7 @@ if __name__ == '__main__':
                     poypc_df['Rank_Passing_Offense_Yards_per_Completion'] = poypc_df.index + 1
                 poypc_df = poypc_df.replace('--', np.nan)
                 poypc_df = poypc_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 special_teams_offense_field_goal_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/field-goal-attempts-per-game' \
                     + '?date=' \
@@ -1336,7 +1336,7 @@ if __name__ == '__main__':
                     stofgapg_df['Rank_Special_Teams_Offense_Field_Goal_Attempts_per_Game'] = stofgapg_df.index + 1
                 stofgapg_df = stofgapg_df.replace('--', np.nan)
                 stofgapg_df = stofgapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 special_teams_offense_field_goals_made_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/field-goals-made-per-game' \
                     + '?date=' \
@@ -1357,7 +1357,7 @@ if __name__ == '__main__':
                     stofgmpg_df['Rank_Special_Teams_Offense_Field_Goals_Made_per_Game'] = stofgmpg_df.index + 1
                 stofgmpg_df = stofgmpg_df.replace('--', np.nan)
                 stofgmpg_df = stofgmpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 special_teams_offense_field_goal_conversion_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/field-goal-conversion-pct' \
                     + '?date=' \
@@ -1381,7 +1381,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         stofgcp_df[c] = stofgcp_df[c].str.rstrip('%').astype('float') / 100.0
                 stofgcp_df = stofgcp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 special_teams_offense_punt_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/punt-attempts-per-game' \
                     + '?date=' \
@@ -1402,7 +1402,7 @@ if __name__ == '__main__':
                     stopapg_df['Rank_Special_Teams_Offense_Punt_Attempts_per_Game'] = stopapg_df.index + 1
                 stopapg_df = stopapg_df.replace('--', np.nan)
                 stopapg_df = stopapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 special_teams_offense_gross_punt_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/gross-punt-yards-per-game' \
                     + '?date=' \
@@ -1423,7 +1423,7 @@ if __name__ == '__main__':
                     stogpypg_df['Rank_Special_Teams_Offense_Gross_Punt_Yards_per_Game'] = stogpypg_df.index + 1
                 stogpypg_df = stogpypg_df.replace('--', np.nan)
                 stogpypg_df = stogpypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opponent_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-game'\
                     + '?date='\
@@ -1442,7 +1442,7 @@ if __name__ == '__main__':
                     sdoppg_df['Rank_Scoring_Defense_Opponent_Points_per_Game'] = sdoppg_df.index + 1
                 sdoppg_df = sdoppg_df.replace('--', np.nan)
                 sdoppg_df = sdoppg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opp_yards_per_point_url_current = 'https://www.teamrankings.com/college-football/stat/opp-yards-per-point' \
                     + '?date=' \
@@ -1463,7 +1463,7 @@ if __name__ == '__main__':
                     sdoypp_df['Rank_Scoring_Defense_Opp_Yards_per_Point'] = sdoypp_df.index + 1
                 sdoypp_df = sdoypp_df.replace('--', np.nan)
                 sdoypp_df = sdoypp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opponent_points_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-play' \
                     + '?date=' \
@@ -1484,7 +1484,7 @@ if __name__ == '__main__':
                     sdoppp_df['Rank_Scoring_Defense_Opponent_Points_per_Play'] = sdoppp_df.index + 1
                 sdoppp_df = sdoppp_df.replace('--', np.nan)
                 sdoppp_df = sdoppp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opponent_average_scoring_margin_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-average-scoring-margin' \
                     + '?date=' \
@@ -1505,7 +1505,7 @@ if __name__ == '__main__':
                     sdoasm_df['Rank_Scoring_Defense_Opponent_Average_Scoring_Margin'] = sdoasm_df.index + 1
                 sdoasm_df = sdoasm_df.replace('--', np.nan)
                 sdoasm_df = sdoasm_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opponent_red_zone_scoring_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-red-zone-scoring-attempts-per-game' \
                     + '?date=' \
@@ -1526,7 +1526,7 @@ if __name__ == '__main__':
                     sdorzsapg_df['Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game'] = sdorzsapg_df.index + 1
                 sdorzsapg_df = sdorzsapg_df.replace('--', np.nan)
                 sdorzsapg_df = sdorzsapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opponent_red_zone_scores_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-red-zone-scores-per-game' \
                     + '?date=' \
@@ -1550,7 +1550,7 @@ if __name__ == '__main__':
                         'Rank_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game'] = sdorzspg_df.index + 1
                 sdorzspg_df = sdorzspg_df.replace('--', np.nan)
                 sdorzspg_df = sdorzspg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opponent_red_zone_scoring_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-red-zone-scoring-pct' \
                     + '?date=' \
@@ -1577,7 +1577,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         sdorzsp_df[c] = sdorzsp_df[c].str.rstrip('%').astype('float') / 100.0
                 sdorzsp_df = sdorzsp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opponent_points_per_field_goal_attempt_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-points-per-field-goal-attempt' \
                     + '?date=' \
@@ -1601,7 +1601,7 @@ if __name__ == '__main__':
                         'Rank_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt'] = sdoppfga_df.index + 1
                 sdoppfga_df = sdoppfga_df.replace('--', np.nan)
                 sdoppfga_df = sdoppfga_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opponent_offensive_touchdowns_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-offensive-touchdowns-per-game' \
                     + '?date=' \
@@ -1625,7 +1625,7 @@ if __name__ == '__main__':
                         'Rank_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game'] = sdootpg_df.index + 1
                 sdootpg_df = sdootpg_df.replace('--', np.nan)
                 sdootpg_df = sdootpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 scoring_defense_opponent_offensive_points_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-offensive-points-per-game' \
                     + '?date=' \
@@ -1649,7 +1649,7 @@ if __name__ == '__main__':
                         'Rank_Scoring_Defense_Opponent_Offensive_Points_per_Game'] = sdooppg_df.index + 1
                 sdooppg_df = sdooppg_df.replace('--', np.nan)
                 sdooppg_df = sdooppg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-game'\
                     + '?date='\
@@ -1668,7 +1668,7 @@ if __name__ == '__main__':
                     tdoypg_df['Rank_Total_Defense_Opponent_Yards_per_Game'] = tdoypg_df.index + 1
                 tdoypg_df = tdoypg_df.replace('--', np.nan)
                 tdoypg_df = tdoypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_plays_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-plays-per-game' \
                     + '?date=' \
@@ -1688,7 +1688,7 @@ if __name__ == '__main__':
                     tdoppg_df['Rank_Total_Defense_Opponent_Plays_per_Game'] = tdoppg_df.index + 1
                 tdoppg_df = tdoppg_df.replace('--', np.nan)
                 tdoppg_df = tdoppg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-first-downs-per-game' \
                     + '?date=' \
@@ -1708,7 +1708,7 @@ if __name__ == '__main__':
                     tdofdpg_df['Rank_Total_Defense_Opponent_First_Downs_per_Game'] = tdofdpg_df.index + 1
                 tdofdpg_df = tdofdpg_df.replace('--', np.nan)
                 tdofdpg_df = tdofdpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_third_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-third-downs-per-game' \
                     + '?date=' \
@@ -1729,7 +1729,7 @@ if __name__ == '__main__':
                     tdotdpg_df['Rank_Total_Defense_Opponent_Third_Downs_per_Game'] = tdotdpg_df.index + 1
                 tdotdpg_df = tdotdpg_df.replace('--', np.nan)
                 tdotdpg_df = tdotdpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_third_down_conversions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-third-down-conversions-per-game' \
                     + '?date=' \
@@ -1750,7 +1750,7 @@ if __name__ == '__main__':
                     tdotdcpg_df['Rank_Total_Defense_Opponent_Third_Down_Conversions_per_Game'] = tdotdcpg_df.index + 1
                 tdotdcpg_df = tdotdcpg_df.replace('--', np.nan)
                 tdotdcpg_df = tdotdcpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_fourth_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fourth-downs-per-game' \
                     + '?date=' \
@@ -1772,7 +1772,7 @@ if __name__ == '__main__':
                     tdofodpg_df['Rank_Total_Defense_Opponent_Fourth_Downs_per_Game'] = tdofodpg_df.index + 1
                 tdofodpg_df = tdofodpg_df.replace('--', np.nan)
                 tdofodpg_df = tdofodpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_fourth_down_conversions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fourth-down-conversions-per-game' \
                     + '?date=' \
@@ -1793,7 +1793,7 @@ if __name__ == '__main__':
                     tdofdcpg_df['Rank_Total_Defense_Opponent_Fourth_Down_Conversions_per_Game'] = tdofdcpg_df.index + 1
                 tdofdcpg_df = tdofdcpg_df.replace('--', np.nan)
                 tdofdcpg_df = tdofdcpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_average_time_of_possession_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-average-time-of-possession-net-of-ot' \
                     + '?date=' \
@@ -1815,7 +1815,7 @@ if __name__ == '__main__':
                     tdoatop_df['Rank_Total_Defense_Opponent_Average_Time_of_Possession'] = tdoatop_df.index + 1
                 tdoatop_df = tdoatop_df.replace('--', np.nan)
                 tdoatop_df = tdoatop_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_time_of_possession_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-time-of-possession-pct-net-of-ot' \
                     + '?date=' \
@@ -1840,7 +1840,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         tdptopp_df[c] = tdptopp_df[c].str.rstrip('%').astype('float') / 100.0
                 tdptopp_df = tdptopp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_third_down_conversion_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-third-down-conversion-pct' \
                     + '?date=' \
@@ -1865,7 +1865,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         tdotdcp_df[c] = tdotdcp_df[c].str.rstrip('%').astype('float') / 100.0
                 tdotdcp_df = tdotdcp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_fourth_down_conversion_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fourth-down-conversion-pct' \
                     + '?date=' \
@@ -1890,7 +1890,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         tdofdcp_df[c] = tdofdcp_df[c].str.rstrip('%').astype('float') / 100.0
                 tdofdcp_df = tdofdcp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_punts_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-punts-per-play' \
                     + '?date=' \
@@ -1912,7 +1912,7 @@ if __name__ == '__main__':
                     tdoppp_df['Rank_Total_Defense_Opponent_Punts_per_Play'] = tdoppp_df.index + 1
                 tdoppp_df = tdoppp_df.replace('--', np.nan)
                 tdoppp_df = tdoppp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 total_defense_opponent_punts_per_offensive_score_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-punts-per-offensive-score' \
                     + '?date=' \
@@ -1934,7 +1934,7 @@ if __name__ == '__main__':
                     tdoppos_df['Rank_Total_Defense_Opponent_Punts_per_Offensive_Score'] = tdoppos_df.index + 1
                 tdoppos_df = tdoppos_df.replace('--', np.nan)
                 tdoppos_df = tdoppos_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_defense_opponent_rushing_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-rushing-attempts-per-game' \
                     + '?date=' \
@@ -1956,7 +1956,7 @@ if __name__ == '__main__':
                     rdorapg_df['Rank_Rushing_Defense_Opponent_Rushing_Attempts_per_Game'] = rdorapg_df.index + 1
                 rdorapg_df = rdorapg_df.replace('--', np.nan)
                 rdorapg_df = rdorapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_defense_opponent_rushing_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-rushing-yards-per-game' \
                     + '?date=' \
@@ -1978,7 +1978,7 @@ if __name__ == '__main__':
                     rdorypg_df['Rank_Rushing_Defense_Opponent_Rushing_Yards_per_Game'] = rdorypg_df.index + 1
                 rdorypg_df = rdorypg_df.replace('--', np.nan)
                 rdorypg_df = rdorypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_defense_opponent_rushing_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-rushing-first-downs-per-game' \
                     + '?date=' \
@@ -2000,7 +2000,7 @@ if __name__ == '__main__':
                     rdorfdpg_df['Rank_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game'] = rdorfdpg_df.index + 1
                 rdorfdpg_df = rdorfdpg_df.replace('--', np.nan)
                 rdorfdpg_df = rdorfdpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_defense_opponent_yards_per_rush_attempt_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-rush-attempt' \
                     + '?date=' \
@@ -2022,7 +2022,7 @@ if __name__ == '__main__':
                     rdoypra_df['Rank_Rushing_Defense_Opponent_Yards_per_Rush_Attempt'] = rdoypra_df.index + 1
                 rdoypra_df = rdoypra_df.replace('--', np.nan)
                 rdoypra_df = rdoypra_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_defense_opponent_rushing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-rushing-play-pct' \
                     + '?date=' \
@@ -2047,7 +2047,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         rdorpp_df[c] = rdorpp_df[c].str.rstrip('%').astype('float') / 100.0
                 rdorpp_df = rdorpp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 rushing_defense_opponent_rushing_yards_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-rushing-yards-pct' \
                     + '?date=' \
@@ -2072,7 +2072,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         rdoryp_df[c] = rdoryp_df[c].str.rstrip('%').astype('float') / 100.0
                 rdoryp_df = rdoryp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_pass_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-pass-attempts-per-game' \
                     + '?date=' \
@@ -2094,7 +2094,7 @@ if __name__ == '__main__':
                     pdopapg_df['Rank_Passing_Defense_Opponent_Pass_Attempts_per_Game'] = pdopapg_df.index + 1
                 pdopapg_df = pdopapg_df.replace('--', np.nan)
                 pdopapg_df = pdopapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_completions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-completions-per-game' \
                     + '?date=' \
@@ -2116,7 +2116,7 @@ if __name__ == '__main__':
                     pdocpg_df['Rank_Passing_Defense_Opponent_Completions_per_Game'] = pdocpg_df.index + 1
                 pdocpg_df = pdocpg_df.replace('--', np.nan)
                 pdocpg_df = pdocpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_incompletions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-incompletions-per-game' \
                     + '?date=' \
@@ -2138,7 +2138,7 @@ if __name__ == '__main__':
                     pdoipg_df['Rank_Passing_Defense_Opponent_Incompletions_per_Game'] = pdoipg_df.index + 1
                 pdoipg_df = pdoipg_df.replace('--', np.nan)
                 pdoipg_df = pdoipg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_completion_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-completion-pct' \
                     + '?date=' \
@@ -2163,7 +2163,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         pdocp_df[c] = pdocp_df[c].str.rstrip('%').astype('float') / 100.0
                 pdocp_df = pdocp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_passing_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-yards-per-game' \
                     + '?date=' \
@@ -2185,7 +2185,7 @@ if __name__ == '__main__':
                     pdopypg_df['Rank_Passing_Defense_Opponent_Passing_Yards_per_Game'] = pdopypg_df.index + 1
                 pdopypg_df = pdopypg_df.replace('--', np.nan)
                 pdopypg_df = pdopypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_passing_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-first-downs-per-game' \
                     + '?date=' \
@@ -2207,7 +2207,7 @@ if __name__ == '__main__':
                     pdofdpg_df['Rank_Passing_Defense_Opponent_Passing_First_Downs_per_Game'] = pdofdpg_df.index + 1
                 pdofdpg_df = pdofdpg_df.replace('--', np.nan)
                 pdofdpg_df = pdofdpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_average_team_passer_rating_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-average-team-passer-rating' \
                     + '?date=' \
@@ -2229,7 +2229,7 @@ if __name__ == '__main__':
                     pdoatpr_df['Rank_Passing_Defense_Opponent_Passing_Average_Team_Passer_Rating'] = pdoatpr_df.index + 1
                 pdoatpr_df = pdoatpr_df.replace('--', np.nan)
                 pdoatpr_df = pdoatpr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_team_sack_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/sack-pct' \
                     + '?date=' \
@@ -2255,7 +2255,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         pdtsp_df[c] = pdtsp_df[c].str.rstrip('%').astype('float') / 100.0
                 pdtsp_df = pdtsp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_passing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-play-pct' \
                     + '?date=' \
@@ -2281,7 +2281,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         pdoppp_df[c] = pdoppp_df[c].str.rstrip('%').astype('float') / 100.0
                 pdoppp_df = pdoppp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_passing_yards_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-passing-yards-pct' \
                     + '?date=' \
@@ -2307,7 +2307,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         pdopyp_df[c] = pdopyp_df[c].str.rstrip('%').astype('float') / 100.0
                 pdopyp_df = pdopyp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_sacks_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/sacks-per-game' \
                     + '?date=' \
@@ -2330,7 +2330,7 @@ if __name__ == '__main__':
                         'Rank_Passing_Defense_Sacks_per_Game'] = pdspg_df.index + 1
                 pdspg_df = pdspg_df.replace('--', np.nan)
                 pdspg_df = pdspg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_yards_per_pass_attempt_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-pass-attempt' \
                     + '?date=' \
@@ -2353,7 +2353,7 @@ if __name__ == '__main__':
                         'Rank_Passing_Defense_Opponent_Yards_per_Pass_Attempt'] = pdoyppa_df.index + 1
                 pdoyppa_df = pdoyppa_df.replace('--', np.nan)
                 pdoyppa_df = pdoyppa_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 passing_defense_opponent_yards_per_completion_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-yards-per-completion' \
                     + '?date=' \
@@ -2376,7 +2376,7 @@ if __name__ == '__main__':
                         'Rank_Passing_Defense_Opponent_Yards_per_Completion'] = pdoypc_df.index + 1
                 pdoypc_df = pdoypc_df.replace('--', np.nan)
                 pdoypc_df = pdoypc_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 special_teams_defense_opponent_field_goal_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-field-goal-attempts-per-game' \
                     + '?date=' \
@@ -2399,7 +2399,7 @@ if __name__ == '__main__':
                         'Rank_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game'] = stdofgapg_df.index + 1
                 stdofgapg_df = stdofgapg_df.replace('--', np.nan)
                 stdofgapg_df = stdofgapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 special_teams_defense_opponent_field_goals_made_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-field-goals-made-per-game' \
                     + '?date=' \
@@ -2424,7 +2424,7 @@ if __name__ == '__main__':
                         'Rank_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game'] = stdofgmpg_df.index + 1
                 stdofgmpg_df = stdofgmpg_df.replace('--', np.nan)
                 stdofgmpg_df = stdofgmpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 special_teams_defense_opponent_punt_attempts_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-punt-attempts-per-game' \
                     + '?date=' \
@@ -2448,7 +2448,7 @@ if __name__ == '__main__':
                         'Rank_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game'] = stdopapg_df.index + 1
                 stdopapg_df = stdopapg_df.replace('--', np.nan)
                 stdopapg_df = stdopapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 special_teams_defense_opponent_gross_punt_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-gross-punt-yards-per-game' \
                     + '?date=' \
@@ -2473,7 +2473,7 @@ if __name__ == '__main__':
                         'Rank_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game'] = stdogpypg_df.index + 1
                 stdogpypg_df = stdogpypg_df.replace('--', np.nan)
                 stdogpypg_df = stdogpypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_interceptions_thrown_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/interceptions-thrown-per-game' \
                     + '?date=' \
@@ -2496,7 +2496,7 @@ if __name__ == '__main__':
                         'Rank_Turnovers_Interceptions_Thrown_per_Game'] = titpg_df.index + 1
                 titpg_df = titpg_df.replace('--', np.nan)
                 titpg_df = titpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_fumbles_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fumbles-per-game' \
                     + '?date=' \
@@ -2519,7 +2519,7 @@ if __name__ == '__main__':
                         'Rank_Turnovers_Fumbles_per_Game'] = tfpg_df.index + 1
                 tfpg_df = tfpg_df.replace('--', np.nan)
                 tfpg_df = tfpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_fumbles_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fumbles-lost-per-game' \
                     + '?date=' \
@@ -2542,7 +2542,7 @@ if __name__ == '__main__':
                         'Rank_Turnovers_Fumbles_Lost_per_Game'] = tflpg_df.index + 1
                 tflpg_df = tflpg_df.replace('--', np.nan)
                 tflpg_df = tflpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_fumbles_not_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/fumbles-not-lost-per-game' \
                     + '?date=' \
@@ -2565,7 +2565,7 @@ if __name__ == '__main__':
                         'Rank_Turnovers_Fumbles_Not_Lost_per_Game'] = tfnlpg_df.index + 1
                 tfnlpg_df = tfnlpg_df.replace('--', np.nan)
                 tfnlpg_df = tfnlpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_giveaways_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/giveaways-per-game'\
                     + '?date='\
@@ -2584,7 +2584,7 @@ if __name__ == '__main__':
                     tgpg_df['Rank_Turnovers_Giveaways_per_Game'] = tgpg_df.index + 1
                 tgpg_df = tgpg_df.replace('--', np.nan)
                 tgpg_df = tgpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_turnover_margin_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/turnover-margin-per-game' \
                     + '?date=' \
@@ -2604,7 +2604,7 @@ if __name__ == '__main__':
                     ttmpg_df['Rank_Turnovers_Turnover_Margin_per_Game'] = ttmpg_df.index + 1
                 ttmpg_df = ttmpg_df.replace('--', np.nan)
                 ttmpg_df = ttmpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_interceptions_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/interceptions-per-game' \
                     + '?date=' \
@@ -2625,7 +2625,7 @@ if __name__ == '__main__':
                     tipg_df['Rank_Turnovers_Interceptions_per_Game'] = tipg_df.index + 1
                 tipg_df = tipg_df.replace('--', np.nan)
                 tipg_df = tipg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_opponent_fumbles_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumbles-per-game' \
                     + '?date=' \
@@ -2646,7 +2646,7 @@ if __name__ == '__main__':
                     tofpg_df['Rank_Turnovers_Opponent_Fumbles_per_Game'] = tofpg_df.index + 1
                 tofpg_df = tofpg_df.replace('--', np.nan)
                 tofpg_df = tofpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_opponent_fumbles_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumbles-lost-per-game' \
                     + '?date=' \
@@ -2667,7 +2667,7 @@ if __name__ == '__main__':
                     toflpg_df['Rank_Turnovers_Opponent_Fumbles_Lost_per_Game'] = toflpg_df.index + 1
                 toflpg_df = toflpg_df.replace('--', np.nan)
                 toflpg_df = toflpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_opponent_fumbles_not_lost_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumbles-not-lost-per-game' \
                     + '?date=' \
@@ -2689,7 +2689,7 @@ if __name__ == '__main__':
                     tofnlpg_df['Rank_Turnovers_Opponent_Fumbles_Not_Lost_per_Game'] = tofnlpg_df.index + 1
                 tofnlpg_df = tofnlpg_df.replace('--', np.nan)
                 tofnlpg_df = tofnlpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_takeaways_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/takeaways-per-game'\
                     + '?date='\
@@ -2708,7 +2708,7 @@ if __name__ == '__main__':
                     tttapg_df['Rank_Turnovers_Takeaways_per_Game'] = tttapg_df.index + 1
                 tttapg_df = tttapg_df.replace('--', np.nan)
                 tttapg_df = tttapg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_opponent_turnover_margin_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-turnover-margin-per-game' \
                     + '?date=' \
@@ -2728,7 +2728,7 @@ if __name__ == '__main__':
                     totmpg_df['Rank_Turnovers_Opponent_Turnover_Margin_per_Game'] = totmpg_df.index + 1
                 totmpg_df = totmpg_df.replace('--', np.nan)
                 totmpg_df = totmpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_interceptions_thrown_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/pass-intercepted-pct' \
                     + '?date=' \
@@ -2753,7 +2753,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         titp_df[c] = titp_df[c].str.rstrip('%').astype('float') / 100.0
                 titp_df = titp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/fumble-recovery-pct' \
                     + '?date=' \
@@ -2778,7 +2778,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         tfrp_df[c] = tfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 tfrp_df = tfrp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_giveaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/giveaway-fumble-recovery-pct' \
                     + '?date=' \
@@ -2803,7 +2803,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         tgfrp_df[c] = tgfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 tgfrp_df = tgfrp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_takeaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/takeaway-fumble-recovery-pct' \
                     + '?date=' \
@@ -2828,7 +2828,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         ttfrp_df[c] = ttfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 ttfrp_df = ttfrp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_opponent_interceptions_thrown_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/interception-pct' \
                     + '?date=' \
@@ -2853,7 +2853,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         toitp_df[c] = toitp_df[c].str.rstrip('%').astype('float') / 100.0
                 toitp_df = toitp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_opponent_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-fumble-recovery-pct' \
                     + '?date=' \
@@ -2878,7 +2878,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         tofrp_df[c] = tofrp_df[c].str.rstrip('%').astype('float') / 100.0
                 tofrp_df = tofrp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_opponent_giveaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-giveaway-fumble-recovery-pct' \
                     + '?date=' \
@@ -2903,7 +2903,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         togfrp_df[c] = togfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 togfrp_df = togfrp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 turnovers_opponent_takeaway_fumble_recovery_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-takeaway-fumble-recovery-pct' \
                     + '?date=' \
@@ -2929,7 +2929,7 @@ if __name__ == '__main__':
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
                         totfrp_df[c] = totfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 totfrp_df = totfrp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_penalties_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/penalties-per-game' \
                     + '?date=' \
@@ -2952,7 +2952,7 @@ if __name__ == '__main__':
                     pppg_df['Rank_Penalties_Penalties_per_Game'] = pppg_df.index + 1
                 pppg_df = pppg_df.replace('--', np.nan)
                 pppg_df = pppg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_penalty_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/penalty-yards-per-game' \
                     + '?date=' \
@@ -2975,7 +2975,7 @@ if __name__ == '__main__':
                     ppypg_df['Rank_Penalties_Penalty_Yards_per_Game'] = ppypg_df.index + 1
                 ppypg_df = ppypg_df.replace('--', np.nan)
                 ppypg_df = ppypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_penalty_first_downs_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/penalty-first-downs-per-game' \
                     + '?date=' \
@@ -2998,7 +2998,7 @@ if __name__ == '__main__':
                     ppfdpg_df['Rank_Penalties_Penalty_First_Downs_per_Game'] = ppfdpg_df.index + 1
                 ppfdpg_df = ppfdpg_df.replace('--', np.nan)
                 ppfdpg_df = ppfdpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_opponent_penalties_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalties-per-game' \
                     + '?date=' \
@@ -3021,7 +3021,7 @@ if __name__ == '__main__':
                     poppg_df['Rank_Penalties_Opponent_Penalties_per_Game'] = poppg_df.index + 1
                 poppg_df = poppg_df.replace('--', np.nan)
                 poppg_df = poppg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_opponent_penalty_yards_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-yards-per-game' \
                     + '?date=' \
@@ -3044,7 +3044,7 @@ if __name__ == '__main__':
                     popypg_df['Rank_Penalties_Opponent_Penalty_Yards_per_Game'] = popypg_df.index + 1
                 popypg_df = popypg_df.replace('--', np.nan)
                 popypg_df = popypg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_opponent_penalty_first_down_per_game_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-first-downs-per-game' \
                     + '?date=' \
@@ -3067,7 +3067,7 @@ if __name__ == '__main__':
                     popfdpg_df['Rank_Penalties_Opponent_Penalty_First_Downs_per_Game'] = popfdpg_df.index + 1
                 popfdpg_df = popfdpg_df.replace('--', np.nan)
                 popfdpg_df = popfdpg_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_penalty_yards_per_penalty_url_current = 'https://www.teamrankings.com/college-football/stat/penalty-yards-per-penalty' \
                     + '?date=' \
@@ -3090,7 +3090,7 @@ if __name__ == '__main__':
                     poptpp_df['Rank_Penalties_Penalty_Yards_per_Penalty'] = poptpp_df.index + 1
                 poptpp_df = poptpp_df.replace('--', np.nan)
                 poptpp_df = poptpp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_penalties_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/penalties-per-play' \
                     + '?date=' \
@@ -3113,7 +3113,7 @@ if __name__ == '__main__':
                     pppp_df['Rank_Penalties_Penalties_per_Play'] = pppp_df.index + 1
                 pppp_df = pppp_df.replace('--', np.nan)
                 pppp_df = pppp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_opponent_penalty_yards_per_penalty_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-yards-per-penalty' \
                     + '?date=' \
@@ -3136,7 +3136,7 @@ if __name__ == '__main__':
                     poppypp_df['Rank_Penalties_Opponents_Penalty_Yards_per_Penalty'] = poppypp_df.index + 1
                 poppypp_df = poppypp_df.replace('--', np.nan)
                 poppypp_df = poppypp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 penalties_opponent_penalties_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalties-per-play' \
                     + '?date=' \
@@ -3159,7 +3159,7 @@ if __name__ == '__main__':
                     poppp_df['Rank_Penalties_Opponents_Penalties_per_Play'] = poppp_df.index + 1
                 poppp_df = poppp_df.replace('--', np.nan)
                 poppp_df = popppp_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 predictive_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/predictive-by-other'\
                     + '?date='\
@@ -3177,7 +3177,7 @@ if __name__ == '__main__':
                     ppr_df['Rank_Predictive_Power_Ranking'] = ppr_df.index + 1
                 ppr_df = ppr_df.replace('--', np.nan)
                 ppr_df = ppr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 home_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/home-by-other' \
                     + '?date=' \
@@ -3196,7 +3196,7 @@ if __name__ == '__main__':
                     hpr_df['Rank_Home_Power_Ranking'] = hpr_df.index + 1
                 hpr_df = hpr_df.replace('--', np.nan)
                 hpr_df = hpr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 away_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/away-by-other' \
                     + '?date=' \
@@ -3215,7 +3215,7 @@ if __name__ == '__main__':
                     apr_df['Rank_Away_Power_Ranking'] = apr_df.index + 1
                 apr_df = apr_df.replace('--', np.nan)
                 apr_df = apr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 neutral_site_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/neutral-by-other'\
                     + '?date='\
@@ -3233,7 +3233,7 @@ if __name__ == '__main__':
                     nspr_df['Rank_Neutral_Site_Power_Ranking'] = nspr_df.index + 1
                 nspr_df = nspr_df.replace('--', np.nan)
                 nspr_df = nspr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 home_advantage_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/home-adv-by-other' \
                     + '?date=' \
@@ -3252,7 +3252,7 @@ if __name__ == '__main__':
                     hapr_df['Rank_Home-Advantage_Power_Ranking'] = hapr_df.index + 1
                 hapr_df = hapr_df.replace('--', np.nan)
                 hapr_df = hapr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/schedule-strength-by-other'\
                     + '?date='\
@@ -3264,13 +3264,13 @@ if __name__ == '__main__':
                                        'Low': 'Low_Strength_of_Schedule_Power_Ranking',
                                        'Last': 'Last_Strength_of_Schedule_Power_Ranking'
                                        }, inplace=True)
-                sospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # sospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 sospr_df['Team'] = sospr_df['Team'].str.strip()
                 if season == '2010':
                     sospr_df['Rank_Strength_of_Schedule_Power_Ranking'] = sospr_df.index + 1
                 sospr_df = sospr_df.replace('--', np.nan)
                 sospr_df = sospr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 future_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/future-sos-by-other' \
                     + '?date=' \
@@ -3283,13 +3283,13 @@ if __name__ == '__main__':
                                          'Low': 'Low_Future_Strength_of_Schedule_Power_Ranking',
                                          'Last': 'Last_Future_Strength_of_Schedule_Power_Ranking'
                                          }, inplace=True)
-                fsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # fsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 fsospr_df['Team'] = fsospr_df['Team'].str.strip()
                 if season == '2010':
                     fsospr_df['Rank_Future_Strength_of_Schedule_Power_Ranking'] = fsospr_df.index + 1
                 fsospr_df = fsospr_df.replace('--', np.nan)
                 fsospr_df = fsospr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 season_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/season-sos-by-other' \
                     + '?date=' \
@@ -3302,13 +3302,13 @@ if __name__ == '__main__':
                                           'Low': 'Low_Season_Strength_of_Schedule_Power_Ranking',
                                           'Last': 'Last_Season_Strength_of_Schedule_Power_Ranking'
                                           }, inplace=True)
-                ssospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # ssospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 ssospr_df['Team'] = ssospr_df['Team'].str.strip()
                 if season == '2010':
                     ssospr_df['Rank_Season_Strength_of_Schedule_Power_Ranking'] = ssospr_df.index + 1
                 ssospr_df = ssospr_df.replace('--', np.nan)
                 ssospr_df = ssospr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 strength_of_schedule_power_ranking_basic_method_url_current = 'https://www.teamrankings.com/college-football/ranking/sos-basic-by-other' \
                     + '?date=' \
@@ -3321,13 +3321,13 @@ if __name__ == '__main__':
                                           'Low': 'Low_Strength_of_Schedule_Power_Ranking_Basic_Method',
                                           'Last': 'Last_Strength_of_Schedule_Power_Ranking_Basic_Method'
                                           }, inplace=True)
-                sosprbm_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # sosprbm_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 sosprbm_df['Team'] = sosprbm_df['Team'].str.strip()
                 if season == '2010':
                     sosprbm_df['Rank_Strength_of_Schedule_Power_Ranking_Basic_Method'] = sosprbm_df.index + 1
                 sosprbm_df = sosprbm_df.replace('--', np.nan)
                 sosprbm_df = sosprbm_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 in_conference_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/in-conference-sos-by-other' \
                     + '?date=' \
@@ -3340,13 +3340,13 @@ if __name__ == '__main__':
                                            'Low': 'Low_In_Conference_Strength_of_Schedule_Power_Ranking',
                                            'Last': 'Last_In-Conference_Strength_of_Schedule_Power_Ranking'
                                            }, inplace=True)
-                icsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # icsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 icsospr_df['Team'] = icsospr_df['Team'].str.strip()
                 if season == '2010':
                     icsospr_df['Rank_In_Conference_Strength_of_Schedule_Power_Ranking'] = icsospr_df.index + 1
                 icsospr_df = icsospr_df.replace('--', np.nan)
                 icsospr_df = icsospr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 nonconference_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/non-conference-sos-by-other' \
                     + '?date=' \
@@ -3359,13 +3359,13 @@ if __name__ == '__main__':
                                            'Low': 'Low_Nonconference_Strength_of_Schedule_Power_Ranking',
                                            'Last': 'Last_Nonconference_Strength_of_Schedule_Power_Ranking'
                                            }, inplace=True)
-                ncsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # ncsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 ncsospr_df['Team'] = ncsospr_df['Team'].str.strip()
                 if season == '2010':
                     ncsospr_df['Rank_Nonconference_Strength_of_Schedule_Power_Ranking'] = ncsospr_df.index + 1
                 ncsospr_df = ncsospr_df.replace('--', np.nan)
                 ncsospr_df = ncsospr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 last_10_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/last-10-games-by-other' \
                     + '?date=' \
@@ -3378,32 +3378,32 @@ if __name__ == '__main__':
                                            'Low': 'Low_Last_10_Power_Ranking',
                                            'Last': 'Last_Last_10_Power_Ranking'
                                            }, inplace=True)
-                l10_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # l10_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 l10_df['Team'] = l10_df['Team'].str.strip()
                 if season == '2010':
                     l10_df['Rank_Last_10_Power_Ranking'] = l10_df.index + 1
                 l10_df = l10_df.replace('--', np.nan)
                 l10_df = l10_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 last_5_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other' \
                     + '?date=' \
                     + this_week_date_str
                 l5_df = main_hist(last_5_power_ranking_url_current, season, str(week),
                                    this_week_date_str, 'last_5_power_ranking')
-                l10_df.rename(columns={'Rank': 'Rank_Last_5_Power_Ranking',
+                l5_df.rename(columns={'Rank': 'Rank_Last_5_Power_Ranking',
                                        'Rating': 'Rating_Last_5_Power_Ranking',
                                        'Hi': 'Hi_Last_5_Power_Ranking',
                                        'Low': 'Low_Last_5_Power_Ranking',
                                        'Last': 'Last_Last_5_Power_Ranking'
                                        }, inplace=True)
-                l5_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # l5_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 l5_df['Team'] = l5_df['Team'].str.strip()
                 if season == '2010':
                     l5_df['Rank_Last_5_Power_Ranking'] = l5_df.index + 1
                 l5_df = l5_df.replace('--', np.nan)
                 l5_df = l5_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 in_conference_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/in-conference-by-other' \
                     + '?date=' \
@@ -3416,13 +3416,13 @@ if __name__ == '__main__':
                                        'Low': 'Low_In_Conference_Power_Ranking',
                                        'Last': 'Last_In-Conference_Power_Ranking'
                                        }, inplace=True)
-                icpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # icpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 icpr_df['Team'] = icpr_df['Team'].str.strip()
                 if season == '2010':
                     icpr_df['Rank_In_Conference_Power_Ranking'] = icpr_df.index + 1
                 icpr_df = icpr_df.replace('--', np.nan)
                 icpr_df = icpr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 nonconference_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/non-conference-by-other' \
                     + '?date=' \
@@ -3435,13 +3435,13 @@ if __name__ == '__main__':
                                         'Low': 'Low_Nonconference_Power_Ranking',
                                         'Last': 'Last_Nonconference_Power_Ranking'
                                         }, inplace=True)
-                ncpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # ncpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 ncpr_df['Team'] = ncpr_df['Team'].str.strip()
                 if season == '2010':
                     ncpr_df['Rank_Nonconference_Power_Ranking'] = ncpr_df.index + 1
                 ncpr_df = ncpr_df.replace('--', np.nan)
                 ncpr_df = ncpr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 luck_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/luck-by-other' \
                     + '?date=' \
@@ -3460,7 +3460,7 @@ if __name__ == '__main__':
                     lpr_df['Rank_Luck_Power_Ranking'] = lpr_df.index + 1
                 lpr_df = lpr_df.replace('--', np.nan)
                 lpr_df = lpr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 consistency_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/consistency-by-other' \
                     + '?date=' \
@@ -3479,7 +3479,7 @@ if __name__ == '__main__':
                     cpr_df['Rank_Consistency_Power_Ranking'] = cpr_df.index + 1
                 cpr_df = cpr_df.replace('--', np.nan)
                 cpr_df = cpr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 versus_teams_1_thru_10_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-1-10-by-other' \
                     + '?date=' \
@@ -3492,13 +3492,13 @@ if __name__ == '__main__':
                                        'Low': 'Low_Versus_Teams_1_Thru_10_Power_Ranking',
                                        'Last': 'Last_Versus_Teams_1_Thru_10_Power_Ranking'
                                        }, inplace=True)
-                vt1_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # vt1_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt1_df['Team'] = vt1_df['Team'].str.strip()
                 if season == '2010':
                     vt1_df['Rank_Versus_Teams_1_Thru_10_Power_Ranking'] = vt1_df.index + 1
                 vt1_df = vt1_df.replace('--', np.nan)
                 vt1_df = vt1_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 versus_teams_11_thru_25_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-11-25-by-other' \
                     + '?date=' \
@@ -3511,13 +3511,13 @@ if __name__ == '__main__':
                                        'Low': 'Low_Versus_Teams_11_Thru_25_Power_Ranking',
                                        'Last': 'Last_Versus_Teams_11_Thru_25_Power_Ranking'
                                        }, inplace=True)
-                vt11_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # vt11_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt11_df['Team'] = vt11_df['Team'].str.strip()
                 if season == '2010':
                     vt11_df['Rank_Versus_Teams_11_Thru_25_Power_Ranking'] = vt11_df.index + 1
                 vt11_df = vt11_df.replace('--', np.nan)
                 vt11_df = vt11_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 versus_teams_26_thru_40_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-26-40-by-other' \
                     + '?date=' \
@@ -3530,13 +3530,13 @@ if __name__ == '__main__':
                                         'Low': 'Low_Versus_Teams_26_Thru_40_Power_Ranking',
                                         'Last': 'Last_Versus_Teams_26_Thru_40_Power_Ranking'
                                         }, inplace=True)
-                vt26_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # vt26_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt26_df['Team'] = vt26_df['Team'].str.strip()
                 if season == '2010':
                     vt26_df['Rank_Versus_Teams_26_Thru_40_Power_Ranking'] = vt26_df.index + 1
                 vt26_df = vt26_df.replace('--', np.nan)
                 vt26_df = vt26_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 versus_teams_41_thru_75_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-41-75-by-other' \
                     + '?date=' \
@@ -3549,13 +3549,13 @@ if __name__ == '__main__':
                                         'Low': 'Low_Versus_Teams_41_Thru_75_Power_Ranking',
                                         'Last': 'Last_Versus_Teams_41_Thru_75_Power_Ranking'
                                         }, inplace=True)
-                vt41_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # vt41_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt41_df['Team'] = vt41_df['Team'].str.strip()
                 if season == '2010':
                     vt41_df['Rank_Versus_Teams_41_Thru_75_Power_Ranking'] = vt41_df.index + 1
                 vt41_df = vt41_df.replace('--', np.nan)
                 vt41_df = vt41_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 versus_teams_76_thru_120_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/vs-76-120-by-other' \
                     + '?date=' \
@@ -3568,18 +3568,18 @@ if __name__ == '__main__':
                                         'Low': 'Low_Versus_Teams_76_Thru_120_Power_Ranking',
                                         'Last': 'Last_Versus_Teams_76_Thru_120_Power_Ranking'
                                         }, inplace=True)
-                vt76_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # vt76_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt76_df['Team'] = vt76_df['Team'].str.strip()
                 if season == '2010':
                     vt76_df['Rank_Versus_Teams_76_Thru_120_Power_Ranking'] = vt76_df.index + 1
                 vt76_df = vt76_df.replace('--', np.nan)
                 vt76_df = vt76_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 first_half_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/first-half-by-other' \
                     + '?date=' \
                     + this_week_date_str
-                fhpr_df = main_hist(first_half_per_ranking_url_current, season, str(week),
+                fhpr_df = main_hist(first_half_power_ranking_url_current, season, str(week),
                                     this_week_date_str, 'first_half_power_ranking')
                 fhpr_df.rename(columns={'Rank': 'First_Half_Power_Ranking',
                                         'Rating': 'First_Half_Power_Ranking',
@@ -3587,13 +3587,13 @@ if __name__ == '__main__':
                                         'Low': 'First_Half_Power_Ranking',
                                         'Last': 'First_Half_Power_Ranking'
                                         }, inplace=True)
-                fhpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # fhpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 fhpr_df['Team'] = fhpr_df['Team'].str.strip()
                 if season == '2010':
                     fhpr_df['Rank_First_Half_Power_Ranking'] = fhpr_df.index + 1
                 fhpr_df = fhpr_df.replace('--', np.nan)
                 fhpr_df = fhpr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 second_half_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/second-half-by-other' \
                     + '?date=' \
@@ -3606,13 +3606,13 @@ if __name__ == '__main__':
                                         'Low': 'Second_Half_Power_Ranking',
                                         'Last': 'Second_Half_Power_Ranking'
                                         }, inplace=True)
-                shpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                # shpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 shpr_df['Team'] = shpr_df['Team'].str.strip()
                 if season == '2010':
                     shpr_df['Rank_Second_Half_Power_Ranking'] = shpr_df.index + 1
                 shpr_df = shpr_df.replace('--', np.nan)
                 shpr_df = shpr_df.apply(pd.to_numeric, errors='ignore')
-                time.sleep(random.uniform(0.2, 1))
+                time.sleep(random.uniform(0.2, 2))
 
                 this_week_date = this_week_date + datetime.timedelta(days=7)
                 this_week_date_str = this_week_date.strftime("%Y-%m-%d")
@@ -4335,7 +4335,7 @@ if __name__ == '__main__':
                                    'Away': 'Away_Total_Offense_Fourth_Down-Conversions_per_Game'
                                    }, inplace=True)
         tofdcpg_df['Team'] = tofdcpg_df['Team'].str.strip()
-        time.sleep(random.uniform(0.2, 1))
+        time.sleep(random.uniform(0.2, 2))
 
         total_offense_average_time_of_possession_url_current = 'https://www.teamrankings.com/college-football/stat/average-time-of-possession-net-of-ot' \
                                                                + '?date=' \
