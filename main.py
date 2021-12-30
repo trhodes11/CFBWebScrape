@@ -3114,56 +3114,352 @@ if __name__ == '__main__':
                 pppp_df = pppp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
-                last_5_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other'\
+                penalties_opponent_penalty_yards_per_penalty_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-yards-per-penalty' \
+                    + '?date=' \
+                   + this_week_date_str
+                poppypp_df = main_hist(penalties_opponent_penalty_yards_per_penalty_url_current, season,
+                                    str(week),
+                                    this_week_date_str,
+                                    'penalties_opponent_penalty_yards_per_penalty')
+                poppypp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                        season: 'Current_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                        str(int(
+                                            season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                        'Last 3': 'Last 3_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                        'Last 1': 'Last 1_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                        'Home': 'At_Home_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                        'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_Yards_per_Penalty'
+                                        }, inplace=True)
+                poppypp_df['Team'] = poppypp_df['Team'].str.strip()
+                if season == '2010':
+                    poppypp_df['Rank_Penalties_Opponents_Penalty_Yards_per_Penalty'] = poppypp_df.index + 1
+                poppypp_df = poppypp_df.replace('--', np.nan)
+                poppypp_df = poppypp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                penalties_opponent_penalties_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalties-per-play' \
+                    + '?date=' \
+                    + this_week_date_str
+                popppp_df = main_hist(penalties_opponent_penalty_yards_per_penalty_url_current, season,
+                                       str(week),
+                                       this_week_date_str,
+                                       'penalties_opponent_penalties_per_play')
+                poppp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalties_per_Play',
+                                           season: 'Current_Season_Penalties_Opponent_Penalties_per_Play',
+                                           str(int(
+                                               season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Play',
+                                           'Last 3': 'Last 3_Penalties_Opponent_Penalties_per_Play',
+                                           'Last 1': 'Last 1_Penalties_Opponent_Penalties_per_Play',
+                                           'Home': 'At_Home_Penalties_Opponent_Penalties_per_Play',
+                                           'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Play'
+                                           }, inplace=True)
+                poppp_df['Team'] = poppp_df['Team'].str.strip()
+                if season == '2010':
+                    poppp_df['Rank_Penalties_Opponents_Penalties_per_Play'] = poppp_df.index + 1
+                poppp_df = poppp_df.replace('--', np.nan)
+                poppp_df = popppp_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                predictive_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/predictive-by-other'\
                     + '?date='\
                     + this_week_date_str
-                l5_df = main_hist(last_5_url_current, season, str(week), this_week_date_str, 'last_5')
-                l5_df.rename(columns={'Rank': 'Rank_Last_5',
-                                      'Rating': 'Rating_Last_5',
-                                      'Hi': 'Hi_Last_5',
-                                      'Low': 'Low_Last_5',
-                                      'Last': 'Last_Last_5'
+                ppr_df = main_hist(predictive_power_ranking_url_current, season, str(week), this_week_date_str, 'predictive_power_ranking')
+                ppr_df.rename(columns={'Rank': 'Rank_Predictive_Power_Ranking',
+                                      'Rating': 'Rating_Predictive_Power_Ranking',
+                                      'Hi': 'Hi_Predictive_Power_Ranking',
+                                      'Low': 'Low_Predictive_Power_Ranking',
+                                      'Last': 'Last_Predictive_Power_Ranking'
                                       }, inplace=True)
+                ppr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                ppr_df['Team'] = ppr_df['Team'].str.strip()
+                if season == '2010':
+                    ppr_df['Rank_Predictive_Power_Ranking'] = ppr_df.index + 1
+                ppr_df = ppr_df.replace('--', np.nan)
+                ppr_df = ppr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                home_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/home-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                hpr_df = main_hist(home_power_ranking_url_current, season, str(week), this_week_date_str,
+                                   'home_power_ranking')
+                hpr_df.rename(columns={'Rank': 'Rank_Home_Power_Ranking',
+                                       'Rating': 'Rating_Home_Power_Ranking',
+                                       'Hi': 'Hi_Home_Power_Ranking',
+                                       'Low': 'Low_Home_Power_Ranking',
+                                       'Last': 'Last_Home_Power_Ranking'
+                                       }, inplace=True)
+                hpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                hpr_df['Team'] = hpr_df['Team'].str.strip()
+                if season == '2010':
+                    hpr_df['Rank_Home_Power_Ranking'] = hpr_df.index + 1
+                hpr_df = hpr_df.replace('--', np.nan)
+                hpr_df = hpr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                away_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/away-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                apr_df = main_hist(away_power_ranking_url_current, season, str(week), this_week_date_str,
+                                   'away_power_ranking')
+                apr_df.rename(columns={'Rank': 'Rank_Away_Power_Ranking',
+                                       'Rating': 'Rating_Away_Power_Ranking',
+                                       'Hi': 'Hi_Away_Power_Ranking',
+                                       'Low': 'Low_Away_Power_Ranking',
+                                       'Last': 'Last_Away_Power_Ranking'
+                                       }, inplace=True)
+                apr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                apr_df['Team'] = apr_df['Team'].str.strip()
+                if season == '2010':
+                    apr_df['Rank_Away_Power_Ranking'] = apr_df.index + 1
+                apr_df = apr_df.replace('--', np.nan)
+                apr_df = apr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                neutral_site_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/neutral-by-other'\
+                    + '?date='\
+                    + this_week_date_str
+                nspr_df = main_hist(neutral_site_power_ranking_url_current, season, str(week), this_week_date_str, 'neutral_site_power_ranking')
+                nspr_df.rename(columns={'Rank': 'Rank_Neutral_Site_Power_Ranking',
+                                      'Rating': 'Rating_Neutral_Site_Power_Ranking',
+                                      'Hi': 'Hi_Neutral_Site_Power_Ranking',
+                                      'Low': 'Low_Neutral_Site_Power_Ranking',
+                                      'Last': 'Last_Neutral_Site_Power_Ranking'
+                                      }, inplace=True)
+                nspr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                nspr_df['Team'] = nspr_df['Team'].str.strip()
+                if season == '2010':
+                    nspr_df['Rank_Neutral_Site_Power_Ranking'] = nspr_df.index + 1
+                nspr_df = nspr_df.replace('--', np.nan)
+                nspr_df = nspr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                home_advantage_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/home-adv-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                hapr_df = main_hist(home_advantage_power_ranking_url_current, season, str(week), this_week_date_str,
+                                    'home_advantage_power_ranking')
+                hapr_df.rename(columns={'Rank': 'Rank_Home_Advantage_Power_Ranking',
+                                        'Rating': 'Rating_Home_Advantage_Power_Ranking',
+                                        'Hi': 'Hi_Home_Advantage_Power_Ranking',
+                                        'Low': 'Low_Home_Advantage_Power_Ranking',
+                                        'Last': 'Last_Home_Advantage_Power_Ranking'
+                                        }, inplace=True)
+                hapr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                hapr_df['Team'] = hapr_df['Team'].str.strip()
+                if season == '2010':
+                    hapr_df['Rank_Home-Advantage_Power_Ranking'] = hapr_df.index + 1
+                hapr_df = hapr_df.replace('--', np.nan)
+                hapr_df = hapr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/schedule-strength-by-other'\
+                    + '?date='\
+                    + this_week_date_str
+                sospr_df = main_hist(strength_of_schedule_power_ranking_url_current, season, str(week), this_week_date_str, 'strength_of_schedule_power_ranking')
+                sospr_df.rename(columns={'Rank': 'Rank_Strength_of_Schedule_Power_Ranking',
+                                       'Rating': 'Rating_Strength_of_Schedule_Power_Ranking',
+                                       'Hi': 'Hi_Strength_of_Schedule_Power_Ranking',
+                                       'Low': 'Low_Strength_of_Schedule_Power_Ranking',
+                                       'Last': 'Last_Strength_of_Schedule_Power_Ranking'
+                                       }, inplace=True)
+                sospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                sospr_df['Team'] = sospr_df['Team'].str.strip()
+                if season == '2010':
+                    sospr_df['Rank_Strength_of_Schedule_Power_Ranking'] = sospr_df.index + 1
+                sospr_df = sospr_df.replace('--', np.nan)
+                sospr_df = sospr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                future_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/future-sos-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                fsospr_df = main_hist(future_strength_of_schedule_power_ranking_url_current, season, str(week),
+                                     this_week_date_str, 'future_strength_of_schedule_power_ranking')
+                fsospr_df.rename(columns={'Rank': 'Rank_Future_Strength_of_Schedule_Power_Ranking',
+                                         'Rating': 'Rating_Future_Strength_of_Schedule_Power_Ranking',
+                                         'Hi': 'Hi_Future_Strength_of_Schedule_Power_Ranking',
+                                         'Low': 'Low_Future_Strength_of_Schedule_Power_Ranking',
+                                         'Last': 'Last_Future_Strength_of_Schedule_Power_Ranking'
+                                         }, inplace=True)
+                fsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                fsospr_df['Team'] = fsospr_df['Team'].str.strip()
+                if season == '2010':
+                    fsospr_df['Rank_Future_Strength_of_Schedule_Power_Ranking'] = fsospr_df.index + 1
+                fsospr_df = fsospr_df.replace('--', np.nan)
+                fsospr_df = fsospr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                season_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/season-sos-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                ssospr_df = main_hist(season_strength_of_schedule_power_ranking_url_current, season, str(week),
+                                      this_week_date_str, 'season_strength_of_schedule_power_ranking')
+                ssospr_df.rename(columns={'Rank': 'Rank_Season_Strength_of_Schedule_Power_Ranking',
+                                          'Rating': 'Rating_Season_Strength_of_Schedule_Power_Ranking',
+                                          'Hi': 'Hi_Season_Strength_of_Schedule_Power_Ranking',
+                                          'Low': 'Low_Season_Strength_of_Schedule_Power_Ranking',
+                                          'Last': 'Last_Season_Strength_of_Schedule_Power_Ranking'
+                                          }, inplace=True)
+                ssospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                ssospr_df['Team'] = ssospr_df['Team'].str.strip()
+                if season == '2010':
+                    ssospr_df['Rank_Season_Strength_of_Schedule_Power_Ranking'] = ssospr_df.index + 1
+                ssospr_df = ssospr_df.replace('--', np.nan)
+                ssospr_df = ssospr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                strength_of_schedule_power_ranking_basic_method_url_current = 'https://www.teamrankings.com/college-football/ranking/sos-basic-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                sosprbm_df = main_hist(strength_of_schedule_power_ranking_basic_method_url_current, season, str(week),
+                                      this_week_date_str, 'strength_of_schedule_power_ranking_basic_method')
+                sosprbm_df.rename(columns={'Rank': 'Rank_Strength_of_Schedule_Power_Ranking_Basic_Method',
+                                          'Rating': 'Rating_Strength_of_Schedule_Power_Ranking_Basic_Method',
+                                          'Hi': 'Hi_Strength_of_Schedule_Power_Ranking_Basic_Method',
+                                          'Low': 'Low_Strength_of_Schedule_Power_Ranking_Basic_Method',
+                                          'Last': 'Last_Strength_of_Schedule_Power_Ranking_Basic_Method'
+                                          }, inplace=True)
+                sosprbm_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                sosprbm_df['Team'] = sosprbm_df['Team'].str.strip()
+                if season == '2010':
+                    sosprbm_df['Rank_Strength_of_Schedule_Power_Ranking_Basic_Method'] = sosprbm_df.index + 1
+                sosprbm_df = sosprbm_df.replace('--', np.nan)
+                sosprbm_df = sosprbm_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                in_conference_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/in-conference-sos-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                icsospr_df = main_hist(in_conference_strength_of_schedule_power_ranking_url_current, season, str(week),
+                                       this_week_date_str, 'in_conference_strength_of_schedule_power_ranking')
+                icsospr_df.rename(columns={'Rank': 'Rank_In_Conference_Strength_of_Schedule_Power_Ranking',
+                                           'Rating': 'Rating_In_Conference_Strength_of_Schedule_Power_Ranking',
+                                           'Hi': 'Hi_In_Conference_Strength_of_Schedule_Power_Ranking',
+                                           'Low': 'Low_In_Conference_Strength_of_Schedule_Power_Ranking',
+                                           'Last': 'Last_In-Conference_Strength_of_Schedule_Power_Ranking'
+                                           }, inplace=True)
+                icsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                icsospr_df['Team'] = icsospr_df['Team'].str.strip()
+                if season == '2010':
+                    icsospr_df['Rank_In_Conference_Strength_of_Schedule_Power_Ranking'] = icsospr_df.index + 1
+                icsospr_df = icsospr_df.replace('--', np.nan)
+                icsospr_df = icsospr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                nonconference_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/non-conference-sos-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                ncsospr_df = main_hist(nonconference_strength_of_schedule_power_ranking_url_current, season, str(week),
+                                       this_week_date_str, 'nonconference_strength_of_schedule_power_ranking')
+                ncsospr_df.rename(columns={'Rank': 'Rank_Nonconference_Strength_of_Schedule_Power_Ranking',
+                                           'Rating': 'Rating_Nonconference_Strength_of_Schedule_Power_Ranking',
+                                           'Hi': 'Hi_Nonconference_Strength_of_Schedule_Power_Ranking',
+                                           'Low': 'Low_Nonconference_Strength_of_Schedule_Power_Ranking',
+                                           'Last': 'Last_Nonconference_Strength_of_Schedule_Power_Ranking'
+                                           }, inplace=True)
+                ncsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                ncsospr_df['Team'] = ncsospr_df['Team'].str.strip()
+                if season == '2010':
+                    ncsospr_df['Rank_Nonconference_Strength_of_Schedule_Power_Ranking'] = ncsospr_df.index + 1
+                ncsospr_df = ncsospr_df.replace('--', np.nan)
+                ncsospr_df = ncsospr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                last_10_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/last-10-games-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                l10_df = main_hist(last_10_power_ranking_url_current, season, str(week),
+                                       this_week_date_str, 'last_10_power_ranking')
+                l10_df.rename(columns={'Rank': 'Rank_Last_10_Power_Ranking',
+                                           'Rating': 'Rating_Last_10_Power_Ranking',
+                                           'Hi': 'Hi_Last_10_Power_Ranking',
+                                           'Low': 'Low_Last_10_Power_Ranking',
+                                           'Last': 'Last_Last_10_Power_Ranking'
+                                           }, inplace=True)
+                l10_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                l10_df['Team'] = l10_df['Team'].str.strip()
+                if season == '2010':
+                    l10_df['Rank_Last_10_Power_Ranking'] = l10_df.index + 1
+                l10_df = l10_df.replace('--', np.nan)
+                l10_df = l10_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                last_5_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                l5_df = main_hist(last_5_power_ranking_url_current, season, str(week),
+                                   this_week_date_str, 'last_5_power_ranking')
+                l10_df.rename(columns={'Rank': 'Rank_Last_5_Power_Ranking',
+                                       'Rating': 'Rating_Last_5_Power_Ranking',
+                                       'Hi': 'Hi_Last_5_Power_Ranking',
+                                       'Low': 'Low_Last_5_Power_Ranking',
+                                       'Last': 'Last_Last_5_Power_Ranking'
+                                       }, inplace=True)
+                l5_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 l5_df['Team'] = l5_df['Team'].str.strip()
                 if season == '2010':
-                    l5_df['Rank_Last_5'] = l5_df.index + 1
+                    l5_df['Rank_Last_5_Power_Ranking'] = l5_df.index + 1
                 l5_df = l5_df.replace('--', np.nan)
                 l5_df = l5_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
-                neutral_site_url_current = 'https://www.teamrankings.com/college-football/ranking/neutral-by-other'\
-                    + '?date='\
+                in_conference_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/in-conference-by-other' \
+                    + '?date=' \
                     + this_week_date_str
-                ns_df = main_hist(neutral_site_url_current, season, str(week), this_week_date_str, 'neutral_site')
-                ns_df.rename(columns={'Rank': 'Rank_Neutral_Site',
-                                      'Rating': 'Rating_Neutral_Site',
-                                      'Hi': 'Hi_Neutral_Site',
-                                      'Low': 'Low_Neutral_Site',
-                                      'Last': 'Last_Neutral_Site'
-                                      }, inplace=True)
-                ns_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
-                ns_df['Team'] = ns_df['Team'].str.strip()
+                icpr_df = main_hist(in_conference_power_ranking_url_current, season, str(week),
+                                  this_week_date_str, 'in_conference_power_ranking')
+                icpr_df.rename(columns={'Rank': 'In_Conference_Power_Ranking',
+                                       'Rating': 'Rating_In-Conference_Power_Ranking',
+                                       'Hi': 'Hi_In-Conference_Power_Ranking',
+                                       'Low': 'Low_In_Conference_Power_Ranking',
+                                       'Last': 'Last_In-Conference_Power_Ranking'
+                                       }, inplace=True)
+                icpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                icpr_df['Team'] = icpr_df['Team'].str.strip()
                 if season == '2010':
-                    ns_df['Rank_Neutral_Site'] = ns_df.index + 1
-                ns_df = ns_df.replace('--', np.nan)
-                ns_df = ns_df.apply(pd.to_numeric, errors='ignore')
+                    icpr_df['Rank_In_Conference_Power_Ranking'] = icpr_df.index + 1
+                icpr_df = icpr_df.replace('--', np.nan)
+                icpr_df = icpr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
-                sos_url_current = 'https://www.teamrankings.com/college-football/ranking/schedule-strength-by-other'\
-                    + '?date='\
+                nonconference_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/non-conference-by-other' \
+                    + '?date=' \
                     + this_week_date_str
-                sos_df = main_hist(sos_url_current, season, str(week), this_week_date_str, 'sos')
-                sos_df.rename(columns={'Rank': 'Rank_SoS',
-                                       'Rating': 'Rating_SoS',
-                                       'Hi': 'Hi_SoS',
-                                       'Low': 'Low_SoS',
-                                       'Last': 'Last_SoS'
-                                       }, inplace=True)
-                sos_df['Team'] = sos_df['Team'].str.strip()
+                ncpr_df = main_hist(nonconference_power_ranking_url_current, season, str(week),
+                                    this_week_date_str, 'nononference_power_ranking')
+                ncpr_df.rename(columns={'Rank': 'Nonconference_Power_Ranking',
+                                        'Rating': 'Rating_Nonconference_Power_Ranking',
+                                        'Hi': 'Hi_Nonconference_Power_Ranking',
+                                        'Low': 'Low_Nonconference_Power_Ranking',
+                                        'Last': 'Last_Nonconference_Power_Ranking'
+                                        }, inplace=True)
+                ncpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                ncpr_df['Team'] = ncpr_df['Team'].str.strip()
                 if season == '2010':
-                    sos_df['Rank_SoS'] = sos_df.index + 1
-                sos_df = sos_df.replace('--', np.nan)
-                sos_df = sos_df.apply(pd.to_numeric, errors='ignore')
+                    ncpr_df['Rank_Nonconference_Power_Ranking'] = ncpr_df.index + 1
+                ncpr_df = ncpr_df.replace('--', np.nan)
+                ncpr_df = ncpr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
+
+                luck_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/luck-by-other' \
+                    + '?date=' \
+                    + this_week_date_str
+                lpr_df = main_hist(luck_power_ranking_url_current, season, str(week),
+                                    this_week_date_str, 'luck_power_ranking')
+                lpr_df.rename(columns={'Rank': 'Luck_Power_Ranking',
+                                        'Rating': 'Rating_Luck_Power_Ranking',
+                                        'Hi': 'Hi_Luck_Power_Ranking',
+                                        'Low': 'Low_Luck_Power_Ranking',
+                                        'Last': 'Last_Luck_Power_Ranking'
+                                        }, inplace=True)
+                lpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+                lpr_df['Team'] = lpr_df['Team'].str.strip()
+                if season == '2010':
+                    lpr_df['Rank_Luck_Power_Ranking'] = lpr_df.index + 1
+                lpr_df = lpr_df.replace('--', np.nan)
+                lpr_df = lpr_df.apply(pd.to_numeric, errors='ignore')
+                time.sleep(2)
 
                 this_week_date = this_week_date + datetime.timedelta(days=7)
                 this_week_date_str = this_week_date.strftime("%Y-%m-%d")
@@ -3301,9 +3597,24 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, popfdpg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, poptpp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, pppp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, poppypp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, poppp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ppr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, hpr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, apr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, nspr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, hapr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sospr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, fsospr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ssospr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, sosprbm_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, icsospr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ncsospr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, l10_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, ns_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, sos_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, icpr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ncpr_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, lpr_df, on=['Team', 'Season', 'Week'], how='outer')
 
                 this_week_df = rearrange_columns(this_week_df)
                 season_df = pd.concat([season_df, this_week_df])
@@ -5677,44 +5988,283 @@ if __name__ == '__main__':
         pppp_df['Team'] = pppp_df['Team'].str.strip()
         time.sleep(1)
 
-        last_5_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other' \
-                             + '?date=' \
-                             + this_week_date_str
-        l5_df = main_hist(last_5_url_current, season, str(week), this_week_date_str, 'last_5')
-        l5_df.rename(columns={'Rank': 'Rank_Last_5',
-                              'Rating': 'Rating_Last_5',
-                              'Hi': 'Hi_Last_5',
-                              'Low': 'Low_Last_5',
-                              'Last': 'Last_Last_5'
-                              }, inplace=True)
+        penalties_opponent_penalty_yards_per_penalty_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalty-yards-per-penalty' \
+                                                                   + '?date=' \
+                                                                   + this_week_date_str
+        poppypp_df = main_hist(penalties_opponent_penalty_yards_per_penalty_url_current, season,
+                               str(week),
+                               this_week_date_str,
+                               'penalties_opponent_penalty_yards_per_penalty')
+        poppypp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                   season: 'Current_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                   str(int(
+                                       season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                   'Last 3': 'Last 3_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                   'Last 1': 'Last 1_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                   'Home': 'At_Home_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                   'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_Yards_per_Penalty'
+                                   }, inplace=True)
+        poppypp_df['Team'] = poppypp_df['Team'].str.strip()
+        time.sleep(1)
+
+        penalties_opponent_penalties_per_play_url_current = 'https://www.teamrankings.com/college-football/stat/opponent-penalties-per-play' \
+                                                            + '?date=' \
+                                                            + this_week_date_str
+        popppp_df = main_hist(penalties_opponent_penalty_yards_per_penalty_url_current, season,
+                              str(week),
+                              this_week_date_str,
+                              'penalties_opponent_penalties_per_play')
+        poppp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalties_per_Play',
+                                 season: 'Current_Season_Penalties_Opponent_Penalties_per_Play',
+                                 str(int(
+                                     season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Play',
+                                 'Last 3': 'Last 3_Penalties_Opponent_Penalties_per_Play',
+                                 'Last 1': 'Last 1_Penalties_Opponent_Penalties_per_Play',
+                                 'Home': 'At_Home_Penalties_Opponent_Penalties_per_Play',
+                                 'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Play'
+                                 }, inplace=True)
+        poppp_df['Team'] = poppp_df['Team'].str.strip()
+        time.sleep(1)
+
+        predictive_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/predictive-by-other' \
+                                               + '?date=' \
+                                               + this_week_date_str
+        ppr_df = main_hist(predictive_power_ranking_url_current, season, str(week), this_week_date_str,
+                           'predictive_power_ranking')
+        ppr_df.rename(columns={'Rank': 'Rank_Predictive_Power_Ranking',
+                               'Rating': 'Rating_Predictive_Power_Ranking',
+                               'Hi': 'Hi_Predictive_Power_Ranking',
+                               'Low': 'Low_Predictive_Power_Ranking',
+                               'Last': 'Last_Predictive_Power_Ranking'
+                               }, inplace=True)
+        ppr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        ppr_df['Team'] = ppr_df['Team'].str.strip()
+        time.sleep(1)
+
+        home_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/home-by-other' \
+                                         + '?date=' \
+                                         + this_week_date_str
+        hpr_df = main_hist(home_power_ranking_url_current, season, str(week), this_week_date_str,
+                           'home_power_ranking')
+        hpr_df.rename(columns={'Rank': 'Rank_Home_Power_Ranking',
+                               'Rating': 'Rating_Home_Power_Ranking',
+                               'Hi': 'Hi_Home_Power_Ranking',
+                               'Low': 'Low_Home_Power_Ranking',
+                               'Last': 'Last_Home_Power_Ranking'
+                               }, inplace=True)
+        hpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        hpr_df['Team'] = hpr_df['Team'].str.strip()
+        time.sleep(1)
+
+        away_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/away-by-other' \
+                                         + '?date=' \
+                                         + this_week_date_str
+        apr_df = main_hist(away_power_ranking_url_current, season, str(week), this_week_date_str,
+                           'away_power_ranking')
+        apr_df.rename(columns={'Rank': 'Rank_Away_Power_Ranking',
+                               'Rating': 'Rating_Away_Power_Ranking',
+                               'Hi': 'Hi_Away_Power_Ranking',
+                               'Low': 'Low_Away_Power_Ranking',
+                               'Last': 'Last_Away_Power_Ranking'
+                               }, inplace=True)
+        apr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        apr_df['Team'] = apr_df['Team'].str.strip()
+        time.sleep(1)
+
+        neutral_site_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/neutral-by-other' \
+                                                 + '?date=' \
+                                                 + this_week_date_str
+        nspr_df = main_hist(neutral_site_power_ranking_url_current, season, str(week), this_week_date_str,
+                            'neutral_site_power_ranking')
+        nspr_df.rename(columns={'Rank': 'Rank_Neutral_Site_Power_Ranking',
+                                'Rating': 'Rating_Neutral_Site_Power_Ranking',
+                                'Hi': 'Hi_Neutral_Site_Power_Ranking',
+                                'Low': 'Low_Neutral_Site_Power_Ranking',
+                                'Last': 'Last_Neutral_Site_Power_Ranking'
+                                }, inplace=True)
+        nspr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        nspr_df['Team'] = nspr_df['Team'].str.strip()
+        time.sleep(1)
+
+        home_advantage_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/home-adv-by-other' \
+                                                   + '?date=' \
+                                                   + this_week_date_str
+        hapr_df = main_hist(home_advantage_power_ranking_url_current, season, str(week), this_week_date_str,
+                            'home_advantage_power_ranking')
+        hapr_df.rename(columns={'Rank': 'Rank_Home_Advantage_Power_Ranking',
+                                'Rating': 'Rating_Home_Advantage_Power_Ranking',
+                                'Hi': 'Hi_Home_Advantage_Power_Ranking',
+                                'Low': 'Low_Home_Advantage_Power_Ranking',
+                                'Last': 'Last_Home_Advantage_Power_Ranking'
+                                }, inplace=True)
+        hapr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        hapr_df['Team'] = hapr_df['Team'].str.strip()
+        time.sleep(1)
+
+        strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/schedule-strength-by-other' \
+                                                         + '?date=' \
+                                                         + this_week_date_str
+        sospr_df = main_hist(strength_of_schedule_power_ranking_url_current, season, str(week), this_week_date_str,
+                             'strength_of_schedule_power_ranking')
+        sospr_df.rename(columns={'Rank': 'Rank_Strength_of_Schedule_Power_Ranking',
+                                 'Rating': 'Rating_Stength_of_Schedule_Power_Ranking',
+                                 'Hi': 'Hi_Strength_of_Schedule_Power_Ranking',
+                                 'Low': 'Low_Strength_of_Schedule_Power_Ranking',
+                                 'Last': 'Last_Strength_of_Schedule_Power_Ranking'
+                                 }, inplace=True)
+        sospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        sospr_df['Team'] = sospr_df['Team'].str.strip()
+        time.sleep(1)
+
+        future_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/future-sos-by-other' \
+                                                                + '?date=' \
+                                                                + this_week_date_str
+        fsospr_df = main_hist(future_strength_of_schedule_power_ranking_url_current, season, str(week),
+                              this_week_date_str, 'future_strength_of_schedule_power_ranking')
+        fsospr_df.rename(columns={'Rank': 'Rank_Future_Strength_of_Schedule_Power_Ranking',
+                                  'Rating': 'Rating_Future_Strength_of_Schedule_Power_Ranking',
+                                  'Hi': 'Hi_Future_Strength_of_Schedule_Power_Ranking',
+                                  'Low': 'Low_Future_Strength_of_Schedule_Power_Ranking',
+                                  'Last': 'Last_Future_Strength_of_Schedule_Power_Ranking'
+                                  }, inplace=True)
+        fsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        fsospr_df['Team'] = fsospr_df['Team'].str.strip()
+        time.sleep(1)
+
+        season_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/season-sos-by-other' \
+                                                                + '?date=' \
+                                                                + this_week_date_str
+        ssospr_df = main_hist(season_strength_of_schedule_power_ranking_url_current, season, str(week),
+                              this_week_date_str, 'season_strength_of_schedule_power_ranking')
+        ssospr_df.rename(columns={'Rank': 'Rank_Season_Strength_of_Schedule_Power_Ranking',
+                                  'Rating': 'Rating_Season_Strength_of_Schedule_Power_Ranking',
+                                  'Hi': 'Hi_Season_Strength_of_Schedule_Power_Ranking',
+                                  'Low': 'Low_Season_Strength_of_Schedule_Power_Ranking',
+                                  'Last': 'Last_Season_Strength_of_Schedule_Power_Ranking'
+                                  }, inplace=True)
+        ssospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        ssospr_df['Team'] = ssospr_df['Team'].str.strip()
+        time.sleep(1)
+
+        strength_of_schedule_power_ranking_basic_method_url_current = 'https://www.teamrankings.com/college-football/ranking/sos-basic-by-other' \
+                                                                  + '?date=' \
+                                                                  + this_week_date_str
+        sosprbm_df = main_hist(strength_of_schedule_power_ranking_basic_method_url_current, season, str(week),
+                               this_week_date_str, 'strength_of_schedule_power_ranking_basic_method')
+        sosprbm_df.rename(columns={'Rank': 'Rank_Strength_of_Schedule_Power_Ranking_Basic_Method',
+                                   'Rating': 'Rating_Strength_of_Schedule_Power_Ranking_Basic_Method',
+                                   'Hi': 'Hi_Strength_of_Schedule_Power_Ranking_Basic_Method',
+                                   'Low': 'Low_Strength_of_Schedule_Power_Ranking_Basic_Method',
+                                   'Last': 'Last_Strength_of_Schedule_Power_Ranking_Basic_Method'
+                                   }, inplace=True)
+        sosprbm_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        sosprbm_df['Team'] = sosprbm_df['Team'].str.strip()
+        time.sleep(1)
+
+        in_conference_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/in-conference-sos-by-other' \
+                                                                       + '?date=' \
+                                                                       + this_week_date_str
+        icsospr_df = main_hist(in_conference_strength_of_schedule_power_ranking_url_current, season, str(week),
+                               this_week_date_str, 'in_conference_strength_of_schedule_power_ranking')
+        icsospr_df.rename(columns={'Rank': 'Rank_In_Conference_Strength_of_Schedule_Power_Ranking',
+                                   'Rating': 'Rating_In_Conference_Strength_of_Schedule_Power_Ranking',
+                                   'Hi': 'Hi_In_Conference_Strength_of_Schedule_Power_Ranking',
+                                   'Low': 'Low_In_Conference_Strength_of_Schedule_Power_Ranking',
+                                   'Last': 'Last_In-Conference_Strength_of_Schedule_Power_Ranking'
+                                   }, inplace=True)
+        icsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        icsospr_df['Team'] = icsospr_df['Team'].str.strip()
+        time.sleep(1)
+
+        nonconference_strength_of_schedule_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/non-conference-sos-by-other' \
+                                                                       + '?date=' \
+                                                                       + this_week_date_str
+        ncsospr_df = main_hist(nonconference_strength_of_schedule_power_ranking_url_current, season, str(week),
+                               this_week_date_str, 'nonconference_strength_of_schedule_power_ranking')
+        ncsospr_df.rename(columns={'Rank': 'Rank_Nonconference_Strength_of_Schedule_Power_Ranking',
+                                   'Rating': 'Rating_Nonconference_Strength_of_Schedule_Power_Ranking',
+                                   'Hi': 'Hi_Nonconference_Strength_of_Schedule_Power_Ranking',
+                                   'Low': 'Low_Nonconference_Strength_of_Schedule_Power_Ranking',
+                                   'Last': 'Last_Nonconference_Strength_of_Schedule_Power_Ranking'
+                                   }, inplace=True)
+        ncsospr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        ncsospr_df['Team'] = ncsospr_df['Team'].str.strip()
+        time.sleep(1)
+
+        last_10_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/last-10-games-by-other' \
+                                            + '?date=' \
+                                            + this_week_date_str
+        l10_df = main_hist(last_10_power_ranking_url_current, season, str(week),
+                           this_week_date_str, 'last_10_power_ranking')
+        l10_df.rename(columns={'Rank': 'Rank_Last_10_Power_Ranking',
+                               'Rating': 'Rating_Last_10_Power_Ranking',
+                               'Hi': 'Hi_Last_10_Power_Ranking',
+                               'Low': 'Low_Last_10_Power_Ranking',
+                               'Last': 'Last_Last_10_Power_Ranking'
+                               }, inplace=True)
+        l10_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        l10_df['Team'] = l10_df['Team'].str.strip()
+        time.sleep(1)
+
+        last_5_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/last-5-games-by-other' \
+                                           + '?date=' \
+                                           + this_week_date_str
+        l5_df = main_hist(last_5_power_ranking_url_current, season, str(week),
+                          this_week_date_str, 'last_5_power_ranking')
+        l10_df.rename(columns={'Rank': 'Rank_Last_5_Power_Ranking',
+                               'Rating': 'Rating_Last_5_Power_Ranking',
+                               'Hi': 'Hi_Last_5_Power_Ranking',
+                               'Low': 'Low_Last_5_Power_Ranking',
+                               'Last': 'Last_Last_5_Power_Ranking'
+                               }, inplace=True)
+        l5_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
         l5_df['Team'] = l5_df['Team'].str.strip()
         time.sleep(1)
 
-        neutral_site_url_current = 'https://www.teamrankings.com/college-football/ranking/neutral-by-other' \
-                                   + '?date=' \
-                                   + this_week_date_str
-        ns_df = main_hist(neutral_site_url_current, season, str(week), this_week_date_str, 'neutral_site')
-        ns_df.rename(columns={'Rank': 'Rank_Neutral_Site',
-                              'Rating': 'Rating_Neutral_Site',
-                              'Hi': 'Hi_Neutral_Site',
-                              'Low': 'Low_Neutral_Site',
-                              'Last': 'Last_Neutral_Site'
-                              }, inplace=True)
-        ns_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
-        ns_df['Team'] = ns_df['Team'].str.strip()
+        in_conference_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/in-conference-by-other' \
+                                                  + '?date=' \
+                                                  + this_week_date_str
+        icpr_df = main_hist(in_conference_power_ranking_url_current, season, str(week),
+                            this_week_date_str, 'in_conference_power_ranking')
+        icpr_df.rename(columns={'Rank': 'In_Conference_Power_Ranking',
+                                'Rating': 'Rating_In-Conference_Power_Ranking',
+                                'Hi': 'Hi_In-Conference_Power_Ranking',
+                                'Low': 'Low_In_Conference_Power_Ranking',
+                                'Last': 'Last_In-Conference_Power_Ranking'
+                                }, inplace=True)
+        icpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        icpr_df['Team'] = icpr_df['Team'].str.strip()
         time.sleep(1)
 
-        sos_url_current = 'https://www.teamrankings.com/college-football/ranking/schedule-strength-by-other' \
-                          + '?date=' \
-                          + this_week_date_str
-        sos_df = main_hist(sos_url_current, season, str(week), this_week_date_str, 'sos')
-        sos_df.rename(columns={'Rank': 'Rank_SoS',
-                               'Rating': 'Rating_SoS',
-                               'Hi': 'Hi_SoS',
-                               'Low': 'Low_SoS',
-                               'Last': 'Last_SoS'
+        nonconference_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/non-conference-by-other' \
+                                                  + '?date=' \
+                                                  + this_week_date_str
+        ncpr_df = main_hist(nonconference_power_ranking_url_current, season, str(week),
+                            this_week_date_str, 'nononference_power_ranking')
+        ncpr_df.rename(columns={'Rank': 'Nonconference_Power_Ranking',
+                                'Rating': 'Rating_Nonconference_Power_Ranking',
+                                'Hi': 'Hi_Nonconference_Power_Ranking',
+                                'Low': 'Low_Nonconference_Power_Ranking',
+                                'Last': 'Last_Nonconference_Power_Ranking'
+                                }, inplace=True)
+        ncpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        ncpr_df['Team'] = ncpr_df['Team'].str.strip()
+        time.sleep(1)
+
+        luck_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/luck-by-other' \
+                                         + '?date=' \
+                                         + this_week_date_str
+        lpr_df = main_hist(luck_power_ranking_url_current, season, str(week),
+                           this_week_date_str, 'luck_power_ranking')
+        lpr_df.rename(columns={'Rank': 'Luck_Power_Ranking',
+                               'Rating': 'Rating_Luck_Power_Ranking',
+                               'Hi': 'Hi_Luck_Power_Ranking',
+                               'Low': 'Low_Luck_Power_Ranking',
+                               'Last': 'Last_Luck_Power_Ranking'
                                }, inplace=True)
-        sos_df['Team'] = sos_df['Team'].str.strip()
+        lpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
+        lpr_df['Team'] = lpr_df['Team'].str.strip()
+        time.sleep(1)
 
         this_week_df = pd.merge(so_df, tasm_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, typp_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -5849,9 +6399,24 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, popfdpg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, poptpp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, pppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poppypp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ppr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, hpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, apr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, nspr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, hapr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fsospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ssospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sosprbm_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, icsospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ncsospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, l10_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
-        this_week_df = pd.merge(this_week_df, ns_df, on=['Team', 'Season', 'Week'], how='outer')
-        this_week_df = pd.merge(this_week_df, sos_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, icpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ncpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, lpr_df, on=['Team', 'Season', 'Week'], how='outer')
 
         this_week_df = rearrange_columns(this_week_df)
         season_df = pd.concat([season_df, this_week_df])
