@@ -74,6 +74,9 @@ if __name__ == '__main__':
     pd.set_option('display.width', desired_width)
     pd.set_option('display.max_columns', 60)
 
+    save_dir = 'C:\PythonPrograms'
+    # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
+
     """
     # This try statement is a check to see whether the program was started using the command line/terminal or using an 
     # editor (like pycharm). We will always be starting it from pycharm, so the try statement will always fail and 
@@ -110,7 +113,8 @@ if __name__ == '__main__':
         # We want to set 'season' to each value in the list 2010-2018; for each value of season we go into the 
         # for loop and scrape each TR table for each week of the season from week 5-14
         """
-        for season in ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']:
+        # for season in ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']:
+        for season in ['2010', '2011']:
             season_df = pd.DataFrame()
             """
             # Each season has it's own season start date, so depending on which season we are at in the for loop
@@ -322,8 +326,8 @@ if __name__ == '__main__':
                 trspp_df = main_hist(team_red_zone_scoring_percentage_url_current, season, str(week), this_week_date_str,
                                   'team_red_zone_scoring_percentage')
                 trspp_df.rename(columns={'Rank': 'Rank_Team_Red_Zone_Scoring_Percentage',
-                                      season: 'Current_Season_Team_Red-Zone_Scoring_Percentage',
-                                      str(int(season) - 1): 'Previous_Season_Team_Red-Zone_Scoring_Percentage',
+                                      season: 'Current_Season_Team_Red_Zone_Scoring_Percentage',
+                                      str(int(season) - 1): 'Previous_Season_Team_Red_Zone_Scoring_Percentage',
                                       'Last 3': 'Last 3_Team_Red_Zone_Scoring_Percentage',
                                       'Last 1': 'Last 1_Team_Red_Zone_Scoring_Percentage',
                                       'Home': 'At_Home_Team_Red_Zone_Scoring_Percentage',
@@ -331,8 +335,11 @@ if __name__ == '__main__':
                                       }, inplace=True)
                 trspp_df['Team'] = trspp_df['Team'].str.strip()
                 if season == '2010':
-                    trspp_df['Rank_Team_Red-Zone_Scoring_Percentage'] = trspp_df.index + 1
+                    trspp_df['Rank_Team_Red_Zone_Scoring_Percentage'] = trspp_df.index + 1
                 trspp_df = trspp_df.replace('--', np.nan)
+                for c in trspp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        trspp_df[c] = trspp_df[c].str.rstrip('%').astype('float') / 100.0
                 trspp_df = trspp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -393,6 +400,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     tops_df['Rank_Team_Offensive_Point_Share_Percentage'] = tops_df.index + 1
                 tops_df = tops_df.replace('--', np.nan)
+                for c in tops_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        tops_df[c] = tops_df[c].str.rstrip('%').astype('float') / 100.0
                 tops_df = tops_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -840,6 +850,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     toatpp_df['Rank_Total_Offense_Average_Time_of_Possession_Percentage'] = toatpp_df.index + 1
                 toatpp_df = toatpp_df.replace('--', np.nan)
+                for c in toatpp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        toatpp_df[c] = toatpp_df[c].str.rstrip('%').astype('float') / 100.0
                 toatpp_df = toatpp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1009,6 +1022,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     rorpp_df['Rank_Rushing_Offense_Rushing_Play_Percentage'] = rorpp_df.index + 1
                 rorpp_df = rorpp_df.replace('--', np.nan)
+                for c in rorpp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        rorpp_df[c] = rorpp_df[c].str.rstrip('%').astype('float') / 100.0
                 rorpp_df = rorpp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1030,6 +1046,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     roryp_df['Rank_Rushing_Offense_Rushing_Yards_Percentage'] = roryp_df.index + 1
                 roryp_df = roryp_df.replace('--', np.nan)
+                for c in roryp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        roryp_df[c] = roryp_df[c].str.rstrip('%').astype('float') / 100.0
                 roryp_df = roryp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1114,6 +1133,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     pocp_df['Rank_Passing_Offense_Completion_Percentage'] = pocp_df.index + 1
                 pocp_df = pocp_df.replace('--', np.nan)
+                for c in pocp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        pocp_df[c] = pocp_df[c].str.rstrip('%').astype('float') / 100.0
                 pocp_df = pocp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1177,6 +1199,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     poqsp_df['Rank_Passing_Offense_QB_Sacked_Percentage'] = poqsp_df.index + 1
                 poqsp_df = poqsp_df.replace('--', np.nan)
+                for c in poqsp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        poqsp_df[c] = poqsp_df[c].str.rstrip('%').astype('float') / 100.0
                 poqsp_df = poqsp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1198,7 +1223,7 @@ if __name__ == '__main__':
                 if season == '2010':
                     poapr_df['Rank_Passing_Offense_Average_Passer_Rating'] = poapr_df.index + 1
                 poapr_df = poapr_df.replace('--', np.nan)
-                poqpr_df = poapr_df.apply(pd.to_numeric, errors='ignore')
+                poapr_df = poapr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
                 passing_offense_passing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/passing-play-pct' \
@@ -1219,6 +1244,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     poppp_df['Rank_Passing_Offense_Passing_Play_Percentage'] = poppp_df.index + 1
                 poppp_df = poppp_df.replace('--', np.nan)
+                for c in poppp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        poppp_df[c] = poppp_df[c].str.rstrip('%').astype('float') / 100.0
                 poppp_df = poppp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1240,6 +1268,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     popyp_df['Rank_Passing_Offense_Passing_Yards_Percentage'] = popyp_df.index + 1
                 popyp_df = popyp_df.replace('--', np.nan)
+                for c in popyp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        popyp_df[c] = popyp_df[c].str.rstrip('%').astype('float') / 100.0
                 popyp_df = popyp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1345,6 +1376,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     stofgcp_df['Rank_Special_Teams_Offense_Field_Goal_Conversion_Percentage'] = stofgcp_df.index + 1
                 stofgcp_df = stofgcp_df.replace('--', np.nan)
+                for c in stofgcp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        stofgcp_df[c] = stofgcp_df[c].str.rstrip('%').astype('float') / 100.0
                 stofgcp_df = stofgcp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1538,6 +1572,9 @@ if __name__ == '__main__':
                     sdorzsp_df[
                         'Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage'] = sdorzsp_df.index + 1
                 sdorzsp_df = sdorzsp_df.replace('--', np.nan)
+                for c in sdorzsp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        sdorzsp_df[c] = sdorzsp_df[c].str.rstrip('%').astype('float') / 100.0
                 sdorzsp_df = sdorzsp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1798,6 +1835,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     tdptopp_df['Rank_Total_Defense_Opponent_Time_of_Possession_Percentage'] = tdptopp_df.index + 1
                 tdptopp_df = tdptopp_df.replace('--', np.nan)
+                for c in tdptopp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        tdptopp_df[c] = tdptopp_df[c].str.rstrip('%').astype('float') / 100.0
                 tdptopp_df = tdptopp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1820,6 +1860,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     tdotdcp_df['Rank_Total_Defense_Opponent_Third_Down_Conversion_Percentage'] = tdotdcp_df.index + 1
                 tdotdcp_df = tdotdcp_df.replace('--', np.nan)
+                for c in tdotdcp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        tdotdcp_df[c] = tdotdcp_df[c].str.rstrip('%').astype('float') / 100.0
                 tdotdcp_df = tdotdcp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1840,8 +1883,11 @@ if __name__ == '__main__':
                                            }, inplace=True)
                 tdofdcp_df['Team'] = tdofdcp_df['Team'].str.strip()
                 if season == '2010':
-                    tdoddcp_df['Rank_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage'] = tdofdcp_df.index + 1
-                tdoddcp_df = tdofdcp_df.replace('--', np.nan)
+                    tdofdcp_df['Rank_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage'] = tdofdcp_df.index + 1
+                tdofdcp_df = tdofdcp_df.replace('--', np.nan)
+                for c in tdofdcp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        tdofdcp_df[c] = tdofdcp_df[c].str.rstrip('%').astype('float') / 100.0
                 tdofdcp_df = tdofdcp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -1996,6 +2042,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     rdorpp_df['Rank_Rushing_Defense_Opponent_Rushing_Play_Percentage'] = rdorpp_df.index + 1
                 rdorpp_df = rdorpp_df.replace('--', np.nan)
+                for c in rdorpp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        rdorpp_df[c] = rdorpp_df[c].str.rstrip('%').astype('float') / 100.0
                 rdorpp_df = rdorpp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2018,6 +2067,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     rdoryp_df['Rank_Rushing_Defense_Opponent_Rushing_Yards_Percentage'] = rdoryp_df.index + 1
                 rdoryp_df = rdoryp_df.replace('--', np.nan)
+                for c in rdoryp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        rdoryp_df[c] = rdoryp_df[c].str.rstrip('%').astype('float') / 100.0
                 rdoryp_df = rdoryp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2106,6 +2158,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     pdocp_df['Rank_Passing_Defense_Opponent_Completion_Percentage'] = pdocp_df.index + 1
                 pdocp_df = pdocp_df.replace('--', np.nan)
+                for c in pdocp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        pdocp_df[c] = pdocp_df[c].str.rstrip('%').astype('float') / 100.0
                 pdocp_df = pdocp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2195,6 +2250,9 @@ if __name__ == '__main__':
                     pdtsp_df[
                         'Rank_Passing_Defense_Team_Sack_Percentage'] = pdtsp_df.index + 1
                 pdtsp_df = pdtsp_df.replace('--', np.nan)
+                for c in pdtsp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        pdtsp_df[c] = pdtsp_df[c].str.rstrip('%').astype('float') / 100.0
                 pdtsp_df = pdtsp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2218,6 +2276,9 @@ if __name__ == '__main__':
                     pdoppp_df[
                         'Rank_Passing_Defense_Opponent_Passing_Play_Percentage'] = pdoppp_df.index + 1
                 pdoppp_df = pdoppp_df.replace('--', np.nan)
+                for c in pdoppp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        pdoppp_df[c] = pdoppp_df[c].str.rstrip('%').astype('float') / 100.0
                 pdoppp_df = pdoppp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2241,6 +2302,9 @@ if __name__ == '__main__':
                     pdopyp_df[
                         'Rank_Passing_Defense_Opponent_Passing_Yards_Percentage'] = pdopyp_df.index + 1
                 pdopyp_df = pdopyp_df.replace('--', np.nan)
+                for c in pdopyp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        pdopyp_df[c] = pdopyp_df[c].str.rstrip('%').astype('float') / 100.0
                 pdopyp_df = pdopyp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2684,6 +2748,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     titp_df['Rank_Turnovers_Interceptions_Thrown_Percentage'] = titp_df.index + 1
                 titp_df = titp_df.replace('--', np.nan)
+                for c in titp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        titp_df[c] = titp_df[c].str.rstrip('%').astype('float') / 100.0
                 titp_df = titp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2706,6 +2773,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     tfrp_df['Rank_Turnovers_Fumble_Recovery_Percentage'] = tfrp_df.index + 1
                 tfrp_df = tfrp_df.replace('--', np.nan)
+                for c in tfrp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        tfrp_df[c] = tfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 tfrp_df = tfrp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2728,6 +2798,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     tgfrp_df['Rank_Turnovers_Giveaway_Fumble_Recovery_Percentage'] = tgfrp_df.index + 1
                 tgfrp_df = tgfrp_df.replace('--', np.nan)
+                for c in tgfrp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        tgfrp_df[c] = tgfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 tgfrp_df = tgfrp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2750,6 +2823,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     ttfrp_df['Rank_Turnovers_Takeaway_Fumble_Recovery_Percentage'] = ttfrp_df.index + 1
                 ttfrp_df = ttfrp_df.replace('--', np.nan)
+                for c in ttfrp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        ttfrp_df[c] = ttfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 ttfrp_df = ttfrp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2772,6 +2848,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     toitp_df['Rank_Turnovers_Opponent_Interceptions_Thrown_Percentage'] = toitp_df.index + 1
                 toitp_df = toitp_df.replace('--', np.nan)
+                for c in toitp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        toitp_df[c] = toitp_df[c].str.rstrip('%').astype('float') / 100.0
                 toitp_df = toitp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2794,6 +2873,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     tofrp_df['Rank_Turnovers_Opponent_Fumble_Recovery_Percentage'] = tofrp_df.index + 1
                 tofrp_df = tofrp_df.replace('--', np.nan)
+                for c in tofrp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        tofrp_df[c] = tofrp_df[c].str.rstrip('%').astype('float') / 100.0
                 tofrp_df = tofrp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2816,6 +2898,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     togfrp_df['Rank_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage'] = togfrp_df.index + 1
                 togfrp_df = togfrp_df.replace('--', np.nan)
+                for c in togfrp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        togfrp_df[c] = togfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 togfrp_df = togfrp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -2839,6 +2924,9 @@ if __name__ == '__main__':
                 if season == '2010':
                     totfrp_df['Rank_Turnovers_Opponent_Takeway_Fumble_Recovery_Percentage'] = totfrp_df.index + 1
                 totfrp_df = totfrp_df.replace('--', np.nan)
+                for c in totfrp_df:
+                    if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
+                        totfrp_df[c] = totfrp_df[c].str.rstrip('%').astype('float') / 100.0
                 totfrp_df = totfrp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(2)
 
@@ -3223,7 +3311,7 @@ if __name__ == '__main__':
 
                 time.sleep(3)
 
-            save_dir = 'C:\PythonPrograms'
+            # save_dir = 'C:\PythonPrograms'
             save_file = 'Scraped_TR_Data_Combined_' + season
             try:
                 datascraper.save_df(season_df, save_dir, save_file)
@@ -3232,7 +3320,7 @@ if __name__ == '__main__':
             except:
                 print('I don\'t think the file saved, you should double check.')
 
-        save_dir = 'C:\PythonPrograms'
+        # save_dir = 'C:\PythonPrograms'
         save_file = 'Scraped_TR_Data_Combined_ALL'
         try:
             datascraper.save_df(master_df, save_dir, save_file)
@@ -5770,6 +5858,7 @@ if __name__ == '__main__':
         master_df = pd.concat([master_df, this_week_df])
 
         save_dir = 'C:\PythonPrograms'
+        # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
         save_file = 'Scraped_TR_Data_Season_' + season + '_Week_' + week
         try:
             datascraper.save_df(season_df, save_dir, save_file)
