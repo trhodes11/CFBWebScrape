@@ -3598,7 +3598,7 @@ if __name__ == '__main__':
                 second_half_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/second-half-by-other' \
                     + '?date=' \
                     + this_week_date_str
-                shpr_df = main_hist(first_half_per_ranking_url_current, season, str(week),
+                shpr_df = main_hist(second_half_power_ranking_url_current, season, str(week),
                                     this_week_date_str, 'second_half_power_ranking')
                 shpr_df.rename(columns={'Rank': 'Second_Half_Power_Ranking',
                                         'Rating': 'Second_Half_Power_Ranking',
