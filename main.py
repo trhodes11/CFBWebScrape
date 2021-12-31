@@ -1241,14 +1241,14 @@ if __name__ == '__main__':
                                          'Home': 'At_Home_Passing_Offense_Passing_Play_Percentage',
                                          'Away': 'Away_Passing_Offense_Passing_Play_Percentage'
                                          }, inplace=True)
-                poppp_df['Team'] = poppp_df['Team'].str.strip()
+                ppoppp_df['Team'] = ppoppp_df['Team'].str.strip()
                 if season == '2010':
-                    poppp_df['Rank_Passing_Offense_Passing_Play_Percentage'] = poppp_df.index + 1
-                poppp_df = poppp_df.replace('--', np.nan)
-                for c in poppp_df:
+                    ppoppp_df['Rank_Passing_Offense_Passing_Play_Percentage'] = ppoppp_df.index + 1
+                ppoppp_df = ppoppp_df.replace('--', np.nan)
+                for c in ppoppp_df:
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
-                        poppp_df[c] = poppp_df[c].str.rstrip('%').astype('float') / 100.0
-                poppp_df = poppp_df.apply(pd.to_numeric, errors='ignore')
+                        ppoppp_df[c] = ppoppp_df[c].str.rstrip('%').astype('float') / 100.0
+                ppoppp_df = ppoppp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
 
                 passing_offense_passing_yards_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/passing-yards-pct' \
@@ -3663,7 +3663,7 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, poqspg_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, poqsp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, poapr_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, poppp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, ppoppp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, popyp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, poyppa_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, poypc_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -4661,9 +4661,9 @@ if __name__ == '__main__':
         passing_offense_passing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/passing-play-pct' \
                                                               + '?date=' \
                                                               + this_week_date_str
-        poppp_df = main_hist(passing_offense_passing_play_percentage_url_current, season, str(week), this_week_date_str,
+        ppoppp_df = main_hist(passing_offense_passing_play_percentage_url_current, season, str(week), this_week_date_str,
                              'passing_offense_passing_play_percentage')
-        poppp_df.rename(columns={'Rank': 'Rank_Passing_Offense_Passing_Play_Percentage',
+        ppoppp_df.rename(columns={'Rank': 'Rank_Passing_Offense_Passing_Play_Percentage',
                                  season: 'Current_Season_Passing_Offense_Passing_Play_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Offense_Passing_Play_Percentage',
@@ -4672,7 +4672,7 @@ if __name__ == '__main__':
                                  'Home': 'At_Home_Passing_Offense_Passing_Play_Percentage',
                                  'Away': 'Away_Passing_Offense_Passing_Play_Percentage'
                                  }, inplace=True)
-        poppp_df['Team'] = poppp_df['Team'].str.strip()
+        ppoppp_df['Team'] = ppoppp_df['Team'].str.strip()
         time.sleep(1)
 
         passing_offense_passing_yards_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/passing-yards-pct' \
@@ -6593,7 +6593,7 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, poqspg_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, poqsp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, poapr_df, on=['Team', 'Season', 'Week'], how='outer')
-        this_week_df = pd.merge(this_week_df, poppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ppoppp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, popyp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, poyppa_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, poypc_df, on=['Team', 'Season', 'Week'], how='outer')
