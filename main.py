@@ -114,8 +114,8 @@ if __name__ == '__main__':
         # We want to set 'season' to each value in the list 2010-2018; for each value of season we go into the 
         # for loop and scrape each TR table for each week of the season from week 5-14
         """
-        # for season in ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']:
-        for season in ['2013']:
+        for season in ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']:
+        # for season in ['2014']:
             season_df = pd.DataFrame()
             """
             # Each season has it's own season start date, so depending on which season we are at in the for loop
@@ -3582,10 +3582,10 @@ if __name__ == '__main__':
                 fhpr_df = main_hist(first_half_power_ranking_url_current, season, str(week),
                                     this_week_date_str, 'first_half_power_ranking')
                 fhpr_df.rename(columns={'Rank': 'First_Half_Power_Ranking',
-                                        'Rating': 'First_Half_Power_Ranking',
-                                        'Hi': 'First_Half_Power_Ranking',
-                                        'Low': 'First_Half_Power_Ranking',
-                                        'Last': 'First_Half_Power_Ranking'
+                                        'Rating': 'Rating_First_Half_Power_Ranking',
+                                        'Hi': 'Hi_First_Half_Power_Ranking',
+                                        'Low': 'Low_First_Half_Power_Ranking',
+                                        'Last': 'Last_First_Half_Power_Ranking'
                                         }, inplace=True)
                 # fhpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 fhpr_df['Team'] = fhpr_df['Team'].str.strip()
@@ -3601,10 +3601,10 @@ if __name__ == '__main__':
                 shpr_df = main_hist(second_half_power_ranking_url_current, season, str(week),
                                     this_week_date_str, 'second_half_power_ranking')
                 shpr_df.rename(columns={'Rank': 'Second_Half_Power_Ranking',
-                                        'Rating': 'Second_Half_Power_Ranking',
-                                        'Hi': 'Second_Half_Power_Ranking',
-                                        'Low': 'Second_Half_Power_Ranking',
-                                        'Last': 'Second_Half_Power_Ranking'
+                                        'Rating': 'Rating_Second_Half_Power_Ranking',
+                                        'Hi': 'Hi_Second_Half_Power_Ranking',
+                                        'Low': 'Low_Second_Half_Power_Ranking',
+                                        'Last': 'Last_Second_Half_Power_Ranking'
                                         }, inplace=True)
                 # shpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 shpr_df['Team'] = shpr_df['Team'].str.strip()
@@ -6523,10 +6523,10 @@ if __name__ == '__main__':
         fhpr_df = main_hist(first_half_per_ranking_url_current, season, str(week),
                             this_week_date_str, 'first_half_power_ranking')
         fhpr_df.rename(columns={'Rank': 'First_Half_Power_Ranking',
-                                'Rating': 'First_Half_Power_Ranking',
-                                'Hi': 'First_Half_Power_Ranking',
-                                'Low': 'First_Half_Power_Ranking',
-                                'Last': 'First_Half_Power_Ranking'
+                                'Rating': 'Rating_First_Half_Power_Ranking',
+                                'Hi': 'Hi_First_Half_Power_Ranking',
+                                'Low': 'Low_First_Half_Power_Ranking',
+                                'Last': 'Last_First_Half_Power_Ranking'
                                 }, inplace=True)
         fhpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
         fhpr_df['Team'] = fhpr_df['Team'].str.strip()
@@ -6538,10 +6538,10 @@ if __name__ == '__main__':
         shpr_df = main_hist(first_half_per_ranking_url_current, season, str(week),
                             this_week_date_str, 'second_half_power_ranking')
         shpr_df.rename(columns={'Rank': 'Second_Half_Power_Ranking',
-                                'Rating': 'Second_Half_Power_Ranking',
-                                'Hi': 'Second_Half_Power_Ranking',
-                                'Low': 'Second_Half_Power_Ranking',
-                                'Last': 'Second_Half_Power_Ranking'
+                                'Rating': 'Rating_Second_Half_Power_Ranking',
+                                'Hi': 'Hi_Second_Half_Power_Ranking',
+                                'Low': 'Low_Second_Half_Power_Ranking',
+                                'Last': 'Last_Second_Half_Power_Ranking'
                                 }, inplace=True)
         shpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
         shpr_df['Team'] = shpr_df['Team'].str.strip()
