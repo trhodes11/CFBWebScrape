@@ -1230,9 +1230,9 @@ if __name__ == '__main__':
                 passing_offense_passing_play_percentage_url_current = 'https://www.teamrankings.com/college-football/stat/passing-play-pct' \
                     + '?date=' \
                     + this_week_date_str
-                poppp_df = main_hist(passing_offense_passing_play_percentage_url_current, season, str(week), this_week_date_str,
+                ppoppp_df = main_hist(passing_offense_passing_play_percentage_url_current, season, str(week), this_week_date_str,
                                      'passing_offense_passing_play_percentage')
-                poppp_df.rename(columns={'Rank': 'Rank_Passing_Offense_Passing_Play_Percentage',
+                ppoppp_df.rename(columns={'Rank': 'Rank_Passing_Offense_Passing_Play_Percentage',
                                          season: 'Current_Season_Passing_Offense_Passing_Play_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Offense_Passing_Play_Percentage',
@@ -3141,7 +3141,7 @@ if __name__ == '__main__':
                                        str(week),
                                        this_week_date_str,
                                        'penalties_opponent_penalties_per_play')
-                poppp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalties_per_Play',
+                popppp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalties_per_Play',
                                            season: 'Current_Season_Penalties_Opponent_Penalties_per_Play',
                                            str(int(
                                                season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Play',
@@ -3150,11 +3150,11 @@ if __name__ == '__main__':
                                            'Home': 'At_Home_Penalties_Opponent_Penalties_per_Play',
                                            'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Play'
                                            }, inplace=True)
-                poppp_df['Team'] = poppp_df['Team'].str.strip()
+                popppp_df['Team'] = poppp_df['Team'].str.strip()
                 if season == '2010':
-                    poppp_df['Rank_Penalties_Opponent_Penalties_per_Play'] = poppp_df.index + 1
-                poppp_df = poppp_df.replace('--', np.nan)
-                poppp_df = popppp_df.apply(pd.to_numeric, errors='ignore')
+                    popppp_df['Rank_Penalties_Opponent_Penalties_per_Play'] = popppp_df.index + 1
+                popppp_df = poppp_df.replace('--', np.nan)
+                popppp_df = popppp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
 
                 predictive_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/predictive-by-other'\
@@ -3747,7 +3747,7 @@ if __name__ == '__main__':
                 this_week_df = pd.merge(this_week_df, poptpp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, pppp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, poppypp_df, on=['Team', 'Season', 'Week'], how='outer')
-                this_week_df = pd.merge(this_week_df, poppp_df, on=['Team', 'Season', 'Week'], how='outer')
+                this_week_df = pd.merge(this_week_df, popppp_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, ppr_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, hpr_df, on=['Team', 'Season', 'Week'], how='outer')
                 this_week_df = pd.merge(this_week_df, apr_df, on=['Team', 'Season', 'Week'], how='outer')
@@ -6171,7 +6171,7 @@ if __name__ == '__main__':
                               str(week),
                               this_week_date_str,
                               'penalties_opponent_penalties_per_play')
-        poppp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalties_per_Play',
+        popppp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalties_per_Play',
                                  season: 'Current_Season_Penalties_Opponent_Penalties_per_Play',
                                  str(int(
                                      season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Play',
@@ -6180,7 +6180,7 @@ if __name__ == '__main__':
                                  'Home': 'At_Home_Penalties_Opponent_Penalties_per_Play',
                                  'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Play'
                                  }, inplace=True)
-        poppp_df['Team'] = poppp_df['Team'].str.strip()
+        popppp_df['Team'] = popppp_df['Team'].str.strip()
         time.sleep(1)
 
         predictive_power_ranking_url_current = 'https://www.teamrankings.com/college-football/ranking/predictive-by-other' \
@@ -6677,7 +6677,7 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, poptpp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, pppp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, poppypp_df, on=['Team', 'Season', 'Week'], how='outer')
-        this_week_df = pd.merge(this_week_df, poppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, popppp_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, ppr_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, hpr_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, apr_df, on=['Team', 'Season', 'Week'], how='outer')
