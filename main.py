@@ -209,7 +209,7 @@ if __name__ == '__main__':
                     + '?date=' \
                     + this_week_date_str
                 typp_df = main_hist(team_yards_per_point_url_current, season, str(week), this_week_date_str, 'team_yards_per_point')
-                typp_df.rename(columns={'Rank': 'Rank_Team_Yards_Per_Point',
+                typp_df.rename(columns={'Rank': 'Rank_Team_Yards_per_Point',
                                       season: 'Current_Season_Team_Yards_per_Point',
                                       str(int(season) - 1): 'Previous_Season_Team_yards_per_Point',
                                       'Last 3': 'Last 3_Team_Yards_per_Point',
@@ -296,7 +296,7 @@ if __name__ == '__main__':
                                       }, inplace=True)
                 trs_df['Team'] = trs_df['Team'].str.strip()
                 if season == '2010':
-                    trs_df['Rank_Team_Red-Zone_Scoring_Attempts_per_Game'] = trs_df.index + 1
+                    trs_df['Rank_Team_Red_Zone_Scoring_Attempts_per_Game'] = trs_df.index + 1
                 trs_df = trs_df.replace('--', np.nan)
                 trs_df = trs_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -316,7 +316,7 @@ if __name__ == '__main__':
                                       }, inplace=True)
                 trsp_df['Team'] = trsp_df['Team'].str.strip()
                 if season == '2010':
-                    trsp_df['Rank_Team_Red-Zone_Scores_per_Game'] = trsp_df.index + 1
+                    trsp_df['Rank_Team_Red_Zone_Scores_per_Game'] = trsp_df.index + 1
                 tssp_df = trsp_df.replace('--', np.nan)
                 trsp_df = trsp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -411,7 +411,7 @@ if __name__ == '__main__':
                     + '?date=' \
                     + this_week_date_str
                 fiq_df = main_hist(team_first_quarter_points_per_game_url_current, season, str(week), this_week_date_str,
-                                    'team_first_quarter_points_per_game')
+                                   'team_first_quarter_points_per_game')
                 fiq_df.rename(columns={'Rank': 'Rank_Team_First_Quarter_Points_per_Game',
                                         season: 'Current_Season_Team_First_Quarter_Points_per_Game',
                                         str(int(season) - 1): 'Previous_Season_Team_First_Quarter_Points_per_Game',
@@ -492,7 +492,7 @@ if __name__ == '__main__':
                     + this_week_date_str
                 ot_df = main_hist(team_overtime_points_per_game_url_current, season, str(week), this_week_date_str,
                                   'team_overtime_points_per_game')
-                ot_df.rename(columns={'Rank': 'Rank_Overtime_Points_per_Game',
+                ot_df.rename(columns={'Rank': 'Rank_Team_Overtime_Points_per_Game',
                                       season: 'Current_Season_Team_Overtime_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_Overtime_Points_per_Game',
                                       'Last 3': 'Last 3_Team_Overtime_Points_per_Game',
@@ -502,7 +502,7 @@ if __name__ == '__main__':
                                       }, inplace=True)
                 ot_df['Team'] = ot_df['Team'].str.strip()
                 if season == '2010':
-                    ot_df['Rank_Team_Overtime_Points_per_Game'] = fq_df.index + 1
+                    ot_df['Rank_Team_Overtime_Points_per_Game'] = ot_df.index + 1
                 ot_df = ot_df.replace('--', np.nan)
                 ot_df = ot_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -512,7 +512,7 @@ if __name__ == '__main__':
                     + this_week_date_str
                 fh_df = main_hist(team_first_half_points_per_game_url_current, season, str(week), this_week_date_str,
                                   'team_first_half_points_per_game')
-                fh_df.rename(columns={'Rank': 'Rank_First_Half_Points_per_Game',
+                fh_df.rename(columns={'Rank': 'Rank_Team_First_Half_Points_per_Game',
                                       season: 'Current_Season_Team_First-Half_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_First-Half_Points_per_Game',
                                       'Last 3': 'Last 3_Team_First-Half_Points_per_Game',
@@ -532,7 +532,7 @@ if __name__ == '__main__':
                     + this_week_date_str
                 sh_df = main_hist(team_second_half_points_per_game_url_current, season, str(week), this_week_date_str,
                                   'team_second_half_points_per_game')
-                sh_df.rename(columns={'Rank': 'Rank_Second_Half_Points_per_Game',
+                sh_df.rename(columns={'Rank': 'Rank_Team_Second_Half_Points_per_Game',
                                       season: 'Current_Season_Team_Second-Half_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_Second-Half_Points_per_Game',
                                       'Last 3': 'Last 3_Team_Second-Half_Points_per_Game',
@@ -542,7 +542,7 @@ if __name__ == '__main__':
                                       }, inplace=True)
                 sh_df['Team'] = sh_df['Team'].str.strip()
                 if season == '2010':
-                    sh_df['Rank_Team_Second_Half_Points_per_Game'] = fh_df.index + 1
+                    sh_df['Rank_Team_Second_Half_Points_per_Game'] = sh_df.index + 1
                 sh_df = sh_df.replace('--', np.nan)
                 sh_df = sh_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -687,7 +687,7 @@ if __name__ == '__main__':
                                       }, inplace=True)
                 toypg_df['Team'] = toypg_df['Team'].str.strip()
                 if season == '2010':
-                    toypg_df['Rank_Total_Offense_Yards_per_Game'] = toypg_df.index + 1
+                    toypg_df['Rank_Total_Offense_yards_per_game'] = toypg_df.index + 1
                 toypg_df = toypg_df.replace('--', np.nan)
                 toypg_df = toypg_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -706,7 +706,7 @@ if __name__ == '__main__':
                                          }, inplace=True)
                 toppg_df['Team'] = toppg_df['Team'].str.strip()
                 if season == '2010':
-                    toppg_df['Rank_Total_Offense_Plays_per_Play'] = toppg_df.index + 1
+                    toppg_df['Rank_Total_Offense_Plays_per_Game'] = toppg_df.index + 1
                 toppg_df = toppg_df.replace('--', np.nan)
                 toppg_df = toppg_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -863,7 +863,7 @@ if __name__ == '__main__':
                 totdcp_df = main_hist(total_offense_third_down_conversion_percent_url_current, season,
                                       str(week), this_week_date_str,
                                       'total_offense_third_down_conversion_percent')
-                totdcp_df.rename(columns={'Rank': 'Rank_Total_Offense_Third_Down-Conversion_Percent',
+                totdcp_df.rename(columns={'Rank': 'Rank_Total_Offense_Third_Down_Conversion_Percent',
                                           season: 'Current_Season_Total_Offense_Third_Down-Conversion_Percent',
                                           str(int(
                                               season) - 1): 'Previous_Season_Total_Offense_Third_Down_Conversion_Percent',
@@ -884,7 +884,7 @@ if __name__ == '__main__':
                     + this_week_date_str
                 tofdcp_df = main_hist(total_offense_fourth_down_conversion_percent_url_current, season, str(week), this_week_date_str,
                                       'total_offense_fourth_down_conversion_percent')
-                tofdcp_df.rename(columns={'Rank': 'Rank_Total_Offense_Fourth_Down-Conversion_Percent',
+                tofdcp_df.rename(columns={'Rank': 'Rank_Total_Offense_Fourth_Down_Conversion_Percent',
                                           season: 'Current_Season_Total_Offense_Fourth_Down-Conversion_Percent',
                                           str(int(
                                               season) - 1): 'Previous_Season_Total_Offense_Fourth_Down_Conversion_Percent',
@@ -1493,8 +1493,7 @@ if __name__ == '__main__':
                                       this_week_date_str, 'scoring_defense_opponent_average_scoring_margin')
                 sdoasm_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                           season: 'Current_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
-                                          str(int(
-                                              season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                          str(int(season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                           'Last 3': 'Last 3_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                           'Last 1': 'Last 1_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                           'Home': 'At_Home_Scoring_Defense_Opponent_Average_Scoring_Margin',
@@ -2226,7 +2225,7 @@ if __name__ == '__main__':
                                            }, inplace=True)
                 pdoatpr_df['Team'] = pdoatpr_df['Team'].str.strip()
                 if season == '2010':
-                    pdoatpr_df['Rank_Passing_Defense_Opponent_Passing_Average_Team_Passer_Rating'] = pdoatpr_df.index + 1
+                    pdoatpr_df['Rank_Passing_Defense_Opponent_Average_Team_Passer_Rating'] = pdoatpr_df.index + 1
                 pdoatpr_df = pdoatpr_df.replace('--', np.nan)
                 pdoatpr_df = pdoatpr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -2248,8 +2247,7 @@ if __name__ == '__main__':
                                            }, inplace=True)
                 pdtsp_df['Team'] = pdtsp_df['Team'].str.strip()
                 if season == '2010':
-                    pdtsp_df[
-                        'Rank_Passing_Defense_Team_Sack_Percentage'] = pdtsp_df.index + 1
+                    pdtsp_df['Rank_Passing_Defense_Team_Sack_Percentage'] = pdtsp_df.index + 1
                 pdtsp_df = pdtsp_df.replace('--', np.nan)
                 for c in pdtsp_df:
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
@@ -2263,7 +2261,7 @@ if __name__ == '__main__':
                 pdoppp_df = main_hist(passing_defense_opponent_passing_play_percentage_url_current, season,
                                      str(week),
                                      this_week_date_str, 'passing_defense_opponent_passing_play_percentage')
-                pdoppp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Team_Opponent_Passing_Play_Percentage',
+                pdoppp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Passing_Play_Percentage',
                                          season: 'Current_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
@@ -2274,8 +2272,7 @@ if __name__ == '__main__':
                                          }, inplace=True)
                 pdoppp_df['Team'] = pdoppp_df['Team'].str.strip()
                 if season == '2010':
-                    pdoppp_df[
-                        'Rank_Passing_Defense_Opponent_Passing_Play_Percentage'] = pdoppp_df.index + 1
+                    pdoppp_df['Rank_Passing_Defense_Opponent_Passing_Play_Percentage'] = pdoppp_df.index + 1
                 pdoppp_df = pdoppp_df.replace('--', np.nan)
                 for c in pdoppp_df:
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
@@ -2289,7 +2286,7 @@ if __name__ == '__main__':
                 pdopyp_df = main_hist(passing_defense_opponent_passing_yards_percentage_url_current, season,
                                       str(week),
                                       this_week_date_str, 'passing_defense_opponent_passing_yards_percentage')
-                pdopyp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Team_Opponent_Passing_Yards_Percentage',
+                pdopyp_df.rename(columns={'Rank': 'Rank_Passing_Defense_Opponent_Passing_Yards_Percentage',
                                           season: 'Current_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
@@ -2300,8 +2297,7 @@ if __name__ == '__main__':
                                           }, inplace=True)
                 pdopyp_df['Team'] = pdopyp_df['Team'].str.strip()
                 if season == '2010':
-                    pdopyp_df[
-                        'Rank_Passing_Defense_Opponent_Passing_Yards_Percentage'] = pdopyp_df.index + 1
+                    pdopyp_df['Rank_Passing_Defense_Opponent_Passing_Yards_Percentage'] = pdopyp_df.index + 1
                 pdopyp_df = pdopyp_df.replace('--', np.nan)
                 for c in pdopyp_df:
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
@@ -2715,7 +2711,7 @@ if __name__ == '__main__':
                     + this_week_date_str
                 totmpg_df = main_hist(turnovers_opponent_turnover_margin_per_game_url_current, season, str(week), this_week_date_str,
                                       'turnovers_opponent_turnover_margin_per_game')
-                totmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Oppoenent_Turnover_margin_per_Game',
+                totmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Turnover_Margin_per_Game',
                                           season: 'Current_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
                                           str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
                                           'Last 3': 'Last 3_Turnovers_Opponent_Turnover_Margin_per_Game',
@@ -2836,7 +2832,7 @@ if __name__ == '__main__':
                 toitp_df = main_hist(turnovers_opponent_interceptions_thrown_percentage_url_current, season, str(week),
                                     this_week_date_str,
                                     'turnovers_opponent_interceptions_thrown_percentage')
-                toitp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                toitp_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Interceptions_Thrown_Percentage',
                                         season: 'Current_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
                                         str(int(
                                             season) - 1): 'Previous_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
@@ -2923,7 +2919,7 @@ if __name__ == '__main__':
                                           }, inplace=True)
                 totfrp_df['Team'] = totfrp_df['Team'].str.strip()
                 if season == '2010':
-                    totfrp_df['Rank_Turnovers_Opponent_Takeway_Fumble_Recovery_Percentage'] = totfrp_df.index + 1
+                    totfrp_df['Rank_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage'] = totfrp_df.index + 1
                 totfrp_df = totfrp_df.replace('--', np.nan)
                 for c in totfrp_df:
                     if (c != 'Team') & (c != 'Season') & (c != 'Week') & ('Rank' not in c):
@@ -3133,7 +3129,7 @@ if __name__ == '__main__':
                                         }, inplace=True)
                 poppypp_df['Team'] = poppypp_df['Team'].str.strip()
                 if season == '2010':
-                    poppypp_df['Rank_Penalties_Opponents_Penalty_Yards_per_Penalty'] = poppypp_df.index + 1
+                    poppypp_df['Rank_Penalties_Opponent_Penalty_Yards_per_Penalty'] = poppypp_df.index + 1
                 poppypp_df = poppypp_df.replace('--', np.nan)
                 poppypp_df = poppypp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3156,7 +3152,7 @@ if __name__ == '__main__':
                                            }, inplace=True)
                 poppp_df['Team'] = poppp_df['Team'].str.strip()
                 if season == '2010':
-                    poppp_df['Rank_Penalties_Opponents_Penalties_per_Play'] = poppp_df.index + 1
+                    poppp_df['Rank_Penalties_Opponent_Penalties_per_Play'] = poppp_df.index + 1
                 poppp_df = poppp_df.replace('--', np.nan)
                 poppp_df = popppp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3249,7 +3245,7 @@ if __name__ == '__main__':
                 hapr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 hapr_df['Team'] = hapr_df['Team'].str.strip()
                 if season == '2010':
-                    hapr_df['Rank_Home-Advantage_Power_Ranking'] = hapr_df.index + 1
+                    hapr_df['Rank_Home_Advantage_Power_Ranking'] = hapr_df.index + 1
                 hapr_df = hapr_df.replace('--', np.nan)
                 hapr_df = hapr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3419,7 +3415,7 @@ if __name__ == '__main__':
                 # icpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 icpr_df['Team'] = icpr_df['Team'].str.strip()
                 if season == '2010':
-                    icpr_df['Rank_In_Conference_Power_Ranking'] = icpr_df.index + 1
+                    icpr_df['In_Conference_Power_Ranking'] = icpr_df.index + 1
                 icpr_df = icpr_df.replace('--', np.nan)
                 icpr_df = icpr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3438,7 +3434,7 @@ if __name__ == '__main__':
                 # ncpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 ncpr_df['Team'] = ncpr_df['Team'].str.strip()
                 if season == '2010':
-                    ncpr_df['Rank_Nonconference_Power_Ranking'] = ncpr_df.index + 1
+                    ncpr_df['Nonconference_Power_Ranking'] = ncpr_df.index + 1
                 ncpr_df = ncpr_df.replace('--', np.nan)
                 ncpr_df = ncpr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3457,7 +3453,7 @@ if __name__ == '__main__':
                 lpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 lpr_df['Team'] = lpr_df['Team'].str.strip()
                 if season == '2010':
-                    lpr_df['Rank_Luck_Power_Ranking'] = lpr_df.index + 1
+                    lpr_df['Luck_Power_Ranking'] = lpr_df.index + 1
                 lpr_df = lpr_df.replace('--', np.nan)
                 lpr_df = lpr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3476,7 +3472,7 @@ if __name__ == '__main__':
                 cpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 cpr_df['Team'] = cpr_df['Team'].str.strip()
                 if season == '2010':
-                    cpr_df['Rank_Consistency_Power_Ranking'] = cpr_df.index + 1
+                    cpr_df['Consistency_Power_Ranking'] = cpr_df.index + 1
                 cpr_df = cpr_df.replace('--', np.nan)
                 cpr_df = cpr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3495,7 +3491,7 @@ if __name__ == '__main__':
                 # vt1_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt1_df['Team'] = vt1_df['Team'].str.strip()
                 if season == '2010':
-                    vt1_df['Rank_Versus_Teams_1_Thru_10_Power_Ranking'] = vt1_df.index + 1
+                    vt1_df['Versus_Teams_1_Thru_10_Power_Ranking'] = vt1_df.index + 1
                 vt1_df = vt1_df.replace('--', np.nan)
                 vt1_df = vt1_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3514,7 +3510,7 @@ if __name__ == '__main__':
                 # vt11_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt11_df['Team'] = vt11_df['Team'].str.strip()
                 if season == '2010':
-                    vt11_df['Rank_Versus_Teams_11_Thru_25_Power_Ranking'] = vt11_df.index + 1
+                    vt11_df['Versus_Teams_11_Thru_25_Power_Ranking'] = vt11_df.index + 1
                 vt11_df = vt11_df.replace('--', np.nan)
                 vt11_df = vt11_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3533,7 +3529,7 @@ if __name__ == '__main__':
                 # vt26_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt26_df['Team'] = vt26_df['Team'].str.strip()
                 if season == '2010':
-                    vt26_df['Rank_Versus_Teams_26_Thru_40_Power_Ranking'] = vt26_df.index + 1
+                    vt26_df['Versus_Teams_26_Thru_40_Power_Ranking'] = vt26_df.index + 1
                 vt26_df = vt26_df.replace('--', np.nan)
                 vt26_df = vt26_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3552,7 +3548,7 @@ if __name__ == '__main__':
                 # vt41_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt41_df['Team'] = vt41_df['Team'].str.strip()
                 if season == '2010':
-                    vt41_df['Rank_Versus_Teams_41_Thru_75_Power_Ranking'] = vt41_df.index + 1
+                    vt41_df['Versus_Teams_41_Thru_75_Power_Ranking'] = vt41_df.index + 1
                 vt41_df = vt41_df.replace('--', np.nan)
                 vt41_df = vt41_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3571,7 +3567,7 @@ if __name__ == '__main__':
                 # vt76_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 vt76_df['Team'] = vt76_df['Team'].str.strip()
                 if season == '2010':
-                    vt76_df['Rank_Versus_Teams_76_Thru_120_Power_Ranking'] = vt76_df.index + 1
+                    vt76_df['Versus_Teams_76_Thru_120_Power_Ranking'] = vt76_df.index + 1
                 vt76_df = vt76_df.replace('--', np.nan)
                 vt76_df = vt76_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3590,7 +3586,7 @@ if __name__ == '__main__':
                 # fhpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 fhpr_df['Team'] = fhpr_df['Team'].str.strip()
                 if season == '2010':
-                    fhpr_df['Rank_First_Half_Power_Ranking'] = fhpr_df.index + 1
+                    fhpr_df['First_Half_Power_Ranking'] = fhpr_df.index + 1
                 fhpr_df = fhpr_df.replace('--', np.nan)
                 fhpr_df = fhpr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
@@ -3609,7 +3605,7 @@ if __name__ == '__main__':
                 # shpr_df.drop(['v 1-10', 'v 11-25', 'v 26-40'], axis=1, inplace=True)
                 shpr_df['Team'] = shpr_df['Team'].str.strip()
                 if season == '2010':
-                    shpr_df['Rank_Second_Half_Power_Ranking'] = shpr_df.index + 1
+                    shpr_df['Second_Half_Power_Ranking'] = shpr_df.index + 1
                 shpr_df = shpr_df.replace('--', np.nan)
                 shpr_df = shpr_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
