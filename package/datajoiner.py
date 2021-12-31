@@ -13,9 +13,8 @@ def join_csvs():
 
     for f in csv_files:
         df = pd.read_csv(f)
-        print('Location:', f)
         print('File Name:', f.split("\\")[-1])
-        master_df = pd.concat([master_df, df])
+        master_df = pd.concat([master_df, df], ignore_index=True)
 
     return master_df
 
