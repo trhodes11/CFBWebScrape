@@ -75,7 +75,7 @@ if __name__ == '__main__':
     pd.set_option('display.width', desired_width)
     pd.set_option('display.max_columns', 60)
 
-    save_dir = 'C:\PythonPrograms'
+    save_dir = '/Users/chris/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
     # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
 
     """
