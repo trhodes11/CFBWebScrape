@@ -3149,7 +3149,7 @@ if __name__ == '__main__':
                                            'Home': 'At_Home_Penalties_Opponent_Penalties_per_Play',
                                            'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Play'
                                            }, inplace=True)
-                popppp_df['Team'] = poppp_df['Team'].str.strip()
+                popppp_df['Team'] = popppp_df['Team'].str.strip()
                 if season == '2010':
                     popppp_df['Rank_Penalties_Opponent_Penalties_per_Play'] = popppp_df.index + 1
                 popppp_df = popppp_df.replace('--', np.nan)
