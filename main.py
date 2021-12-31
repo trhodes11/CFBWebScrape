@@ -174,8 +174,8 @@ if __name__ == '__main__':
                 so_df.rename(columns={'Rank': 'Rank_Scoring_Offense',
                                       season: 'Current_Season_Scoring_Offense',
                                       str(int(season) - 1): 'Previous_Season_Scoring_Offense',
-                                      'Last 3': 'Last 3_Scoring_Offense',
-                                      'Last 1': 'Last 1_Scoring_Offense',
+                                      'Last 3': 'Last_3_Scoring_Offense',
+                                      'Last 1': 'Last_1_Scoring_Offense',
                                       'Home': 'At_Home_Scoring_Offense',
                                       'Away': 'Away_Scoring_Offense'
                                       }, inplace=True)
@@ -193,8 +193,8 @@ if __name__ == '__main__':
                 tasm_df.rename(columns={'Rank': 'Rank_Team_Average_Scoring_Margin',
                                       season: 'Current_Season_Team_Scoring_Average_Margin',
                                       str(int(season) - 1): 'Previous_Season_Team_Average_Scoring_Margin',
-                                      'Last 3': 'Last 3_Team_Average_Scoring_Margin',
-                                      'Last 1': 'Last 1_Team_Average_Scoring_Margin',
+                                      'Last 3': 'Last_3_Team_Average_Scoring_Margin',
+                                      'Last 1': 'Last_1_Team_Average_Scoring_Margin',
                                       'Home': 'At_Home_Team_Average_Scoring_Margin',
                                       'Away': 'Away_Team_Average_Scoring_Margin'
                                       }, inplace=True)
@@ -212,8 +212,8 @@ if __name__ == '__main__':
                 typp_df.rename(columns={'Rank': 'Rank_Team_Yards_per_Point',
                                       season: 'Current_Season_Team_Yards_per_Point',
                                       str(int(season) - 1): 'Previous_Season_Team_yards_per_Point',
-                                      'Last 3': 'Last 3_Team_Yards_per_Point',
-                                      'Last 1': 'Last 1_Team_Yards_per_Point',
+                                      'Last 3': 'Last_3_Team_Yards_per_Point',
+                                      'Last 1': 'Last_1_Team_Yards_per_Point',
                                       'Home': 'At_Home_Team_Yards_per_Point',
                                       'Away': 'Away_Team_Yards_per_Point'
                                       }, inplace=True)
@@ -231,8 +231,8 @@ if __name__ == '__main__':
                 typm_df.rename(columns={'Rank': 'Rank_Team_Yards_per_Point_Margin',
                                       season: 'Current_Season_Team_Yards_per_Point_Margin',
                                       str(int(season) - 1): 'Previous_Season_Team_yards_per_Point_Margin',
-                                      'Last 3': 'Last 3_Team_Yards_per_Point_Margin',
-                                      'Last 1': 'Last 1_Team_Yards_per_Point_Margin',
+                                      'Last 3': 'Last_3_Team_Yards_per_Point_Margin',
+                                      'Last 1': 'Last_1_Team_Yards_per_Point_Margin',
                                       'Home': 'At_Home_Team_Yards_per_Point_Margin',
                                       'Away': 'Away_Team_Yards_per_Point_Margin'
                                       }, inplace=True)
@@ -250,8 +250,8 @@ if __name__ == '__main__':
                 typ_df.rename(columns={'Rank': 'Rank_Team_Points_per_Play',
                                       season: 'Current_Season_Team_Points_per_Play',
                                       str(int(season) - 1): 'Previous_Season_Team_Points_per_Play',
-                                      'Last 3': 'Last 3_Team_Points_per_Play',
-                                      'Last 1': 'Last 1_Team_Points_per_Play',
+                                      'Last 3': 'Last_3_Team_Points_per_Play',
+                                      'Last 1': 'Last_1_Team_Points_per_Play',
                                       'Home': 'At_Home_Team_Points_per_Play',
                                       'Away': 'Away_Team_Points_per_Play'
                                       }, inplace=True)
@@ -269,8 +269,8 @@ if __name__ == '__main__':
                 typpm_df.rename(columns={'Rank': 'Rank_Team_Points_per_Play_Margin',
                                       season: 'Current_Season_Team_Points_per_Play_Margin',
                                       str(int(season) - 1): 'Previous_Season_Team_Points_per_Play_Margin',
-                                      'Last 3': 'Last 3_Team_Points_per_Play_Margin',
-                                      'Last 1': 'Last 1_Team_Points_per_Play_Margin',
+                                      'Last 3': 'Last_3_Team_Points_per_Play_Margin',
+                                      'Last 1': 'Last_1_Team_Points_per_Play_Margin',
                                       'Home': 'At_Home_Team_Points_per_Play_Margin',
                                       'Away': 'Away_Team_Points_per_Play_Margin'
                                       }, inplace=True)
@@ -287,12 +287,12 @@ if __name__ == '__main__':
                 trs_df = main_hist(team_red_zone_scoring_attempts_per_game_url_current, season, str(week), this_week_date_str,
                                   'team_red_zone_scoring_attempts_per_game')
                 trs_df.rename(columns={'Rank': 'Rank_Team_Red_Zone_Scoring_Attempts_per_Game',
-                                      season: 'Current_Season_Team_Red-Zone_Scoring_Attempts_per_Game',
-                                      str(int(season) - 1): 'Previous_Season_Team_Red-Zone_Scoring_Attempts_per_Game',
-                                      'Last 3': 'Last 3_Team_Red_Zone_Scoring_Attempts_per_Game',
-                                      'Last 1': 'Last 1_Team_Red_Zone_Scoring_Attempts_per_Game',
+                                      season: 'Current_Season_Team_Red_Zone_Scoring_Attempts_per_Game',
+                                      str(int(season) - 1): 'Previous_Season_Team_Red_Zone_Scoring_Attempts_per_Game',
+                                      'Last 3': 'Last_3_Team_Red_Zone_Scoring_Attempts_per_Game',
+                                      'Last 1': 'Last_1_Team_Red_Zone_Scoring_Attempts_per_Game',
                                       'Home': 'At_Home_Team_Red_Zone_Scoring_Attempts_per_Game',
-                                      'Away': 'Away_Team_Red_Zone-Scoring-Attempts_per_Game'
+                                      'Away': 'Away_Team_Red_Zone_Scoring_Attempts_per_Game'
                                       }, inplace=True)
                 trs_df['Team'] = trs_df['Team'].str.strip()
                 if season == '2010':
@@ -307,17 +307,17 @@ if __name__ == '__main__':
                 trsp_df = main_hist(team_red_zone_scores_per_game_url_current, season, str(week), this_week_date_str,
                                   'team_red_zone_scores_per_game')
                 trsp_df.rename(columns={'Rank': 'Rank_Team_Red_Zone_Scores_per_Game',
-                                      season: 'Current_Season_Team_Red-Zone_Scores_per_Game',
-                                      str(int(season) - 1): 'Previous_Season_Team_Red-Zone_Scores_per_Game',
-                                      'Last 3': 'Last 3_Team_Red_Zone_Scores_per_Game',
-                                      'Last 1': 'Last 1_Team_Red_Zone_Scores_per_Game',
+                                      season: 'Current_Season_Team_Red_Zone_Scores_per_Game',
+                                      str(int(season) - 1): 'Previous_Season_Team_Red_Zone_Scores_per_Game',
+                                      'Last 3': 'Last_3_Team_Red_Zone_Scores_per_Game',
+                                      'Last 1': 'Last_1_Team_Red_Zone_Scores_per_Game',
                                       'Home': 'At_Home_Team_Red_Zone_Scores_per_Game',
-                                      'Away': 'Away_Team_Red_Zone-Scores_per_Game'
+                                      'Away': 'Away_Team_Red_Zone_Scores_per_Game'
                                       }, inplace=True)
                 trsp_df['Team'] = trsp_df['Team'].str.strip()
                 if season == '2010':
                     trsp_df['Rank_Team_Red_Zone_Scores_per_Game'] = trsp_df.index + 1
-                tssp_df = trsp_df.replace('--', np.nan)
+                trsp_df = trsp_df.replace('--', np.nan)
                 trsp_df = trsp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
 
@@ -329,10 +329,10 @@ if __name__ == '__main__':
                 trspp_df.rename(columns={'Rank': 'Rank_Team_Red_Zone_Scoring_Percentage',
                                       season: 'Current_Season_Team_Red_Zone_Scoring_Percentage',
                                       str(int(season) - 1): 'Previous_Season_Team_Red_Zone_Scoring_Percentage',
-                                      'Last 3': 'Last 3_Team_Red_Zone_Scoring_Percentage',
-                                      'Last 1': 'Last 1_Team_Red_Zone_Scoring_Percentage',
+                                      'Last 3': 'Last_3_Team_Red_Zone_Scoring_Percentage',
+                                      'Last 1': 'Last_1_Team_Red_Zone_Scoring_Percentage',
                                       'Home': 'At_Home_Team_Red_Zone_Scoring_Percentage',
-                                      'Away': 'Away_Team_Red_Zone-Scoring_Percentage'
+                                      'Away': 'Away_Team_Red_Zone_Scoring_Percentage'
                                       }, inplace=True)
                 trspp_df['Team'] = trspp_df['Team'].str.strip()
                 if season == '2010':
@@ -352,8 +352,8 @@ if __name__ == '__main__':
                 tot_df.rename(columns={'Rank': 'Rank_Team_Offensive_Touchdowns_per_Game',
                                       season: 'Current_Season_Team_Offensive_Touchdowns_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_Offensive_Touchdowns_per_Game',
-                                      'Last 3': 'Last 3_Team_Offensive_Touchdowns_per_Game',
-                                      'Last 1': 'Last 1_Team_Offensive_Touchdowns_per_Game',
+                                      'Last 3': 'Last_3_Team_Offensive_Touchdowns_per_Game',
+                                      'Last 1': 'Last_1_Team_Offensive_Touchdowns_per_Game',
                                       'Home': 'At_Home_Team_Offensive_Touchdowns_per_Game',
                                       'Away': 'Away_Team_Offensive_Touchdowns_per_Game'
                                       }, inplace=True)
@@ -372,8 +372,8 @@ if __name__ == '__main__':
                 top_df.rename(columns={'Rank': 'Rank_Team_Offensive_Points_per_Game',
                                       season: 'Current_Season_Team_Offensive_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_Offensive_Points_per_Game',
-                                      'Last 3': 'Last 3_Team_Offensive_Points_per_Game',
-                                      'Last 1': 'Last 1_Team_Offensive_Points_per_Game',
+                                      'Last 3': 'Last_3_Team_Offensive_Points_per_Game',
+                                      'Last 1': 'Last_1_Team_Offensive_Points_per_Game',
                                       'Home': 'At_Home_Team_Offensive_Points_per_Game',
                                       'Away': 'Away_Team_Offensive_Points_per_Game'
                                       }, inplace=True)
@@ -392,8 +392,8 @@ if __name__ == '__main__':
                 tops_df.rename(columns={'Rank': 'Rank_Team_Offensive_Point_Share_Percentage',
                                       season: 'Current_Season_Team_Offensive_Point_Share_Percentage',
                                       str(int(season) - 1): 'Previous_Season_Team_Offensive_Point_Share_Percentage',
-                                      'Last 3': 'Last 3_Team_Offensive_Point_Share_Percentage',
-                                      'Last 1': 'Last 1_Team_Offensive_Point_Share_Percentage',
+                                      'Last 3': 'Last_3_Team_Offensive_Point_Share_Percentage',
+                                      'Last 1': 'Last_1_Team_Offensive_Point_Share_Percentage',
                                       'Home': 'At_Home_Team_Offensive_Point_Share_Percentage',
                                       'Away': 'Away_Team_Offensive_Point_Share_Percentage'
                                       }, inplace=True)
@@ -415,8 +415,8 @@ if __name__ == '__main__':
                 fiq_df.rename(columns={'Rank': 'Rank_Team_First_Quarter_Points_per_Game',
                                         season: 'Current_Season_Team_First_Quarter_Points_per_Game',
                                         str(int(season) - 1): 'Previous_Season_Team_First_Quarter_Points_per_Game',
-                                        'Last 3': 'Last 3_Team_First_Quarter_Points_per_Game',
-                                        'Last 1': 'Last 1_Team_First_Quarter_Points_per_Game',
+                                        'Last 3': 'Last_3_Team_First_Quarter_Points_per_Game',
+                                        'Last 1': 'Last_1_Team_First_Quarter_Points_per_Game',
                                         'Home': 'At_Home_Team_First_Quarter_Points_per_Game',
                                         'Away': 'Away_Team_First_Quarter_Points_per_Game'
                                         }, inplace=True)
@@ -435,8 +435,8 @@ if __name__ == '__main__':
                 sq_df.rename(columns={'Rank': 'Rank_Team_Second_Quarter_Points_per_Game',
                                       season: 'Current_Season_Team_Second_Quarter_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_Second_Quarter_Points_per_Game',
-                                      'Last 3': 'Last 3_Team_Second_Quarter_Points_per_Game',
-                                      'Last 1': 'Last 1_Team_Second_Quarter_Points_per_Game',
+                                      'Last 3': 'Last_3_Team_Second_Quarter_Points_per_Game',
+                                      'Last 1': 'Last_1_Team_Second_Quarter_Points_per_Game',
                                       'Home': 'At_Home_Team_Second_Quarter_Points_per_Game',
                                       'Away': 'Away_Team_Second_Quarter_Points_per_Game'
                                       }, inplace=True)
@@ -455,8 +455,8 @@ if __name__ == '__main__':
                 tq_df.rename(columns={'Rank': 'Rank_Team_Third_Quarter_Points_per_Game',
                                       season: 'Current_Season_Team_Third_Quarter_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_Third_Quarter_Points_per_Game',
-                                      'Last 3': 'Last 3_Team_Third_Quarter_Points_per_Game',
-                                      'Last 1': 'Last 1_Team_Third_Quarter_Points_per_Game',
+                                      'Last 3': 'Last_3_Team_Third_Quarter_Points_per_Game',
+                                      'Last 1': 'Last_1_Team_Third_Quarter_Points_per_Game',
                                       'Home': 'At_Home_Team_Third_Quarter_Points_per_Game',
                                       'Away': 'Away_Team_Third_Quarter_Points_per_Game'
                                       }, inplace=True)
@@ -475,8 +475,8 @@ if __name__ == '__main__':
                 fq_df.rename(columns={'Rank': 'Rank_Team_Fourth_Quarter_Points_per_Game',
                                       season: 'Current_Season_Team_Fourth_Quarter_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_Fourth_Quarter_Points_per_Game',
-                                      'Last 3': 'Last 3_Team_Fourth_Quarter_Points_per_Game',
-                                      'Last 1': 'Last 1_Team_Fourth_Quarter_Points_per_Game',
+                                      'Last 3': 'Last_3_Team_Fourth_Quarter_Points_per_Game',
+                                      'Last 1': 'Last_1_Team_Fourth_Quarter_Points_per_Game',
                                       'Home': 'At_Home_Team_Fourth_Quarter_Points_per_Game',
                                       'Away': 'Away_Team_Fourth_Quarter_Points_per_Game'
                                       }, inplace=True)
@@ -495,8 +495,8 @@ if __name__ == '__main__':
                 ot_df.rename(columns={'Rank': 'Rank_Team_Overtime_Points_per_Game',
                                       season: 'Current_Season_Team_Overtime_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_Overtime_Points_per_Game',
-                                      'Last 3': 'Last 3_Team_Overtime_Points_per_Game',
-                                      'Last 1': 'Last 1_Team_Overtime_Points_per_Game',
+                                      'Last 3': 'Last_3_Team_Overtime_Points_per_Game',
+                                      'Last 1': 'Last_1_Team_Overtime_Points_per_Game',
                                       'Home': 'At_Home_Team_Overtime_Points_per_Game',
                                       'Away': 'Away_Team_Overtime_Points_per_Game'
                                       }, inplace=True)
@@ -515,8 +515,8 @@ if __name__ == '__main__':
                 fh_df.rename(columns={'Rank': 'Rank_Team_First_Half_Points_per_Game',
                                       season: 'Current_Season_Team_First-Half_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_First-Half_Points_per_Game',
-                                      'Last 3': 'Last 3_Team_First-Half_Points_per_Game',
-                                      'Last 1': 'Last 1_Team_First-Half_Points_per_Game',
+                                      'Last 3': 'Last_3_Team_First-Half_Points_per_Game',
+                                      'Last 1': 'Last_1_Team_First-Half_Points_per_Game',
                                       'Home': 'At_Home_Team_First_Half_Points_per_Game',
                                       'Away': 'Away_Team_First-Half_Points_per_Game'
                                       }, inplace=True)
@@ -535,8 +535,8 @@ if __name__ == '__main__':
                 sh_df.rename(columns={'Rank': 'Rank_Team_Second_Half_Points_per_Game',
                                       season: 'Current_Season_Team_Second-Half_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Team_Second-Half_Points_per_Game',
-                                      'Last 3': 'Last 3_Team_Second-Half_Points_per_Game',
-                                      'Last 1': 'Last 1_Team_Second-Half_Points_per_Game',
+                                      'Last 3': 'Last_3_Team_Second-Half_Points_per_Game',
+                                      'Last 1': 'Last_1_Team_Second-Half_Points_per_Game',
                                       'Home': 'At_Home_Team_Second_Half_Points_per_Game',
                                       'Away': 'Away_Team_Second-Half_Points_per_Game'
                                       }, inplace=True)
@@ -555,8 +555,8 @@ if __name__ == '__main__':
                 fiqtp_df.rename(columns={'Rank': 'Rank_Team_First_Quarter_Time_of_Possession_Share_Percent',
                                       season: 'Current_Team_First_Quarter_Time_of_Possession_Share_Percent',
                                       str(int(season) - 1): 'Previous_Season_Team_First_Quarter_Time_of_Possession_Share_Percent',
-                                      'Last 3': 'Last 3_Team_First_Quarter_Time_of_Possession_Share_Percent',
-                                      'Last 1': 'Last 1_Team_First_Quarter_Time_of_Possession_Share_Percent',
+                                      'Last 3': 'Last_3_Team_First_Quarter_Time_of_Possession_Share_Percent',
+                                      'Last 1': 'Last_1_Team_First_Quarter_Time_of_Possession_Share_Percent',
                                       'Home': 'At_Home_Team_First_Quarter_Time_of_Possession_Share_Percent',
                                       'Away': 'Away_Team_First_Quarter_Time_of_Possession_Share_Percent'
                                       }, inplace=True)
@@ -576,8 +576,8 @@ if __name__ == '__main__':
                                         season: 'Current_Team_Second_Quarter_Time_of_Possession_Share_Percent',
                                         str(int(
                                             season) - 1): 'Previous_Season_Team_Second_Quarter_Time_of_Possession_Share_Percent',
-                                        'Last 3': 'Last 3_Team_Second_Quarter_Time_of_Possession_Share_Percent',
-                                        'Last 1': 'Last 1_Team_Second_Quarter_Time_of_Possession_Share_Percent',
+                                        'Last 3': 'Last_3_Team_Second_Quarter_Time_of_Possession_Share_Percent',
+                                        'Last 1': 'Last_1_Team_Second_Quarter_Time_of_Possession_Share_Percent',
                                         'Home': 'At_Home_Team_Second_Quarter_Time_of_Possession_Share_Percent',
                                         'Away': 'Away_Team_Second_Quarter_Time_of_Possession_Share_Percent'
                                         }, inplace=True)
@@ -598,8 +598,8 @@ if __name__ == '__main__':
                                         season: 'Current_Team_Third_Quarter_Time_of_Possession_Share_Percent',
                                         str(int(
                                             season) - 1): 'Previous_Season_Team_Third_Quarter_Time_of_Possession_Share_Percent',
-                                        'Last 3': 'Last 3_Team_Third_Quarter_Time_of_Possession_Share_Percent',
-                                        'Last 1': 'Last 1_Team_Third_Quarter_Time_of_Possession_Share_Percent',
+                                        'Last 3': 'Last_3_Team_Third_Quarter_Time_of_Possession_Share_Percent',
+                                        'Last 1': 'Last_1_Team_Third_Quarter_Time_of_Possession_Share_Percent',
                                         'Home': 'At_Home_Team_Third_Quarter_Time_of_Possession_Share_Percent',
                                         'Away': 'Away_Team_Third_Quarter_Time_of_Possession_Share_Percent'
                                         }, inplace=True)
@@ -619,8 +619,8 @@ if __name__ == '__main__':
                                         season: 'Current_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
                                         str(int(
                                             season) - 1): 'Previous_Season_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
-                                        'Last 3': 'Last 3_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
-                                        'Last 1': 'Last 1_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
+                                        'Last 3': 'Last_3_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
+                                        'Last 1': 'Last_1_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
                                         'Home': 'At_Home_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
                                         'Away': 'Away_Team_Fourth_Quarter_Time_of_Possession_Share_Percent'
                                         }, inplace=True)
@@ -640,8 +640,8 @@ if __name__ == '__main__':
                                         season: 'Current_Team_First_Half_Time_of_Possession_Share_Percent',
                                         str(int(
                                             season) - 1): 'Previous_Season_Team_First_Half_Time_of_Possession_Share_Percent',
-                                        'Last 3': 'Last 3_Team_First_Half_Time_of_Possession_Share_Percent',
-                                        'Last 1': 'Last 1_Team_First_Half_Time_of_Possession_Share_Percent',
+                                        'Last 3': 'Last_3_Team_First_Half_Time_of_Possession_Share_Percent',
+                                        'Last 1': 'Last_1_Team_First_Half_Time_of_Possession_Share_Percent',
                                         'Home': 'At_Home_Team_First_Half_Time_of_Possession_Share_Percent',
                                         'Away': 'Away_Team_First_Half_Time_of_Possession_Share_Percent'
                                         }, inplace=True)
@@ -661,8 +661,8 @@ if __name__ == '__main__':
                                         season: 'Current_Team_Second_Half_Time_of_Possession_Share_Percent',
                                         str(int(
                                             season) - 1): 'Previous_Season_Team_Second_Half_Time_of_Possession_Share_Percent',
-                                        'Last 3': 'Last 3_Team_Second_Half_Time_of_Possession_Share_Percent',
-                                        'Last 1': 'Last 1_Team_Second_Half_Time_of_Possession_Share_Percent',
+                                        'Last 3': 'Last_3_Team_Second_Half_Time_of_Possession_Share_Percent',
+                                        'Last 1': 'Last_1_Team_Second_Half_Time_of_Possession_Share_Percent',
                                         'Home': 'At_Home_Team_Second_Half_Time_of_Possession_Share_Percent',
                                         'Away': 'Away_Team_Second_Half_Time_of_Possession_Share_Percent'
                                         }, inplace=True)
@@ -680,8 +680,8 @@ if __name__ == '__main__':
                 toypg_df.rename(columns={'Rank': 'Rank_Total_Offense_yards_per_game',
                                       season: 'Current_Season_Total_Offense_Yards_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Total_Offense_Yards_per_Game',
-                                      'Last 3': 'Last 3_Total_Offense_Yards_per_Game',
-                                      'Last 1': 'Last 1_Total_Offense_Yards_per_Game',
+                                      'Last 3': 'Last_3_Total_Offense_Yards_per_Game',
+                                      'Last 1': 'Last_1_Total_Offense_Yards_per_Game',
                                       'Home': 'At_Home_Total_Offense_Yards_per_Game',
                                       'Away': 'Away_Total_Offense_Yards_per_Game'
                                       }, inplace=True)
@@ -699,8 +699,8 @@ if __name__ == '__main__':
                 toppg_df.rename(columns={'Rank': 'Rank_Total_Offense_Plays_per_Game',
                                          season: 'Current_Season_Total_Offense_Plays_per_Game',
                                          str(int(season) - 1): 'Previous_Season_Total_Offense_Plays_per_Game',
-                                         'Last 3': 'Last 3_Total_Offense_Plays_per_Game',
-                                         'Last 1': 'Last 1_Total_Offense_Plays_per_Game',
+                                         'Last 3': 'Last_3_Total_Offense_Plays_per_Game',
+                                         'Last 1': 'Last_1_Total_Offense_Plays_per_Game',
                                          'Home': 'At_Home_Total_Offense_Plays_per_Game',
                                          'Away': 'Away_Total_Offense_Plays_per_Game'
                                          }, inplace=True)
@@ -719,8 +719,8 @@ if __name__ == '__main__':
                 toypp_df.rename(columns={'Rank': 'Rank_Total_Offense_Yards_per_Play',
                                          season: 'Current_Season_Total_Offense_Yards_per_Play',
                                          str(int(season) - 1): 'Previous_Season_Total_Offense_Yards_per_Play',
-                                         'Last 3': 'Last 3_Total_Offense_Yards_per_Play',
-                                         'Last 1': 'Last 1_Total_Offense_Yards_per_Play',
+                                         'Last 3': 'Last_3_Total_Offense_Yards_per_Play',
+                                         'Last 1': 'Last_1_Total_Offense_Yards_per_Play',
                                          'Home': 'At_Home_Total_Offense_Yards_per_Play',
                                          'Away': 'Away_Total_Offense_Yards_per_Play'
                                          }, inplace=True)
@@ -739,8 +739,8 @@ if __name__ == '__main__':
                 totdpg_df.rename(columns={'Rank': 'Rank_Total_Offense_Third_Down_per_Game',
                                          season: 'Current_Season_Total_Offense_Third_Down_per_Game',
                                          str(int(season) - 1): 'Previous_Season_Total_Offense_Third_Down_per_Game',
-                                         'Last 3': 'Last 3_Total_Offense_Third_Down_per_Game',
-                                         'Last 1': 'Last 1_Total_Offense_Third_Down_per_Game',
+                                         'Last 3': 'Last_3_Total_Offense_Third_Down_per_Game',
+                                         'Last 1': 'Last_1_Total_Offense_Third_Down_per_Game',
                                          'Home': 'At_Home_Total_Offense_Third_Down_per_Game',
                                          'Away': 'Away_Total_Offense_Third-Down-per_Game'
                                          }, inplace=True)
@@ -759,8 +759,8 @@ if __name__ == '__main__':
                 totdcpg_df.rename(columns={'Rank': 'Rank_Total_Offense_Third_Down_Conversions_per_Game',
                                           season: 'Current_Season_Total_Offense_Third_Down_Conversions_per_Game',
                                           str(int(season) - 1): 'Previous_Season_Total_Offense_Third_Down_Conversions_per_Game',
-                                          'Last 3': 'Last 3_Total_Offense_Third_Down_Conversions_per_Game',
-                                          'Last 1': 'Last 1_Total_Offense_Third_Down_Conversions_per_Game',
+                                          'Last 3': 'Last_3_Total_Offense_Third_Down_Conversions_per_Game',
+                                          'Last 1': 'Last_1_Total_Offense_Third_Down_Conversions_per_Game',
                                           'Home': 'At_Home_Total_Offense_Third_Down_Conversions_per_Game',
                                           'Away': 'Away_Total_Offense_Third-Down-Conversions_per_Game'
                                           }, inplace=True)
@@ -779,8 +779,8 @@ if __name__ == '__main__':
                 tofdpg_df.rename(columns={'Rank': 'Rank_Total_Offense_Fourth_Down_per_Game',
                                           season: 'Current_Season_Total_Offense_Fourth_Down_per_Game',
                                           str(int(season) - 1): 'Previous_Season_Total_Offense_Fourth_Down_per_Game',
-                                          'Last 3': 'Last 3_Total_Offense_Fourth_Down_per_Game',
-                                          'Last 1': 'Last 1_Total_Offense_Fourth_Down_per_Game',
+                                          'Last 3': 'Last_3_Total_Offense_Fourth_Down_per_Game',
+                                          'Last 1': 'Last_1_Total_Offense_Fourth_Down_per_Game',
                                           'Home': 'At_Home_Total_Offense_Fourth_Down_per_Game',
                                           'Away': 'Away_Total_Offense_Fourth-Down_per_Game'
                                           }, inplace=True)
@@ -800,8 +800,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Total_Offense_Fourth_Down_Conversions_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Offense_Fourth_Down_Conversions_per_Game',
-                                           'Last 3': 'Last 3_Total_Offense_Fourth_Down_Conversions_per_Game',
-                                           'Last 1': 'Last 1_Total_Offense_Fourth_Down_Conversions_per_Game',
+                                           'Last 3': 'Last_3_Total_Offense_Fourth_Down_Conversions_per_Game',
+                                           'Last 1': 'Last_1_Total_Offense_Fourth_Down_Conversions_per_Game',
                                            'Home': 'At_Home_Total_Offense_Fourth_Down_Conversions_per_Game',
                                            'Away': 'Away_Total_Offense_Fourth_Down-Conversions_per_Game'
                                            }, inplace=True)
@@ -821,8 +821,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Total_Offense_Average_Time_of_Possession',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Offense_Average_Time_of_Possession',
-                                           'Last 3': 'Last 3_Total_Offense_Average_Time_of_Possession',
-                                           'Last 1': 'Last 1_Total_Offense_Average_Time_of_Possession',
+                                           'Last 3': 'Last_3_Total_Offense_Average_Time_of_Possession',
+                                           'Last 1': 'Last_1_Total_Offense_Average_Time_of_Possession',
                                            'Home': 'At_Home_Total_Offense_Average_Time_of_Possession',
                                            'Away': 'Away_Total_Offense_Average_Time_of_Possession'
                                            }, inplace=True)
@@ -842,8 +842,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Total_Offense_Average_Time_of_Possession_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Total_Offense_Average_Time_of_Possession_Percentage',
-                                         'Last 3': 'Last 3_Total_Offense_Average_Time_of_Possession_Percentage',
-                                         'Last 1': 'Last 1_Total_Offense_Average_Time_of_Possession_Percentage',
+                                         'Last 3': 'Last_3_Total_Offense_Average_Time_of_Possession_Percentage',
+                                         'Last 1': 'Last_1_Total_Offense_Average_Time_of_Possession_Percentage',
                                          'Home': 'At_Home_Total_Offense_Average_Time_of_Possession_Percentage',
                                          'Away': 'Away_Total_Offense_Average_Time_of_Possession_Percentage'
                                          }, inplace=True)
@@ -867,8 +867,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Total_Offense_Third_Down-Conversion_Percent',
                                           str(int(
                                               season) - 1): 'Previous_Season_Total_Offense_Third_Down_Conversion_Percent',
-                                          'Last 3': 'Last 3_Total_Offense_Third_Down_Conversion_Percent',
-                                          'Last 1': 'Last 1_Total_Offense_Third_Down_Conversion_Percent',
+                                          'Last 3': 'Last_3_Total_Offense_Third_Down_Conversion_Percent',
+                                          'Last 1': 'Last_1_Total_Offense_Third_Down_Conversion_Percent',
                                           'Home': 'At_Home_Total_Offense_Third_Down_Conversion_Percent',
                                           'Away': 'Away_Total_Offense_Third_Down_Conversion_Percent'
                                           }, inplace=True)
@@ -888,8 +888,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Total_Offense_Fourth_Down-Conversion_Percent',
                                           str(int(
                                               season) - 1): 'Previous_Season_Total_Offense_Fourth_Down_Conversion_Percent',
-                                          'Last 3': 'Last 3_Total_Offense_Fourth_Down_Conversion_Percent',
-                                          'Last 1': 'Last 1_Total_Offense_Fourth_Down_Conversion_Percent',
+                                          'Last 3': 'Last_3_Total_Offense_Fourth_Down_Conversion_Percent',
+                                          'Last 1': 'Last_1_Total_Offense_Fourth_Down_Conversion_Percent',
                                           'Home': 'At_Home_Total_Offense_Fourth_Down_Conversion_Percent',
                                           'Away': 'Away_Total_Offense_Fourth_Down_Conversion_Percent'
                                           }, inplace=True)
@@ -909,8 +909,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Total_Offense_Punts_per_Play',
                                           str(int(
                                               season) - 1): 'Previous_Season_Total_Offense_Punts_per_Play',
-                                          'Last 3': 'Last 3_Total_Offense_Punts_per_Play',
-                                          'Last 1': 'Last 1_Total_Offense_Punts_per_Play',
+                                          'Last 3': 'Last_3_Total_Offense_Punts_per_Play',
+                                          'Last 1': 'Last_1_Total_Offense_Punts_per_Play',
                                           'Home': 'At_Home_Total_Offense_Punts_per_Play',
                                           'Away': 'Away_Total_Offense_Punts_per_Play'
                                           }, inplace=True)
@@ -930,8 +930,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Total_Offense_Punts_per_Offensive_Score',
                                          str(int(
                                              season) - 1): 'Previous_Season_Total_Offense_Punts_per_Offensive_Score',
-                                         'Last 3': 'Last 3_Total_Offense_Punts_per_Offensive_Score',
-                                         'Last 1': 'Last 1_Total_Offense_Punts_per_Offensive_Score',
+                                         'Last 3': 'Last_3_Total_Offense_Punts_per_Offensive_Score',
+                                         'Last 1': 'Last_1_Total_Offense_Punts_per_Offensive_Score',
                                          'Home': 'At_Home_Total_Offense_Punts_per_Offensive_Score',
                                          'Away': 'Away_Total_Offense_Punts_per_Offensive_Score'
                                          }, inplace=True)
@@ -951,8 +951,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Rushing_Offense_Rushing_Attempts_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Attempts_per_Game',
-                                          'Last 3': 'Last 3_Rushing_Offense_Rushing_Attempts_per_Game',
-                                          'Last 1': 'Last 1_Rushing_Offense_Rushing_Attempts_per_Game',
+                                          'Last 3': 'Last_3_Rushing_Offense_Rushing_Attempts_per_Game',
+                                          'Last 1': 'Last_1_Rushing_Offense_Rushing_Attempts_per_Game',
                                           'Home': 'At_Home_Rushing_Offense_Rushing_Attempts_per_Game',
                                           'Away': 'Away_Rushing_Offense_Rushing_Attempts_per_Game'
                                           }, inplace=True)
@@ -972,8 +972,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Rushing_Offense_Rushing_Yards_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Yards_per_Game',
-                                          'Last 3': 'Last 3_Rushing_Offense_Rushing_Yards_per_Game',
-                                          'Last 1': 'Last 1_Rushing_Offense_Rushing_Yards_per_Game',
+                                          'Last 3': 'Last_3_Rushing_Offense_Rushing_Yards_per_Game',
+                                          'Last 1': 'Last_1_Rushing_Offense_Rushing_Yards_per_Game',
                                           'Home': 'At_Home_Rushing_Offense_Rushing_Yards_per_Game',
                                           'Away': 'Away_Rushing_Offense_Rushing_Yards_per_Game'
                                           }, inplace=True)
@@ -993,8 +993,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
                                           str(int(
                                               season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
-                                          'Last 3': 'Last 3_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
-                                          'Last 1': 'Last 1_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
+                                          'Last 3': 'Last_3_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
+                                          'Last 1': 'Last_1_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
                                           'Home': 'At_Home_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
                                           'Away': 'Away_Rushing_Offense_Rushing_Yards_per_Rush_Attempt'
                                           }, inplace=True)
@@ -1014,8 +1014,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Rushing_Offense_Rushing_Play_Percentage',
                                            str(int(
                                                season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Play_Percentage',
-                                           'Last 3': 'Last 3_Rushing_Offense_Rushing_Play_Percentage',
-                                           'Last 1': 'Last 1_Rushing_Offense_Rushing_Play_Percentage',
+                                           'Last 3': 'Last_3_Rushing_Offense_Rushing_Play_Percentage',
+                                           'Last 1': 'Last_1_Rushing_Offense_Rushing_Play_Percentage',
                                            'Home': 'At_Home_Rushing_Offense_Rushing_Play_Percentage',
                                            'Away': 'Away_Rushing_Offense_Rushing_Play_Percentage'
                                            }, inplace=True)
@@ -1038,8 +1038,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Rushing_Offense_Rushing_Yards_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Yards_Percentage',
-                                         'Last 3': 'Last 3_Rushing_Offense_Rushing_Yards_Percentage',
-                                         'Last 1': 'Last 1_Rushing_Offense_Rushing_Yards_Percentage',
+                                         'Last 3': 'Last_3_Rushing_Offense_Rushing_Yards_Percentage',
+                                         'Last 1': 'Last_1_Rushing_Offense_Rushing_Yards_Percentage',
                                          'Home': 'At_Home_Rushing_Offense_Rushing_Yards_Percentage',
                                          'Away': 'Away_Rushing_Offense_Rushing_Yards_Percentage'
                                          }, inplace=True)
@@ -1062,8 +1062,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Offense_Pass_Attempts_per_Game',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Offense_Pass_Attempts_per_Game',
-                                         'Last 3': 'Last 3_Passing_Offense_Pass_Attempts_per_Game',
-                                         'Last 1': 'Last 1_Passing_Offense_Pass_Attempts_per_Game',
+                                         'Last 3': 'Last_3_Passing_Offense_Pass_Attempts_per_Game',
+                                         'Last 1': 'Last_1_Passing_Offense_Pass_Attempts_per_Game',
                                          'Home': 'At_Home_Passing_Offense_Pass_Attempts_per_Game',
                                          'Away': 'Away_Passing_Offense_Pass_Attempts_per_Game'
                                          }, inplace=True)
@@ -1083,8 +1083,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Passing_Offense_Completions_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Offense_Completions_per_Game',
-                                          'Last 3': 'Last 3_Passing_Offense_Completions_per_Game',
-                                          'Last 1': 'Last 1_Passing_Offense_Completions_per_Game',
+                                          'Last 3': 'Last_3_Passing_Offense_Completions_per_Game',
+                                          'Last 1': 'Last_1_Passing_Offense_Completions_per_Game',
                                           'Home': 'At_Home_Passing_Offense_Completions_per_Game',
                                           'Away': 'Away_Passing_Offense_Completions_per_Game'
                                           }, inplace=True)
@@ -1104,8 +1104,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Offense_Incompletions_per_Game',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Offense_Incompletions_per_Game',
-                                         'Last 3': 'Last 3_Passing_Offense_Incompletions_per_Game',
-                                         'Last 1': 'Last 1_Passing_Offense_Incompletions_per_Game',
+                                         'Last 3': 'Last_3_Passing_Offense_Incompletions_per_Game',
+                                         'Last 1': 'Last_1_Passing_Offense_Incompletions_per_Game',
                                          'Home': 'At_Home_Passing_Offense_Incompletions_per_Game',
                                          'Away': 'Away_Passing_Offense_Incompletions_per_Game'
                                          }, inplace=True)
@@ -1125,8 +1125,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Offense_Completion_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Offense_Completion_Percentage',
-                                         'Last 3': 'Last 3_Passing_Offense_Completion_Percentage',
-                                         'Last 1': 'Last 1_Passing_Offense_Completion_Percentage',
+                                         'Last 3': 'Last_3_Passing_Offense_Completion_Percentage',
+                                         'Last 1': 'Last_1_Passing_Offense_Completion_Percentage',
                                          'Home': 'At_Home_Passing_Offense_Completion_Percentage',
                                          'Away': 'Away_Passing_Offense_Completion_Percentage'
                                          }, inplace=True)
@@ -1149,8 +1149,8 @@ if __name__ == '__main__':
                                         season: 'Current_Season_Passing_Offense_Passing_Yards_per_Game',
                                         str(int(
                                             season) - 1): 'Previous_Season_Passing_Offense_Passing_Yards_per_Game',
-                                        'Last 3': 'Last 3_Passing_Offense_Passing_Yards_per_Game',
-                                        'Last 1': 'Last 1_Passing_Offense_Passing_Yards_per_Game',
+                                        'Last 3': 'Last_3_Passing_Offense_Passing_Yards_per_Game',
+                                        'Last 1': 'Last_1_Passing_Offense_Passing_Yards_per_Game',
                                         'Home': 'At_Home_Passing_Offense_Passing_Yards_per_Game',
                                         'Away': 'Away_Passing_Offense_Passing_Yards_per_Game'
                                         }, inplace=True)
@@ -1170,8 +1170,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Passing_Offense_QB_Sacked_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Offense_QB_Sacked_per_Game',
-                                          'Last 3': 'Last 3_Passing_Offense_QB_Sacked_per_Game',
-                                          'Last 1': 'Last 1_Passing_Offense_QB_Sacked_per_Game',
+                                          'Last 3': 'Last_3_Passing_Offense_QB_Sacked_per_Game',
+                                          'Last 1': 'Last_1_Passing_Offense_QB_Sacked_per_Game',
                                           'Home': 'At_Home_Passing_Offense_QB_Sacked_per_Game',
                                           'Away': 'Away_Passing_Offense_QB_Sacked_per_Game'
                                           }, inplace=True)
@@ -1191,8 +1191,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Passing_Offense_QB_Sacked_Percentage',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Offense_QB_Sacked_Percentage',
-                                          'Last 3': 'Last 3_Passing_Offense_QB_Sacked_Percentage',
-                                          'Last 1': 'Last 1_Passing_Offense_QB_Sacked_Percentage',
+                                          'Last 3': 'Last_3_Passing_Offense_QB_Sacked_Percentage',
+                                          'Last 1': 'Last_1_Passing_Offense_QB_Sacked_Percentage',
                                           'Home': 'At_Home_Passing_Offense_QB_Sacked_Percentage',
                                           'Away': 'Away_Passing_Offense_QB_Sacked_Percentage'
                                           }, inplace=True)
@@ -1215,8 +1215,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Offense_Average_Passer_Rating',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Offense_Average_Passer_Rating',
-                                         'Last 3': 'Last 3_Passing_Offense_Average_Passer_Rating',
-                                         'Last 1': 'Last 1_Passing_Offense_Average_Passer_Rating',
+                                         'Last 3': 'Last_3_Passing_Offense_Average_Passer_Rating',
+                                         'Last 1': 'Last_1_Passing_Offense_Average_Passer_Rating',
                                          'Home': 'At_Home_Passing_Offense_Average_Passer_Rating',
                                          'Away': 'Away_Passing_Offense_Average_Passer_Rating'
                                          }, inplace=True)
@@ -1236,8 +1236,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Offense_Passing_Play_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Offense_Passing_Play_Percentage',
-                                         'Last 3': 'Last 3_Passing_Offense_Passing_Play_Percentage',
-                                         'Last 1': 'Last 1_Passing_Offense_Passing_Play_Percentage',
+                                         'Last 3': 'Last_3_Passing_Offense_Passing_Play_Percentage',
+                                         'Last 1': 'Last_1_Passing_Offense_Passing_Play_Percentage',
                                          'Home': 'At_Home_Passing_Offense_Passing_Play_Percentage',
                                          'Away': 'Away_Passing_Offense_Passing_Play_Percentage'
                                          }, inplace=True)
@@ -1260,8 +1260,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Offense_Passing_Yards_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Offense_Passing_Yards_Percentage',
-                                         'Last 3': 'Last 3_Passing_Offense_Passing_Yards_Percentage',
-                                         'Last 1': 'Last 1_Passing_Offense_Passing_Yards_Percentage',
+                                         'Last 3': 'Last_3_Passing_Offense_Passing_Yards_Percentage',
+                                         'Last 1': 'Last_1_Passing_Offense_Passing_Yards_Percentage',
                                          'Home': 'At_Home_Passing_Offense_Passing_Yards_Percentage',
                                          'Away': 'Away_Passing_Offense_Passing_Yards_Percentage'
                                          }, inplace=True)
@@ -1284,8 +1284,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Offense_Yards_per_Pass_Attempt',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Offense_Yards_per_Pass_Attempt',
-                                         'Last 3': 'Last 3_Passing_Offense_Yards_per_Pass_Attempt',
-                                         'Last 1': 'Last 1_Passing_Offense_Yards_per_Pass_Attempt',
+                                         'Last 3': 'Last_3_Passing_Offense_Yards_per_Pass_Attempt',
+                                         'Last 1': 'Last_1_Passing_Offense_Yards_per_Pass_Attempt',
                                          'Home': 'At_Home_Passing_Offense_Yards_per_Pass_Attempt',
                                          'Away': 'Away_Passing_Offense_Yards_per_Pass_Attempt'
                                          }, inplace=True)
@@ -1305,8 +1305,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Passing_Offense_Yards_per_Completion',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Offense_Yards_per_Completion',
-                                          'Last 3': 'Last 3_Passing_Offense_Yards_per_Completion',
-                                          'Last 1': 'Last 1_Passing_Offense_Yards_per_Completion',
+                                          'Last 3': 'Last_3_Passing_Offense_Yards_per_Completion',
+                                          'Last 1': 'Last_1_Passing_Offense_Yards_per_Completion',
                                           'Home': 'At_Home_Passing_Offense_Yards_per_Completion',
                                           'Away': 'Away_Passing_Offense_Yards_per_Completion'
                                           }, inplace=True)
@@ -1326,8 +1326,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
                                          str(int(
                                              season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
-                                         'Last 3': 'Last 3_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
-                                         'Last 1': 'Last 1_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                         'Last 3': 'Last_3_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                         'Last 1': 'Last_1_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
                                          'Home': 'At_Home_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
                                          'Away': 'Away_Special_Teams_Offense_Field_Goal_Attempts_per_Game'
                                          }, inplace=True)
@@ -1347,8 +1347,8 @@ if __name__ == '__main__':
                                             season: 'Current_Season_Special_Teams_Offense_Field_Goals_Made_per_Game',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goals_Made_per_Game',
-                                            'Last 3': 'Last 3_Special_Teams_Offense_Field_Goals_Made_per_Game',
-                                            'Last 1': 'Last 1_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                            'Last 3': 'Last_3_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                            'Last 1': 'Last_1_Special_Teams_Offense_Field_Goals_Made_per_Game',
                                             'Home': 'At_Home_Special_Teams_Offense_Field_Goals_Made_per_Game',
                                             'Away': 'Away_Special_Teams_Offense_Field_Goals_Made_per_Game'
                                             }, inplace=True)
@@ -1368,8 +1368,8 @@ if __name__ == '__main__':
                                             season: 'Current_Season_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
-                                            'Last 3': 'Last 3_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
-                                            'Last 1': 'Last 1_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                            'Last 3': 'Last_3_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                            'Last 1': 'Last_1_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
                                             'Home': 'At_Home_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
                                             'Away': 'Away_Special_Teams_Offense_Field_Goal_Conversion_Percentage'
                                             }, inplace=True)
@@ -1392,8 +1392,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Special_Teams_Offense_Punt_Attempts_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Special_Teams_Offense_Punt_Attempts_per_Game',
-                                           'Last 3': 'Last 3_Special_Teams_Offense_Punt_Attempts_per_Game',
-                                           'Last 1': 'Last 1_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                           'Last 3': 'Last_3_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                           'Last 1': 'Last_1_Special_Teams_Offense_Punt_Attempts_per_Game',
                                            'Home': 'At_Home_Special_Teams_Offense_Punt_Attempts_per_Game',
                                            'Away': 'Away_Special_Teams_Offense_Punt_Attempts_per_Game'
                                            }, inplace=True)
@@ -1413,8 +1413,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
-                                           'Last 3': 'Last 3_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
-                                           'Last 1': 'Last 1_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                           'Last 3': 'Last_3_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                           'Last 1': 'Last_1_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
                                            'Home': 'At_Home_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
                                            'Away': 'Away_Special_Teams_Offense_Gross_Punt_Yards_per_Game'
                                            }, inplace=True)
@@ -1432,8 +1432,8 @@ if __name__ == '__main__':
                 sdoppg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Points_per_Game',
                                       season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Game',
-                                      'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Game',
-                                      'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Game',
+                                      'Last 3': 'Last_3_Scoring_Defense_Opponent_Points_per_Game',
+                                      'Last 1': 'Last_1_Scoring_Defense_Opponent_Points_per_Game',
                                       'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Game',
                                       'Away': 'Away_Scoring_Defense_Opponent_Points_per_Game'
                                       }, inplace=True)
@@ -1453,8 +1453,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Scoring_Defense_Opp_Yards_per_Point',
                                           str(int(
                                               season) - 1): 'Previous_Season_Scoring_Defense_Opp_Yards_per_Point',
-                                          'Last 3': 'Last 3_Scoring_Defense_Opp_Yards_per_Point',
-                                          'Last 1': 'Last 1_Scoring_Defense_Opp_Yards_per_Point',
+                                          'Last 3': 'Last_3_Scoring_Defense_Opp_Yards_per_Point',
+                                          'Last 1': 'Last_1_Scoring_Defense_Opp_Yards_per_Point',
                                           'Home': 'At_Home_Scoring_Defense_Opp_Yards_per_Point',
                                           'Away': 'Away_Scoring_Defense_Opp_Yards_per_Point'
                                           }, inplace=True)
@@ -1474,8 +1474,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Play',
                                           str(int(
                                               season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Play',
-                                          'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Play',
-                                          'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Play',
+                                          'Last 3': 'Last_3_Scoring_Defense_Opponent_Points_per_Play',
+                                          'Last 1': 'Last_1_Scoring_Defense_Opponent_Points_per_Play',
                                           'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Play',
                                           'Away': 'Away_Scoring_Defense_Opponent_Points_per_Play'
                                           }, inplace=True)
@@ -1494,8 +1494,8 @@ if __name__ == '__main__':
                 sdoasm_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                           season: 'Current_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                           str(int(season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
-                                          'Last 3': 'Last 3_Scoring_Defense_Opponent_Average_Scoring_Margin',
-                                          'Last 1': 'Last 1_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                          'Last 3': 'Last_3_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                          'Last 1': 'Last_1_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                           'Home': 'At_Home_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                           'Away': 'Away_Scoring_Defense_Opponent_Average_Scoring_Margin'
                                           }, inplace=True)
@@ -1515,8 +1515,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
-                                          'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
-                                          'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                          'Last 3': 'Last_3_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                          'Last 1': 'Last_1_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
                                           'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
                                           'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game'
                                           }, inplace=True)
@@ -1538,8 +1538,8 @@ if __name__ == '__main__':
                                              season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
                                              str(int(
                                                  season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
-                                             'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scores_per_Game',
-                                             'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                             'Last 3': 'Last_3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scores_per_Game',
+                                             'Last 1': 'Last_1_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
                                              'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
                                              'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game'
                                              }, inplace=True)
@@ -1562,8 +1562,8 @@ if __name__ == '__main__':
                                             season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
-                                            'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scoring_Percentage',
-                                            'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                            'Last 3': 'Last_3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scoring_Percentage',
+                                            'Last 1': 'Last_1_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
                                             'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
                                             'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage'
                                             }, inplace=True)
@@ -1589,8 +1589,8 @@ if __name__ == '__main__':
                                             season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
-                                            'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
-                                            'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                            'Last 3': 'Last_3_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                            'Last 1': 'Last_1_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
                                             'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
                                             'Away': 'Away_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt'
                                             }, inplace=True)
@@ -1613,8 +1613,8 @@ if __name__ == '__main__':
                                             season: 'Current_Season_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
-                                            'Last 3': 'Last 3_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
-                                            'Last 1': 'Last 1_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                            'Last 3': 'Last_3_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                            'Last 1': 'Last_1_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
                                             'Home': 'At_Home_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
                                             'Away': 'Away_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game'
                                             }, inplace=True)
@@ -1637,8 +1637,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Scoring_Defense_Opponent_Offensive_Points_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Offensive_Points_per_Game',
-                                           'Last 3': 'Last 3_Scoring_Defense_Opponent_Offensive_Points_per_Game',
-                                           'Last 1': 'Last 1_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                           'Last 3': 'Last_3_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                           'Last 1': 'Last_1_Scoring_Defense_Opponent_Offensive_Points_per_Game',
                                            'Home': 'At_Home_Scoring_Defense_Opponent_Offensive_Points_per_Game',
                                            'Away': 'Away_Scoring_Defense_Opponent_Offensive_Points_per_Game'
                                            }, inplace=True)
@@ -1657,8 +1657,8 @@ if __name__ == '__main__':
                 tdoypg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Yards_per_Game',
                                       season: 'Current_Season_Total_Defense_Opponent_Yards_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_Yards_per_Game',
-                                      'Last 3': 'Last 3_Total_Defense_Opponent_Yards_per_Game',
-                                      'Last 1': 'Last 1_Total_Defense_Opponent_Yards_per_Game',
+                                      'Last 3': 'Last_3_Total_Defense_Opponent_Yards_per_Game',
+                                      'Last 1': 'Last_1_Total_Defense_Opponent_Yards_per_Game',
                                       'Home': 'At_Home_Total_Defense_Opponent_Yards_per_Game',
                                       'Away': 'Away_Total_Defense_Opponent_Yards_per_Game'
                                       }, inplace=True)
@@ -1677,8 +1677,8 @@ if __name__ == '__main__':
                 tdoppg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Plays_per_Game',
                                           season: 'Current_Season_Total_Defense_Opponent_Plays_per_Game',
                                           str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_Plays_per_Game',
-                                          'Last 3': 'Last 3_Total_Defense_Opponent_Plays_per_Game',
-                                          'Last 1': 'Last 1_Total_Defense_Opponent_Plays_per_Game',
+                                          'Last 3': 'Last_3_Total_Defense_Opponent_Plays_per_Game',
+                                          'Last 1': 'Last_1_Total_Defense_Opponent_Plays_per_Game',
                                           'Home': 'At_Home_Total_Defense_Opponent_Plays_per_Game',
                                           'Away': 'Away_Total_Defense_Opponent_Plays_per_Game'
                                           }, inplace=True)
@@ -1697,8 +1697,8 @@ if __name__ == '__main__':
                 tdofdpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_First_Downs_per_Game',
                                           season: 'Current_Season_Total_Defense_Opponent_First_Downs_per_Game',
                                           str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_First_Downs_per_Game',
-                                          'Last 3': 'Last 3_Total_Defense_Opponent_First_Downs_per_Game',
-                                          'Last 1': 'Last 1_Total_Defense_Opponent_First_Downs_per_Game',
+                                          'Last 3': 'Last_3_Total_Defense_Opponent_First_Downs_per_Game',
+                                          'Last 1': 'Last_1_Total_Defense_Opponent_First_Downs_per_Game',
                                           'Home': 'At_Home_Total_Defense_Opponent_First_Downs_per_Game',
                                           'Away': 'Away_Total_Defense_Opponent_First_Downs_per_Game'
                                           }, inplace=True)
@@ -1718,8 +1718,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Total_Defense_Opponent_Third_Downs_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Downs_per_Game',
-                                           'Last 3': 'Last 3_Total_Defense_Opponent_Third_Downs_per_Game',
-                                           'Last 1': 'Last 1_Total_Defense_Opponent_Third_Downs_per_Game',
+                                           'Last 3': 'Last_3_Total_Defense_Opponent_Third_Downs_per_Game',
+                                           'Last 1': 'Last_1_Total_Defense_Opponent_Third_Downs_per_Game',
                                            'Home': 'At_Home_Total_Defense_Opponent_Third_Downs_per_Game',
                                            'Away': 'Away_Total_Defense_Opponent_Third_Downs_per_Game'
                                            }, inplace=True)
@@ -1739,8 +1739,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
-                                           'Last 3': 'Last 3_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
-                                           'Last 1': 'Last 1_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                           'Last 3': 'Last_3_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                           'Last 1': 'Last_1_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
                                            'Home': 'At_Home_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
                                            'Away': 'Away_Total_Defense_Opponent_Third_Down_Conversions_per_Game'
                                            }, inplace=True)
@@ -1761,8 +1761,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Total_Defense_Opponent_Fourth_Downs_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Defense_Opponent_Fourth_Downs_per_Game',
-                                           'Last 3': 'Last 3_Total_Defense_Opponent_Fourth_Downs_per_Game',
-                                           'Last 1': 'Last 1_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                           'Last 3': 'Last_3_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                           'Last 1': 'Last_1_Total_Defense_Opponent_Fourth_Downs_per_Game',
                                            'Home': 'At_Home_Total_Defense_Opponent_Fourth_Downs_per_Game',
                                            'Away': 'Away_Total_Defense_Opponent_Fourth_Downs_per_Game'
                                            }, inplace=True)
@@ -1782,8 +1782,8 @@ if __name__ == '__main__':
                                             season: 'Current_Season_Total_Defense_Opponent_Fourth_Down_Conversions_Game',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Total_Defense_Opponent_Fourth_Down_Conversions_Game',
-                                            'Last 3': 'Last 3_Total_Defense_Opponent_Fourth_Down_Conversions_per_Game',
-                                            'Last 1': 'Last 1_Total_Defense_Opponent_Fourth_Downs_Conversions_per_Game',
+                                            'Last 3': 'Last_3_Total_Defense_Opponent_Fourth_Down_Conversions_per_Game',
+                                            'Last 1': 'Last_1_Total_Defense_Opponent_Fourth_Downs_Conversions_per_Game',
                                             'Home': 'At_Home_Total_Defense_Opponent_Fourth_Down_Conversions_per_Game',
                                             'Away': 'Away_Total_Defense_Opponent_Fourth_Down_Conversions_per_Game'
                                             }, inplace=True)
@@ -1804,8 +1804,8 @@ if __name__ == '__main__':
                                             season: 'Current_Season_Total_Defense_Opponent_Average_Time_of_Possession',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Total_Defense_Opponent_Average_Time_of_Possession',
-                                            'Last 3': 'Last 3_Total_Defense_Opponent_Average_Time_of_Possession',
-                                            'Last 1': 'Last 1_Total_Defense_Opponent_Average_Time_of_Possession',
+                                            'Last 3': 'Last_3_Total_Defense_Opponent_Average_Time_of_Possession',
+                                            'Last 1': 'Last_1_Total_Defense_Opponent_Average_Time_of_Possession',
                                             'Home': 'At_Home_Total_Defense_Opponent_Average_Time_of_Possession',
                                             'Away': 'Away_Total_Defense_Opponent_Average_Time_of_Possession'
                                             }, inplace=True)
@@ -1826,8 +1826,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Total_Defense_Opponent_Time_of_Possession_Percentage',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Defense_Opponent_Time_of_Possession_Percentage',
-                                           'Last 3': 'Last 3_Total_Defense_Opponent_Time_of_Possession_Percentage',
-                                           'Last 1': 'Last 1_Total_Defense_Opponent_Time_of_Possession_Percentage',
+                                           'Last 3': 'Last_3_Total_Defense_Opponent_Time_of_Possession_Percentage',
+                                           'Last 1': 'Last_1_Total_Defense_Opponent_Time_of_Possession_Percentage',
                                            'Home': 'At_Home_Total_Defense_Opponent_Time_of_Possession_Percentage',
                                            'Away': 'Away_Total_Defense_Opponent_Time_of_Possession_Percentage'
                                            }, inplace=True)
@@ -1851,8 +1851,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
-                                           'Last 3': 'Last 3_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
-                                           'Last 1': 'Last 1_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
+                                           'Last 3': 'Last_3_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
+                                           'Last 1': 'Last_1_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
                                            'Home': 'At_Home_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
                                            'Away': 'Away_Total_Defense_Opponent_Third_Down_Conversion_Percentage'
                                            }, inplace=True)
@@ -1876,8 +1876,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
-                                           'Last 3': 'Last 3_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
-                                           'Last 1': 'Last 1_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
+                                           'Last 3': 'Last_3_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
+                                           'Last 1': 'Last_1_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
                                            'Home': 'At_Home_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
                                            'Away': 'Away_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage'
                                            }, inplace=True)
@@ -1901,8 +1901,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Total_Defense_Opponent_Punts_per_Play',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Defense_Opponent_Punts_per_Play',
-                                           'Last 3': 'Last 3_Total_Defense_Opponent_Punts_per_Play',
-                                           'Last 1': 'Last 1_Total_Defense_Opponent_Punts_per_Play',
+                                           'Last 3': 'Last_3_Total_Defense_Opponent_Punts_per_Play',
+                                           'Last 1': 'Last_1_Total_Defense_Opponent_Punts_per_Play',
                                            'Home': 'At_Home_Total_Defense_Opponent_Punts_per_Play',
                                            'Away': 'Away_Total_Defense_Opponent_Punts_per_Play'
                                            }, inplace=True)
@@ -1923,8 +1923,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Total_Defense_Opponent_Punts_per_Offensive_Score',
                                           str(int(
                                               season) - 1): 'Previous_Season_Total_Defense_Opponent_Punts_per_Offensive_Score',
-                                          'Last 3': 'Last 3_Total_Defense_Opponent_Punts_per_Offensive_Score',
-                                          'Last 1': 'Last 1_Total_Defense_Opponent_Punts_per_Offensive_Score',
+                                          'Last 3': 'Last_3_Total_Defense_Opponent_Punts_per_Offensive_Score',
+                                          'Last 1': 'Last_1_Total_Defense_Opponent_Punts_per_Offensive_Score',
                                           'Home': 'At_Home_Total_Defense_Opponent_Punts_per_Offensive_Score',
                                           'Away': 'Away_Total_Defense_Opponent_Punts_per_Offensive_Score'
                                           }, inplace=True)
@@ -1945,8 +1945,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Rushing_Defense_Opponent_Rushing_Attempts_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
-                                           'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
-                                           'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
+                                           'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
+                                           'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
                                            'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
                                            'Away': 'Away_Rushing_Defense_Opponent_Rushing_Attempts_per_Game'
                                            }, inplace=True)
@@ -1967,8 +1967,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
-                                           'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
-                                           'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
+                                           'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
+                                           'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
                                            'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
                                            'Away': 'Away_Rushing_Defense_Opponent_Rushing_Yards_per_Game'
                                            }, inplace=True)
@@ -1989,8 +1989,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
-                                           'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
-                                           'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
+                                           'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
+                                           'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
                                            'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
                                            'Away': 'Away_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game'
                                            }, inplace=True)
@@ -2011,8 +2011,8 @@ if __name__ == '__main__':
                                             season: 'Current_Season_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
-                                            'Last 3': 'Last 3_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
-                                            'Last 1': 'Last 1_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
+                                            'Last 3': 'Last_3_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
+                                            'Last 1': 'Last_1_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
                                             'Home': 'At_Home_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
                                             'Away': 'Away_Rushing_Defense_Opponent_Yards_per_Rush_Attempt'
                                             }, inplace=True)
@@ -2033,8 +2033,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Rushing_Defense_Opponent_Rushing_Play_Percentage',
                                            str(int(
                                                season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_Play_Percentage',
-                                           'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_Play_Percentage',
-                                           'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_Play_Percentage',
+                                           'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_Play_Percentage',
+                                           'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_Play_Percentage',
                                            'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_Play_Percentage',
                                            'Away': 'Away_Rushing_Defense_Opponent_Rushing_Play_Percentage'
                                            }, inplace=True)
@@ -2058,8 +2058,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
                                           str(int(
                                               season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
-                                          'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
-                                          'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
+                                          'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
+                                          'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
                                           'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
                                           'Away': 'Away_Rushing_Defense_Opponent_Rushing_Yards_Percentage'
                                           }, inplace=True)
@@ -2083,8 +2083,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Passing_Defense_Opponent_Pass_Attempts_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Defense_Opponent_Pass_Attempts_per_Game',
-                                          'Last 3': 'Last 3_Passing_Defense_Opponent_Pass_Attempts_per_Game',
-                                          'Last 1': 'Last 1_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                          'Last 3': 'Last_3_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                          'Last 1': 'Last_1_Passing_Defense_Opponent_Pass_Attempts_per_Game',
                                           'Home': 'At_Home_Passing_Defense_Opponent_Pass_Attempts_per_Game',
                                           'Away': 'Away_Passing_Defense_Opponent_Pass_Attempts_per_Game'
                                           }, inplace=True)
@@ -2105,8 +2105,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Passing_Defense_Opponent_Completions_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Passing_Defense_Opponent_Completions_per_Game',
-                                           'Last 3': 'Last 3_Passing_Defense_Opponent_Completions_per_Game',
-                                           'Last 1': 'Last 1_Passing_Defense_Opponent_Completions_per_Game',
+                                           'Last 3': 'Last_3_Passing_Defense_Opponent_Completions_per_Game',
+                                           'Last 1': 'Last_1_Passing_Defense_Opponent_Completions_per_Game',
                                            'Home': 'At_Home_Passing_Defense_Opponent_Completions_per_Game',
                                            'Away': 'Away_Passing_Defense_Opponent_Completions_per_Game'
                                            }, inplace=True)
@@ -2127,8 +2127,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Passing_Defense_Opponent_Incompletions_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Defense_Opponent_Incompletions_per_Game',
-                                          'Last 3': 'Last 3_Passing_Defense_Opponent_Incompletions_per_Game',
-                                          'Last 1': 'Last 1_Passing_Defense_Opponent_Incompletions_per_Game',
+                                          'Last 3': 'Last_3_Passing_Defense_Opponent_Incompletions_per_Game',
+                                          'Last 1': 'Last_1_Passing_Defense_Opponent_Incompletions_per_Game',
                                           'Home': 'At_Home_Passing_Defense_Opponent_Incompletions_per_Game',
                                           'Away': 'Away_Passing_Defense_Opponent_Incompletions_per_Game'
                                           }, inplace=True)
@@ -2149,8 +2149,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Passing_Defense_Opponent_Completion_Percentage',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Defense_Opponent_Completion_Percentage',
-                                          'Last 3': 'Last 3_Passing_Defense_Opponent_Completion_Percentage',
-                                          'Last 1': 'Last 1_Passing_Defense_Opponent_Completion_Percentage',
+                                          'Last 3': 'Last_3_Passing_Defense_Opponent_Completion_Percentage',
+                                          'Last 1': 'Last_1_Passing_Defense_Opponent_Completion_Percentage',
                                           'Home': 'At_Home_Passing_Defense_Opponent_Completion_Percentage',
                                           'Away': 'Away_Passing_Defense_Opponent_Completion_Percentage'
                                           }, inplace=True)
@@ -2174,8 +2174,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Defense_Opponent_Passing_Yards_per_Game',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Yards_per_Game',
-                                         'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Yards_per_Game',
-                                         'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                         'Last 3': 'Last_3_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                         'Last 1': 'Last_1_Passing_Defense_Opponent_Passing_Yards_per_Game',
                                          'Home': 'At_Home_Passing_Defense_Opponent_Passing_Yards_per_Game',
                                          'Away': 'Away_Passing_Defense_Opponent_Passing_Yards_per_Game'
                                          }, inplace=True)
@@ -2196,8 +2196,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
-                                           'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
-                                           'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                           'Last 3': 'Last_3_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                           'Last 1': 'Last_1_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
                                            'Home': 'At_Home_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
                                            'Away': 'Away_Passing_Defense_Opponent_Passing_First_Downs_per_Game'
                                            }, inplace=True)
@@ -2218,8 +2218,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Passing_Defense_Opponent_Average_Team_Passer_Rating',
                                            str(int(
                                                season) - 1): 'Previous_Season_Passing_Defense_Opponent_Average_Team_Passer_Rating',
-                                           'Last 3': 'Last 3_Passing_Defense_Opponent_Average_Team_Passer_Rating',
-                                           'Last 1': 'Last 1_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                           'Last 3': 'Last_3_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                           'Last 1': 'Last_1_Passing_Defense_Opponent_Average_Team_Passer_Rating',
                                            'Home': 'At_Home_Passing_Defense_Opponent_Average_Team_Passer_Rating',
                                            'Away': 'Away_Passing_Defense_Opponent_Average_Team_Passer_Rating'
                                            }, inplace=True)
@@ -2240,8 +2240,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Passing_Defense_Team_Sack_Percentage',
                                            str(int(
                                                season) - 1): 'Previous_Season_Passing_Defense_Team_Sack_Percentage',
-                                           'Last 3': 'Last 3_Passing_Defense_Team_Sack_Percentage',
-                                           'Last 1': 'Last 1_Passing_Defense_Team_Sack_Percentage',
+                                           'Last 3': 'Last_3_Passing_Defense_Team_Sack_Percentage',
+                                           'Last 1': 'Last_1_Passing_Defense_Team_Sack_Percentage',
                                            'Home': 'At_Home_Passing_Defense_Team_Sack_Percentage',
                                            'Away': 'Away_Passing_Defense_Team_Sack_Percentage'
                                            }, inplace=True)
@@ -2265,8 +2265,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
-                                         'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Play_Percentage',
-                                         'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                         'Last 3': 'Last_3_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                         'Last 1': 'Last_1_Passing_Defense_Opponent_Passing_Play_Percentage',
                                          'Home': 'At_Home_Passing_Defense_Opponent_Passing_Play_Percentage',
                                          'Away': 'Away_Passing_Defense_Opponent_Passing_Play_Percentage'
                                          }, inplace=True)
@@ -2290,8 +2290,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
-                                          'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Yards_Percentage',
-                                          'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                          'Last 3': 'Last_3_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                          'Last 1': 'Last_1_Passing_Defense_Opponent_Passing_Yards_Percentage',
                                           'Home': 'At_Home_Passing_Defense_Opponent_Passing_Yards_Percentage',
                                           'Away': 'Away_Passing_Defense_Opponent_Passing_Yards_Percentage'
                                           }, inplace=True)
@@ -2315,8 +2315,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Passing_Defense_Sacks_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Passing_Defense_Sacks_per_Game',
-                                          'Last 3': 'Last 3_Passing_Defense_Sacks_per_Game',
-                                          'Last 1': 'Last 1_Passing_Defense_Sacks_per_Game',
+                                          'Last 3': 'Last_3_Passing_Defense_Sacks_per_Game',
+                                          'Last 1': 'Last_1_Passing_Defense_Sacks_per_Game',
                                           'Home': 'At_Home_Passing_Defense_Sacks_per_Game',
                                           'Away': 'Away_Passing_Defense_Sacks_per_Game'
                                           }, inplace=True)
@@ -2338,8 +2338,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
                                          str(int(
                                              season) - 1): 'Previous_Season_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
-                                         'Last 3': 'Last 3_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
-                                         'Last 1': 'Last 1_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                         'Last 3': 'Last_3_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                         'Last 1': 'Last_1_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
                                          'Home': 'At_Home_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
                                          'Away': 'Away_Passing_Defense_Opponent_Yards_per_Pass_Attempt'
                                          }, inplace=True)
@@ -2361,8 +2361,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Passing_Defense_Opponent_Yards_per_Completion',
                                            str(int(
                                                season) - 1): 'Previous_Season_Passing_Defense_Opponent_Yards_per_Completion',
-                                           'Last 3': 'Last 3_Passing_Defense_Opponent_Yards_per_Completion',
-                                           'Last 1': 'Last 1_Passing_Defense_Opponent_Yards_per_Completion',
+                                           'Last 3': 'Last_3_Passing_Defense_Opponent_Yards_per_Completion',
+                                           'Last 1': 'Last_1_Passing_Defense_Opponent_Yards_per_Completion',
                                            'Home': 'At_Home_Passing_Defense_Opponent_Yards_per_Completion',
                                            'Away': 'Away_Passing_Defense_Opponent_Yards_per_Completion'
                                            }, inplace=True)
@@ -2384,8 +2384,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
-                                          'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
-                                          'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                          'Last 3': 'Last_3_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                          'Last 1': 'Last_1_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
                                           'Home': 'At_Home_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
                                           'Away': 'Away_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game'
                                           }, inplace=True)
@@ -2409,8 +2409,8 @@ if __name__ == '__main__':
                                              season: 'Current_Season_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
                                              str(int(
                                                  season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
-                                             'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
-                                             'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                             'Last 3': 'Last_3_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                             'Last 1': 'Last_1_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
                                              'Home': 'At_Home_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
                                              'Away': 'Away_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game'
                                              }, inplace=True)
@@ -2433,8 +2433,8 @@ if __name__ == '__main__':
                                              season: 'Current_Season_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
                                              str(int(
                                                  season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
-                                             'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
-                                             'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                             'Last 3': 'Last_3_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                             'Last 1': 'Last_1_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
                                              'Home': 'At_Home_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
                                              'Away': 'Away_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game'
                                              }, inplace=True)
@@ -2458,8 +2458,8 @@ if __name__ == '__main__':
                                             season: 'Current_Season_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
-                                            'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
-                                            'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                            'Last 3': 'Last_3_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                            'Last 1': 'Last_1_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
                                             'Home': 'At_Home_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
                                             'Away': 'Away_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game'
                                             }, inplace=True)
@@ -2481,8 +2481,8 @@ if __name__ == '__main__':
                                              season: 'Current_Season_Turnovers_Interceptions_Thrown_per_Game',
                                              str(int(
                                                  season) - 1): 'Previous_Season_Turnovers_Interceptions_Thrown_per_Game',
-                                             'Last 3': 'Last 3_Turnovers_Interceptions_Thrown_per_Game',
-                                             'Last 1': 'Last 1_Turnovers_Interceptions_Thrown_per_Game',
+                                             'Last 3': 'Last_3_Turnovers_Interceptions_Thrown_per_Game',
+                                             'Last 1': 'Last_1_Turnovers_Interceptions_Thrown_per_Game',
                                              'Home': 'At_Home_Turnovers_Interceptions_Thrown_per_Game',
                                              'Away': 'Away_Turnovers_Interceptions_per_Game'
                                              }, inplace=True)
@@ -2504,8 +2504,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Turnovers_Fumbles_per_Game',
                                          str(int(
                                              season) - 1): 'Previous_Season_Turnovers_Fumbles_per_Game',
-                                         'Last 3': 'Last 3_Turnovers_Fumbles_per_Game',
-                                         'Last 1': 'Last 1_Turnovers_Fumbles_per_Game',
+                                         'Last 3': 'Last_3_Turnovers_Fumbles_per_Game',
+                                         'Last 1': 'Last_1_Turnovers_Fumbles_per_Game',
                                          'Home': 'At_Home_Turnovers_Fumbles_per_Game',
                                          'Away': 'Away_Turnovers_Fumbles_per_Game'
                                          }, inplace=True)
@@ -2527,8 +2527,8 @@ if __name__ == '__main__':
                                         season: 'Current_Season_Turnovers_Fumbles_Lost_per_Game',
                                         str(int(
                                             season) - 1): 'Previous_Season_Turnovers_Fumbles_Lost_per_Game',
-                                        'Last 3': 'Last 3_Turnovers_Fumbles_Lost_per_Game',
-                                        'Last 1': 'Last 1_Turnovers_Fumbles_Lost_per_Game',
+                                        'Last 3': 'Last_3_Turnovers_Fumbles_Lost_per_Game',
+                                        'Last 1': 'Last_1_Turnovers_Fumbles_Lost_per_Game',
                                         'Home': 'At_Home_Turnovers_Fumbles_Lost_per_Game',
                                         'Away': 'Away_Turnovers_Fumbles_Lost_per_Game'
                                         }, inplace=True)
@@ -2550,8 +2550,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Turnovers_Fumbles_Not_Lost_per_Game',
                                          str(int(
                                              season) - 1): 'Previous_Season_Turnovers_Fumbles_Not_Lost_per_Game',
-                                         'Last 3': 'Last 3_Turnovers_Fumbles_Not_Lost_per_Game',
-                                         'Last 1': 'Last 1_Turnovers_Fumbles_Not_Lost_per_Game',
+                                         'Last 3': 'Last_3_Turnovers_Fumbles_Not_Lost_per_Game',
+                                         'Last 1': 'Last_1_Turnovers_Fumbles_Not_Lost_per_Game',
                                          'Home': 'At_Home_Turnovers_Fumbles_Not_Lost_per_Game',
                                          'Away': 'Away_Turnovers_Fumbles_Not_Lost_per_Game'
                                          }, inplace=True)
@@ -2570,8 +2570,8 @@ if __name__ == '__main__':
                 tgpg_df.rename(columns={'Rank': 'Rank_Turnovers_Giveaways_per_Game',
                                       season: 'Current_Season_Turnovers_Giveaways_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Turnovers_Giveaways_per_Game',
-                                      'Last 3': 'Last 3_Turnovers_Giveaways_per_Game',
-                                      'Last 1': 'Last 1_Turnovers_Giveaways_per_Game',
+                                      'Last 3': 'Last_3_Turnovers_Giveaways_per_Game',
+                                      'Last 1': 'Last_1_Turnovers_Giveaways_per_Game',
                                       'Home': 'At_Home_Turnovers_Giveaways_per_Game',
                                       'Away': 'Away_Turnovers_Giveaways_per-Game'
                                       }, inplace=True)
@@ -2590,8 +2590,8 @@ if __name__ == '__main__':
                 ttmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Turnover_Margin_per_Game',
                                         season: 'Current_Season_Turnovers_Turnover_Margin_per_Game',
                                         str(int(season) - 1): 'Previous_Season_Turnovers_Turnover_Margin_per_Game',
-                                        'Last 3': 'Last 3_Turnovers_Turnover_Margin_per_Game',
-                                        'Last 1': 'Last 1_Turnovers_Turnover_Margin_per_Game',
+                                        'Last 3': 'Last_3_Turnovers_Turnover_Margin_per_Game',
+                                        'Last 1': 'Last_1_Turnovers_Turnover_Margin_per_Game',
                                         'Home': 'At_Home_Turnovers_Turnover_Margin_per_Game',
                                         'Away': 'Away_Turnovers_Turnover_Margin_per-Game'
                                         }, inplace=True)
@@ -2611,8 +2611,8 @@ if __name__ == '__main__':
                 tipg_df.rename(columns={'Rank': 'Rank_Turnovers_Interceptions_per_Game',
                                          season: 'Current_Season_Turnovers_Interceptions_per_Game',
                                          str(int(season) - 1): 'Previous_Season_Turnovers_Interceptions_per_Game',
-                                         'Last 3': 'Last 3_Turnovers_Interceptions_per_Game',
-                                         'Last 1': 'Last 1_Turnovers_Interceptions_per_Game',
+                                         'Last 3': 'Last_3_Turnovers_Interceptions_per_Game',
+                                         'Last 1': 'Last_1_Turnovers_Interceptions_per_Game',
                                          'Home': 'At_Home_Turnovers_Interceptions_per_Game',
                                          'Away': 'Away_Turnovers_Interceptions_per-Game'
                                          }, inplace=True)
@@ -2632,8 +2632,8 @@ if __name__ == '__main__':
                 tofpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_per_Game',
                                         season: 'Current_Season_Turnovers_Opponent_Fumbles_per_Game',
                                         str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_per_Game',
-                                        'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_per_Game',
-                                        'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_per_Game',
+                                        'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_per_Game',
+                                        'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_per_Game',
                                         'Home': 'At_Home_Turnovers_Opponent_Fumbles_per_Game',
                                         'Away': 'Away_Turnovers_Opponent_Fumbles_per-Game'
                                         }, inplace=True)
@@ -2653,8 +2653,8 @@ if __name__ == '__main__':
                 toflpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                          season: 'Current_Season_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                          str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_Lost_per_Game',
-                                         'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_Lost_per_Game',
-                                         'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                         'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                         'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                          'Home': 'At_Home_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                          'Away': 'Away_Turnovers_Opponent_Fumbles_Lost_per-Game'
                                          }, inplace=True)
@@ -2675,8 +2675,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
-                                          'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
-                                          'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                          'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                          'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                           'Home': 'At_Home_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                           'Away': 'Away_Turnovers_Opponent_Fumbles_Not_Lost_per-Game'
                                           }, inplace=True)
@@ -2694,8 +2694,8 @@ if __name__ == '__main__':
                 tttapg_df.rename(columns={'Rank': 'Rank_Turnovers_Takeaways_per_Game',
                                       season: 'Current_Season_Turnovers_Takeaways_per_Game',
                                       str(int(season) - 1): 'Previous_Season_Turnovers_Takeaways_per_Game',
-                                      'Last 3': 'Last 3_Turnovers_Takeaways_per_Game',
-                                      'Last 1': 'Last 1_Turnovers_Takeaways_per_Game',
+                                      'Last 3': 'Last_3_Turnovers_Takeaways_per_Game',
+                                      'Last 1': 'Last_1_Turnovers_Takeaways_per_Game',
                                       'Home': 'At_Home_Turnovers_Takeaways_per_Game',
                                       'Away': 'Away_Turnovers_Takeaways_per_Game'
                                       }, inplace=True)
@@ -2714,8 +2714,8 @@ if __name__ == '__main__':
                 totmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Turnover_Margin_per_Game',
                                           season: 'Current_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
                                           str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
-                                          'Last 3': 'Last 3_Turnovers_Opponent_Turnover_Margin_per_Game',
-                                          'Last 1': 'Last 1_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                          'Last 3': 'Last_3_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                          'Last 1': 'Last_1_Turnovers_Opponent_Turnover_Margin_per_Game',
                                           'Home': 'At_Home_Turnovers_Opponent_Turnover_Margin_per_Game',
                                           'Away': 'Away_Turnovers_Turnover_Margin_per_Game'
                                           }, inplace=True)
@@ -2736,8 +2736,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Turnovers_Interceptions_Thrown_Percentage',
                                           str(int(
                                               season) - 1): 'Previous_Season_Turnovers_Interceptions_Thrown_Percentage',
-                                          'Last 3': 'Last 3_Turnovers_Interceptions_Thrown_Percentage',
-                                          'Last 1': 'Last 1_Turnovers_Interceptions_Thrown_Percentage',
+                                          'Last 3': 'Last_3_Turnovers_Interceptions_Thrown_Percentage',
+                                          'Last 1': 'Last_1_Turnovers_Interceptions_Thrown_Percentage',
                                           'Home': 'At_Home_Turnovers_Interceptions_Thrown_Percentage',
                                           'Away': 'Away_Turnovers_Interceptions_Thrown_Percentage'
                                           }, inplace=True)
@@ -2761,8 +2761,8 @@ if __name__ == '__main__':
                                         season: 'Current_Season_Turnovers_Fumble_Recovery_Percentage',
                                         str(int(
                                             season) - 1): 'Previous_Season_Turnovers_Fumble_Recovery_Percentage',
-                                        'Last 3': 'Last 3_Turnovers_Fumble_Recovery_Percentage',
-                                        'Last 1': 'Last 1_Turnovers_Fumble_Recovery_Percentage',
+                                        'Last 3': 'Last_3_Turnovers_Fumble_Recovery_Percentage',
+                                        'Last 1': 'Last_1_Turnovers_Fumble_Recovery_Percentage',
                                         'Home': 'At_Home_Turnovers_Fumble_Recovery_Percentage',
                                         'Away': 'Away_Turnovers_Fumble_Recovery_Percentage'
                                         }, inplace=True)
@@ -2786,8 +2786,8 @@ if __name__ == '__main__':
                                         season: 'Current_Season_Turnovers_Giveaway_Fumble_Recovery_Percentage',
                                         str(int(
                                             season) - 1): 'Previous_Season_Turnovers_Giveaway_Fumble_Recovery_Percentage',
-                                        'Last 3': 'Last 3_Turnovers_Giveaway_Fumble_Recovery_Percentage',
-                                        'Last 1': 'Last 1_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                        'Last 3': 'Last_3_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                        'Last 1': 'Last_1_Turnovers_Giveaway_Fumble_Recovery_Percentage',
                                         'Home': 'At_Home_Turnovers_Giveaway_Fumble_Recovery_Percentage',
                                         'Away': 'Away_Turnovers_Giveaway_Fumble_Recovery_Percentage'
                                         }, inplace=True)
@@ -2811,8 +2811,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Turnovers_Takeaway_Fumble_Recovery_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Turnovers_Takeaway_Fumble_Recovery_Percentage',
-                                         'Last 3': 'Last 3_Turnovers_Takeaway_Fumble_Recovery_Percentage',
-                                         'Last 1': 'Last 1_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                         'Last 3': 'Last_3_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                         'Last 1': 'Last_1_Turnovers_Takeaway_Fumble_Recovery_Percentage',
                                          'Home': 'At_Home_Turnovers_Takeaway_Fumble_Recovery_Percentage',
                                          'Away': 'Away_Turnovers_Takeaway_Fumble_Recovery_Percentage'
                                          }, inplace=True)
@@ -2836,8 +2836,8 @@ if __name__ == '__main__':
                                         season: 'Current_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
                                         str(int(
                                             season) - 1): 'Previous_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
-                                        'Last 3': 'Last 3_Turnovers_Opponents_Interceptions_Thrown_Percentage',
-                                        'Last 1': 'Last 1_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                        'Last 3': 'Last_3_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                        'Last 1': 'Last_1_Turnovers_Opponents_Interceptions_Thrown_Percentage',
                                         'Home': 'At_Home_Turnovers_Opponents_Interceptions_Thrown_Percentage',
                                         'Away': 'Away_Turnovers_Opponents_Interceptions_Thrown_Percentage'
                                         }, inplace=True)
@@ -2861,8 +2861,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Turnovers_Opponent_Fumble_Recovery_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Turnovers_Opponent_Fumble_Recovery_Percentage',
-                                         'Last 3': 'Last 3_Turnovers_Opponent_Fumble_Recovery_Percentage',
-                                         'Last 1': 'Last 1_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                         'Last 3': 'Last_3_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                         'Last 1': 'Last_1_Turnovers_Opponent_Fumble_Recovery_Percentage',
                                          'Home': 'At_Home_Turnovers_Opponent_Fumble_Recovery_Percentage',
                                          'Away': 'Away_Turnovers_Opponent_Fumble_Recovery_Percentage'
                                          }, inplace=True)
@@ -2886,8 +2886,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
                                          str(int(
                                              season) - 1): 'Previous_Season_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
-                                         'Last 3': 'Last 3_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
-                                         'Last 1': 'Last 1_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                         'Last 3': 'Last_3_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                         'Last 1': 'Last_1_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
                                          'Home': 'At_Home_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
                                          'Away': 'Away_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage'
                                          }, inplace=True)
@@ -2912,8 +2912,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
                                           str(int(
                                               season) - 1): 'Previous_Season_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
-                                          'Last 3': 'Last 3_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
-                                          'Last 1': 'Last 1_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                          'Last 3': 'Last_3_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                          'Last 1': 'Last_1_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
                                           'Home': 'At_Home_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
                                           'Away': 'Away_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage'
                                           }, inplace=True)
@@ -2938,8 +2938,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Penalties_Penalties_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Penalties_per_Game',
-                                          'Last 3': 'Last 3_Penalties_Penalties_per_Game',
-                                          'Last 1': 'Last 1_Penalties_Penalties_per_Game',
+                                          'Last 3': 'Last_3_Penalties_Penalties_per_Game',
+                                          'Last 1': 'Last_1_Penalties_Penalties_per_Game',
                                           'Home': 'At_Home_Penalties_Penalties_per_Game',
                                           'Away': 'Away_Turnovers_Penalties_Penalties_per_Game'
                                           }, inplace=True)
@@ -2961,8 +2961,8 @@ if __name__ == '__main__':
                                         season: 'Current_Season_Penalties_Penalty_Yards_per_Game',
                                         str(int(
                                             season) - 1): 'Previous_Season_Penalty_Yards_per_Game',
-                                        'Last 3': 'Last 3_Penalties_Penalty_Yards_per_Game',
-                                        'Last 1': 'Last 1_Penalties_Penalty_Yards_per_Game',
+                                        'Last 3': 'Last_3_Penalties_Penalty_Yards_per_Game',
+                                        'Last 1': 'Last_1_Penalties_Penalty_Yards_per_Game',
                                         'Home': 'At_Home_Penalties_Penalty_Yards_per_Game',
                                         'Away': 'Away_Turnovers_Penalties_Penalty_Yards_per_Game'
                                         }, inplace=True)
@@ -2984,8 +2984,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Penalties_Penalty_First_Downs_per_Game',
                                          str(int(
                                              season) - 1): 'Previous_Season_Penalty_First_Downs_per_Game',
-                                         'Last 3': 'Last 3_Penalties_Penalty_First_Downs_per_Game',
-                                         'Last 1': 'Last 1_Penalties_Penalty_First_Downs_per_Game',
+                                         'Last 3': 'Last_3_Penalties_Penalty_First_Downs_per_Game',
+                                         'Last 1': 'Last_1_Penalties_Penalty_First_Downs_per_Game',
                                          'Home': 'At_Home_Penalties_Penalty_First_Downs_per_Game',
                                          'Away': 'Away_Turnovers_Penalties_Penalty_First_Downs_per_Game'
                                          }, inplace=True)
@@ -3007,8 +3007,8 @@ if __name__ == '__main__':
                                         season: 'Current_Season_Penalties_Opponent_Penalties_per_Game',
                                         str(int(
                                             season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Game',
-                                        'Last 3': 'Last 3_Penalties_Opponent_Penalties_per_Game',
-                                        'Last 1': 'Last 1_Penalties_Opponent_Penalties_per_Game',
+                                        'Last 3': 'Last_3_Penalties_Opponent_Penalties_per_Game',
+                                        'Last 1': 'Last_1_Penalties_Opponent_Penalties_per_Game',
                                         'Home': 'At_Home_Penalties_Opponent_Penalties_per_Game',
                                         'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Game'
                                         }, inplace=True)
@@ -3030,8 +3030,8 @@ if __name__ == '__main__':
                                          season: 'Current_Season_Penalties_Opponent_Penalty_Yards_per_Game',
                                          str(int(
                                              season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Game',
-                                         'Last 3': 'Last 3_Penalties_Opponent_Penalty_Yards_per_Game',
-                                         'Last 1': 'Last 1_Penalties_Opponent_Penalty_Yards_per_Game',
+                                         'Last 3': 'Last_3_Penalties_Opponent_Penalty_Yards_per_Game',
+                                         'Last 1': 'Last_1_Penalties_Opponent_Penalty_Yards_per_Game',
                                          'Home': 'At_Home_Penalties_Opponent_Penalty_Yards_per_Game',
                                          'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_Yards_per_Game'
                                          }, inplace=True)
@@ -3053,8 +3053,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Penalties_Opponent_Penalty_First_Downs_per_Game',
                                           str(int(
                                               season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_First_Downs_per_Game',
-                                          'Last 3': 'Last 3_Penalties_Opponent_Penalty_First_Downs_per_Game',
-                                          'Last 1': 'Last 1_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                          'Last 3': 'Last_3_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                          'Last 1': 'Last_1_Penalties_Opponent_Penalty_First_Downs_per_Game',
                                           'Home': 'At_Home_Penalties_Opponent_Penalty_First_Downs_per_Game',
                                           'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_First_Downs_per_Game'
                                           }, inplace=True)
@@ -3076,8 +3076,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Penalties_Penalty_Yards_per_Penalty',
                                            str(int(
                                                season) - 1): 'Previous_Season_Penalties_Penalty_Yards_per_Penalty',
-                                           'Last 3': 'Last 3_Penalties_Penalty_Yards_per_Penalty',
-                                           'Last 1': 'Last 1_Penalties_Penalty_Yards_per_Penalty',
+                                           'Last 3': 'Last_3_Penalties_Penalty_Yards_per_Penalty',
+                                           'Last 1': 'Last_1_Penalties_Penalty_Yards_per_Penalty',
                                            'Home': 'At_Home_Penalties_Penalty_Yards_per_Penalty',
                                            'Away': 'Away_Turnovers_Penalties_Penalty_Yards_per_Penalty'
                                            }, inplace=True)
@@ -3099,8 +3099,8 @@ if __name__ == '__main__':
                                           season: 'Current_Season_Penalties_Penalties_per_Play',
                                           str(int(
                                               season) - 1): 'Previous_Season_Penalties_Penalties_per_Play',
-                                          'Last 3': 'Last 3_Penalties_Penalties_per_Play',
-                                          'Last 1': 'Last 1_Penalties_Penalties_per_Play',
+                                          'Last 3': 'Last_3_Penalties_Penalties_per_Play',
+                                          'Last 1': 'Last_1_Penalties_Penalties_per_Play',
                                           'Home': 'At_Home_Penalties_Penalties_per_Play',
                                           'Away': 'Away_Turnovers_Penalties_Penalties_per_Play'
                                           }, inplace=True)
@@ -3121,8 +3121,8 @@ if __name__ == '__main__':
                 poppypp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                         season: 'Current_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                         str(int(season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
-                                        'Last 3': 'Last 3_Penalties_Opponent_Penalty_Yards_per_Penalty',
-                                        'Last 1': 'Last 1_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                        'Last 3': 'Last_3_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                        'Last 1': 'Last_1_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                         'Home': 'At_Home_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                         'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_Yards_per_Penalty'
                                         }, inplace=True)
@@ -3144,8 +3144,8 @@ if __name__ == '__main__':
                                            season: 'Current_Season_Penalties_Opponent_Penalties_per_Play',
                                            str(int(
                                                season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Play',
-                                           'Last 3': 'Last 3_Penalties_Opponent_Penalties_per_Play',
-                                           'Last 1': 'Last 1_Penalties_Opponent_Penalties_per_Play',
+                                           'Last 3': 'Last_3_Penalties_Opponent_Penalties_per_Play',
+                                           'Last 1': 'Last_1_Penalties_Opponent_Penalties_per_Play',
                                            'Home': 'At_Home_Penalties_Opponent_Penalties_per_Play',
                                            'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Play'
                                            }, inplace=True)
@@ -3823,8 +3823,8 @@ if __name__ == '__main__':
         so_df.rename(columns={'Rank': 'Rank_Scoring_Offense',
                               season: 'Current_Season_Scoring_Offense',
                               str(int(season) - 1): 'Previous_Season_Scoring_Offense',
-                              'Last 3': 'Last 3_Scoring_Offense',
-                              'Last 1': 'Last 1_Scoring_Offense',
+                              'Last 3': 'Last_3_Scoring_Offense',
+                              'Last 1': 'Last_1_Scoring_Offense',
                               'Home': 'At_Home_Scoring_Offense',
                               'Away': 'Away_Scoring_Offense'
                               }, inplace=True)
@@ -3838,8 +3838,8 @@ if __name__ == '__main__':
         tasm_df.rename(columns={'Rank': 'Rank_Team_Average_Scoring_Margin',
                               season: 'Current_Season_Team_Average_Scoring_Margin',
                               str(int(season) - 1): 'Previous_Season_Team_Average_Scoring_Margin',
-                              'Last 3': 'Last 3_Team_Average_Scoring_Margin',
-                              'Last 1': 'Last 1_Team_Average_Scoring_Margin',
+                              'Last 3': 'Last_3_Team_Average_Scoring_Margin',
+                              'Last 1': 'Last_1_Team_Average_Scoring_Margin',
                               'Home': 'At_Home_Team_Average_Scoring_Margin',
                               'Away': 'Away_Team_Average_Scoring_Margin'
                               }, inplace=True)
@@ -3853,8 +3853,8 @@ if __name__ == '__main__':
         typp_df.rename(columns={'Rank': 'Rank_Team_Yards_per_Point',
                               season: 'Current_Season_Team_Yards_per_Point',
                               str(int(season) - 1): 'Previous_Season_Team_yards_per_Point',
-                              'Last 3': 'Last 3_Team_Yards_per_Point',
-                              'Last 1': 'Last 1_Team_Yards_per_Point',
+                              'Last 3': 'Last_3_Team_Yards_per_Point',
+                              'Last 1': 'Last_1_Team_Yards_per_Point',
                               'Home': 'At_Home_Team_Yards_per_Point',
                               'Away': 'Away_Team_Yards_per_Point'
                               }, inplace=True)
@@ -3869,8 +3869,8 @@ if __name__ == '__main__':
         typm_df.rename(columns={'Rank': 'Rank_Team_Yards_Per_Point_Margin',
                               season: 'Current_Season_Team_Yards_per_Point_Margin',
                               str(int(season) - 1): 'Previous_Season_Team_yards_per_Point_Margin',
-                              'Last 3': 'Last 3_Team_Yards_per_Point_Margin',
-                              'Last 1': 'Last 1_Team_Yards_per_Point_Margin',
+                              'Last 3': 'Last_3_Team_Yards_per_Point_Margin',
+                              'Last 1': 'Last_1_Team_Yards_per_Point_Margin',
                               'Home': 'At_Home_Team_Yards_per_Point_Nargin',
                               'Away': 'Away_Team_Yards_per_Point_Margin'
                               }, inplace=True)
@@ -3884,8 +3884,8 @@ if __name__ == '__main__':
         typ_df.rename(columns={'Rank': 'Rank_Team_Points_per_Play',
                               season: 'Current_Season_Team_Points_per_Play',
                               str(int(season) - 1): 'Previous_Season_Team_Points_per_Play',
-                              'Last 3': 'Last 3_Team_Points_per_Play',
-                              'Last 1': 'Last 1_Team_Points_per_Play',
+                              'Last 3': 'Last_3_Team_Points_per_Play',
+                              'Last 1': 'Last_1_Team_Points_per_Play',
                               'Home': 'At_Home_Team_Points_per_Play',
                               'Away': 'Away_Team_Points_per_Play'
                               }, inplace=True)
@@ -3899,8 +3899,8 @@ if __name__ == '__main__':
         typpm_df.rename(columns={'Rank': 'Rank_Team_Points_per_Play_Margin',
                               season: 'Current_Season_Team_Points_per_Play_Margin',
                               str(int(season) - 1): 'Previous_Season_Team_Points_per_Play_Margin',
-                              'Last 3': 'Last 3_Team_Points_per_Play_Margin',
-                              'Last 1': 'Last 1_Team_Points_per_Play_Margin',
+                              'Last 3': 'Last_3_Team_Points_per_Play_Margin',
+                              'Last 1': 'Last_1_Team_Points_per_Play_Margin',
                               'Home': 'At_Home_Team_Points_per_Play_Margin',
                               'Away': 'Away_Team_Points_per_Play_Margin'
                               }, inplace=True)
@@ -3913,12 +3913,12 @@ if __name__ == '__main__':
         trs_df = main_hist(team_red_zone_scoring_attempts_per_game_url_current, season, str(week), this_week_date_str,
                           'team_red_zone_scoring_attempts_per_game')
         trs_df.rename(columns={'Rank': 'Rank_Team_Red_Zone_Scoring_Attempts_per_Game',
-                              season: 'Current_Season_Team_Red-Zone_Scoring_Attempts_per_Game',
-                              str(int(season) - 1): 'Previous_Season_Team_Red-Zone_Scoring_Attempts_per_Game',
-                              'Last 3': 'Last 3_Team_Red_Zone_Scoring_Attempts_per_Game',
-                              'Last 1': 'Last 1_Team_Red_Zone_Scoring_Attempts_per_Game',
+                              season: 'Current_Season_Team_Red_Zone_Scoring_Attempts_per_Game',
+                              str(int(season) - 1): 'Previous_Season_Team_Red_Zone_Scoring_Attempts_per_Game',
+                              'Last 3': 'Last_3_Team_Red_Zone_Scoring_Attempts_per_Game',
+                              'Last 1': 'Last_1_Team_Red_Zone_Scoring_Attempts_per_Game',
                               'Home': 'At_Home_Team_Red_Zone_Scoring_Attempts_per_Game',
-                              'Away': 'Away_Team_Red_Zone-Scoring-Attempts_per_Game'
+                              'Away': 'Away_Team_Red_Zone_Scoring_Attempts_per_Game'
                               }, inplace=True)
         trs_df['Team'] = trs_df['Team'].str.strip()
         time.sleep(1)
@@ -3929,12 +3929,12 @@ if __name__ == '__main__':
         trsp_df = main_hist(team_red_zone_scores_per_game_url_current, season, str(week), this_week_date_str,
                           'team_red_zone_scores_per_game')
         trsp_df.rename(columns={'Rank': 'Rank_Team_Red_Zone_Scores_per_Game',
-                              season: 'Current_Season_Team_Red-Zone_Scores_per_Game',
-                              str(int(season) - 1): 'Previous_Season_Team_Red-Zone_Scores_per_Game',
-                              'Last 3': 'Last 3_Team_Red_Zone_Scores_per_Game',
-                              'Last 1': 'Last 1_Team_Red_Zone_Scores_per_Game',
+                              season: 'Current_Season_Team_Red_Zone_Scores_per_Game',
+                              str(int(season) - 1): 'Previous_Season_Team_Red_Zone_Scores_per_Game',
+                              'Last 3': 'Last_3_Team_Red_Zone_Scores_per_Game',
+                              'Last 1': 'Last_1_Team_Red_Zone_Scores_per_Game',
                               'Home': 'At_Home_Team_Red_Zone_Scores_per_Game',
-                              'Away': 'Away_Team_Red_Zone-Scores_per_Game'
+                              'Away': 'Away_Team_Red_Zone_Scores_per_Game'
                               }, inplace=True)
         trsp_df['Team'] = trsp_df['Team'].str.strip()
         time.sleep(1)
@@ -3945,12 +3945,12 @@ if __name__ == '__main__':
         trspp_df = main_hist(team_red_zone_scoring_percentage_url_current, season, str(week), this_week_date_str,
                           'team_red_zone_scoring_percentage')
         trspp_df.rename(columns={'Rank': 'Rank_Team_Red_Zone_Scoring_Percentage',
-                              season: 'Current_Season_Team_Red-Zone_Scoring_Percentage',
-                              str(int(season) - 1): 'Previous_Season_Team_Red-Zone_Scoring_Percentage',
-                              'Last 3': 'Last 3_Team_Red_Zone_Scoring_Percentage',
-                              'Last 1': 'Last 1_Team_Red_Zone_Scoring_Percentage',
+                              season: 'Current_Season_Team_Red_Zone_Scoring_Percentage',
+                              str(int(season) - 1): 'Previous_Season_Team_Red_Zone_Scoring_Percentage',
+                              'Last 3': 'Last_3_Team_Red_Zone_Scoring_Percentage',
+                              'Last 1': 'Last_1_Team_Red_Zone_Scoring_Percentage',
                               'Home': 'At_Home_Team_Red_Zone_Scoring_Percentage',
-                              'Away': 'Away_Team_Red_Zone-Scoring_Percentage'
+                              'Away': 'Away_Team_Red_Zone_Scoring_Percentage'
                               }, inplace=True)
         trspp_df['Team'] = trspp_df['Team'].str.strip()
         time.sleep(1)
@@ -3963,8 +3963,8 @@ if __name__ == '__main__':
         tot_df.rename(columns={'Rank': 'Rank_Team_Offensive_Touchdowns_per_Game',
                           season: 'Current_Season_Team_Offensive_Touchdowns_per_Game',
                           str(int(season) - 1): 'Previous_Season_Team_Offensive_Touchdowns_per_Game',
-                          'Last 3': 'Last 3_Team_Offensive_Touchdowns_per_Game',
-                          'Last 1': 'Last 1_Team_Offensive_Touchdowns_per_Game',
+                          'Last 3': 'Last_3_Team_Offensive_Touchdowns_per_Game',
+                          'Last 1': 'Last_1_Team_Offensive_Touchdowns_per_Game',
                           'Home': 'At_Home_Team_Offensive_Touchdowns_per_Game',
                           'Away': 'Away_Team_Offensive_Touchdowns_per_Game'
                           }, inplace=True)
@@ -3979,8 +3979,8 @@ if __name__ == '__main__':
         top_df.rename(columns={'Rank': 'Rank_Team_Offensive_Points_per_Game',
                               season: 'Current_Season_Team_Offensive_Points_per_Game',
                               str(int(season) - 1): 'Previous_Season_Team_Offensive_Points_per_Game',
-                              'Last 3': 'Last 3_Team_Offensive_Points_per_Game',
-                              'Last 1': 'Last 1_Team_Offensive_Points_per_Game',
+                              'Last 3': 'Last_3_Team_Offensive_Points_per_Game',
+                              'Last 1': 'Last_1_Team_Offensive_Points_per_Game',
                               'Home': 'At_Home_Team_Offensive_Points_per_Game',
                               'Away': 'Away_Team_Offensive_Points_per_Game'
                               }, inplace=True)
@@ -3995,8 +3995,8 @@ if __name__ == '__main__':
         tops_df.rename(columns={'Rank': 'Rank_Team_Offensive_Point_Share_Percentage',
                               season: 'Current_Season_Team_Offensive_Point_Share_Percentage',
                               str(int(season) - 1): 'Previous_Season_Team_Offensive_Point_Share_Percentage',
-                              'Last 3': 'Last 3_Team_Offensive_Point_Share_Percentage',
-                              'Last 1': 'Last 1_Team_Offensive_Point_Share_Percentage',
+                              'Last 3': 'Last_3_Team_Offensive_Point_Share_Percentage',
+                              'Last 1': 'Last_1_Team_Offensive_Point_Share_Percentage',
                               'Home': 'At_Home_Team_Offensive_Point_Share_Percentage',
                               'Away': 'Away_Team_Offensive_Point_Share_Percentage'
                               }, inplace=True)
@@ -4011,8 +4011,8 @@ if __name__ == '__main__':
         fiq_df.rename(columns={'Rank': 'Rank_Team_First_Quarter_Points_per_Game',
                               season: 'Current_Season_Team_First_Quarter_Points_per_Game',
                               str(int(season) - 1): 'Previous_Season_Team_First_Quarter_Points_per_Game',
-                              'Last 3': 'Last 3_Team_First_Quarter_Points_per_Game',
-                              'Last 1': 'Last 1_Team_First_Quarter_Points_per_Game',
+                              'Last 3': 'Last_3_Team_First_Quarter_Points_per_Game',
+                              'Last 1': 'Last_1_Team_First_Quarter_Points_per_Game',
                               'Home': 'At_Home_Team_First_Quarter_Points_per_Game',
                               'Away': 'Away_Team_First_Quarter_Points_per_Game'
                               }, inplace=True)
@@ -4027,8 +4027,8 @@ if __name__ == '__main__':
         sq_df.rename(columns={'Rank': 'Rank_Team_Second_Quarter_Points_per_Game',
                               season: 'Current_Season_Team_Second_Quarter_Points_per_Game',
                               str(int(season) - 1): 'Previous_Season_Team_Second_Quarter_Points_per_Game',
-                              'Last 3': 'Last 3_Team_Second_Quarter_Points_per_Game',
-                              'Last 1': 'Last 1_Team_Second_Quarter_Points_per_Game',
+                              'Last 3': 'Last_3_Team_Second_Quarter_Points_per_Game',
+                              'Last 1': 'Last_1_Team_Second_Quarter_Points_per_Game',
                               'Home': 'At_Home_Team_Second_Quarter_Points_per_Game',
                               'Away': 'Away_Team_Second_Quarter_Points_per_Game'
                               }, inplace=True)
@@ -4043,8 +4043,8 @@ if __name__ == '__main__':
         tq_df.rename(columns={'Rank': 'Rank_Team_Third_Quarter_Points_per_Game',
                               season: 'Current_Season_Team_Third_Quarter_Points_per_Game',
                               str(int(season) - 1): 'Previous_Season_Team_Third_Quarter_Points_per_Game',
-                              'Last 3': 'Last 3_Team_Third_Quarter_Points_per_Game',
-                              'Last 1': 'Last 1_Team_Third_Quarter_Points_per_Game',
+                              'Last 3': 'Last_3_Team_Third_Quarter_Points_per_Game',
+                              'Last 1': 'Last_1_Team_Third_Quarter_Points_per_Game',
                               'Home': 'At_Home_Team_Third_Quarter_Points_per_Game',
                               'Away': 'Away_Team_Third_Quarter_Points_per_Game'
                               }, inplace=True)
@@ -4059,8 +4059,8 @@ if __name__ == '__main__':
         fq_df.rename(columns={'Rank': 'Rank_Team_Fourth_Quarter_Points_per_Game',
                               season: 'Current_Season_Team_Fourth_Quarter_Points_per_Game',
                               str(int(season) - 1): 'Previous_Season_Team_Fourth_Quarter_Points_per_Game',
-                              'Last 3': 'Last 3_Team_Fourth_Quarter_Points_per_Game',
-                              'Last 1': 'Last 1_Team_Fourth_Quarter_Points_per_Game',
+                              'Last 3': 'Last_3_Team_Fourth_Quarter_Points_per_Game',
+                              'Last 1': 'Last_1_Team_Fourth_Quarter_Points_per_Game',
                               'Home': 'At_Home_Team_Fourth_Quarter_Points_per_Game',
                               'Away': 'Away_Team_Fourth_Quarter_Points_per_Game'
                               }, inplace=True)
@@ -4075,8 +4075,8 @@ if __name__ == '__main__':
         ot_df.rename(columns={'Rank': 'Rank_Overtime_Points_per_Game',
                               season: 'Current_Season_Team_Overtime_Points_per_Game',
                               str(int(season) - 1): 'Previous_Season_Team_Overtime_Points_per_Game',
-                              'Last 3': 'Last 3_Team_Overtime_Points_per_Game',
-                              'Last 1': 'Last 1_Team_Overtime_Points_per_Game',
+                              'Last 3': 'Last_3_Team_Overtime_Points_per_Game',
+                              'Last 1': 'Last_1_Team_Overtime_Points_per_Game',
                               'Home': 'At_Home_Team_Overtime_Points_per_Game',
                               'Away': 'Away_Team_Overtime_Points_per_Game'
                               }, inplace=True)
@@ -4091,8 +4091,8 @@ if __name__ == '__main__':
         fh_df.rename(columns={'Rank': 'Rank_First_Half_Points_per_Game',
                               season: 'Current_Season_Team_First-Half_Points_per_Game',
                               str(int(season) - 1): 'Previous_Season_Team_First-Half_Points_per_Game',
-                              'Last 3': 'Last 3_Team_First-Half_Points_per_Game',
-                              'Last 1': 'Last 1_Team_First-Half_Points_per_Game',
+                              'Last 3': 'Last_3_Team_First-Half_Points_per_Game',
+                              'Last 1': 'Last_1_Team_First-Half_Points_per_Game',
                               'Home': 'At_Home_Team_First_Half_Points_per_Game',
                               'Away': 'Away_Team_First-Half_Points_per_Game'
                               }, inplace=True)
@@ -4107,8 +4107,8 @@ if __name__ == '__main__':
         sh_df.rename(columns={'Rank': 'Rank_Second_Half_Points_per_Game',
                               season: 'Current_Season_Team_Second-Half_Points_per_Game',
                               str(int(season) - 1): 'Previous_Season_Team_Second-Half_Points_per_Game',
-                              'Last 3': 'Last 3_Team_Second-Half_Points_per_Game',
-                              'Last 1': 'Last 1_Team_Second-Half_Points_per_Game',
+                              'Last 3': 'Last_3_Team_Second-Half_Points_per_Game',
+                              'Last 1': 'Last_1_Team_Second-Half_Points_per_Game',
                               'Home': 'At_Home_Team_Second_Half_Points_per_Game',
                               'Away': 'Away_Team_Second-Half_Points_per_Game'
                               }, inplace=True)
@@ -4124,8 +4124,8 @@ if __name__ == '__main__':
                                 season: 'Current_Team_First_Quarter_Time_of_Possession_Share_Percent',
                                 str(int(
                                     season) - 1): 'Previous_Season_Team_First_Quarter_Time_of_Possession_Share_Percent',
-                                'Last 3': 'Last 3_Team_First_Quarter_Time_of_Possession_Share_Percent',
-                                'Last 1': 'Last 1_Team_First_Quarter_Time_of_Possession_Share_Percent',
+                                'Last 3': 'Last_3_Team_First_Quarter_Time_of_Possession_Share_Percent',
+                                'Last 1': 'Last_1_Team_First_Quarter_Time_of_Possession_Share_Percent',
                                 'Home': 'At_Home_Team_First_Quarter_Time_of_Possession_Share_Percent',
                                 'Away': 'Away_Team_First_Quarter_Time_of_Possession_Share_Percent'
                                 }, inplace=True)
@@ -4141,8 +4141,8 @@ if __name__ == '__main__':
                                 season: 'Current_Team_Second_Quarter_Time_of_Possession_Share_Percent',
                                 str(int(
                                     season) - 1): 'Previous_Season_Team_Second_Quarter_Time_of_Possession_Share_Percent',
-                                'Last 3': 'Last 3_Team_Second_Quarter_Time_of_Possession_Share_Percent',
-                                'Last 1': 'Last 1_Team_Second_Quarter_Time_of_Possession_Share_Percent',
+                                'Last 3': 'Last_3_Team_Second_Quarter_Time_of_Possession_Share_Percent',
+                                'Last 1': 'Last_1_Team_Second_Quarter_Time_of_Possession_Share_Percent',
                                 'Home': 'At_Home_Team_Second_Quarter_Time_of_Possession_Share_Percent',
                                 'Away': 'Away_Team_Second_Quarter_Time_of_Possession_Share_Percent'
                                 }, inplace=True)
@@ -4158,8 +4158,8 @@ if __name__ == '__main__':
                                 season: 'Current_Team_Third_Quarter_Time_of_Possession_Share_Percent',
                                 str(int(
                                     season) - 1): 'Previous_Season_Team_Third_Quarter_Time_of_Possession_Share_Percent',
-                                'Last 3': 'Last 3_Team_Third_Quarter_Time_of_Possession_Share_Percent',
-                                'Last 1': 'Last 1_Team_Third_Quarter_Time_of_Possession_Share_Percent',
+                                'Last 3': 'Last_3_Team_Third_Quarter_Time_of_Possession_Share_Percent',
+                                'Last 1': 'Last_1_Team_Third_Quarter_Time_of_Possession_Share_Percent',
                                 'Home': 'At_Home_Team_Third_Quarter_Time_of_Possession_Share_Percent',
                                 'Away': 'Away_Team_Third_Quarter_Time_of_Possession_Share_Percent'
                                 }, inplace=True)
@@ -4175,8 +4175,8 @@ if __name__ == '__main__':
                                 season: 'Current_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
                                 str(int(
                                     season) - 1): 'Previous_Season_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
-                                'Last 3': 'Last 3_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
-                                'Last 1': 'Last 1_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
+                                'Last 3': 'Last_3_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
+                                'Last 1': 'Last_1_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
                                 'Home': 'At_Home_Team_Fourth_Quarter_Time_of_Possession_Share_Percent',
                                 'Away': 'Away_Team_Fourth_Quarter_Time_of_Possession_Share_Percent'
                                 }, inplace=True)
@@ -4192,8 +4192,8 @@ if __name__ == '__main__':
                                 season: 'Current_Team_First_Half_Time_of_Possession_Share_Percent',
                                 str(int(
                                     season) - 1): 'Previous_Season_Team_First_Half_Time_of_Possession_Share_Percent',
-                                'Last 3': 'Last 3_Team_First_Half_Time_of_Possession_Share_Percent',
-                                'Last 1': 'Last 1_Team_First_Half_Time_of_Possession_Share_Percent',
+                                'Last 3': 'Last_3_Team_First_Half_Time_of_Possession_Share_Percent',
+                                'Last 1': 'Last_1_Team_First_Half_Time_of_Possession_Share_Percent',
                                 'Home': 'At_Home_Team_First_Half_Time_of_Possession_Share_Percent',
                                 'Away': 'Away_Team_First_Half_Time_of_Possession_Share_Percent'
                                 }, inplace=True)
@@ -4209,8 +4209,8 @@ if __name__ == '__main__':
                                 season: 'Current_Team_Second_Half_Time_of_Possession_Share_Percent',
                                 str(int(
                                     season) - 1): 'Previous_Season_Team_Second_Half_Time_of_Possession_Share_Percent',
-                                'Last 3': 'Last 3_Team_Second_Half_Time_of_Possession_Share_Percent',
-                                'Last 1': 'Last 1_Team_Second_Half_Time_of_Possession_Share_Percent',
+                                'Last 3': 'Last_3_Team_Second_Half_Time_of_Possession_Share_Percent',
+                                'Last 1': 'Last_1_Team_Second_Half_Time_of_Possession_Share_Percent',
                                 'Home': 'At_Home_Team_Second_Half_Time_of_Possession_Share_Percent',
                                 'Away': 'Away_Team_Second_Half_Time_of_Possession_Share_Percent'
                                 }, inplace=True)
@@ -4224,8 +4224,8 @@ if __name__ == '__main__':
         toypg_df.rename(columns={'Rank': 'Rank_Total_Offense_Yards_per_Game',
                               season: 'Current_Season_Total_Offense_Yards_per_Game',
                               str(int(season) - 1): 'Previous_Season_Total_Offense_Yards_per_Game',
-                              'Last 3': 'Last 3_Total_Offense_Yards_per_Game',
-                              'Last 1': 'Last 1_Total_Offense_Yards_per_Game',
+                              'Last 3': 'Last_3_Total_Offense_Yards_per_Game',
+                              'Last 1': 'Last_1_Total_Offense_Yards_per_Game',
                               'Home': 'At_Home_Total_Offense_Yards_per_Game',
                               'Away': 'Away_Total_Offense_Yards_per_Game'
                               }, inplace=True)
@@ -4240,8 +4240,8 @@ if __name__ == '__main__':
         toppg_df.rename(columns={'Rank': 'Rank_Total_Offense_Plays_per_Game',
                                  season: 'Current_Season_Total_Offense_Plays_per_Game',
                                  str(int(season) - 1): 'Previous_Season_Total_Offense_Plays_per_Game',
-                                 'Last 3': 'Last 3_Total_Offense_Plays_per_Game',
-                                 'Last 1': 'Last 1_Total_Offense_Plays_per_Game',
+                                 'Last 3': 'Last_3_Total_Offense_Plays_per_Game',
+                                 'Last 1': 'Last_1_Total_Offense_Plays_per_Game',
                                  'Home': 'At_Home_Total_Offense_Plays_per_Game',
                                  'Away': 'Away_Total_Offense_Plays_per_Game'
                                  }, inplace=True)
@@ -4256,8 +4256,8 @@ if __name__ == '__main__':
         toypp_df.rename(columns={'Rank': 'Rank_Total_Offense_Yards_per_Play',
                                  season: 'Current_Season_Total_Offense_Yards_per_Play',
                                  str(int(season) - 1): 'Previous_Season_Total_Offense_Yards_per_Play',
-                                 'Last 3': 'Last 3_Total_Offense_Yards_per_Play',
-                                 'Last 1': 'Last 1_Total_Offense_Yards_per_Play',
+                                 'Last 3': 'Last_3_Total_Offense_Yards_per_Play',
+                                 'Last 1': 'Last_1_Total_Offense_Yards_per_Play',
                                  'Home': 'At_Home_Total_Offense_Yards_per_Play',
                                  'Away': 'Away_Total_Offense_Yards_per_Play'
                                  }, inplace=True)
@@ -4272,8 +4272,8 @@ if __name__ == '__main__':
         totdpg_df.rename(columns={'Rank': 'Rank_Total_Offense_Third_Down_per_Game',
                                   season: 'Current_Season_Total_Offense_Third_Down_per_Game',
                                   str(int(season) - 1): 'Previous_Season_Total_Offense_Third_Down_per_Game',
-                                  'Last 3': 'Last 3_Total_Offense_Third_Down_per_Game',
-                                  'Last 1': 'Last 1_Total_Offense_Third_Down_per_Game',
+                                  'Last 3': 'Last_3_Total_Offense_Third_Down_per_Game',
+                                  'Last 1': 'Last_1_Total_Offense_Third_Down_per_Game',
                                   'Home': 'At_Home_Total_Offense_Third_Down_per_Game',
                                   'Away': 'Away_Total_Offense_Third-Down-per_Game'
                                   }, inplace=True)
@@ -4289,8 +4289,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Total_Offense_Third_Down_Conversions_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Total_Offense_Third_Down_Conversions_per_Game',
-                                   'Last 3': 'Last 3_Total_Offense_Third_Down_Conversions_per_Game',
-                                   'Last 1': 'Last 1_Total_Offense_Third_Down_Conversions_per_Game',
+                                   'Last 3': 'Last_3_Total_Offense_Third_Down_Conversions_per_Game',
+                                   'Last 1': 'Last_1_Total_Offense_Third_Down_Conversions_per_Game',
                                    'Home': 'At_Home_Total_Offense_Third_Down_Conversions_per_Game',
                                    'Away': 'Away_Total_Offense_Third-Down-Conversions_per_Game'
                                    }, inplace=True)
@@ -4306,8 +4306,8 @@ if __name__ == '__main__':
         tofdpg_df.rename(columns={'Rank': 'Rank_Total_Offense_Fourth_Down_per_Game',
                                   season: 'Current_Season_Total_Offense_Fourth_Down_per_Game',
                                   str(int(season) - 1): 'Previous_Season_Total_Offense_Fourth_Down_per_Game',
-                                  'Last 3': 'Last 3_Total_Offense_Fourth_Down_per_Game',
-                                  'Last 1': 'Last 1_Total_Offense_Fourth_Down_per_Game',
+                                  'Last 3': 'Last_3_Total_Offense_Fourth_Down_per_Game',
+                                  'Last 1': 'Last_1_Total_Offense_Fourth_Down_per_Game',
                                   'Home': 'At_Home_Total_Offense_Fourth_Down_per_Game',
                                   'Away': 'Away_Total_Offense_Fourth-Down-per_Game'
                                   }, inplace=True)
@@ -4324,8 +4324,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Total_Offense_Fourth_Down_Conversions_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Total_Offense_Fourth_Down_Conversions_per_Game',
-                                   'Last 3': 'Last 3_Total_Offense_Fourth_Down_Conversions_per_Game',
-                                   'Last 1': 'Last 1_Total_Offense_Fourth_Down_Conversions_per_Game',
+                                   'Last 3': 'Last_3_Total_Offense_Fourth_Down_Conversions_per_Game',
+                                   'Last 1': 'Last_1_Total_Offense_Fourth_Down_Conversions_per_Game',
                                    'Home': 'At_Home_Total_Offense_Fourth_Down_Conversions_per_Game',
                                    'Away': 'Away_Total_Offense_Fourth_Down-Conversions_per_Game'
                                    }, inplace=True)
@@ -4342,8 +4342,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Total_Offense_Average_Time_of_Possession',
                                  str(int(
                                      season) - 1): 'Previous_Season_Total_Offense_Average_Time_of_Possession',
-                                 'Last 3': 'Last 3_Total_Offense_Average_Time_of_Possession',
-                                 'Last 1': 'Last 1_Total_Offense_Average_Time_of_Possession',
+                                 'Last 3': 'Last_3_Total_Offense_Average_Time_of_Possession',
+                                 'Last 1': 'Last_1_Total_Offense_Average_Time_of_Possession',
                                  'Home': 'At_Home_Total_Offense_Average_Time_of_Possession',
                                  'Away': 'Away_Total_Offense_Average_Time_of_Possession'
                                  }, inplace=True)
@@ -4360,8 +4360,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Total_Offense_Average_Time_of_Possession_Percentage',
                                   str(int(
                                       season) - 1): 'Previous_Season_Total_Offense_Average_Time_of_Possession_Percentage',
-                                  'Last 3': 'Last 3_Total_Offense_Average_Time_of_Possession_Percentage',
-                                  'Last 1': 'Last 1_Total_Offense_Average_Time_of_Possession_Percentage',
+                                  'Last 3': 'Last_3_Total_Offense_Average_Time_of_Possession_Percentage',
+                                  'Last 1': 'Last_1_Total_Offense_Average_Time_of_Possession_Percentage',
                                   'Home': 'At_Home_Total_Offense_Average_Time_of_Possession_Percentage',
                                   'Away': 'Away_Total_Offense_Average_Time_of_Possession_Percentage'
                                   }, inplace=True)
@@ -4377,8 +4377,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Total_Offense_Third_Down-Conversion_Percent',
                                   str(int(
                                       season) - 1): 'Previous_Season_Total_Offense_Third_Down_Conversion_Percent',
-                                  'Last 3': 'Last 3_Total_Offense_Third_Down_Conversion_Percent',
-                                  'Last 1': 'Last 1_Total_Offense_Third_Down_Conversion_Percent',
+                                  'Last 3': 'Last_3_Total_Offense_Third_Down_Conversion_Percent',
+                                  'Last 1': 'Last_1_Total_Offense_Third_Down_Conversion_Percent',
                                   'Home': 'At_Home_Total_Offense_Third_Down_Conversion_Percent',
                                   'Away': 'Away_Total_Offense_Third_Down_Conversion_Percent'
                                   }, inplace=True)
@@ -4394,8 +4394,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Total_Offense_Fourth_Down-Conversion_Percent',
                                   str(int(
                                       season) - 1): 'Previous_Season_Total_Offense_Fourth_Down_Conversion_Percent',
-                                  'Last 3': 'Last 3_Total_Offense_Fourth_Down_Conversion_Percent',
-                                  'Last 1': 'Last 1_Total_Offense_Fourth_Down_Conversion_Percent',
+                                  'Last 3': 'Last_3_Total_Offense_Fourth_Down_Conversion_Percent',
+                                  'Last 1': 'Last_1_Total_Offense_Fourth_Down_Conversion_Percent',
                                   'Home': 'At_Home_Total_Offense_Fourth_Down_Conversion_Percent',
                                   'Away': 'Away_Total_Offense_Fourth_Down_Conversion_Percent'
                                   }, inplace=True)
@@ -4411,8 +4411,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Total_Offense_Punts_per_Play',
                                  str(int(
                                      season) - 1): 'Previous_Season_Total_Offense_Punts_per_Play',
-                                 'Last 3': 'Last 3_Total_Offense_Punts_per_Play',
-                                 'Last 1': 'Last 1_Total_Offense_Punts_per_Play',
+                                 'Last 3': 'Last_3_Total_Offense_Punts_per_Play',
+                                 'Last 1': 'Last_1_Total_Offense_Punts_per_Play',
                                  'Home': 'At_Home_Total_Offense_Punts_per_Play',
                                  'Away': 'Away_Total_Offense_Punts_per_Play'
                                  }, inplace=True)
@@ -4428,8 +4428,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Total_Offense_Punts_per_Offensive_Score',
                                   str(int(
                                       season) - 1): 'Previous_Season_Total_Offense_Punts_per_Offensive_Score',
-                                  'Last 3': 'Last 3_Total_Offense_Punts_per_Offensive_Score',
-                                  'Last 1': 'Last 1_Total_Offense_Punts_per_Offensive_Score',
+                                  'Last 3': 'Last_3_Total_Offense_Punts_per_Offensive_Score',
+                                  'Last 1': 'Last_1_Total_Offense_Punts_per_Offensive_Score',
                                   'Home': 'At_Home_Total_Offense_Punts_per_Offensive_Score',
                                   'Away': 'Away_Total_Offense_Punts_per_Offensive_Score'
                                   }, inplace=True)
@@ -4445,8 +4445,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Rushing_Offense_Rushing_Attempts_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Attempts_per_Game',
-                                  'Last 3': 'Last 3_Rushing_Offense_Rushing_Attempts_per_Game',
-                                  'Last 1': 'Last 1_Rushing_Offense_Rushing_Attempts_per_Game',
+                                  'Last 3': 'Last_3_Rushing_Offense_Rushing_Attempts_per_Game',
+                                  'Last 1': 'Last_1_Rushing_Offense_Rushing_Attempts_per_Game',
                                   'Home': 'At_Home_Rushing_Offense_Rushing_Attempts_per_Game',
                                   'Away': 'Away_Rushing_Offense_Rushing_Attempts_per_Game'
                                   }, inplace=True)
@@ -4462,8 +4462,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Rushing_Offense_Rushing_Yards_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Yards_per_Game',
-                                  'Last 3': 'Last 3_Rushing_Offense_Rushing_Yards_per_Game',
-                                  'Last 1': 'Last 1_Rushing_Offense_Rushing_Yards_per_Game',
+                                  'Last 3': 'Last_3_Rushing_Offense_Rushing_Yards_per_Game',
+                                  'Last 1': 'Last_1_Rushing_Offense_Rushing_Yards_per_Game',
                                   'Home': 'At_Home_Rushing_Offense_Rushing_Yards_per_Game',
                                   'Away': 'Away_Rushing_Offense_Rushing_Yards_per_Game'
                                   }, inplace=True)
@@ -4479,8 +4479,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
                                    str(int(
                                        season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
-                                   'Last 3': 'Last 3_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
-                                   'Last 1': 'Last 1_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
+                                   'Last 3': 'Last_3_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
+                                   'Last 1': 'Last_1_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
                                    'Home': 'At_Home_Rushing_Offense_Rushing_Yards_per_Rush_Attempt',
                                    'Away': 'Away_Rushing_Offense_Rushing_Yards_per_Rush_Attempt'
                                    }, inplace=True)
@@ -4496,8 +4496,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Rushing_Offense_Rushing_Play_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Play_Percentage',
-                                 'Last 3': 'Last 3_Rushing_Offense_Rushing_Play_Percentage',
-                                 'Last 1': 'Last 1_Rushing_Offense_Rushing_Play_Percentage',
+                                 'Last 3': 'Last_3_Rushing_Offense_Rushing_Play_Percentage',
+                                 'Last 1': 'Last_1_Rushing_Offense_Rushing_Play_Percentage',
                                  'Home': 'At_Home_Rushing_Offense_Rushing_Play_Percentage',
                                  'Away': 'Away_Rushing_Offense_Rushing_Play_Percentage'
                                  }, inplace=True)
@@ -4513,8 +4513,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Rushing_Offense_Rushing_Yards_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Rushing_Offense_Rushing_Yards_Percentage',
-                                 'Last 3': 'Last 3_Rushing_Offense_Rushing_Yards_Percentage',
-                                 'Last 1': 'Last 1_Rushing_Offense_Rushing_Yards_Percentage',
+                                 'Last 3': 'Last_3_Rushing_Offense_Rushing_Yards_Percentage',
+                                 'Last 1': 'Last_1_Rushing_Offense_Rushing_Yards_Percentage',
                                  'Home': 'At_Home_Rushing_Offense_Rushing_Yards_Percentage',
                                  'Away': 'Away_Rushing_Offense_Rushing_Yards_Percentage'
                                  }, inplace=True)
@@ -4530,8 +4530,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Passing_Offense_Pass_Attempts_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Passing_Offense_Pass_Attempts_per_Game',
-                                  'Last 3': 'Last 3_Passing_Offense_Pass_Attempts_per_Game',
-                                  'Last 1': 'Last 1_Passing_Offense_Pass_Attempts_per_Game',
+                                  'Last 3': 'Last_3_Passing_Offense_Pass_Attempts_per_Game',
+                                  'Last 1': 'Last_1_Passing_Offense_Pass_Attempts_per_Game',
                                   'Home': 'At_Home_Passing_Offense_Pass_Attempts_per_Game',
                                   'Away': 'Away_Passing_Offense_Pass_Attempts_per_Game'
                                   }, inplace=True)
@@ -4547,8 +4547,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Offense_Completions_per_Game',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Offense_Completions_per_Game',
-                                 'Last 3': 'Last 3_Passing_Offense_Completions_per_Game',
-                                 'Last 1': 'Last 1_Passing_Offense_Completions_per_Game',
+                                 'Last 3': 'Last_3_Passing_Offense_Completions_per_Game',
+                                 'Last 1': 'Last_1_Passing_Offense_Completions_per_Game',
                                  'Home': 'At_Home_Passing_Offense_Completions_per_Game',
                                  'Away': 'Away_Passing_Offense_Completions_per_Game'
                                  }, inplace=True)
@@ -4564,8 +4564,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Offense_Incompletions_per_Game',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Offense_Incompletions_per_Game',
-                                 'Last 3': 'Last 3_Passing_Offense_Incompletions_per_Game',
-                                 'Last 1': 'Last 1_Passing_Offense_Incompletions_per_Game',
+                                 'Last 3': 'Last_3_Passing_Offense_Incompletions_per_Game',
+                                 'Last 1': 'Last_1_Passing_Offense_Incompletions_per_Game',
                                  'Home': 'At_Home_Passing_Offense_Incompletions_per_Game',
                                  'Away': 'Away_Passing_Offense_Incompletions_per_Game'
                                  }, inplace=True)
@@ -4581,8 +4581,8 @@ if __name__ == '__main__':
                                 season: 'Current_Season_Passing_Offense_Completion_Percentage',
                                 str(int(
                                     season) - 1): 'Previous_Season_Passing_Offense_Completion_Percentage',
-                                'Last 3': 'Last 3_Passing_Offense_Completion_Percentage',
-                                'Last 1': 'Last 1_Passing_Offense_Completion_Percentage',
+                                'Last 3': 'Last_3_Passing_Offense_Completion_Percentage',
+                                'Last 1': 'Last_1_Passing_Offense_Completion_Percentage',
                                 'Home': 'At_Home_Passing_Offense_Completion_Percentage',
                                 'Away': 'Away_Passing_Offense_Completion_Percentage'
                                 }, inplace=True)
@@ -4598,8 +4598,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Passing_Offense_Passing_Yards_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Passing_Offense_Passing_Yards_per_Game',
-                                  'Last 3': 'Last 3_Passing_Offense_Passing_Yards_per_Game',
-                                  'Last 1': 'Last 1_Passing_Offense_Passing_Yards_per_Game',
+                                  'Last 3': 'Last_3_Passing_Offense_Passing_Yards_per_Game',
+                                  'Last 1': 'Last_1_Passing_Offense_Passing_Yards_per_Game',
                                   'Home': 'At_Home_Passing_Offense_Passing_Yards_per_Game',
                                   'Away': 'Away_Passing_Offense_Passing_Yards_per_Game'
                                   }, inplace=True)
@@ -4615,8 +4615,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Passing_Offense_QB_Sacked_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Passing_Offense_QB_Sacked_per_Game',
-                                  'Last 3': 'Last 3_Passing_Offense_QB_Sacked_per_Game',
-                                  'Last 1': 'Last 1_Passing_Offense_QB_Sacked_per_Game',
+                                  'Last 3': 'Last_3_Passing_Offense_QB_Sacked_per_Game',
+                                  'Last 1': 'Last_1_Passing_Offense_QB_Sacked_per_Game',
                                   'Home': 'At_Home_Passing_Offense_QB_Sacked_per_Game',
                                   'Away': 'Away_Passing_Offense_QB_Sacked_per_Game'
                                   }, inplace=True)
@@ -4632,8 +4632,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Offense_QB_Sacked_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Offense_QB_Sacked_Percentage',
-                                 'Last 3': 'Last 3_Passing_Offense_QB_Sacked_Percentage',
-                                 'Last 1': 'Last 1_Passing_Offense_QB_Sacked_Percentage',
+                                 'Last 3': 'Last_3_Passing_Offense_QB_Sacked_Percentage',
+                                 'Last 1': 'Last_1_Passing_Offense_QB_Sacked_Percentage',
                                  'Home': 'At_Home_Passing_Offense_QB_Sacked_Percentage',
                                  'Away': 'Away_Passing_Offense_QB_Sacked_Percentage'
                                  }, inplace=True)
@@ -4649,8 +4649,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Offense_Average_Passer_Rating',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Offense_Average_Passer_Rating',
-                                 'Last 3': 'Last 3_Passing_Offense_Average_Passer_Rating',
-                                 'Last 1': 'Last 1_Passing_Offense_Average_Passer_Rating',
+                                 'Last 3': 'Last_3_Passing_Offense_Average_Passer_Rating',
+                                 'Last 1': 'Last_1_Passing_Offense_Average_Passer_Rating',
                                  'Home': 'At_Home_Passing_Offense_Average_Passer_Rating',
                                  'Away': 'Away_Passing_Offense_Average_Passer_Rating'
                                  }, inplace=True)
@@ -4666,8 +4666,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Offense_Passing_Play_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Offense_Passing_Play_Percentage',
-                                 'Last 3': 'Last 3_Passing_Offense_Passing_Play_Percentage',
-                                 'Last 1': 'Last 1_Passing_Offense_Passing_Play_Percentage',
+                                 'Last 3': 'Last_3_Passing_Offense_Passing_Play_Percentage',
+                                 'Last 1': 'Last_1_Passing_Offense_Passing_Play_Percentage',
                                  'Home': 'At_Home_Passing_Offense_Passing_Play_Percentage',
                                  'Away': 'Away_Passing_Offense_Passing_Play_Percentage'
                                  }, inplace=True)
@@ -4683,8 +4683,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Offense_Passing_Yards_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Offense_Passing_Yards_Percentage',
-                                 'Last 3': 'Last 3_Passing_Offense_Passing_Yards_Percentage',
-                                 'Last 1': 'Last 1_Passing_Offense_Passing_Yards_Percentage',
+                                 'Last 3': 'Last_3_Passing_Offense_Passing_Yards_Percentage',
+                                 'Last 1': 'Last_1_Passing_Offense_Passing_Yards_Percentage',
                                  'Home': 'At_Home_Passing_Offense_Passing_Yards_Percentage',
                                  'Away': 'Away_Passing_Offense_Passing_Yards_Percentage'
                                  }, inplace=True)
@@ -4700,8 +4700,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Passing_Offense_Yards_per_Pass_Attempt',
                                   str(int(
                                       season) - 1): 'Previous_Season_Passing_Offense_Yards_per_Pass_Attempt',
-                                  'Last 3': 'Last 3_Passing_Offense_Yards_per_Pass_Attempt',
-                                  'Last 1': 'Last 1_Passing_Offense_Yards_per_Pass_Attempt',
+                                  'Last 3': 'Last_3_Passing_Offense_Yards_per_Pass_Attempt',
+                                  'Last 1': 'Last_1_Passing_Offense_Yards_per_Pass_Attempt',
                                   'Home': 'At_Home_Passing_Offense_Yards_per_Pass_Attempt',
                                   'Away': 'Away_Passing_Offense_Yards_per_Pass_Attempt'
                                   }, inplace=True)
@@ -4717,8 +4717,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Offense_Yards_per_Completion',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Offense_Yards_per_Completion',
-                                 'Last 3': 'Last 3_Passing_Offense_Yards_per_Completion',
-                                 'Last 1': 'Last 1_Passing_Offense_Yards_per_Completion',
+                                 'Last 3': 'Last_3_Passing_Offense_Yards_per_Completion',
+                                 'Last 1': 'Last_1_Passing_Offense_Yards_per_Completion',
                                  'Home': 'At_Home_Passing_Offense_Yards_per_Completion',
                                  'Away': 'Away_Passing_Offense_Yards_per_Completion'
                                  }, inplace=True)
@@ -4735,8 +4735,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
                                     str(int(
                                         season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
-                                    'Last 3': 'Last 3_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
-                                    'Last 1': 'Last 1_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                    'Last 3': 'Last_3_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
+                                    'Last 1': 'Last_1_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
                                     'Home': 'At_Home_Special_Teams_Offense_Field_Goal_Attempts_per_Game',
                                     'Away': 'Away_Special_Teams_Offense_Field_Goal_Attempts_per_Game'
                                     }, inplace=True)
@@ -4753,8 +4753,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Special_Teams_Offense_Field_Goals_Made_per_Game',
                                     str(int(
                                         season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goals_Made_per_Game',
-                                    'Last 3': 'Last 3_Special_Teams_Offense_Field_Goals_Made_per_Game',
-                                    'Last 1': 'Last 1_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                    'Last 3': 'Last_3_Special_Teams_Offense_Field_Goals_Made_per_Game',
+                                    'Last 1': 'Last_1_Special_Teams_Offense_Field_Goals_Made_per_Game',
                                     'Home': 'At_Home_Special_Teams_Offense_Field_Goals_Made_per_Game',
                                     'Away': 'Away_Special_Teams_Offense_Field_Goals_Made_per_Game'
                                     }, inplace=True)
@@ -4771,8 +4771,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
                                     str(int(
                                         season) - 1): 'Previous_Season_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
-                                    'Last 3': 'Last 3_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
-                                    'Last 1': 'Last 1_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                    'Last 3': 'Last_3_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
+                                    'Last 1': 'Last_1_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
                                     'Home': 'At_Home_Special_Teams_Offense_Field_Goal_Conversion_Percentage',
                                     'Away': 'Away_Special_Teams_Offense_Field_Goal_Conversion_Percentage'
                                     }, inplace=True)
@@ -4789,8 +4789,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Special_Teams_Offense_Punt_Attempts_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Special_Teams_Offense_Punt_Attempts_per_Game',
-                                   'Last 3': 'Last 3_Special_Teams_Offense_Punt_Attempts_per_Game',
-                                   'Last 1': 'Last 1_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                   'Last 3': 'Last_3_Special_Teams_Offense_Punt_Attempts_per_Game',
+                                   'Last 1': 'Last_1_Special_Teams_Offense_Punt_Attempts_per_Game',
                                    'Home': 'At_Home_Special_Teams_Offense_Punt_Attempts_per_Game',
                                    'Away': 'Away_Special_Teams_Offense_Punt_Attempts_per_Game'
                                    }, inplace=True)
@@ -4807,8 +4807,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
                                     str(int(
                                         season) - 1): 'Previous_Season_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
-                                    'Last 3': 'Last 3_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
-                                    'Last 1': 'Last 1_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                    'Last 3': 'Last_3_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
+                                    'Last 1': 'Last_1_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
                                     'Home': 'At_Home_Special_Teams_Offense_Gross_Punt_Yards_per_Game',
                                     'Away': 'Away_Special_Teams_Offense_Gross_Punt_Yards_per_Game'
                                     }, inplace=True)
@@ -4823,8 +4823,8 @@ if __name__ == '__main__':
         sdoppg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Points_per_Game',
                                   season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Game',
                                   str(int(season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Game',
-                                  'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Game',
-                                  'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Game',
+                                  'Last 3': 'Last_3_Scoring_Defense_Opponent_Points_per_Game',
+                                  'Last 1': 'Last_1_Scoring_Defense_Opponent_Points_per_Game',
                                   'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Game',
                                   'Away': 'Away_Scoring_Defense_Opponent_Points_per_Game'
                                   }, inplace=True)
@@ -4840,8 +4840,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Scoring_Defense_Opp_Yards_per_Point',
                                   str(int(
                                       season) - 1): 'Previous_Season_Scoring_Defense_Opp_Yards_per_Point',
-                                  'Last 3': 'Last 3_Scoring_Defense_Opp_Yards_per_Point',
-                                  'Last 1': 'Last 1_Scoring_Defense_Opp_Yards_per_Point',
+                                  'Last 3': 'Last_3_Scoring_Defense_Opp_Yards_per_Point',
+                                  'Last 1': 'Last_1_Scoring_Defense_Opp_Yards_per_Point',
                                   'Home': 'At_Home_Scoring_Defense_Opp_Yards_per_Point',
                                   'Away': 'Away_Scoring_Defense_Opp_Yards_per_Point'
                                   }, inplace=True)
@@ -4857,8 +4857,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Play',
                                   str(int(
                                       season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Play',
-                                  'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Play',
-                                  'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Play',
+                                  'Last 3': 'Last_3_Scoring_Defense_Opponent_Points_per_Play',
+                                  'Last 1': 'Last_1_Scoring_Defense_Opponent_Points_per_Play',
                                   'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Play',
                                   'Away': 'Away_Scoring_Defense_Opponent_Points_per_Play'
                                   }, inplace=True)
@@ -4874,8 +4874,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                   str(int(
                                       season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Average_Scoring_Margin',
-                                  'Last 3': 'Last 3_Scoring_Defense_Opponent_Average_Scoring_Margin',
-                                  'Last 1': 'Last 1_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                  'Last 3': 'Last_3_Scoring_Defense_Opponent_Average_Scoring_Margin',
+                                  'Last 1': 'Last_1_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                   'Home': 'At_Home_Scoring_Defense_Opponent_Average_Scoring_Margin',
                                   'Away': 'Away_Scoring_Defense_Opponent_Average_Scoring_Margin'
                                   }, inplace=True)
@@ -4892,8 +4892,8 @@ if __name__ == '__main__':
                                      season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
                                      str(int(
                                          season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
-                                     'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
-                                     'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                     'Last 3': 'Last_3_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
+                                     'Last 1': 'Last_1_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
                                      'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game',
                                      'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scoring_Attempts_per_Game'
                                      }, inplace=True)
@@ -4911,8 +4911,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
                                     str(int(
                                         season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
-                                    'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scores_per_Game',
-                                    'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
+                                    'Last 3': 'Last_3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scores_per_Game',
+                                    'Last 1': 'Last_1_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
                                     'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game',
                                     'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scores_per_Game'
                                     }, inplace=True)
@@ -4930,8 +4930,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
                                     str(int(
                                         season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
-                                    'Last 3': 'Last 3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scoring_Percentage',
-                                    'Last 1': 'Last 1_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                                    'Last 3': 'Last_3_Scoring_Defense_Opponent_Red_Zone_Scoring_Scoring_Percentage',
+                                    'Last 1': 'Last_1_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
                                     'Home': 'At_Home_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
                                     'Away': 'Away_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage'
                                     }, inplace=True)
@@ -4949,8 +4949,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
                                     str(int(
                                         season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
-                                    'Last 3': 'Last 3_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
-                                    'Last 1': 'Last 1_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                    'Last 3': 'Last_3_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
+                                    'Last 1': 'Last_1_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
                                     'Home': 'At_Home_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt',
                                     'Away': 'Away_Scoring_Defense_Opponent_Points_per_Field_Goal_Attempt'
                                     }, inplace=True)
@@ -4968,8 +4968,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
-                                   'Last 3': 'Last 3_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
-                                   'Last 1': 'Last 1_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                   'Last 3': 'Last_3_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
+                                   'Last 1': 'Last_1_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
                                    'Home': 'At_Home_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game',
                                    'Away': 'Away_Scoring_Defense_Opponent_Offensive_Touchdowns_per_Game'
                                    }, inplace=True)
@@ -4987,8 +4987,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Scoring_Defense_Opponent_Offensive_Points_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Offensive_Points_per_Game',
-                                   'Last 3': 'Last 3_Scoring_Defense_Opponent_Offensive_Points_per_Game',
-                                   'Last 1': 'Last 1_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                   'Last 3': 'Last_3_Scoring_Defense_Opponent_Offensive_Points_per_Game',
+                                   'Last 1': 'Last_1_Scoring_Defense_Opponent_Offensive_Points_per_Game',
                                    'Home': 'At_Home_Scoring_Defense_Opponent_Offensive_Points_per_Game',
                                    'Away': 'Away_Scoring_Defense_Opponent_Offensive_Points_per_Game'
                                    }, inplace=True)
@@ -5003,8 +5003,8 @@ if __name__ == '__main__':
         tdoypg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Yards_per_Game',
                                   season: 'Current_Season_Total_Defense_Opponent_Yards_per_Game',
                                   str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_Yards_per_Game',
-                                  'Last 3': 'Last 3_Total_Defense_Opponent_Yards_per_Game',
-                                  'Last 1': 'Last 1_Total_Defense_Opponent_Yards_per_Game',
+                                  'Last 3': 'Last_3_Total_Defense_Opponent_Yards_per_Game',
+                                  'Last 1': 'Last_1_Total_Defense_Opponent_Yards_per_Game',
                                   'Home': 'At_Home_Total_Defense_Opponent_Yards_per_Game',
                                   'Away': 'Away_Total_Defense_Opponent_Yards_per_Game'
                                   }, inplace=True)
@@ -5019,8 +5019,8 @@ if __name__ == '__main__':
         tdoppg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Plays_per_Game',
                                   season: 'Current_Season_Total_Defense_Opponent_Plays_per_Game',
                                   str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_Plays_per_Game',
-                                  'Last 3': 'Last 3_Total_Defense_Opponent_Plays_per_Game',
-                                  'Last 1': 'Last 1_Total_Defense_Opponent_Plays_per_Game',
+                                  'Last 3': 'Last_3_Total_Defense_Opponent_Plays_per_Game',
+                                  'Last 1': 'Last_1_Total_Defense_Opponent_Plays_per_Game',
                                   'Home': 'At_Home_Total_Defense_Opponent_Plays_per_Game',
                                   'Away': 'Away_Total_Defense_Opponent_Plays_per_Game'
                                   }, inplace=True)
@@ -5035,8 +5035,8 @@ if __name__ == '__main__':
         tdofdpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_First_Downs_per_Game',
                                    season: 'Current_Season_Total_Defense_Opponent_First_Downs_per_Game',
                                    str(int(season) - 1): 'Previous_Season_Total_Defense_Opponent_First_Downs_per_Game',
-                                   'Last 3': 'Last 3_Total_Defense_Opponent_First_Downs_per_Game',
-                                   'Last 1': 'Last 1_Total_Defense_Opponent_First_Downs_per_Game',
+                                   'Last 3': 'Last_3_Total_Defense_Opponent_First_Downs_per_Game',
+                                   'Last 1': 'Last_1_Total_Defense_Opponent_First_Downs_per_Game',
                                    'Home': 'At_Home_Total_Defense_Opponent_First_Downs_per_Game',
                                    'Away': 'Away_Total_Defense_Opponent_First_Downs_per_Game'
                                    }, inplace=True)
@@ -5052,8 +5052,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Total_Defense_Opponent_Third_Downs_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Downs_per_Game',
-                                   'Last 3': 'Last 3_Total_Defense_Opponent_Third_Downs_per_Game',
-                                   'Last 1': 'Last 1_Total_Defense_Opponent_Third_Downs_per_Game',
+                                   'Last 3': 'Last_3_Total_Defense_Opponent_Third_Downs_per_Game',
+                                   'Last 1': 'Last_1_Total_Defense_Opponent_Third_Downs_per_Game',
                                    'Home': 'At_Home_Total_Defense_Opponent_Third_Downs_per_Game',
                                    'Away': 'Away_Total_Defense_Opponent_Third_Downs_per_Game'
                                    }, inplace=True)
@@ -5069,8 +5069,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
-                                   'Last 3': 'Last 3_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
-                                   'Last 1': 'Last 1_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                   'Last 3': 'Last_3_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                                   'Last 1': 'Last_1_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
                                    'Home': 'At_Home_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
                                    'Away': 'Away_Total_Defense_Opponent_Third_Down_Conversions_per_Game'
                                    }, inplace=True)
@@ -5087,8 +5087,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Total_Defense_Opponent_Fourth_Downs_per_Game',
                                     str(int(
                                         season) - 1): 'Previous_Season_Total_Defense_Opponent_Fourth_Downs_per_Game',
-                                    'Last 3': 'Last 3_Total_Defense_Opponent_Fourth_Downs_per_Game',
-                                    'Last 1': 'Last 1_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                    'Last 3': 'Last_3_Total_Defense_Opponent_Fourth_Downs_per_Game',
+                                    'Last 1': 'Last_1_Total_Defense_Opponent_Fourth_Downs_per_Game',
                                     'Home': 'At_Home_Total_Defense_Opponent_Fourth_Downs_per_Game',
                                     'Away': 'Away_Total_Defense_Opponent_Fourth_Downs_per_Game'
                                     }, inplace=True)
@@ -5105,8 +5105,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Total_Defense_Opponent_Fourth_Down_Conversions_Game',
                                     str(int(
                                         season) - 1): 'Previous_Season_Total_Defense_Opponent_Fourth_Down_Conversions_Game',
-                                    'Last 3': 'Last 3_Total_Defense_Opponent_Fourth_Down_Conversions_per_Game',
-                                    'Last 1': 'Last 1_Total_Defense_Opponent_Fourth_Downs_Conversions_per_Game',
+                                    'Last 3': 'Last_3_Total_Defense_Opponent_Fourth_Down_Conversions_per_Game',
+                                    'Last 1': 'Last_1_Total_Defense_Opponent_Fourth_Downs_Conversions_per_Game',
                                     'Home': 'At_Home_Total_Defense_Opponent_Fourth_Down_Conversions_per_Game',
                                     'Away': 'Away_Total_Defense_Opponent_Fourth_Down_Conversions_per_Game'
                                     }, inplace=True)
@@ -5123,8 +5123,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Total_Defense_Opponent_Average_Time_of_Possession',
                                    str(int(
                                        season) - 1): 'Previous_Season_Total_Defense_Opponent_Average_Time_of_Possession',
-                                   'Last 3': 'Last 3_Total_Defense_Opponent_Average_Time_of_Possession',
-                                   'Last 1': 'Last 1_Total_Defense_Opponent_Average_Time_of_Possession',
+                                   'Last 3': 'Last_3_Total_Defense_Opponent_Average_Time_of_Possession',
+                                   'Last 1': 'Last_1_Total_Defense_Opponent_Average_Time_of_Possession',
                                    'Home': 'At_Home_Total_Defense_Opponent_Average_Time_of_Possession',
                                    'Away': 'Away_Total_Defense_Opponent_Average_Time_of_Possession'
                                    }, inplace=True)
@@ -5141,8 +5141,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Total_Defense_Opponent_Time_of_Possession_Percentage',
                                    str(int(
                                        season) - 1): 'Previous_Season_Total_Defense_Opponent_Time_of_Possession_Percentage',
-                                   'Last 3': 'Last 3_Total_Defense_Opponent_Time_of_Possession_Percentage',
-                                   'Last 1': 'Last 1_Total_Defense_Opponent_Time_of_Possession_Percentage',
+                                   'Last 3': 'Last_3_Total_Defense_Opponent_Time_of_Possession_Percentage',
+                                   'Last 1': 'Last_1_Total_Defense_Opponent_Time_of_Possession_Percentage',
                                    'Home': 'At_Home_Total_Defense_Opponent_Time_of_Possession_Percentage',
                                    'Away': 'Away_Total_Defense_Opponent_Time_of_Possession_Percentage'
                                    }, inplace=True)
@@ -5159,8 +5159,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
                                    str(int(
                                        season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
-                                   'Last 3': 'Last 3_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
-                                   'Last 1': 'Last 1_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
+                                   'Last 3': 'Last_3_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
+                                   'Last 1': 'Last_1_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
                                    'Home': 'At_Home_Total_Defense_Opponent_Third_Down_Conversion_Percentage',
                                    'Away': 'Away_Total_Defense_Opponent_Third_Down_Conversion_Percentage'
                                    }, inplace=True)
@@ -5177,8 +5177,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
                                    str(int(
                                        season) - 1): 'Previous_Season_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
-                                   'Last 3': 'Last 3_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
-                                   'Last 1': 'Last 1_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
+                                   'Last 3': 'Last_3_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
+                                   'Last 1': 'Last_1_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
                                    'Home': 'At_Home_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage',
                                    'Away': 'Away_Total_Defense_Opponent_Fourth_Down_Conversion_Percentage'
                                    }, inplace=True)
@@ -5195,8 +5195,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Total_Defense_Opponent_Punts_per_Play',
                                   str(int(
                                       season) - 1): 'Previous_Season_Total_Defense_Opponent_Punts_per_Play',
-                                  'Last 3': 'Last 3_Total_Defense_Opponent_Punts_per_Play',
-                                  'Last 1': 'Last 1_Total_Defense_Opponent_Punts_per_Play',
+                                  'Last 3': 'Last_3_Total_Defense_Opponent_Punts_per_Play',
+                                  'Last 1': 'Last_1_Total_Defense_Opponent_Punts_per_Play',
                                   'Home': 'At_Home_Total_Defense_Opponent_Punts_per_Play',
                                   'Away': 'Away_Total_Defense_Opponent_Punts_per_Play'
                                   }, inplace=True)
@@ -5213,8 +5213,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Total_Defense_Opponent_Punts_per_Offensive_Score',
                                    str(int(
                                        season) - 1): 'Previous_Season_Total_Defense_Opponent_Punts_per_Offensive_Score',
-                                   'Last 3': 'Last 3_Total_Defense_Opponent_Punts_per_Offensive_Score',
-                                   'Last 1': 'Last 1_Total_Defense_Opponent_Punts_per_Offensive_Score',
+                                   'Last 3': 'Last_3_Total_Defense_Opponent_Punts_per_Offensive_Score',
+                                   'Last 1': 'Last_1_Total_Defense_Opponent_Punts_per_Offensive_Score',
                                    'Home': 'At_Home_Total_Defense_Opponent_Punts_per_Offensive_Score',
                                    'Away': 'Away_Total_Defense_Opponent_Punts_per_Offensive_Score'
                                    }, inplace=True)
@@ -5231,8 +5231,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Rushing_Defense_Opponent_Rushing_Attempts_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
-                                   'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
-                                   'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
+                                   'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
+                                   'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
                                    'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_Attempts_per_Game',
                                    'Away': 'Away_Rushing_Defense_Opponent_Rushing_Attempts_per_Game'
                                    }, inplace=True)
@@ -5249,8 +5249,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
-                                   'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
-                                   'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
+                                   'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
+                                   'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
                                    'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_Yards_per_Game',
                                    'Away': 'Away_Rushing_Defense_Opponent_Rushing_Yards_per_Game'
                                    }, inplace=True)
@@ -5267,8 +5267,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
                                     str(int(
                                         season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
-                                    'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
-                                    'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
+                                    'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
+                                    'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
                                     'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game',
                                     'Away': 'Away_Rushing_Defense_Opponent_Rushing_First_Downs_per_Game'
                                     }, inplace=True)
@@ -5285,8 +5285,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
                                    str(int(
                                        season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
-                                   'Last 3': 'Last 3_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
-                                   'Last 1': 'Last 1_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
+                                   'Last 3': 'Last_3_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
+                                   'Last 1': 'Last_1_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
                                    'Home': 'At_Home_Rushing_Defense_Opponent_Yards_per_Rush_Attempt',
                                    'Away': 'Away_Rushing_Defense_Opponent_Yards_per_Rush_Attempt'
                                    }, inplace=True)
@@ -5303,8 +5303,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Rushing_Defense_Opponent_Rushing_Play_Percentage',
                                   str(int(
                                       season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_Play_percentage',
-                                  'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_Play_Percentage',
-                                  'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_Play_Percentage',
+                                  'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_Play_Percentage',
+                                  'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_Play_Percentage',
                                   'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_Play_Percentage',
                                   'Away': 'Away_Rushing_Defense_Opponent_Rushing_Play_Percentage'
                                   }, inplace=True)
@@ -5321,8 +5321,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
                                   str(int(
                                       season) - 1): 'Previous_Season_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
-                                  'Last 3': 'Last 3_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
-                                  'Last 1': 'Last 1_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
+                                  'Last 3': 'Last_3_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
+                                  'Last 1': 'Last_1_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
                                   'Home': 'At_Home_Rushing_Defense_Opponent_Rushing_Yards_Percentage',
                                   'Away': 'Away_Rushing_Defense_Opponent_Rushing_Yards_Percentage'
                                   }, inplace=True)
@@ -5339,8 +5339,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Passing_Defense_Opponent_Pass_Attempts_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Passing_Defense_Opponent_Pass_Attempts_per_Game',
-                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Pass_Attempts_per_Game',
-                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                   'Last 3': 'Last_3_Passing_Defense_Opponent_Pass_Attempts_per_Game',
+                                   'Last 1': 'Last_1_Passing_Defense_Opponent_Pass_Attempts_per_Game',
                                    'Home': 'At_Home_Passing_Defense_Opponent_Pass_Attempts_per_Game',
                                    'Away': 'Away_Passing_Defense_Opponent_Pass_Attempts_per_Game'
                                    }, inplace=True)
@@ -5357,8 +5357,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Passing_Defense_Opponent_Completions_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Completions_per_Game',
-                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Completions_per_Game',
-                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Completions_per_Game',
+                                  'Last 3': 'Last_3_Passing_Defense_Opponent_Completions_per_Game',
+                                  'Last 1': 'Last_1_Passing_Defense_Opponent_Completions_per_Game',
                                   'Home': 'At_Home_Passing_Defense_Opponent_Completions_per_Game',
                                   'Away': 'Away_Passing_Defense_Opponent_Completions_per_Game'
                                   }, inplace=True)
@@ -5375,8 +5375,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Passing_Defense_Opponent_Incompletions_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Incompletions_per_Game',
-                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Incompletions_per_Game',
-                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Incompletions_per_Game',
+                                  'Last 3': 'Last_3_Passing_Defense_Opponent_Incompletions_per_Game',
+                                  'Last 1': 'Last_1_Passing_Defense_Opponent_Incompletions_per_Game',
                                   'Home': 'At_Home_Passing_Defense_Opponent_Incompletions_per_Game',
                                   'Away': 'Away_Passing_Defense_Opponent_Incompletions_per_Game'
                                   }, inplace=True)
@@ -5393,8 +5393,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Defense_Opponent_Completion_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Defense_Opponent_Completion_Percentage',
-                                 'Last 3': 'Last 3_Passing_Defense_Opponent_Completion_Percentage',
-                                 'Last 1': 'Last 1_Passing_Defense_Opponent_Completion_Percentage',
+                                 'Last 3': 'Last_3_Passing_Defense_Opponent_Completion_Percentage',
+                                 'Last 1': 'Last_1_Passing_Defense_Opponent_Completion_Percentage',
                                  'Home': 'At_Home_Passing_Defense_Opponent_Completion_Percentage',
                                  'Away': 'Away_Passing_Defense_Opponent_Completion_Percentage'
                                  }, inplace=True)
@@ -5411,8 +5411,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Passing_Defense_Opponent_Passing_Yards_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Yards_per_Game',
-                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Yards_per_Game',
-                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                   'Last 3': 'Last_3_Passing_Defense_Opponent_Passing_Yards_per_Game',
+                                   'Last 1': 'Last_1_Passing_Defense_Opponent_Passing_Yards_per_Game',
                                    'Home': 'At_Home_Passing_Defense_Opponent_Passing_Yards_per_Game',
                                    'Away': 'Away_Passing_Defense_Opponent_Passing_Yards_per_Game'
                                    }, inplace=True)
@@ -5429,8 +5429,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
-                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
-                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                   'Last 3': 'Last_3_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
+                                   'Last 1': 'Last_1_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
                                    'Home': 'At_Home_Passing_Defense_Opponent_Passing_First_Downs_per_Game',
                                    'Away': 'Away_Passing_Defense_Opponent_Passing_First_Downs_per_Game'
                                    }, inplace=True)
@@ -5447,8 +5447,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Passing_Defense_Opponent_Average_Team_Passer_Rating',
                                    str(int(
                                        season) - 1): 'Previous_Season_Passing_Defense_Opponent_Average_Team_Passer_Rating',
-                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Average_Team_Passer_Rating',
-                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                   'Last 3': 'Last_3_Passing_Defense_Opponent_Average_Team_Passer_Rating',
+                                   'Last 1': 'Last_1_Passing_Defense_Opponent_Average_Team_Passer_Rating',
                                    'Home': 'At_Home_Passing_Defense_Opponent_Average_Team_Passer_Rating',
                                    'Away': 'Away_Passing_Defense_Opponent_Average_Team_Passer_Rating'
                                    }, inplace=True)
@@ -5465,8 +5465,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Defense_Team_Sack_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Defense_Team_Sack_Percentage',
-                                 'Last 3': 'Last 3_Passing_Defense_Team_Sack_Percentage',
-                                 'Last 1': 'Last 1_Passing_Defense_Team_Sack_Percentage',
+                                 'Last 3': 'Last_3_Passing_Defense_Team_Sack_Percentage',
+                                 'Last 1': 'Last_1_Passing_Defense_Team_Sack_Percentage',
                                  'Home': 'At_Home_Passing_Defense_Team_Sack_Percentage',
                                  'Away': 'Away_Passing_Defense_Team_Sack_Percentage'
                                  }, inplace=True)
@@ -5483,8 +5483,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
                                   str(int(
                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Play_Percentage',
-                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Play_Percentage',
-                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                  'Last 3': 'Last_3_Passing_Defense_Opponent_Passing_Play_Percentage',
+                                  'Last 1': 'Last_1_Passing_Defense_Opponent_Passing_Play_Percentage',
                                   'Home': 'At_Home_Passing_Defense_Opponent_Passing_Play_Percentage',
                                   'Away': 'Away_Passing_Defense_Opponent_Passing_Play_Percentage'
                                   }, inplace=True)
@@ -5501,8 +5501,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
                                   str(int(
                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Passing_Yards_Percentage',
-                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Passing_Yards_Percentage',
-                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                  'Last 3': 'Last_3_Passing_Defense_Opponent_Passing_Yards_Percentage',
+                                  'Last 1': 'Last_1_Passing_Defense_Opponent_Passing_Yards_Percentage',
                                   'Home': 'At_Home_Passing_Defense_Opponent_Passing_Yards_Percentage',
                                   'Away': 'Away_Passing_Defense_Opponent_Passing_Yards_Percentage'
                                   }, inplace=True)
@@ -5519,8 +5519,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Passing_Defense_Sacks_per_Game',
                                  str(int(
                                      season) - 1): 'Previous_Season_Passing_Defense_Sacks_per_Game',
-                                 'Last 3': 'Last 3_Passing_Defense_Sacks_per_Game',
-                                 'Last 1': 'Last 1_Passing_Defense_Sacks_per_Game',
+                                 'Last 3': 'Last_3_Passing_Defense_Sacks_per_Game',
+                                 'Last 1': 'Last_1_Passing_Defense_Sacks_per_Game',
                                  'Home': 'At_Home_Passing_Defense_Sacks_per_Game',
                                  'Away': 'Away_Passing_Defense_Sacks_per_Game'
                                  }, inplace=True)
@@ -5537,8 +5537,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
                                    str(int(
                                        season) - 1): 'Previous_Season_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
-                                   'Last 3': 'Last 3_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
-                                   'Last 1': 'Last 1_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                   'Last 3': 'Last_3_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
+                                   'Last 1': 'Last_1_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
                                    'Home': 'At_Home_Passing_Defense_Opponent_Yards_per_Pass_Attempt',
                                    'Away': 'Away_Passing_Defense_Opponent_Yards_per_Pass_Attempt'
                                    }, inplace=True)
@@ -5555,8 +5555,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Passing_Defense_Opponent_Yards_per_Completion',
                                   str(int(
                                       season) - 1): 'Previous_Season_Passing_Defense_Opponent_Yards_per_Completion',
-                                  'Last 3': 'Last 3_Passing_Defense_Opponent_Yards_per_Completion',
-                                  'Last 1': 'Last 1_Passing_Defense_Opponent_Yards_per_Completion',
+                                  'Last 3': 'Last_3_Passing_Defense_Opponent_Yards_per_Completion',
+                                  'Last 1': 'Last_1_Passing_Defense_Opponent_Yards_per_Completion',
                                   'Home': 'At_Home_Passing_Defense_Opponent_Yards_per_Completion',
                                   'Away': 'Away_Passing_Defense_Opponent_Yards_per_Completion'
                                   }, inplace=True)
@@ -5573,8 +5573,8 @@ if __name__ == '__main__':
                                      season: 'Current_Season_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
                                      str(int(
                                          season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
-                                     'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
-                                     'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                     'Last 3': 'Last_3_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
+                                     'Last 1': 'Last_1_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
                                      'Home': 'At_Home_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game',
                                      'Away': 'Away_Special_Teams_Defense_Opponent_Field_Goal_Attempts_per_Game'
                                      }, inplace=True)
@@ -5593,8 +5593,8 @@ if __name__ == '__main__':
                                      season: 'Current_Season_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
                                      str(int(
                                          season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
-                                     'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
-                                     'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                     'Last 3': 'Last_3_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
+                                     'Last 1': 'Last_1_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
                                      'Home': 'At_Home_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game',
                                      'Away': 'Away_Special_Teams_Defense_Opponent_Field_Goals_Made_per_Game'
                                      }, inplace=True)
@@ -5613,8 +5613,8 @@ if __name__ == '__main__':
                                     season: 'Current_Season_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
                                     str(int(
                                         season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
-                                    'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
-                                    'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                    'Last 3': 'Last_3_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
+                                    'Last 1': 'Last_1_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
                                     'Home': 'At_Home_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game',
                                     'Away': 'Away_Special_Teams_Defense_Opponent_Punt_Attempts_per_Game'
                                     }, inplace=True)
@@ -5633,8 +5633,8 @@ if __name__ == '__main__':
                                      season: 'Current_Season_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
                                      str(int(
                                          season) - 1): 'Previous_Season_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
-                                     'Last 3': 'Last 3_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
-                                     'Last 1': 'Last 1_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                     'Last 3': 'Last_3_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
+                                     'Last 1': 'Last_1_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
                                      'Home': 'At_Home_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game',
                                      'Away': 'Away_Special_Teams_Defense_Opponent_Gross_Punt_Yards_per_Game'
                                      }, inplace=True)
@@ -5651,8 +5651,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Turnovers_Interceptions_Thrown_per_Game',
                                  str(int(
                                      season) - 1): 'Previous_Season_Turnovers_Interceptions_Thrown_per_Game',
-                                 'Last 3': 'Last 3_Turnovers_Interceptions_Thrown_per_Game',
-                                 'Last 1': 'Last 1_Turnovers_Interceptions_Thrown_per_Game',
+                                 'Last 3': 'Last_3_Turnovers_Interceptions_Thrown_per_Game',
+                                 'Last 1': 'Last_1_Turnovers_Interceptions_Thrown_per_Game',
                                  'Home': 'At_Home_Turnovers_Interceptions_Thrown_per_Game',
                                  'Away': 'Away_Turnovers_Interceptions_per_Game'
                                  }, inplace=True)
@@ -5669,8 +5669,8 @@ if __name__ == '__main__':
                                 season: 'Current_Season_Turnovers_Fumbles_per_Game',
                                 str(int(
                                     season) - 1): 'Previous_Season_Turnovers_Fumbles_per_Game',
-                                'Last 3': 'Last 3_Turnovers_Fumbles_per_Game',
-                                'Last 1': 'Last 1_Turnovers_Fumbles_per_Game',
+                                'Last 3': 'Last_3_Turnovers_Fumbles_per_Game',
+                                'Last 1': 'Last_1_Turnovers_Fumbles_per_Game',
                                 'Home': 'At_Home_Turnovers_Fumbles_per_Game',
                                 'Away': 'Away_Turnovers_Fumbles_per_Game'
                                 }, inplace=True)
@@ -5687,8 +5687,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Turnovers_Fumbles_Lost_per_Game',
                                  str(int(
                                      season) - 1): 'Previous_Season_Turnovers_Fumbles_Lost_per_Game',
-                                 'Last 3': 'Last 3_Turnovers_Fumbles_Lost_per_Game',
-                                 'Last 1': 'Last 1_Turnovers_Fumbles_Lost_per_Game',
+                                 'Last 3': 'Last_3_Turnovers_Fumbles_Lost_per_Game',
+                                 'Last 1': 'Last_1_Turnovers_Fumbles_Lost_per_Game',
                                  'Home': 'At_Home_Turnovers_Fumbles_Lost_per_Game',
                                  'Away': 'Away_Turnovers_Fumbles_Lost_per_Game'
                                  }, inplace=True)
@@ -5705,8 +5705,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Turnovers_Fumbles_Not_Lost_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Turnovers_Fumbles_Not_Lost_per_Game',
-                                  'Last 3': 'Last 3_Turnovers_Fumbles_Not_Lost_per_Game',
-                                  'Last 1': 'Last 1_Turnovers_Fumbles_Not_Lost_per_Game',
+                                  'Last 3': 'Last_3_Turnovers_Fumbles_Not_Lost_per_Game',
+                                  'Last 1': 'Last_1_Turnovers_Fumbles_Not_Lost_per_Game',
                                   'Home': 'At_Home_Turnovers_Fumbles_Not_Lost_per_Game',
                                   'Away': 'Away_Turnovers_Fumbles_Not_Lost_per_Game'
                                   }, inplace=True)
@@ -5721,8 +5721,8 @@ if __name__ == '__main__':
         tgpg_df.rename(columns={'Rank': 'Rank_Turnovers_Giveaways_per_Game',
                                 season: 'Current_Season_Turnovers_Giveaways_per_Game',
                                 str(int(season) - 1): 'Previous_Season_Turnovers_Giveaways_per_Game',
-                                'Last 3': 'Last 3_Turnovers_Giveaways_per_Game',
-                                'Last 1': 'Last 1_Turnovers_Giveaways_per_Game',
+                                'Last 3': 'Last_3_Turnovers_Giveaways_per_Game',
+                                'Last 1': 'Last_1_Turnovers_Giveaways_per_Game',
                                 'Home': 'At_Home_Turnovers_Giveaways_per_Game',
                                 'Away': 'Away_Turnovers_Giveaways_per-Game'
                                 }, inplace=True)
@@ -5737,8 +5737,8 @@ if __name__ == '__main__':
         ttmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Turnover_Margin_per_Game',
                                  season: 'Current_Season_Turnovers_Turnover_Margin_per_Game',
                                  str(int(season) - 1): 'Previous_Season_Turnovers_Turnover_Margin_per_Game',
-                                 'Last 3': 'Last 3_Turnovers_Turnover_Margin_per_Game',
-                                 'Last 1': 'Last 1_Turnovers_Turnover_Margin_per_Game',
+                                 'Last 3': 'Last_3_Turnovers_Turnover_Margin_per_Game',
+                                 'Last 1': 'Last_1_Turnovers_Turnover_Margin_per_Game',
                                  'Home': 'At_Home_Turnovers_Turnover_Margin_per_Game',
                                  'Away': 'Away_Turnovers_Turnover_Margin_per-Game'
                                  }, inplace=True)
@@ -5754,8 +5754,8 @@ if __name__ == '__main__':
         tipg_df.rename(columns={'Rank': 'Rank_Turnovers_Interceptions_per_Game',
                                 season: 'Current_Season_Turnovers_Interceptions_per_Game',
                                 str(int(season) - 1): 'Previous_Season_Turnovers_Interceptions_per_Game',
-                                'Last 3': 'Last 3_Turnovers_Interceptions_per_Game',
-                                'Last 1': 'Last 1_Turnovers_Interceptions_per_Game',
+                                'Last 3': 'Last_3_Turnovers_Interceptions_per_Game',
+                                'Last 1': 'Last_1_Turnovers_Interceptions_per_Game',
                                 'Home': 'At_Home_Turnovers_Interceptions_per_Game',
                                 'Away': 'Away_Turnovers_Interceptions_per-Game'
                                 }, inplace=True)
@@ -5771,8 +5771,8 @@ if __name__ == '__main__':
         tofpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_per_Game',
                                  season: 'Current_Season_Turnovers_Opponent_Fumbles_per_Game',
                                  str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_per_Game',
-                                 'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_per_Game',
-                                 'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_per_Game',
+                                 'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_per_Game',
+                                 'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_per_Game',
                                  'Home': 'At_Home_Turnovers_Opponent_Fumbles_per_Game',
                                  'Away': 'Away_Turnovers_Opponent_Fumbles_per-Game'
                                  }, inplace=True)
@@ -5788,8 +5788,8 @@ if __name__ == '__main__':
         toflpg_df.rename(columns={'Rank': 'Rank_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                   season: 'Current_Season_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                   str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_Lost_per_Game',
-                                  'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_Lost_per_Game',
-                                  'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                  'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_Lost_per_Game',
+                                  'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                   'Home': 'At_Home_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                   'Away': 'Away_Turnovers_Opponent_Fumbles_Lost_per-Game'
                                   }, inplace=True)
@@ -5806,8 +5806,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
-                                   'Last 3': 'Last 3_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
-                                   'Last 1': 'Last 1_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                   'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
+                                   'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                    'Home': 'At_Home_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                    'Away': 'Away_Turnovers_Opponent_Fumbles_Not_Lost_per-Game'
                                    }, inplace=True)
@@ -5822,8 +5822,8 @@ if __name__ == '__main__':
         tttapg_df.rename(columns={'Rank': 'Rank_Turnovers_Takeaways_per_Game',
                                   season: 'Current_Season_Turnovers_Takeaways_per_Game',
                                   str(int(season) - 1): 'Previous_Season_Turnovers_Takeaways_per_Game',
-                                  'Last 3': 'Last 3_Turnovers_Take_Aways_per_Game',
-                                  'Last 1': 'Last 1_Turnovers_Takeaways_per_Game',
+                                  'Last 3': 'Last_3_Turnovers_Take_Aways_per_Game',
+                                  'Last 1': 'Last_1_Turnovers_Takeaways_per_Game',
                                   'Home': 'At_Home_Turnovers_Takeaways_per_Game',
                                   'Away': 'Away_Turnovers_Takeaways_per_Game'
                                   }, inplace=True)
@@ -5839,8 +5839,8 @@ if __name__ == '__main__':
         totmpg_df.rename(columns={'Rank': 'Rank_Turnovers_Oppoenent_Turnover_margin_per_Game',
                                   season: 'Current_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
                                   str(int(season) - 1): 'Previous_Season_Turnovers_Opponent_Turnover_Margin_per_Game',
-                                  'Last 3': 'Last 3_Turnovers_Opponent_Turnover_Margin_per_Game',
-                                  'Last 1': 'Last 1_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                  'Last 3': 'Last_3_Turnovers_Opponent_Turnover_Margin_per_Game',
+                                  'Last 1': 'Last_1_Turnovers_Opponent_Turnover_Margin_per_Game',
                                   'Home': 'At_Home_Turnovers_Opponent_Turnover_Margin_per_Game',
                                   'Away': 'Away_Turnovers_Turnover_Margin_per_Game'
                                   }, inplace=True)
@@ -5857,8 +5857,8 @@ if __name__ == '__main__':
                                 season: 'Current_Season_Turnovers_Interceptions_Thrown_Percentage',
                                 str(int(
                                     season) - 1): 'Previous_Season_Turnovers_Interceptions_Thrown_Percentage',
-                                'Last 3': 'Last 3_Turnovers_Interceptions_Thrown_Percentage',
-                                'Last 1': 'Last 1_Turnovers_Interceptions_Thrown_Percentage',
+                                'Last 3': 'Last_3_Turnovers_Interceptions_Thrown_Percentage',
+                                'Last 1': 'Last_1_Turnovers_Interceptions_Thrown_Percentage',
                                 'Home': 'At_Home_Turnovers_Interceptions_Thrown_Percentage',
                                 'Away': 'Away_Turnovers_Interceptions_Thrown_Percentage'
                                 }, inplace=True)
@@ -5875,8 +5875,8 @@ if __name__ == '__main__':
                                 season: 'Current_Season_Turnovers_Fumble_Recovery_Percentage',
                                 str(int(
                                     season) - 1): 'Previous_Season_Turnovers_Fumble_Recovery_Percentage',
-                                'Last 3': 'Last 3_Turnovers_Fumble_Recovery_Percentage',
-                                'Last 1': 'Last 1_Turnovers_Fumble_Recovery_Percentage',
+                                'Last 3': 'Last_3_Turnovers_Fumble_Recovery_Percentage',
+                                'Last 1': 'Last_1_Turnovers_Fumble_Recovery_Percentage',
                                 'Home': 'At_Home_Turnovers_Fumble_Recovery_Percentage',
                                 'Away': 'Away_Turnovers_Fumble_Recovery_Percentage'
                                 }, inplace=True)
@@ -5893,8 +5893,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Turnovers_Giveaway_Fumble_Recovery_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Turnovers_Giveaway_Fumble_Recovery_Percentage',
-                                 'Last 3': 'Last 3_Turnovers_Giveaway_Fumble_Recovery_Percentage',
-                                 'Last 1': 'Last 1_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                 'Last 3': 'Last_3_Turnovers_Giveaway_Fumble_Recovery_Percentage',
+                                 'Last 1': 'Last_1_Turnovers_Giveaway_Fumble_Recovery_Percentage',
                                  'Home': 'At_Home_Turnovers_Giveaway_Fumble_Recovery_Percentage',
                                  'Away': 'Away_Turnovers_Giveaway_Fumble_Recovery_Percentage'
                                  }, inplace=True)
@@ -5911,8 +5911,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Turnovers_Takeaway_Fumble_Recovery_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Turnovers_Takeaway_Fumble_Recovery_Percentage',
-                                 'Last 3': 'Last 3_Turnovers_Takeaway_Fumble_Recovery_Percentage',
-                                 'Last 1': 'Last 1_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                 'Last 3': 'Last_3_Turnovers_Takeaway_Fumble_Recovery_Percentage',
+                                 'Last 1': 'Last_1_Turnovers_Takeaway_Fumble_Recovery_Percentage',
                                  'Home': 'At_Home_Turnovers_Takeaway_Fumble_Recovery_Percentage',
                                  'Away': 'Away_Turnovers_Takeaway_Fumble_Recovery_Percentage'
                                  }, inplace=True)
@@ -5929,8 +5929,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Turnovers_Opponents_Interceptions_Thrown_Percentage',
-                                 'Last 3': 'Last 3_Turnovers_Opponents_Interceptions_Thrown_Percentage',
-                                 'Last 1': 'Last 1_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                 'Last 3': 'Last_3_Turnovers_Opponents_Interceptions_Thrown_Percentage',
+                                 'Last 1': 'Last_1_Turnovers_Opponents_Interceptions_Thrown_Percentage',
                                  'Home': 'At_Home_Turnovers_Opponents_Interceptions_Thrown_Percentage',
                                  'Away': 'Away_Turnovers_Opponents_Interceptions_Thrown_Percentage'
                                  }, inplace=True)
@@ -5947,8 +5947,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Turnovers_Opponent_Fumble_Recovery_Percentage',
                                  str(int(
                                      season) - 1): 'Previous_Season_Turnovers_Opponent_Fumble_Recovery_Percentage',
-                                 'Last 3': 'Last 3_Turnovers_Opponent_Fumble_Recovery_Percentage',
-                                 'Last 1': 'Last 1_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                 'Last 3': 'Last_3_Turnovers_Opponent_Fumble_Recovery_Percentage',
+                                 'Last 1': 'Last_1_Turnovers_Opponent_Fumble_Recovery_Percentage',
                                  'Home': 'At_Home_Turnovers_Opponent_Fumble_Recovery_Percentage',
                                  'Away': 'Away_Turnovers_Opponent_Fumble_Recovery_Percentage'
                                  }, inplace=True)
@@ -5965,8 +5965,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
                                   str(int(
                                       season) - 1): 'Previous_Season_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
-                                  'Last 3': 'Last 3_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
-                                  'Last 1': 'Last 1_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                  'Last 3': 'Last_3_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
+                                  'Last 1': 'Last_1_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
                                   'Home': 'At_Home_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage',
                                   'Away': 'Away_Turnovers_Opponent_Giveaway_Fumble_Recovery_Percentage'
                                   }, inplace=True)
@@ -5984,8 +5984,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
                                   str(int(
                                       season) - 1): 'Previous_Season_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
-                                  'Last 3': 'Last 3_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
-                                  'Last 1': 'Last 1_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                  'Last 3': 'Last_3_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
+                                  'Last 1': 'Last_1_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
                                   'Home': 'At_Home_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage',
                                   'Away': 'Away_Turnovers_Opponent_Takeaway_Fumble_Recovery_Percentage'
                                   }, inplace=True)
@@ -6003,8 +6003,8 @@ if __name__ == '__main__':
                                 season: 'Current_Season_Penalties_Penalties_per_Game',
                                 str(int(
                                     season) - 1): 'Previous_Season_Penalties_per_Game',
-                                'Last 3': 'Last 3_Penalties_Penalties_per_Game',
-                                'Last 1': 'Last 1_Penalties_Penalties_per_Game',
+                                'Last 3': 'Last_3_Penalties_Penalties_per_Game',
+                                'Last 1': 'Last_1_Penalties_Penalties_per_Game',
                                 'Home': 'At_Home_Penalties_Penalties_per_Game',
                                 'Away': 'Away_Turnovers_Penalties_Penalties_per_Game'
                                 }, inplace=True)
@@ -6022,8 +6022,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Penalties_Penalty_Yards_per_Game',
                                  str(int(
                                      season) - 1): 'Previous_Season_Penalty_Yards_per_Game',
-                                 'Last 3': 'Last 3_Penalties_Penalty_Yards_per_Game',
-                                 'Last 1': 'Last 1_Penalties_Penalty_Yards_per_Game',
+                                 'Last 3': 'Last_3_Penalties_Penalty_Yards_per_Game',
+                                 'Last 1': 'Last_1_Penalties_Penalty_Yards_per_Game',
                                  'Home': 'At_Home_Penalties_Penalty_Yards_per_Game',
                                  'Away': 'Away_Turnovers_Penalties_Penalty_Yards_per_Game'
                                  }, inplace=True)
@@ -6041,8 +6041,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Penalties_Penalty_First_Downs_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Penalty_First_Downs_per_Game',
-                                  'Last 3': 'Last 3_Penalties_Penalty_First_Downs_per_Game',
-                                  'Last 1': 'Last 1_Penalties_Penalty_First_Downs_per_Game',
+                                  'Last 3': 'Last_3_Penalties_Penalty_First_Downs_per_Game',
+                                  'Last 1': 'Last_1_Penalties_Penalty_First_Downs_per_Game',
                                   'Home': 'At_Home_Penalties_Penalty_First_Downs_per_Game',
                                   'Away': 'Away_Turnovers_Penalties_Penalty_First_Downs_per_Game'
                                   }, inplace=True)
@@ -6060,8 +6060,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Penalties_Opponent_Penalties_per_Game',
                                  str(int(
                                      season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Game',
-                                 'Last 3': 'Last 3_Penalties_Opponent_Penalties_per_Game',
-                                 'Last 1': 'Last 1_Penalties_Opponent_Penalties_per_Game',
+                                 'Last 3': 'Last_3_Penalties_Opponent_Penalties_per_Game',
+                                 'Last 1': 'Last_1_Penalties_Opponent_Penalties_per_Game',
                                  'Home': 'At_Home_Penalties_Opponent_Penalties_per_Game',
                                  'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Game'
                                  }, inplace=True)
@@ -6079,8 +6079,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Penalties_Opponent_Penalty_Yards_per_Game',
                                   str(int(
                                       season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Game',
-                                  'Last 3': 'Last 3_Penalties_Opponent_Penalty_Yards_per_Game',
-                                  'Last 1': 'Last 1_Penalties_Opponent_Penalty_Yards_per_Game',
+                                  'Last 3': 'Last_3_Penalties_Opponent_Penalty_Yards_per_Game',
+                                  'Last 1': 'Last_1_Penalties_Opponent_Penalty_Yards_per_Game',
                                   'Home': 'At_Home_Penalties_Opponent_Penalty_Yards_per_Game',
                                   'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_Yards_per_Game'
                                   }, inplace=True)
@@ -6098,8 +6098,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Penalties_Opponent_Penalty_First_Downs_per_Game',
                                    str(int(
                                        season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_First_Downs_per_Game',
-                                   'Last 3': 'Last 3_Penalties_Opponent_Penalty_First_Downs_per_Game',
-                                   'Last 1': 'Last 1_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                   'Last 3': 'Last_3_Penalties_Opponent_Penalty_First_Downs_per_Game',
+                                   'Last 1': 'Last_1_Penalties_Opponent_Penalty_First_Downs_per_Game',
                                    'Home': 'At_Home_Penalties_Opponent_Penalty_First_Downs_per_Game',
                                    'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_First_Downs_per_Game'
                                    }, inplace=True)
@@ -6117,8 +6117,8 @@ if __name__ == '__main__':
                                   season: 'Current_Season_Penalties_Penalty_Yards_per_Penalty',
                                   str(int(
                                       season) - 1): 'Previous_Season_Penalties_Penalty_Yards_per_Penalty',
-                                  'Last 3': 'Last 3_Penalties_Penalty_Yards_per_Penalty',
-                                  'Last 1': 'Last 1_Penalties_Penalty_Yards_per_Penalty',
+                                  'Last 3': 'Last_3_Penalties_Penalty_Yards_per_Penalty',
+                                  'Last 1': 'Last_1_Penalties_Penalty_Yards_per_Penalty',
                                   'Home': 'At_Home_Penalties_Penalty_Yards_per_Penalty',
                                   'Away': 'Away_Turnovers_Penalties_Penalty_Yards_per_Penalty'
                                   }, inplace=True)
@@ -6136,8 +6136,8 @@ if __name__ == '__main__':
                                 season: 'Current_Season_Penalties_Penalties_per_Play',
                                 str(int(
                                     season) - 1): 'Previous_Season_Penalties_Penalties_per_Play',
-                                'Last 3': 'Last 3_Penalties_Penalties_per_Play',
-                                'Last 1': 'Last 1_Penalties_Penalties_per_Play',
+                                'Last 3': 'Last_3_Penalties_Penalties_per_Play',
+                                'Last 1': 'Last_1_Penalties_Penalties_per_Play',
                                 'Home': 'At_Home_Penalties_Penalties_per_Play',
                                 'Away': 'Away_Turnovers_Penalties_Penalties_per_Play'
                                 }, inplace=True)
@@ -6155,8 +6155,8 @@ if __name__ == '__main__':
                                    season: 'Current_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                    str(int(
                                        season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
-                                   'Last 3': 'Last 3_Penalties_Opponent_Penalty_Yards_per_Penalty',
-                                   'Last 1': 'Last 1_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                   'Last 3': 'Last_3_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                   'Last 1': 'Last_1_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                    'Home': 'At_Home_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                    'Away': 'Away_Turnovers_Penalties_Opponent_Penalty_Yards_per_Penalty'
                                    }, inplace=True)
@@ -6174,8 +6174,8 @@ if __name__ == '__main__':
                                  season: 'Current_Season_Penalties_Opponent_Penalties_per_Play',
                                  str(int(
                                      season) - 1): 'Previous_Season_Penalties_Opponent_Penalties_per_Play',
-                                 'Last 3': 'Last 3_Penalties_Opponent_Penalties_per_Play',
-                                 'Last 1': 'Last 1_Penalties_Opponent_Penalties_per_Play',
+                                 'Last 3': 'Last_3_Penalties_Opponent_Penalties_per_Play',
+                                 'Last 1': 'Last_1_Penalties_Opponent_Penalties_per_Play',
                                  'Home': 'At_Home_Penalties_Opponent_Penalties_per_Play',
                                  'Away': 'Away_Turnovers_Penalties_Opponent_Penalties_per_Play'
                                  }, inplace=True)
