@@ -317,7 +317,7 @@ if __name__ == '__main__':
                 trsp_df['Team'] = trsp_df['Team'].str.strip()
                 if season == '2010':
                     trsp_df['Rank_Team_Red_Zone_Scores_per_Game'] = trsp_df.index + 1
-                tssp_df = trsp_df.replace('--', np.nan)
+                trsp_df = trsp_df.replace('--', np.nan)
                 trsp_df = trsp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
 
