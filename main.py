@@ -3120,8 +3120,7 @@ if __name__ == '__main__':
                                     'penalties_opponent_penalty_yards_per_penalty')
                 poppypp_df.rename(columns={'Rank': 'Rank_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                         season: 'Current_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
-                                        str(int(
-                                            season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
+                                        str(int(season) - 1): 'Previous_Season_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                         'Last 3': 'Last 3_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                         'Last 1': 'Last 1_Penalties_Opponent_Penalty_Yards_per_Penalty',
                                         'Home': 'At_Home_Penalties_Opponent_Penalty_Yards_per_Penalty',
