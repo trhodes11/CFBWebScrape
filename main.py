@@ -1558,7 +1558,7 @@ if __name__ == '__main__':
                                         season, str(week),
                                         this_week_date_str,
                                         'scoring_defense_opponent_red_zone_scoring_percentage')
-                sdorzspg_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
+                sdorzsp_df.rename(columns={'Rank': 'Rank_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
                                             season: 'Current_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
                                             str(int(
                                                 season) - 1): 'Previous_Season_Scoring_Defense_Opponent_Red_Zone_Scoring_Percentage',
@@ -1735,7 +1735,7 @@ if __name__ == '__main__':
                     + this_week_date_str
                 tdotdcpg_df = main_hist(total_defense_opponent_third_down_conversions_per_game_url_current, season, str(week),
                                        this_week_date_str, 'total_defense_opponent_third_down_conversions_per_game')
-                tdotdpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
+                tdotdcpg_df.rename(columns={'Rank': 'Rank_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
                                            season: 'Current_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
                                            str(int(
                                                season) - 1): 'Previous_Season_Total_Defense_Opponent_Third_Down_Conversions_per_Game',
@@ -3153,7 +3153,7 @@ if __name__ == '__main__':
                 popppp_df['Team'] = poppp_df['Team'].str.strip()
                 if season == '2010':
                     popppp_df['Rank_Penalties_Opponent_Penalties_per_Play'] = popppp_df.index + 1
-                popppp_df = poppp_df.replace('--', np.nan)
+                popppp_df = popppp_df.replace('--', np.nan)
                 popppp_df = popppp_df.apply(pd.to_numeric, errors='ignore')
                 time.sleep(random.uniform(0.2, 2))
 
