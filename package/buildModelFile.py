@@ -1,21 +1,59 @@
-def cleaned_cpr_2022(Historic_Games, Teams, Scraped_TR_data):
+from package import *
+import pandas as pd
 
+
+def build_model_df():
+    desired_width = 320
+    pd.set_option('display.width', desired_width)
+    pd.set_option('display.max_columns', 60)
+
+    """
+    # 
+    """
+    f = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/Combined/Final_Combined_Dataset.csv'
+    Scraped_TR_data = pd.read_csv(f)
+
+    f = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/Historic_Games.csv'
+    Historic_Games = pd.read_csv(f)
+
+    """
+    # 
+    """
     home_team_scraped_TR = Scraped_TR_data
-    for col_name in home_team_scraped_TR.columns:
-        if((col_name != 'Season') & (col_name != 'Week') & (col_name != 'Team')):
-            home_team_scraped_TR =home_team_scraped_TR.withColumnRenamed(col_name, "Home_" + col_name)
+    for col_name in home_team_scraped_TR:
+        if (col_name != 'Season') & (col_name != 'Week') & (col_name != 'Team'):
+            home_team_scraped_TR = home_team_scraped_TR.rename({col_name: 'Home_' + col_name}, axis=1)
+
     away_team_scraped_TR = Scraped_TR_data
-    for col_name in away_team_scraped_TR.columns:
-        if((col_name != 'Season') & (col_name != 'Week') & (col_name != 'Team')):
-            away_team_scraped_TR =away_team_scraped_TR.withColumnRenamed(col_name, "Away_" + col_name)
+    for col_name in away_team_scraped_TR:
+        if (col_name != 'Season') & (col_name != 'Week') & (col_name != 'Team'):
+            away_team_scraped_TR = away_team_scraped_TR.rename({col_name: 'Away_' + col_name}, axis=1)
 
-    TR_Teams = ['Colorado St','Georgia State','TX Christian','Kent State','S Mississippi','Central Mich','S Alabama','Middle Tenn','Central FL','Northwestern','Florida Intl','Oregon St','Connecticut','Washington','Miss State','Vanderbilt','Pittsburgh','San Diego St','Fla Atlantic','W Virginia','Iowa State','Nebraska','LSU','Arizona St','Air Force','Penn State','Wyoming','Old Dominion','Wisconsin','Boston Col','Coastal Car','GA Southern','North Texas','Michigan St','S Methodist','Oklahoma St','Bowling Grn','Wake Forest','Texas State','N Mex State','Mississippi','Arkansas St','Memphis','San Jose St','NC State','TX-San Ant','Boise State','Baylor','E Michigan','Oregon','Arkansas','Temple','E Carolina','Louisville','W Kentucky','Miami (FL)','N Illinois','Ohio State','Texas Tech','Notre Dame','New Mexico','Florida St','Miami (OH)','Ball State','N Carolina','Cincinnati','California','TX El Paso','S Carolina','W Michigan','Utah State','BYU','Michigan','Virginia','Navy','LA Lafayette','Arizona','Marshall','Minnesota','App State','Kansas St','Texas A&M','LA Monroe','Fresno St','S Florida','Tennessee','Charlotte','Iowa','Wash State','Florida','Indiana','VA Tech','Hawaii','Oklahoma','Stanford','Missouri','Kentucky','Syracuse','Colorado','Duke','Illinois','Maryland','Rice','GA Tech','LA Tech','Rutgers','Georgia','Alabama','Houston','Buffalo','Liberty','Clemson','Auburn','Nevada','Toledo','Kansas','Purdue','Tulane','U Mass','Texas','UNLV','Akron','Tulsa','Idaho','Utah','UAB','Ohio','UCLA','Army','Troy','USC']
+    TR_Teams = ['Colorado St', 'Georgia State', 'TX Christian', 'Kent State', 'S Mississippi', 'Central Mich',
+                'S Alabama', 'Middle Tenn', 'Central FL', 'Northwestern', 'Florida Intl', 'Oregon St', 'Connecticut',
+                'Washington', 'Miss State', 'Vanderbilt', 'Pittsburgh', 'San Diego St', 'Fla Atlantic', 'W Virginia',
+                'Iowa State', 'Nebraska', 'LSU', 'Arizona St', 'Air Force', 'Penn State', 'Wyoming', 'Old Dominion',
+                'Wisconsin', 'Boston Col', 'Coastal Car', 'GA Southern', 'North Texas', 'Michigan St', 'S Methodist',
+                'Oklahoma St', 'Bowling Grn', 'Wake Forest', 'Texas State', 'N Mex State', 'Mississippi', 'Arkansas St',
+                'Memphis','San Jose St','NC State','TX-San Ant','Boise State','Baylor','E Michigan','Oregon','Arkansas',
+                'Temple','E Carolina','Louisville','W Kentucky','Miami (FL)','N Illinois','Ohio State','Texas Tech',
+                'Notre Dame','New Mexico','Florida St','Miami (OH)','Ball State','N Carolina','Cincinnati','California',
+                'TX El Paso','S Carolina','W Michigan','Utah State','BYU','Michigan','Virginia','Navy','LA Lafayette',
+                'Arizona','Marshall','Minnesota','App State','Kansas St','Texas A&M','LA Monroe','Fresno St',
+                'S Florida','Tennessee','Charlotte','Iowa','Wash State','Florida','Indiana','VA Tech','Hawaii',
+                'Oklahoma','Stanford','Missouri','Kentucky','Syracuse','Colorado','Duke','Illinois','Maryland','Rice',
+                'GA Tech','LA Tech','Rutgers','Georgia','Alabama','Houston','Buffalo','Liberty','Clemson','Auburn',
+                'Nevada','Toledo','Kansas','Purdue','Tulane','U Mass','Texas','UNLV','Akron','Tulsa','Idaho','Utah',
+                'UAB','Ohio','UCLA','Army','Troy','USC']
 
-    df_historical_games = Historic_Games \
-        .withColumn('Season',F.year(F.col('start_date'))) \
-        .filter(F.col('week') >= 5) \
-        .withColumnRenamed('week', 'Week')
+    df_historical_games = Historic_Games
+    df_historical_games['Season'] = pd.DatetimeIndex(df_historical_games['start_date']).year
+    df_historical_games = df_historical_games[df_historical_games['week'] >= 5]
+    df_historical_games = df_historical_games.rename({'week': 'Week'}, axis=1)
+    boolean_series = ~df_historical_games.home_team.isin(TR_Teams) | ~df_historical_games.away_team.isin(TR_Teams)
+    df_historical_games = df_historical_games[boolean_series]
 
+    """
     df_historical_games = df_historical_games.filter((df_historical_games.home_team != 'Yale') | (df_historical_games.home_team != 'Norfolk State'))
 
     df_teams = Teams.withColumn('home_team', F.col('School')) \
@@ -164,5 +202,17 @@ def cleaned_cpr_2022(Historic_Games, Teams, Scraped_TR_data):
     df_joined = df_joined.join(away_team_scraped_TR.withColumnRenamed('Team', 'away_team'),
                                 ['away_team', 'Week', 'Season'],
                                 how='left')
+    """
+    return Historic_Games
 
-    return(df_joined)
+
+if __name__ == '__main__':
+    modelDF = build_model_df()
+    save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/Model/'
+    save_file = 'Model_Dataset'
+    try:
+        datascraper.save_df(modelDF, save_dir, save_file)
+        print('{} saved successfully.'.format(save_file))
+        print('File successfully saved at {}.'.format(save_dir))
+    except:
+        print('I don\'t think the file saved, you should double check.')
