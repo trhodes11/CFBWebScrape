@@ -96,8 +96,8 @@ if __name__ == '__main__':
     """
 
     # url = input('Please enter url: ')
-    # run_type = 'historic season'    # This is used to tell the below code which mode we want to run in
-    run_type = 'current week'
+    run_type = 'historic season'    # This is used to tell the below code which mode we want to run in
+    # run_type = 'current week'
 
     """
     # Depending on which mode run_type is set to, we will go into either the if or the elif statement
