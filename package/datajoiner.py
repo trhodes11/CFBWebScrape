@@ -3,12 +3,13 @@ import os
 import glob
 from package import *
 
+
 def join_csvs():
     """
     Opens each annual csv file, converts to dataframe, unions them together and returns a master dataset
     """
     master_df = pd.DataFrame()
-    file_path = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
+    file_path = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/Combined'
     csv_files = glob.glob(os.path.join(file_path, "*.csv"))
 
     for f in csv_files:
