@@ -115,7 +115,7 @@ if __name__ == '__main__':
         # for loop and scrape each TR table for each week of the season from week 5-14
         """
         # for season in ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']:
-        for season in ['2011']:
+        for season in ['2012']:
             season_df = pd.DataFrame()
             """
             # Each season has it's own season start date, so depending on which season we are at in the for loop
