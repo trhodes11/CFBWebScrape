@@ -1,0 +1,528 @@
+Week,Date,Away,Home
+5,2021-09-30,Virginia,Miami (FL)
+5,2021-10-01,Houston,Tulsa
+5,2021-10-01,Iowa,Maryland
+5,2021-10-01,BYU,Utah State
+5,2021-10-02,Tulane,E Carolina
+5,2021-10-02,Texas Tech,W Virginia
+5,2021-10-02,Texas,TX Christian
+5,2021-10-02,Baylor,Oklahoma St
+5,2021-10-02,Oklahoma,Kansas St
+5,2021-10-02,Kansas,Iowa State
+5,2021-10-02,Toledo,U Mass
+5,2021-10-02,Ohio State,Rutgers
+5,2021-10-02,Northwestern,Nebraska
+5,2021-10-02,Minnesota,Purdue
+5,2021-10-02,Michigan,Wisconsin
+5,2021-10-02,Memphis,Temple
+5,2021-10-02,S Florida,S Methodist
+5,2021-10-02,Central Mich,Miami (OH)
+5,2021-10-02,Oregon,Stanford
+5,2021-10-02,Wash State,California
+5,2021-10-02,LA Lafayette,S Alabama
+5,2021-10-02,LA Monroe,Coastal Car
+5,2021-10-02,Arkansas St,GA Southern
+5,2021-10-02,App State,Georgia State
+5,2021-10-02,Bowling Grn,Kent State
+5,2021-10-02,W Michigan,Buffalo
+5,2021-10-02,Ohio,Akron
+5,2021-10-02,Army,Ball State
+5,2021-10-02,E Michigan,N Illinois
+5,2021-10-02,Indiana,Penn State
+5,2021-10-02,Louisville,Wake Forest
+5,2021-10-02,Duke,N Carolina
+5,2021-10-02,Tennessee,Missouri
+5,2021-10-02,Auburn,LSU
+5,2021-10-02,Florida,Kentucky
+5,2021-10-02,Arkansas,Georgia
+5,2021-10-02,Mississippi,Alabama
+5,2021-10-02,N Mex State,San Jose St
+5,2021-10-02,Nevada,Boise State
+5,2021-10-02,Air Force,New Mexico
+5,2021-10-02,USC,Colorado
+5,2021-10-02,Arizona St,UCLA
+5,2021-10-02,Washington,Oregon St
+5,2021-10-02,Troy,S Carolina
+5,2021-10-02,Miss State,Texas A&M
+5,2021-10-02,Connecticut,Vanderbilt
+5,2021-10-02,Pittsburgh,GA Tech
+5,2021-10-02,Syracuse,Florida St
+5,2021-10-02,Boston Col,Clemson
+5,2021-10-02,W Kentucky,Michigan St
+5,2021-10-02,UNLV,TX-San Ant
+5,2021-10-02,LA Tech,NC State
+5,2021-10-02,Charlotte,Illinois
+5,2021-10-02,S Mississippi,Rice
+5,2021-10-02,Old Dominion,TX El Paso
+5,2021-10-02,Marshall,Middle Tenn
+5,2021-10-02,Florida Intl,Fla Atlantic
+5,2021-10-02,Cincinnati,Notre Dame
+5,2021-10-02,Central FL,Navy
+5,2021-10-02,Liberty,UAB
+5,2021-10-02,Fresno St,Hawaii
+6,2021-10-07,Houston,Tulane
+6,2021-10-07,Coastal Car,Arkansas St
+6,2021-10-08,Temple,Cincinnati
+6,2021-10-08,Charlotte,Florida Intl
+6,2021-10-08,Stanford,Arizona St
+6,2021-10-09,New Mexico,San Diego St
+6,2021-10-09,N Illinois,Toledo
+6,2021-10-09,Buffalo,Kent State
+6,2021-10-09,Ball State,W Michigan
+6,2021-10-09,Miami (OH),E Michigan
+6,2021-10-09,Memphis,Tulsa
+6,2021-10-09,E Carolina,Central FL
+6,2021-10-09,TX Christian,Texas Tech
+6,2021-10-09,W Virginia,Baylor
+6,2021-10-09,Connecticut,U Mass
+6,2021-10-09,Akron,Bowling Grn
+6,2021-10-09,Central Mich,Ohio
+6,2021-10-09,GA Southern,Troy
+6,2021-10-09,Oklahoma,Texas
+6,2021-10-09,San Jose St,Colorado St
+6,2021-10-09,Boise State,BYU
+6,2021-10-09,Utah,USC
+6,2021-10-09,UCLA,Arizona
+6,2021-10-09,Oregon St,Wash State
+6,2021-10-09,S Alabama,Texas State
+6,2021-10-09,Georgia State,LA Monroe
+6,2021-10-09,Michigan St,Rutgers
+6,2021-10-09,Michigan,Nebraska
+6,2021-10-09,Maryland,Ohio State
+6,2021-10-09,Fla Atlantic,UAB
+6,2021-10-09,Alabama,Texas A&M
+6,2021-10-09,S Carolina,Tennessee
+6,2021-10-09,North Texas,Missouri
+6,2021-10-09,Arkansas,Mississippi
+6,2021-10-09,LSU,Kentucky
+6,2021-10-09,Vanderbilt,Florida
+6,2021-10-09,Georgia,Auburn
+6,2021-10-09,Old Dominion,Marshall
+6,2021-10-09,TX El Paso,S Mississippi
+6,2021-10-09,TX-San Ant,W Kentucky
+6,2021-10-09,Penn State,Iowa
+6,2021-10-09,Wisconsin,Illinois
+6,2021-10-09,Notre Dame,VA Tech
+6,2021-10-09,Wake Forest,Syracuse
+6,2021-10-09,Florida St,N Carolina
+6,2021-10-09,Virginia,Louisville
+6,2021-10-09,GA Tech,Duke
+6,2021-10-09,Middle Tenn,Liberty
+6,2021-10-09,S Methodist,Navy
+6,2021-10-09,Wyoming,Air Force
+6,2021-10-09,N Mex State,Nevada
+7,2021-10-12,App State,LA Lafayette
+7,2021-10-14,Navy,Memphis
+7,2021-10-14,GA Southern,S Alabama
+7,2021-10-15,Marshall,North Texas
+7,2021-10-15,Clemson,Syracuse
+7,2021-10-15,San Diego St,San Jose St
+7,2021-10-15,California,Oregon
+7,2021-10-16,Yale,Connecticut
+7,2021-10-16,Toledo,Central Mich
+7,2021-10-16,Ball State,E Michigan
+7,2021-10-16,Akron,Miami (OH)
+7,2021-10-16,Tulsa,S Florida
+7,2021-10-16,Central FL,Cincinnati
+7,2021-10-16,Oklahoma St,Texas
+7,2021-10-16,TX Christian,Oklahoma
+7,2021-10-16,Iowa State,Kansas St
+7,2021-10-16,Texas Tech,Kansas
+7,2021-10-16,Bowling Grn,N Illinois
+7,2021-10-16,Ohio,Buffalo
+7,2021-10-16,Fresno St,Wyoming
+7,2021-10-16,Colorado St,New Mexico
+7,2021-10-16,Air Force,Boise State
+7,2021-10-16,Arizona St,Utah
+7,2021-10-16,Arizona,Colorado
+7,2021-10-16,UCLA,Washington
+7,2021-10-16,Stanford,Wash State
+7,2021-10-16,Troy,Texas State
+7,2021-10-16,Kent State,W Michigan
+7,2021-10-16,BYU,Baylor
+7,2021-10-16,Liberty,LA Monroe
+7,2021-10-16,W Kentucky,Old Dominion
+7,2021-10-16,LA Tech,TX El Paso
+7,2021-10-16,Mississippi,Tennessee
+7,2021-10-16,Vanderbilt,S Carolina
+7,2021-10-16,Texas A&M,Missouri
+7,2021-10-16,Alabama,Miss State
+7,2021-10-16,Florida,LSU
+7,2021-10-16,Kentucky,Georgia
+7,2021-10-16,Auburn,Arkansas
+7,2021-10-16,Rice,TX-San Ant
+7,2021-10-16,UAB,S Mississippi
+7,2021-10-16,Army,Wisconsin
+7,2021-10-16,Rutgers,Northwestern
+7,2021-10-16,Nebraska,Minnesota
+7,2021-10-16,Purdue,Iowa
+7,2021-10-16,Michigan St,Indiana
+7,2021-10-16,Pittsburgh,VA Tech
+7,2021-10-16,Duke,Virginia
+7,2021-10-16,Miami (FL),N Carolina
+7,2021-10-16,NC State,Boston Col
+7,2021-10-16,Utah State,UNLV
+7,2021-10-16,Hawaii,Nevada
+8,2021-10-20,Coastal Car,App State
+8,2021-10-21,Fla Atlantic,Charlotte
+8,2021-10-21,Tulane,S Methodist
+8,2021-10-21,LA Lafayette,Arkansas St
+8,2021-10-22,Memphis,Central FL
+8,2021-10-22,Colorado St,Utah State
+8,2021-10-22,Washington,Arizona
+8,2021-10-23,N Mex State,Hawaii
+8,2021-10-23,Cincinnati,Navy
+8,2021-10-23,Wake Forest,Army
+8,2021-10-23,Buffalo,Akron
+8,2021-10-23,E Michigan,Bowling Grn
+8,2021-10-23,W Michigan,Toledo
+8,2021-10-23,Miami (OH),Ball State
+8,2021-10-23,Temple,S Florida
+8,2021-10-23,E Carolina,Houston
+8,2021-10-23,Kansas St,Texas Tech
+8,2021-10-23,W Virginia,TX Christian
+8,2021-10-23,Kent State,Ohio
+8,2021-10-23,N Illinois,Central Mich
+8,2021-10-23,Texas State,Georgia State
+8,2021-10-23,San Jose St,UNLV
+8,2021-10-23,Nevada,Fresno St
+8,2021-10-23,New Mexico,Wyoming
+8,2021-10-23,BYU,Wash State
+8,2021-10-23,Utah,Oregon St
+8,2021-10-23,Oregon,UCLA
+8,2021-10-23,Colorado,California
+8,2021-10-23,S Alabama,LA Monroe
+8,2021-10-23,Oklahoma,Kansas
+8,2021-10-23,Oklahoma St,Iowa State
+8,2021-10-23,Wisconsin,Purdue
+8,2021-10-23,Rice,UAB
+8,2021-10-23,TX-San Ant,LA Tech
+8,2021-10-23,W Kentucky,Florida Intl
+8,2021-10-23,Miss State,Vanderbilt
+8,2021-10-23,S Carolina,Texas A&M
+8,2021-10-23,LSU,Mississippi
+8,2021-10-23,Arkansas-Pine Bluff,Arkansas
+8,2021-10-23,Tennessee,Alabama
+8,2021-10-23,Liberty,North Texas
+8,2021-10-23,U Mass,Florida St
+8,2021-10-23,Boston Col,Louisville
+8,2021-10-23,Northwestern,Michigan
+8,2021-10-23,Maryland,Minnesota
+8,2021-10-23,Ohio State,Indiana
+8,2021-10-23,Illinois,Penn State
+8,2021-10-23,Syracuse,VA Tech
+8,2021-10-23,GA Tech,Virginia
+8,2021-10-23,Clemson,Pittsburgh
+8,2021-10-23,NC State,Miami (FL)
+8,2021-10-23,Middle Tenn,Connecticut
+8,2021-10-23,San Diego St,Air Force
+8,2021-10-23,USC,Notre Dame
+9,2021-10-28,S Florida,E Carolina
+9,2021-10-28,Troy,Coastal Car
+9,2021-10-29,Navy,Tulsa
+9,2021-10-29,UNLV,Nevada
+9,2021-10-30,Bowling Grn,Buffalo
+9,2021-10-30,LA Monroe,App State
+9,2021-10-30,S Methodist,Houston
+9,2021-10-30,Cincinnati,Tulane
+9,2021-10-30,Central FL,Temple
+9,2021-10-30,Iowa State,W Virginia
+9,2021-10-30,Kansas,Oklahoma St
+9,2021-10-30,Texas Tech,Oklahoma
+9,2021-10-30,TX Christian,Kansas St
+9,2021-10-30,Texas,Baylor
+9,2021-10-30,Arkansas St,S Alabama
+9,2021-10-30,Georgia State,GA Southern
+9,2021-10-30,Texas State,LA Lafayette
+9,2021-10-30,Wyoming,San Jose St
+9,2021-10-30,Hawaii,Utah State
+9,2021-10-30,Boise State,Colorado St
+9,2021-10-30,UCLA,Utah
+9,2021-10-30,Arizona,USC
+9,2021-10-30,Wash State,Arizona St
+9,2021-10-30,Colorado,Oregon
+9,2021-10-30,Washington,Stanford
+9,2021-10-30,Oregon St,California
+9,2021-10-30,U Mass,Liberty
+9,2021-10-30,Penn State,Ohio State
+9,2021-10-30,Virginia,BYU
+9,2021-10-30,North Texas,Rice
+9,2021-10-30,S Mississippi,Middle Tenn
+9,2021-10-30,TX El Paso,Fla Atlantic
+9,2021-10-30,Florida Intl,Marshall
+9,2021-10-30,Charlotte,W Kentucky
+9,2021-10-30,Missouri,Vanderbilt
+9,2021-10-30,Kentucky,Miss State
+9,2021-10-30,Mississippi,Auburn
+9,2021-10-30,Florida St,Clemson
+9,2021-10-30,VA Tech,GA Tech
+9,2021-10-30,Louisville,NC State
+9,2021-10-30,Purdue,Nebraska
+9,2021-10-30,Minnesota,Northwestern
+9,2021-10-30,Michigan,Michigan St
+9,2021-10-30,Iowa,Wisconsin
+9,2021-10-30,Indiana,Maryland
+9,2021-10-30,Rutgers,Illinois
+9,2021-10-30,Duke,Wake Forest
+9,2021-10-30,Boston Col,Syracuse
+9,2021-10-30,Miami (FL),Pittsburgh
+9,2021-10-30,LA Tech,Old Dominion
+9,2021-10-30,Georgia,Florida
+9,2021-10-30,N Carolina,Notre Dame
+9,2021-10-30,Fresno St,San Diego St
+10,2021-11-02,Miami (OH),Ohio
+10,2021-11-02,Ball State,Akron
+10,2021-11-02,E Michigan,Toledo
+10,2021-11-03,Central Mich,W Michigan
+10,2021-11-03,N Illinois,Kent State
+10,2021-11-04,Georgia State,LA Lafayette
+10,2021-11-05,VA Tech,Boston Col
+10,2021-11-05,Utah,Stanford
+10,2021-11-06,LA Tech,UAB
+10,2021-11-06,San Diego St,Hawaii
+10,2021-11-06,Oklahoma St,W Virginia
+10,2021-11-06,Baylor,TX Christian
+10,2021-11-06,Kansas St,Kansas
+10,2021-11-06,Texas,Iowa State
+10,2021-11-06,Rhode Island,U Mass
+10,2021-11-06,Wisconsin,Rutgers
+10,2021-11-06,Ohio State,Nebraska
+10,2021-11-06,Michigan St,Purdue
+10,2021-11-06,Penn State,Maryland
+10,2021-11-06,Iowa,Northwestern
+10,2021-11-06,Temple,E Carolina
+10,2021-11-06,Tulane,Central FL
+10,2021-11-06,Oregon St,Colorado
+10,2021-11-06,Oregon,Washington
+10,2021-11-06,California,Arizona
+10,2021-11-06,S Alabama,Troy
+10,2021-11-06,LA Monroe,Texas State
+10,2021-11-06,Coastal Car,GA Southern
+10,2021-11-06,App State,Arkansas St
+10,2021-11-06,S Methodist,Memphis
+10,2021-11-06,Houston,S Florida
+10,2021-11-06,Tulsa,Cincinnati
+10,2021-11-06,Indiana,Michigan
+10,2021-11-06,Illinois,Minnesota
+10,2021-11-06,Florida,S Carolina
+10,2021-11-06,Liberty,Mississippi
+10,2021-11-06,Tennessee,Kentucky
+10,2021-11-06,Missouri,Georgia
+10,2021-11-06,Miss State,Arkansas
+10,2021-11-06,LSU,Alabama
+10,2021-11-06,San Jose St,Nevada
+10,2021-11-06,Utah State,N Mex State
+10,2021-11-06,UNLV,New Mexico
+10,2021-11-06,USC,Arizona St
+10,2021-11-06,Auburn,Texas A&M
+10,2021-11-06,Rice,Charlotte
+10,2021-11-06,Wake Forest,N Carolina
+10,2021-11-06,GA Tech,Miami (FL)
+10,2021-11-06,Clemson,Louisville
+10,2021-11-06,NC State,Florida St
+10,2021-11-06,Pittsburgh,Duke
+10,2021-11-06,TX-San Ant,TX El Paso
+10,2021-11-06,North Texas,S Mississippi
+10,2021-11-06,Middle Tenn,W Kentucky
+10,2021-11-06,Marshall,Fla Atlantic
+10,2021-11-06,Old Dominion,Florida Intl
+10,2021-11-06,Idaho State,BYU
+10,2021-11-06,Colorado St,Wyoming
+10,2021-11-06,Navy,Notre Dame
+10,2021-11-06,Boise State,Fresno St
+10,2021-11-07,Army,Air Force
+11,2021-11-09,Buffalo,Miami (OH)
+11,2021-11-09,Ohio,E Michigan
+11,2021-11-09,Akron,W Michigan
+11,2021-11-10,Toledo,Bowling Grn
+11,2021-11-03,Kent State,Central Mich
+11,2021-11-10,Ball State,N Illinois
+11,2021-11-11,N Carolina,Pittsburgh
+11,2021-11-12,Cincinnati,S Florida
+11,2021-11-12,Wyoming,Boise State
+11,2021-11-13,Purdue,Ohio State
+11,2021-11-13,Northwestern,Wisconsin
+11,2021-11-13,Michigan,Penn State
+11,2021-11-13,Maryland,Michigan St
+11,2021-11-13,Minnesota,Iowa
+11,2021-11-13,Rutgers,Indiana
+11,2021-11-13,NC State,Wake Forest
+11,2021-11-13,Duke,VA Tech
+11,2021-11-13,Notre Dame,Virginia
+11,2021-11-13,Syracuse,Louisville
+11,2021-11-13,Boston Col,GA Tech
+11,2021-11-13,Maine,U Mass
+11,2021-11-13,Oklahoma,Baylor
+11,2021-11-13,W Virginia,Kansas St
+11,2021-11-13,GA Southern,Texas State
+11,2021-11-13,Georgia State,Coastal Car
+11,2021-11-13,Arkansas St,LA Monroe
+11,2021-11-13,S Alabama,App State
+11,2021-11-13,Tulsa,Tulane
+11,2021-11-13,Houston,Temple
+11,2021-11-13,E Carolina,Memphis
+11,2021-11-13,Central FL,S Methodist
+11,2021-11-13,Iowa State,Texas Tech
+11,2021-11-13,Kansas,Texas
+11,2021-11-13,TX Christian,Oklahoma St
+11,2021-11-13,Miami (FL),Florida St
+11,2021-11-13,Connecticut,Clemson
+11,2021-11-13,Bucknell,Army
+11,2021-11-13,Hawaii,UNLV
+11,2021-11-13,Utah State,San Jose St
+11,2021-11-13,New Mexico,Fresno St
+11,2021-11-13,Colorado,UCLA
+11,2021-11-13,Arizona St,Washington
+11,2021-11-13,Utah,Arizona
+11,2021-11-13,Wash State,Oregon
+11,2021-11-13,Stanford,Oregon St
+11,2021-11-13,USC,California
+11,2021-11-13,LA Lafayette,Troy
+11,2021-11-13,N Mex State,Alabama
+11,2021-11-13,Miss State,Auburn
+11,2021-11-13,Samford,Florida
+11,2021-11-13,S Mississippi,TX-San Ant
+11,2021-11-13,W Kentucky,Rice
+11,2021-11-13,TX El Paso,North Texas
+11,2021-11-13,Fla Atlantic,Old Dominion
+11,2021-11-13,Florida Intl,Middle Tenn
+11,2021-11-13,Charlotte,LA Tech
+11,2021-11-13,Kentucky,Vanderbilt
+11,2021-11-13,Georgia,Tennessee
+11,2021-11-13,S Carolina,Missouri
+11,2021-11-13,Texas A&M,Mississippi
+11,2021-11-13,Arkansas,LSU
+11,2021-11-13,UAB,Marshall
+11,2021-11-13,Air Force,Colorado St
+11,2021-11-13,Nevada,San Diego St
+12,2021-11-16,Bowling Grn,Miami (OH)
+12,2021-11-16,W Michigan,E Michigan
+12,2021-11-16,Toledo,Ohio
+12,2021-11-17,N Illinois,Buffalo
+12,2021-11-17,Central Mich,Ball State
+12,2021-11-18,Louisville,Duke
+12,2021-11-19,Air Force,Nevada
+12,2021-11-19,S Mississippi,LA Tech
+12,2021-11-19,Memphis,Houston
+12,2021-11-19,Arizona,Wash State
+12,2021-11-20,Rutgers,Penn State
+12,2021-11-20,Nebraska,Wisconsin
+12,2021-11-20,Michigan St,Ohio State
+12,2021-11-20,Michigan,Maryland
+12,2021-11-20,Minnesota,Indiana
+12,2021-11-20,Illinois,Iowa
+12,2021-11-20,Virginia,Pittsburgh
+12,2021-11-20,Wofford,N Carolina
+12,2021-11-20,Syracuse,NC State
+12,2021-11-20,VA Tech,Miami (FL)
+12,2021-11-20,Wake Forest,Clemson
+12,2021-11-20,Connecticut,Central FL
+12,2021-11-20,LA Lafayette,Liberty
+12,2021-11-20,Baylor,Kansas St
+12,2021-11-20,Purdue,Northwestern
+12,2021-11-20,Colorado St,Hawaii
+12,2021-11-20,App State,Troy
+12,2021-11-20,Kent State,Akron
+12,2021-11-20,Temple,Tulsa
+12,2021-11-20,S Florida,Tulane
+12,2021-11-20,S Methodist,Cincinnati
+12,2021-11-20,Texas,W Virginia
+12,2021-11-20,Oklahoma St,Texas Tech
+12,2021-11-20,Kansas,TX Christian
+12,2021-11-20,Iowa State,Oklahoma
+12,2021-11-20,Florida St,Boston Col
+12,2021-11-20,UAB,TX-San Ant
+12,2021-11-20,Arkansas,Alabama
+12,2021-11-20,U Mass,Army
+12,2021-11-20,New Mexico,Boise State
+12,2021-11-20,UCLA,USC
+12,2021-11-20,Washington,Colorado
+12,2021-11-20,Arizona St,Oregon St
+12,2021-11-20,Oregon,Utah
+12,2021-11-20,California,Stanford
+12,2021-11-20,BYU,GA Southern
+12,2021-11-20,Texas State,Coastal Car
+12,2021-11-20,Arkansas St,Georgia State
+12,2021-11-20,Charl South,Georgia
+12,2021-11-20,N Mex State,Kentucky
+12,2021-11-20,LA Monroe,LSU
+12,2021-11-20,Rice,TX El Paso
+12,2021-11-20,Old Dominion,Middle Tenn
+12,2021-11-20,Fla Atlantic,W Kentucky
+12,2021-11-20,North Texas,Florida Intl
+12,2021-11-20,Marshall,Charlotte
+12,2021-11-20,Prairie View A&M,Texas A&M
+12,2021-11-20,S Alabama,Tennessee
+12,2021-11-20,Auburn,S Carolina
+12,2021-11-20,Florida,Missouri
+12,2021-11-20,TN State,Miss State
+12,2021-11-20,Vanderbilt,Mississippi
+12,2021-11-20,GA Tech,Notre Dame
+12,2021-11-20,E Carolina,Navy
+12,2021-11-20,Wyoming,Utah State
+12,2021-11-20,San Diego St,UNLV
+13,2021-11-23,Buffalo,Ball State
+13,2021-11-23,W Michigan,N Illinois
+13,2021-11-25,Fresno St,San Jose St
+13,2021-11-25,Mississippi,Miss State
+13,2021-11-26,Coastal Car,S Alabama
+13,2021-11-26,Wash State,Washington
+13,2021-11-26,Colorado,Utah
+13,2021-11-26,Kansas St,Texas
+13,2021-11-26,Boise State,San Diego St
+13,2021-11-26,Ohio,Bowling Grn
+13,2021-11-26,E Michigan,Central Mich
+13,2021-11-26,Tulsa,S Methodist
+13,2021-11-26,Tulane,Memphis
+13,2021-11-26,Cincinnati,E Carolina
+13,2021-11-26,S Florida,Central FL
+13,2021-11-26,TX Christian,Iowa State
+13,2021-11-26,N Carolina,NC State
+13,2021-11-26,Utah State,New Mexico
+13,2021-11-26,Iowa,Nebraska
+13,2021-11-26,Missouri,Arkansas
+13,2021-11-26,UNLV,Air Force
+13,2021-11-27,Notre Dame,Stanford
+13,2021-11-27,VA Tech,Virginia
+13,2021-11-27,Pittsburgh,Syracuse
+13,2021-11-27,Miami (FL),Duke
+13,2021-11-27,Wake Forest,Boston Col
+13,2021-11-27,TX El Paso,UAB
+13,2021-11-27,TX-San Ant,North Texas
+13,2021-11-27,LA Tech,Rice
+13,2021-11-27,Middle Tenn,Fla Atlantic
+13,2021-11-27,Northwestern,Illinois
+13,2021-11-27,Indiana,Purdue
+13,2021-11-27,Maryland,Rutgers
+13,2021-11-27,Navy,Temple
+13,2021-11-27,Oklahoma,Oklahoma St
+13,2021-11-27,W Virginia,Kansas
+13,2021-11-27,Texas Tech,Baylor
+13,2021-11-27,U Mass,N Mex State
+13,2021-11-27,Army,Liberty
+13,2021-11-27,Wisconsin,Minnesota
+13,2021-11-27,Penn State,Michigan St
+13,2021-11-27,Miami (OH),Kent State
+13,2021-11-27,Florida Intl,S Mississippi
+13,2021-11-27,BYU,USC
+13,2021-11-27,Arizona,Arizona St
+13,2021-11-27,Oregon St,Oregon
+13,2021-11-27,California,UCLA
+13,2021-11-27,LA Monroe,LA Lafayette
+13,2021-11-27,Troy,Georgia State
+13,2021-11-27,Texas State,Arkansas St
+13,2021-11-27,GA Southern,App State
+13,2021-11-27,Akron,Toledo
+13,2021-11-27,Hawaii,Wyoming
+13,2021-11-27,Ohio State,Michigan
+13,2021-11-27,Charlotte,Old Dominion
+13,2021-11-27,Vanderbilt,Tennessee
+13,2021-11-27,Clemson,S Carolina
+13,2021-11-27,Texas A&M,LSU
+13,2021-11-27,Kentucky,Louisville
+13,2021-11-27,Georgia,GA Tech
+13,2021-11-27,Florida St,Florida
+13,2021-11-27,Alabama,Auburn
+13,2021-11-27,Houston,Connecticut
+13,2021-11-27,W Kentucky,Marshall
+13,2021-11-27,Nevada,Colorado St
