@@ -74,11 +74,11 @@ if __name__ == '__main__':
     pd.set_option('display.width', desired_width)
     pd.set_option('display.max_columns', 60)
 
-    save_dir = '/Users/chris/PycharmProjects/CFBWebScrape/scraped_data/'
+    save_dir = 'C:\'
     # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
 
-    run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
-    # run_type = 'current week'
+    # run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
+    run_type = 'current week'
 
     """
     # This try statement is a check to see whether the program was started using the command line/terminal or using an 
@@ -7542,15 +7542,13 @@ if __name__ == '__main__':
         this_week_df = pd.merge(this_week_df, fhpr_df, on=['Team', 'Season', 'Week'], how='outer')
         this_week_df = pd.merge(this_week_df, shpr_df, on=['Team', 'Season', 'Week'], how='outer')
 
-        this_week_df = rearrange_columns(this_week_df)
-        season_df = pd.concat([season_df, this_week_df])
-        master_df = pd.concat([master_df, this_week_df])
+        # this_week_df = rearrange_columns(this_week_df)
+        # season_df = pd.concat([season_df, this_week_df])
+        # master_df = pd.concat([master_df, this_week_df])
 
-        # save_dir = 'C:\PythonPrograms'
-        save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
         save_file = 'Scraped_TR_Data_Season_' + season + '_Week_' + week
         try:
-            datascraper.save_df(season_df, save_dir, save_file)
+            datascraper.save_df(this_week_df, save_dir, save_file)
             print('{} saved successfully.'.format(save_file))
             print('File successfully saved at {}.'.format(save_dir))
         except:
