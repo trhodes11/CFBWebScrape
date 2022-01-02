@@ -763,7 +763,7 @@ if __name__ == '__main__':
                                           'Last 3': 'Last_3_Total_Offense_Third_Down_per_Game',
                                           'Last 1': 'Last_1_Total_Offense_Third_Down_per_Game',
                                           'Home': 'At_Home_Total_Offense_Third_Down_per_Game',
-                                          'Away': 'Away_Total_Offense_Third-Down-per_Game'
+                                          'Away': 'Away_Total_Offense_Third_Down_per_Game'
                                           }, inplace=True)
                 totdpg_df['Team'] = totdpg_df['Team'].str.strip()
                 if season == '2010':
@@ -2637,7 +2637,7 @@ if __name__ == '__main__':
                                         'Last 3': 'Last_3_Turnovers_Giveaways_per_Game',
                                         'Last 1': 'Last_1_Turnovers_Giveaways_per_Game',
                                         'Home': 'At_Home_Turnovers_Giveaways_per_Game',
-                                        'Away': 'Away_Turnovers_Giveaways_per-Game'
+                                        'Away': 'Away_Turnovers_Giveaways_per_Game'
                                         }, inplace=True)
                 tgpg_df['Team'] = tgpg_df['Team'].str.strip()
                 if season == '2010':
@@ -2658,7 +2658,7 @@ if __name__ == '__main__':
                                          'Last 3': 'Last_3_Turnovers_Turnover_Margin_per_Game',
                                          'Last 1': 'Last_1_Turnovers_Turnover_Margin_per_Game',
                                          'Home': 'At_Home_Turnovers_Turnover_Margin_per_Game',
-                                         'Away': 'Away_Turnovers_Turnover_Margin_per-Game'
+                                         'Away': 'Away_Turnovers_Turnover_Margin_per_Game'
                                          }, inplace=True)
                 ttmpg_df['Team'] = ttmpg_df['Team'].str.strip()
                 if season == '2010':
@@ -2700,7 +2700,7 @@ if __name__ == '__main__':
                                          'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_per_Game',
                                          'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_per_Game',
                                          'Home': 'At_Home_Turnovers_Opponent_Fumbles_per_Game',
-                                         'Away': 'Away_Turnovers_Opponent_Fumbles_per-Game'
+                                         'Away': 'Away_Turnovers_Opponent_Fumbles_per_Game'
                                          }, inplace=True)
                 tofpg_df['Team'] = tofpg_df['Team'].str.strip()
                 if season == '2010':
@@ -2722,7 +2722,7 @@ if __name__ == '__main__':
                                           'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                           'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                           'Home': 'At_Home_Turnovers_Opponent_Fumbles_Lost_per_Game',
-                                          'Away': 'Away_Turnovers_Opponent_Fumbles_Lost_per-Game'
+                                          'Away': 'Away_Turnovers_Opponent_Fumbles_Lost_per_Game'
                                           }, inplace=True)
                 toflpg_df['Team'] = toflpg_df['Team'].str.strip()
                 if season == '2010':
@@ -2744,7 +2744,7 @@ if __name__ == '__main__':
                                            'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                            'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                            'Home': 'At_Home_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
-                                           'Away': 'Away_Turnovers_Opponent_Fumbles_Not_Lost_per-Game'
+                                           'Away': 'Away_Turnovers_Opponent_Fumbles_Not_Lost_per_Game'
                                            }, inplace=True)
                 tofnlpg_df['Team'] = tofnlpg_df['Team'].str.strip()
                 if season == '2010':
@@ -4485,7 +4485,7 @@ if __name__ == '__main__':
                                   'Last 3': 'Last_3_Total_Offense_Third_Down_per_Game',
                                   'Last 1': 'Last_1_Total_Offense_Third_Down_per_Game',
                                   'Home': 'At_Home_Total_Offense_Third_Down_per_Game',
-                                  'Away': 'Away_Total_Offense_Third-Down-per_Game'
+                                  'Away': 'Away_Total_Offense_Third_Down_per_Game'
                                   }, inplace=True)
         totdpg_df['Team'] = totdpg_df['Team'].str.strip()
         if season == '2010':
@@ -6338,7 +6338,7 @@ if __name__ == '__main__':
                                 'Last 3': 'Last_3_Turnovers_Giveaways_per_Game',
                                 'Last 1': 'Last_1_Turnovers_Giveaways_per_Game',
                                 'Home': 'At_Home_Turnovers_Giveaways_per_Game',
-                                'Away': 'Away_Turnovers_Giveaways_per-Game'
+                                'Away': 'Away_Turnovers_Giveaways_per_Game'
                                 }, inplace=True)
         tgpg_df['Team'] = tgpg_df['Team'].str.strip()
         if season == '2010':
@@ -6358,7 +6358,7 @@ if __name__ == '__main__':
                                  'Last 3': 'Last_3_Turnovers_Turnover_Margin_per_Game',
                                  'Last 1': 'Last_1_Turnovers_Turnover_Margin_per_Game',
                                  'Home': 'At_Home_Turnovers_Turnover_Margin_per_Game',
-                                 'Away': 'Away_Turnovers_Turnover_Margin_per-Game'
+                                 'Away': 'Away_Turnovers_Turnover_Margin_per_Game'
                                  }, inplace=True)
         ttmpg_df['Team'] = ttmpg_df['Team'].str.strip()
         if season == '2010':
@@ -6400,7 +6400,7 @@ if __name__ == '__main__':
                                  'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_per_Game',
                                  'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_per_Game',
                                  'Home': 'At_Home_Turnovers_Opponent_Fumbles_per_Game',
-                                 'Away': 'Away_Turnovers_Opponent_Fumbles_per-Game'
+                                 'Away': 'Away_Turnovers_Opponent_Fumbles_per_Game'
                                  }, inplace=True)
         tofpg_df['Team'] = tofpg_df['Team'].str.strip()
         if season == '2010':
@@ -6421,7 +6421,7 @@ if __name__ == '__main__':
                                   'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                   'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_Lost_per_Game',
                                   'Home': 'At_Home_Turnovers_Opponent_Fumbles_Lost_per_Game',
-                                  'Away': 'Away_Turnovers_Opponent_Fumbles_Lost_per-Game'
+                                  'Away': 'Away_Turnovers_Opponent_Fumbles_Lost_per_Game'
                                   }, inplace=True)
         toflpg_df['Team'] = toflpg_df['Team'].str.strip()
         if season == '2010':
@@ -6443,7 +6443,7 @@ if __name__ == '__main__':
                                    'Last 3': 'Last_3_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                    'Last 1': 'Last_1_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
                                    'Home': 'At_Home_Turnovers_Opponent_Fumbles_Not_Lost_per_Game',
-                                   'Away': 'Away_Turnovers_Opponent_Fumbles_Not_Lost_per-Game'
+                                   'Away': 'Away_Turnovers_Opponent_Fumbles_Not_Lost_per_Game'
                                    }, inplace=True)
         tofnlpg_df['Team'] = tofnlpg_df['Team'].str.strip()
         if season == '2010':
