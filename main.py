@@ -74,11 +74,11 @@ if __name__ == '__main__':
     pd.set_option('display.width', desired_width)
     pd.set_option('display.max_columns', 60)
 
-    # save_dir = 'C:\'
-    save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
+    save_dir = '/Users/chris/PycharmProjects/CFBWebScrape/scraped_data/'
+    # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
 
-    # run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
-    run_type = 'current week'
+    run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
+    # run_type = 'current week'
 
     """
     # This try statement is a check to see whether the program was started using the command line/terminal or using an 
@@ -3876,7 +3876,7 @@ if __name__ == '__main__':
         season_df = pd.DataFrame()
 
         season = '2021'
-        week = '5'
+        week = '14'
         week_num = int(week) - 5
 
         if (season == '2021'):
@@ -7382,174 +7382,175 @@ if __name__ == '__main__':
         this_week_date = this_week_date + datetime.timedelta(days=7)
         this_week_date_str = this_week_date.strftime("%Y-%m-%d")
 
-        this_week_df = pd.concat([so_df,
-                                  tasm_df,
-                                  typp_df,
-                                  typm_df,
-                                  typ_df,
-                                  typpm_df,
-                                  trs_df,
-                                  trsp_df,
-                                  trspp_df,
-                                  tot_df,
-                                  top_df,
-                                  tops_df,
-                                  fiq_df,
-                                  sq_df,
-                                  tq_df,
-                                  fq_df,
-                                  ot_df,
-                                  fh_df,
-                                  sh_df,
-                                  fiqtp_df,
-                                  sqtp_df,
-                                  tqtp_df,
-                                  fqtp_df,
-                                  fhtp_df,
-                                  shtp_df,
-                                  toypg_df,
-                                  toppg_df,
-                                  toypp_df,
-                                  totdpg_df,
-                                  totdcpg_df,
-                                  tofdpg_df,
-                                  tofdcpg_df,
-                                  toatp_df,
-                                  toatpp_df,
-                                  totdcp_df,
-                                  tofdcp_df,
-                                  toppp_df,
-                                  toppos_df,
-                                  rorapg_df,
-                                  rorypg_df,
-                                  rorypra_df,
-                                  rorpp_df,
-                                  roryp_df,
-                                  popapg_df,
-                                  pocpg_df,
-                                  poipg_df,
-                                  pocp_df,
-                                  popypg_df,
-                                  poqspg_df,
-                                  poqsp_df,
-                                  poapr_df,
-                                  ppoppp_df,
-                                  popyp_df,
-                                  poyppa_df,
-                                  poypc_df,
-                                  stofgapg_df,
-                                  stofgmpg_df,
-                                  stofgcp_df,
-                                  stopapg_df,
-                                  stogpypg_df,
-                                  sdoppg_df,
-                                  sdoypp_df,
-                                  sdoppp_df,
-                                  sdoasm_df,
-                                  sdorzsapg_df,
-                                  sdorzspg_df,
-                                  sdorzsp_df,
-                                  sdoppfga_df,
-                                  sdootpg_df,
-                                  sdooppg_df,
-                                  tdoypg_df,
-                                  tdoppg_df,
-                                  tdofdpg_df,
-                                  tdotdpg_df,
-                                  tdotdcpg_df,
-                                  tdofodpg_df,
-                                  tdofdcpg_df,
-                                  tdoatop_df,
-                                  tdptopp_df,
-                                  tdotdcp_df,
-                                  tdofdcp_df,
-                                  tdoppp_df,
-                                  tdoppos_df,
-                                  rdorapg_df,
-                                  rdorypg_df,
-                                  rdorfdpg_df,
-                                  rdoypra_df,
-                                  rdorpp_df,
-                                  rdoryp_df,
-                                  pdopapg_df,
-                                  pdocpg_df,
-                                  pdoipg_df,
-                                  pdocp_df,
-                                  pdopypg_df,
-                                  pdofdpg_df,
-                                  pdoatpr_df,
-                                  pdtsp_df,
-                                  pdoppp_df,
-                                  pdopyp_df,
-                                  pdspg_df,
-                                  pdoyppa_df,
-                                  pdoypc_df,
-                                  stdofgapg_df,
-                                  stdofgmpg_df,
-                                  stdopapg_df,
-                                  stdogpypg_df,
-                                  titpg_df,
-                                  tfpg_df,
-                                  tflpg_df,
-                                  tfnlpg_df,
-                                  tgpg_df,
-                                  ttmpg_df,
-                                  tipg_df,
-                                  tofpg_df,
-                                  toflpg_df,
-                                  tofnlpg_df,
-                                  tttapg_df,
-                                  totmpg_df,
-                                  titp_df,
-                                  tfrp_df,
-                                  tgfrp_df,
-                                  ttfrp_df,
-                                  toitp_df,
-                                  tofrp_df,
-                                  totfrp_df,
-                                  pppg_df,
-                                  ppypg_df,
-                                  ppfdpg_df,
-                                  poppg_df,
-                                  popypg_df,
-                                  popfdpg_df,
-                                  poptpp_df,
-                                  pppp_df,
-                                  poppypp_df,
-                                  popppp_df,
-                                  ppr_df,
-                                  hpr_df,
-                                  apr_df,
-                                  nspr_df,
-                                  hapr_df,
-                                  sospr_df,
-                                  fsospr_df,
-                                  sospr_df,
-                                  sosprbm_df,
-                                  icsospr_df,
-                                  ncsospr_df,
-                                  l10_df,
-                                  l5_df,
-                                  icpr_df,
-                                  ncpr_df,
-                                  lpr_df,
-                                  cpr_df,
-                                  vt1_df,
-                                  vt11_df,
-                                  vt26_df,
-                                  vt41_df,
-                                  vt76_df,
-                                  fhpr_df,
-                                  shpr_df
-                                  ], axis=1)
+        this_week_df = pd.merge(so_df, tasm_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, typp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, typm_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, typ_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, typpm_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, trs_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, trsp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, trspp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tot_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, top_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tops_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fiq_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sq_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tq_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fq_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ot_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fh_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sh_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fiqtp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sqtp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tqtp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fqtp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fhtp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, shtp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toypp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, totdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, totdcpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofdcpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toatp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toatpp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, totdcp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofdcp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toppos_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rorapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rorypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rorypra_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rorpp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, roryp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, popapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pocpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poipg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pocp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, popypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poqspg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poqsp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poapr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ppoppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, popyp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poyppa_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poypc_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stofgapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stofgmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stofgcp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stopapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoypp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoasm_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdorzsapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdorzspg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdorzsp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdoppfga_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdootpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sdooppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdoypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdoppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdofdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdotdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdotdcpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdofodpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdofdcpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdoatop_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdptopp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdotdcp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdofdcp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdoppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tdoppos_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rdorapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rdorypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rdorfdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rdoypra_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rdorpp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, rdoryp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdopapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdocpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoipg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdocp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdopypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdofdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoatpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdtsp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdopyp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdspg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoyppa_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pdoypc_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stdofgapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stdofgmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stdopapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, stdogpypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, titpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tfpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tflpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tfnlpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tgpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ttmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tipg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toflpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofnlpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tttapg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, totmpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, titp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tgfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ttfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, toitp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, tofrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, totfrp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ppypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ppfdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poppg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, popypg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, popfdpg_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poptpp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, pppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, poppypp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, popppp_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ppr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, hpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, apr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, nspr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, hapr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fsospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ssospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, sosprbm_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, icsospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ncsospr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, l10_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, l5_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, icpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, ncpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, lpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, cpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt1_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt11_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt26_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt41_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, vt76_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, fhpr_df, on=['Team', 'Season', 'Week'], how='outer')
+        this_week_df = pd.merge(this_week_df, shpr_df, on=['Team', 'Season', 'Week'], how='outer')
 
-        # this_week_df = rearrange_columns(this_week_df)
-        # season_df = pd.concat([season_df, this_week_df])
-        # master_df = pd.concat([master_df, this_week_df])
+        this_week_df = rearrange_columns(this_week_df)
+        season_df = pd.concat([season_df, this_week_df])
+        master_df = pd.concat([master_df, this_week_df])
 
+        # save_dir = 'C:\PythonPrograms'
+        save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
         save_file = 'Scraped_TR_Data_Season_' + season + '_Week_' + week
         try:
-            datascraper.save_df(this_week_df, save_dir, save_file)
+            datascraper.save_df(season_df, save_dir, save_file)
             print('{} saved successfully.'.format(save_file))
             print('File successfully saved at {}.'.format(save_dir))
         except:
