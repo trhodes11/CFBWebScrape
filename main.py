@@ -74,11 +74,11 @@ if __name__ == '__main__':
     pd.set_option('display.width', desired_width)
     pd.set_option('display.max_columns', 60)
 
-    save_dir = 'C:/Users\chris\PycharmProjects\CFBWebScrape\scraped_data'
+    save_dir = 'C:\Users\chris\PycharmProjects\CFBWebScrape\scraped_data'
     # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
 
-    # run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
-    run_type = 'current week'
+    run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
+    # run_type = 'current week'
 
     """
     # This try statement is a check to see whether the program was started using the command line/terminal or using an 
@@ -2547,7 +2547,7 @@ if __name__ == '__main__':
                                          'Last 3': 'Last_3_Turnovers_Interceptions_Thrown_per_Game',
                                          'Last 1': 'Last_1_Turnovers_Interceptions_Thrown_per_Game',
                                          'Home': 'At_Home_Turnovers_Interceptions_Thrown_per_Game',
-                                         'Away': 'Away_Turnovers_Interceptions_per_Game'
+                                         'Away': 'Away_Turnovers_Interceptions_Thrown_per_Game'
                                          }, inplace=True)
                 titpg_df['Team'] = titpg_df['Team'].str.strip()
                 if season == '2010':
@@ -2679,7 +2679,7 @@ if __name__ == '__main__':
                                         'Last 3': 'Last_3_Turnovers_Interceptions_per_Game',
                                         'Last 1': 'Last_1_Turnovers_Interceptions_per_Game',
                                         'Home': 'At_Home_Turnovers_Interceptions_per_Game',
-                                        'Away': 'Away_Turnovers_Interceptions_per-Game'
+                                        'Away': 'Away_Turnovers_Interceptions_per_Game'
                                         }, inplace=True)
                 tipg_df['Team'] = tipg_df['Team'].str.strip()
                 if season == '2010':
@@ -6248,7 +6248,7 @@ if __name__ == '__main__':
                                  'Last 3': 'Last_3_Turnovers_Interceptions_Thrown_per_Game',
                                  'Last 1': 'Last_1_Turnovers_Interceptions_Thrown_per_Game',
                                  'Home': 'At_Home_Turnovers_Interceptions_Thrown_per_Game',
-                                 'Away': 'Away_Turnovers_Interceptions_per_Game'
+                                 'Away': 'Away_Turnovers_Interceptions_Thrown_per_Game'
                                  }, inplace=True)
         titpg_df['Team'] = titpg_df['Team'].str.strip()
         if season == '2010':
@@ -6379,7 +6379,7 @@ if __name__ == '__main__':
                                 'Last 3': 'Last_3_Turnovers_Interceptions_per_Game',
                                 'Last 1': 'Last_1_Turnovers_Interceptions_per_Game',
                                 'Home': 'At_Home_Turnovers_Interceptions_per_Game',
-                                'Away': 'Away_Turnovers_Interceptions_per-Game'
+                                'Away': 'Away_Turnovers_Interceptions_per_Game'
                                 }, inplace=True)
         tipg_df['Team'] = tipg_df['Team'].str.strip()
         if season == '2010':
