@@ -74,7 +74,7 @@ if __name__ == '__main__':
     pd.set_option('display.width', desired_width)
     pd.set_option('display.max_columns', 60)
 
-    save_dir = 'C:\'
+    save_dir = 'C:/Users\chris\PycharmProjects\CFBWebScrape\scraped_data'
     # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
 
     # run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
@@ -115,7 +115,7 @@ if __name__ == '__main__':
         # for loop and scrape each TR table for each week of the season from week 5-14
         """
         # for season in ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']:
-        for season in ['2019']:
+        for season in ['2021']:
             season_df = pd.DataFrame()
             """
             # Each season has it's own season start date, so depending on which season we are at in the for loop
@@ -3876,7 +3876,7 @@ if __name__ == '__main__':
         season_df = pd.DataFrame()
 
         season = '2021'
-        week = '14'
+        week = '6'
         week_num = int(week) - 5
 
         if (season == '2021'):
