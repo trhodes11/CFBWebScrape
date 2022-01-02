@@ -3876,7 +3876,7 @@ if __name__ == '__main__':
         season_df = pd.DataFrame()
 
         season = '2021'
-        week = '12'
+        week = '13'
         week_num = int(week) - 5
 
         if (season == '2021'):
