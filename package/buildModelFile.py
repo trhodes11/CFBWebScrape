@@ -401,6 +401,7 @@ def build_model_df():
     # Join together the dataframes df_historical_games and df_teams on the home_team column. This will add the City and
     # State columns to the df_joined dataframe (similar to doing a vlookup in Excel)
     """
+    # df_historical_games = df_historical_games[df_historical_games['Season'].isin([2010, 2011])]
     df_joined = pd.merge(df_historical_games,
                          df_teams_home[['home_team', 'home_city', 'home_state']],
                          on=['home_team'],
