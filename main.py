@@ -47,7 +47,7 @@ def main_hist(this_url, this_season, this_week, this_date, table_name):
         path_decision = 'Y'
         if path_decision == 'Y':
             # save_dir = os.getcwd()
-            save_dir = 'C:Users\chris\PycharmProjects\CFBWebScrape\scraped_data' + this_week
+            save_dir = 'C:/Users/chris/PycharmProjects/CFBWebScrape/scraped_data' + this_week
         else:
             save_dir = input('Please enter the full path of the save location: ')
         # save_file = input('Please enter a file name (with no extension): ')
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     pd.set_option('display.width', desired_width)
     pd.set_option('display.max_columns', 60)
 
-    save_dir = 'c:\users\chris\PycharmProjects\CFBWebScrape\scraped_data'
+    save_dir = 'C:/Users/chris/PycharmProjects/CFBWebScrape/scraped_data'
     # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
 
     run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
@@ -3859,7 +3859,7 @@ if __name__ == '__main__':
                 time.sleep(3)
 
             # save_dir = 'c:\Users\chris\PycharmProjects\CFBWebScrape\scraped_data'
-            # save_file = 'Scraped_TR_Data_Combined_' + season
+            save_file = 'Scraped_TR_Data_Combined_' + season
             try:
                 datascraper.save_df(season_df, save_dir, save_file)
                 print('{} saved successfully.'.format(save_file))
@@ -3868,7 +3868,7 @@ if __name__ == '__main__':
                 print('I don\'t think the file saved, you should double check.')
 
         # save_dir = 'C:\users\chris\PycharmProjects\CFBWebScrape\scraped_data'
-        # save_file = 'Scraped_TR_Data_Combined_ALL'
+        save_file = 'Scraped_TR_Data_Combined_ALL'
         try:
             datascraper.save_df(master_df, save_dir, save_file)
             print('{} saved successfully.'.format(save_file))
