@@ -47,7 +47,7 @@ def main_hist(this_url, this_season, this_week, this_date, table_name):
         path_decision = 'Y'
         if path_decision == 'Y':
             # save_dir = os.getcwd()
-            save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/' + this_season
+            save_dir = 'C:/Users/chris/PycharmProjects/CFBWebScrape/scraped_data' + this_week
         else:
             save_dir = input('Please enter the full path of the save location: ')
         # save_file = input('Please enter a file name (with no extension): ')
@@ -74,8 +74,8 @@ if __name__ == '__main__':
     pd.set_option('display.width', desired_width)
     pd.set_option('display.max_columns', 60)
 
-    # save_dir = 'C:/Users\chris\PycharmProjects\CFBWebScrape\scraped_data'
-    save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
+    save_dir = 'C:/Users/chris/PycharmProjects/CFBWebScrape/scraped_data'
+    # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
 
     # run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
     run_type = 'current week'
@@ -115,7 +115,7 @@ if __name__ == '__main__':
         # for loop and scrape each TR table for each week of the season from week 5-14
         """
         # for season in ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']:
-        for season in ['2019']:
+        for season in ['2020']:
             season_df = pd.DataFrame()
             """
             # Each season has it's own season start date, so depending on which season we are at in the for loop
@@ -126,19 +126,25 @@ if __name__ == '__main__':
             # in the model for games that occurred in Week 5 will be 9/27/2010 which is the Monday after Week 4.
             """
             if (season == '2010') | (season == '2021'):
-                season_start_date = datetime.date(int(season), 9, 27)
+                season_start_date = datetime.date(int(season), 9, 6)
             elif (season == '2011') | (season == '2016'):
-                season_start_date = datetime.date(int(season), 9, 26)
+                season_start_date = datetime.date(int(season), 9, 5)
             elif (season == '2012') | (season == '2018'):
-                season_start_date = datetime.date(int(season), 9, 24)
+                season_start_date = datetime.date(int(season), 9, 3)
             elif (season == '2013') | (season == '2019'):
-                season_start_date = datetime.date(int(season), 9, 23)
+                season_start_date = datetime.date(int(season), 9, 2)
             elif season == '2014':
-                season_start_date = datetime.date(int(season), 9, 22)
+                season_start_date = datetime.date(int(season), 9, 1)
             elif season == '2015':
-                season_start_date = datetime.date(int(season), 9, 28)
+                season_start_date = datetime.date(int(season), 9, 7)
             elif season == '2017':
-                season_start_date = datetime.date(int(season), 9, 25)
+                season_start_date = datetime.date(int(season), 9, 4)
+            elif season == '2018':
+                season_start_date = datetime.date(int(season), 9, 3)
+            elif season == '2019':
+                season_start_date = datetime.date(int(season), 9, 3)
+            elif season == '2020':
+                season_start_date = datetime.date(int(season), 9, 7)
 
             """
             # Now that we know the season_start_date for the current season, we can set the start date for the 
@@ -160,7 +166,7 @@ if __name__ == '__main__':
             # it reaches the value of 15 which will cause it to exit the loop (week = 14 will be the last time it
             # enters the loop
             """
-            for week in range(5, 15):
+            for week in range(2, 16):
                 """
                 # For each week of the current season, we will build a url string for each of the tables we want to
                 # scrape using the current value of 'this_week_date_str'. The 'this_week_date_str' variable will 
@@ -3852,7 +3858,7 @@ if __name__ == '__main__':
 
                 time.sleep(3)
 
-            # save_dir = 'C:\PythonPrograms'
+            # save_dir = 'c:\Users\chris\PycharmProjects\CFBWebScrape\scraped_data'
             save_file = 'Scraped_TR_Data_Combined_' + season
             try:
                 datascraper.save_df(season_df, save_dir, save_file)
@@ -3861,7 +3867,7 @@ if __name__ == '__main__':
             except:
                 print('I don\'t think the file saved, you should double check.')
 
-        # save_dir = 'C:\PythonPrograms'
+        # save_dir = 'C:\users\chris\PycharmProjects\CFBWebScrape\scraped_data'
         save_file = 'Scraped_TR_Data_Combined_ALL'
         try:
             datascraper.save_df(master_df, save_dir, save_file)
@@ -3876,11 +3882,11 @@ if __name__ == '__main__':
         season_df = pd.DataFrame()
 
         season = '2021'
-        week = '5'
+        week = '7'
         week_num = int(week) - 5
 
         if (season == '2021'):
-            season_start_date = datetime.date(int(season), 9, 27)
+            season_start_date = datetime.date(int(season), 9, 6)
         elif (season == '2022'):
             season_start_date = datetime.date(int(season), 9, 27)
 
