@@ -77,8 +77,8 @@ if __name__ == '__main__':
     save_dir = 'C:/Users/chris/PycharmProjects/CFBWebScrape/scraped_data'
     # save_dir = '/Users/staceyrhodes/PycharmProjects/TeamRankingsWebScraper/scraped_data/'
 
-    run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
-    # run_type = 'current week'
+    # run_type = 'historic season'  # This is used to tell the below code which mode we want to run in
+    run_type = 'current week'
 
     """
     # This try statement is a check to see whether the program was started using the command line/terminal or using an 
@@ -3882,7 +3882,7 @@ if __name__ == '__main__':
         season_df = pd.DataFrame()
 
         season = '2021'
-        week = '2'
+        week = '3'
         week_num = int(week) - 5
 
         if (season == '2021'):
