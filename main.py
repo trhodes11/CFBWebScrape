@@ -135,16 +135,9 @@ if __name__ == '__main__':
                 season_start_date = datetime.date(int(season), 9, 2)
             elif season == '2014':
                 season_start_date = datetime.date(int(season), 9, 1)
-            elif season == '2015':
-                season_start_date = datetime.date(int(season), 9, 7)
-            elif season == '2017':
-                season_start_date = datetime.date(int(season), 9, 4)
-            elif season == '2018':
-                season_start_date = datetime.date(int(season), 9, 3)
-            elif season == '2019':
-                season_start_date = datetime.date(int(season), 9, 3)
             elif season == '2020':
                 season_start_date = datetime.date(int(season), 9, 7)
+
 
             """
             # Now that we know the season_start_date for the current season, we can set the start date for the 
@@ -3882,8 +3875,9 @@ if __name__ == '__main__':
         season_df = pd.DataFrame()
 
         season = '2021'
-        week = '7'
-        week_num = int(week) - 5
+        week = '3'
+        week_num = int(week)
+        # week_num = int(week) - 5
 
         if (season == '2021'):
             season_start_date = datetime.date(int(season), 9, 6)
@@ -3896,8 +3890,8 @@ if __name__ == '__main__':
         # Since we will start at week 5, we can set this_week_date to the season_start_date which is the 
         # Monday before week 5 games.
         """
-        this_week_date = season_start_date + datetime.timedelta(days=7 * week_num)
-        # this_week_date = season_start_date
+        # this_week_date = season_start_date + datetime.timedelta(days=7 * week_num)
+        this_week_date = season_start_date
 
         # The next line will convert the date variable to a string so that we can use it in filenames
         season_start_date_str = season_start_date.strftime("%Y-%m-%d")
