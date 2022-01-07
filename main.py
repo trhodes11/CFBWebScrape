@@ -135,16 +135,9 @@ if __name__ == '__main__':
                 season_start_date = datetime.date(int(season), 9, 2)
             elif season == '2014':
                 season_start_date = datetime.date(int(season), 9, 1)
-            elif season == '2015':
-                season_start_date = datetime.date(int(season), 9, 7)
-            elif season == '2017':
-                season_start_date = datetime.date(int(season), 9, 4)
-            elif season == '2018':
-                season_start_date = datetime.date(int(season), 9, 3)
-            elif season == '2019':
-                season_start_date = datetime.date(int(season), 9, 3)
             elif season == '2020':
                 season_start_date = datetime.date(int(season), 9, 7)
+
 
             """
             # Now that we know the season_start_date for the current season, we can set the start date for the 
@@ -3882,11 +3875,12 @@ if __name__ == '__main__':
         season_df = pd.DataFrame()
 
         season = '2021'
-        week = '7'
-        week_num = int(week) - 5
+        week = '15'
+        week_num = int(week) -1
+        # week_num = int(week) - 5
 
         if (season == '2021'):
-            season_start_date = datetime.date(int(season), 9, 6)
+            season_start_date = datetime.date(int(season), 8, 30)
         elif (season == '2022'):
             season_start_date = datetime.date(int(season), 9, 27)
 
